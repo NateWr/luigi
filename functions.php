@@ -19,13 +19,35 @@
  * @license    GNU General Public License v2.0 or later
  */
 
- /**
-  * Initialize the theme
-  * @since 0.0.1
-  */
 if ( !function_exists( 'luigi_setup_theme' ) ) {
-function luigi_setup_theme() {
+    /**
+     * Initialize the theme
+     * @since 0.0.1
+     */
+    function luigi_setup_theme() {
 
+    }
+    add_action( 'after_setup_theme', 'luigi_setup_theme' );
 }
-} // endif;
-add_action( 'after_setup_theme', 'luigi_setup_theme' );
+
+if ( !function_exists( 'luigi_enqueue_assets' ) ) {
+    /**
+     * Enqueue the theme's assets
+     *
+     * @since 0.0.1
+     */
+    function luigi_enqueue_assets() {
+
+        // Auto-load the parent theme's style if a child theme is active
+        if ( is_child_theme() ) {
+            wp_enqueue_style( 'luigi-parent', trailingslashit( get_template_directory_uri() ) . 'style.css' );
+        }
+
+        // Enqueue active theme's CSS stylesheet
+        wp_enqueue_style( 'luigi', get_stylesheet_uri() );
+
+        // Load fonts
+        wp_enqueue_style( 'luigi-fonts', '//fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Open+Sans:400,400italic,600,600italic,700,700italic&subset=latin,latin-ext');
+    }
+    add_action( 'wp_enqueue_scripts', 'luigi_enqueue_assets' );
+}
