@@ -1,0 +1,25 @@
+//
+// Mix-ins, functions, etc.
+//
+
+.clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Input field placeholders
+.placeholder() {
+	&:-moz-placeholder,          // Firefox 4-18
+	&::-moz-placeholder,         // Firefox 19+
+	&:-ms-input-placeholder,     // Internet Explorer 10+
+	&::-webkit-input-placeholder // Safari and Chrome
+	{
+		opacity: 50%;
+	}
+}
