@@ -26,6 +26,17 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
      */
     function luigi_setup_theme() {
 
+        // Include theme files
+        include_once( 'includes/template-helpers.php' );
+
+        // Register the menu
+        register_nav_menus(
+            array(
+                'primary_menu'	=> esc_html__( 'Primary Navigation Menu', 'luigi' ),
+                'social_menu'	=> esc_html__( 'Social Profiles Menu', 'luigi' ),
+            )
+        );
+
     }
     add_action( 'after_setup_theme', 'luigi_setup_theme' );
 }
