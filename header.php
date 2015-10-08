@@ -61,13 +61,15 @@
 				?>
 			</div>
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
+			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Main Menu', 'luigi' ); ?>">
 				<?php
 					wp_nav_menu(
 						array(
 							'theme_location'  => 'primary_menu',
 							'container'       => 'div',
 							'container_class' => 'primary-menu',
+							'walker'          => new Aria_Walker_Nav_Menu(),
+							'items_wrap'     => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
 						)
 					);
 				?>

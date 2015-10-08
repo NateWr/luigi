@@ -37,6 +37,12 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
             )
         );
 
+        // Enqueue the scripts and stylesheets
+        add_action( 'wp_enqueue_scripts', 'luigi_enqueue_assets' );
+
+        // Load the navigation menu walker for aria support
+        add_action( 'wp', 'luigi_load_aria_nav_walker' );
+
     }
     add_action( 'after_setup_theme', 'luigi_setup_theme' );
 }
@@ -59,6 +65,19 @@ if ( !function_exists( 'luigi_enqueue_assets' ) ) {
 
         // Load fonts
         wp_enqueue_style( 'luigi-fonts', '//fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Open+Sans:400,400italic,600,600italic,700,700italic&subset=latin,latin-ext');
+
+        // Enqueue frontend script
+        wp_enqueue_script( 'luigi-js', get_stylesheet_directory_uri() . '/assets/js/frontend.js', array( 'jquery' ), '0.0.1', true );
     }
-    add_action( 'wp_enqueue_scripts', 'luigi_enqueue_assets' );
+}
+
+if ( !function_exists( 'luigi_load_aria_nav_walker' ) ) {
+    /**
+     * Load the aria-compliant navigation menu walker class
+     *
+     * @since 0.0.1
+     */
+    function luigi_load_aria_nav_walker() {
+        include_once( 'lib/WAI-ARIA-Walker_Nav_Menu/aria-walker-nav-menu.php' );
+    }
 }
