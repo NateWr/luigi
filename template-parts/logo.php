@@ -16,7 +16,7 @@
 	<?php endif; ?>
 </a>
 <?php if ( empty( get_theme_mod( 'logo' ) ) && !empty( get_bloginfo( 'description' ) ) ) : ?>
-	<span class="description">
+	<span class="site-tagline">
 		<?php echo get_bloginfo( 'description', 'display' ); ?>
 	</span>
 <?php endif; ?>

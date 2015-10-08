@@ -1,0 +1,38 @@
+//
+// Re-usable components
+//
+
+// Social icons menu
+.luigi-social-menu {
+	line-height: 0; // collapse space added by inline <ul>
+
+	ul {
+		&:extend(.unstyled_list);
+		.clearfix();
+		display: inline-block;
+	}
+
+	li {
+		float: left;
+		padding-right: @double;
+		padding-bottom: @base;
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+
+	a {
+		display: block;
+		border: @border-line;
+		color: @text-light;
+		text-align: center;
+
+		&:hover,
+		&:focus {
+			background: @primary;
+			color: #fff;
+			border-color: @primary;
+		}
+	}
+}

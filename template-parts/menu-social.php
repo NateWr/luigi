@@ -11,7 +11,7 @@ wp_nav_menu(
 	array(
 		'theme_location'  => 'social_menu',
 		'container'       => 'div',
-		'container_class' => 'social-menu social-icons',
+		'container_class' => 'luigi-social-menu social-icons',
 		'depth'           => 1,
 		'link_before'     => '<span class="screen-reader-text">',
 		'link_after'      => '</span>',

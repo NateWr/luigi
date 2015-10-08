@@ -1,0 +1,69 @@
+//
+// Header
+//
+.site-header {
+	max-width: 100%;
+	padding-left: @double;
+	padding-right: @double;
+	text-align: center;
+
+	.row {
+		position: relative;
+		padding-top: @double;
+		padding-bottom: @double;
+	}
+
+	.home-link,
+	.site-tagline {
+	}
+
+	.home-link {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: auto;
+		max-width: 10em;
+		font-family: @font-alt;
+		font-size: @font-logo-sml;
+		line-height: @line-logo;
+		color: @primary;
+		text-decoration: none;
+	}
+
+	.site-tagline {
+		display: inline-block;
+		position: relative;
+		top: -@double;
+		max-width: 30em;
+		font-size: @font-tiny;
+		font-weight: @semibold;
+		line-height: @line-sml;
+		text-transform: uppercase;
+		background: rgba(250,250,250,0.8);
+	}
+
+	.bp-contact-card {
+		color: @text-light;
+
+		.bp-phone {
+			margin: 0;
+		}
+	}
+
+	.luigi-social-menu {
+		padding: @double 0 @base; // Extra space on bottom is taken by <li>s
+	}
+
+	@media(min-width: @screen-xs) {
+
+		.home-link {
+			font-size: @font-logo;
+		}
+
+		.site-tagline {
+			font-size: @font-sml;
+			line-height: @line-sml;
+		}
+	}
+
+}

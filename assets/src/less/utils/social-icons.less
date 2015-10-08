@@ -1,0 +1,100 @@
+//
+// Social Media Icons
+//
+@socicon-font-path: "assets/fonts/";
+@socicon-font-name: "socicon-webfont";
+
+@font-face {
+	font-family: 'socicon';
+	src: url('@{socicon-font-path}@{socicon-font-name}.eot');
+	src: url('@{socicon-font-path}@{socicon-font-name}.eot?#iefix') format('embedded-opentype'),
+		 url('@{socicon-font-path}@{socicon-font-name}.woff') format('woff'),
+		 url('@{socicon-font-path}@{socicon-font-name}.ttf') format('truetype'),
+		 url('@{socicon-font-path}@{socicon-font-name}.svg#sociconregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.social-icons a:before {
+	line-height: @triple;
+	width: @triple;
+	height: @triple;
+	text-align: center;
+	display: inline-block;
+	font-size: @font-tiny;
+	font-family: 'socicon' !important;
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+.social-icons a:empty{
+	width: @triple;
+}
+
+.social-icons a[href*="easid.cc"]::before { content: "5"; }
+.social-icons a[href*="twitter.com"]::before { content: "a"; }
+.social-icons a[href*="facebook.com"]::before { content: "b"; }
+.social-icons a[href*="google.com"]::before { content: "c"; }
+.social-icons a[href*="pinterest.com"]::before { content: "d"; }
+.social-icons a[href*="foursquare.com"]::before { content: "e"; }
+.social-icons a[href*="yahoo.com"]::before { content: "f"; }
+.social-icons a[href*="skype:"]::before { content: "g"; }
+.social-icons a[href*="yelp.com"]::before { content: "h"; }
+.social-icons a[href*="feedburner.com"]::before { content: "i"; }
+.social-icons a[href*="linkedin.com"]::before { content: "j"; }
+.social-icons a[href*="viadeo.com"]::before { content: "k"; }
+.social-icons a[href*="xing.com"]::before { content: "l"; }
+.social-icons a[href*="myspace.com"]::before { content: "m"; }
+.social-icons a[href*="soundcloud.com"]::before { content: "n"; }
+.social-icons a[href*="spotify.com"]::before { content: "o"; }
+.social-icons a[href*="grooveshark.com"]::before { content: "p"; }
+.social-icons a[href*="last.fm"]::before { content: "q"; }
+.social-icons a[href*="youtube.com"]::before { content: "r"; }
+.social-icons a[href*="vimeo.com"]::before { content: "s"; }
+.social-icons a[href*="dailymotion.com"]::before { content: "t"; }
+.social-icons a[href*="vine.com"]::before { content: "u"; }
+.social-icons a[href*="flickr.com"]::before { content: "p"; }
+.social-icons a[href*="500px.com"]::before { content: "w"; }
+.social-icons a[href*="instagram.com"]::before { content: "x"; }
+.social-icons a[href*="wordpress.com"]::before { content: "y"; }
+.social-icons a[href*="wordpress.org"]::before { content: "y"; }
+.social-icons a[href*="tumblr.com"]::before { content: "z"; }
+.social-icons a[href*="blogger.com"]::before { content: "A"; }
+.social-icons a[href*="technorati.com"]::before { content: "B"; }
+.social-icons a[href*="reddit.com"]::before { content: "C"; }
+.social-icons a[href*="dribbble.com"]::before { content: "D"; }
+.social-icons a[href*="stumbleupon.com"]::before { content: "E"; }
+.social-icons a[href*="digg.com"]::before { content: "F"; }
+.social-icons a[href*="envato.com"]::before { content: "G"; }
+.social-icons a[href*="behance.net"]::before { content: "H"; }
+.social-icons a[href*="delicious.com"]::before { content: "I"; }
+.social-icons a[href*="deviantart.com"]::before { content: "J"; }
+.social-icons a[href*="forrst.com"]::before { content: "K"; }
+.social-icons a[href*="play.com"]::before { content: "L"; }
+.social-icons a[href*="zerply.com"]::before { content: "M"; }
+.social-icons a[href*="wikipedia.com"]::before { content: "N"; }
+.social-icons a[href*="apple.com"]::before { content: "O"; }
+.social-icons a[href*="flattr.com"]::before { content: "P"; }
+.social-icons a[href*="github.com"]::before { content: "Q"; }
+.social-icons a[href*="github.io"]::before { content: "Q"; }
+.social-icons a[href*="chime.in"]::before { content: "R"; }
+.social-icons a[href*="friendfeed.com"]::before { content: "S"; }
+.social-icons a[href*="newsvine.com"]::before { content: "T"; }
+.social-icons a[href*="identi.ca"]::before { content: "U"; }
+.social-icons a[href*="bebo.com"]::before { content: "V"; }
+.social-icons a[href*="zynga.com"]::before { content: "W"; }
+.social-icons a[href*="steampowered.com"]::before { content: "X"; }
+.social-icons a[href*="xbox.com"]::before { content: "Y"; }
+.social-icons a[href*="windows.com"]::before { content: "Z"; }
+.social-icons a[href*=".live.com"]::before { content: "Z"; }
+/* Outlook skipped. It's not clear what domain it would be attached to */
+.social-icons a[href*="coderwall.com"]::before { content: "2"; }
+.social-icons a[href*="tripadvisor.co"]::before { content: "3"; }
+.social-icons a[href*="netcod.es"]::before { content: "4"; }
+.social-icons a[href*="lanyrd.com"]::before { content: "7"; }
+.social-icons a[href*="slideshare.net"]::before { content: "8"; }
+.social-icons a[href*="bufferapp.com"]::before { content: "9"; }
+.social-icons a[href*=".rss"]::before { content: ","; }
+.social-icons a[href*="vk.com"]::before { content: ";"; }
+.social-icons a[href*="disqus.com"]::before { content: ":"; }
