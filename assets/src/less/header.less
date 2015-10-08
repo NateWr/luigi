@@ -13,8 +13,8 @@
 		padding-bottom: @double;
 	}
 
-	.home-link,
-	.site-tagline {
+	h1 {
+		margin: 0;
 	}
 
 	.home-link {
@@ -25,6 +25,7 @@
 		max-width: 10em;
 		font-family: @font-alt;
 		font-size: @font-logo-sml;
+		font-weight: @normal;
 		line-height: @line-logo;
 		color: @primary;
 		text-decoration: none;
@@ -44,8 +45,11 @@
 
 	.bp-contact-card {
 		color: @text-light;
+		font-size: @font-tiny;
+		font-weight: @semibold;
 
 		.bp-phone {
+			display: inline-block;
 			margin: 0;
 		}
 	}
