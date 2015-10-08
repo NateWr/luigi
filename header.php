@@ -37,42 +37,13 @@
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="row">
-				<a href="<?php home_url(); ?>" title="<?php esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php if ( empty( get_theme_mod( 'logo' ) ) ) : ?>
-						<?php echo get_bloginfo( 'name', 'display' ); ?>
-					<?php else : ?>
-						<img src="<?php echo esc_url( get_theme_mod( 'logo' ) ); ?>" class="logo-image" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-					<?php endif; ?>
-				</a>
-
+				<?php get_template_part( 'template-parts/logo' ); ?>
 				<?php luigi_print_phone(); ?>
-
-				<?php
-					wp_nav_menu(
-						array(
-							'theme_location'  => 'social_menu',
-							'container'       => 'div',
-							'container_class' => 'social-menu social-icons',
-							'depth'           => 1,
-							'link_before'     => '<span class="screen-reader-text">',
-							'link_after'      => '</span>',
-						)
-					);
-				?>
+				<?php get_template_part( 'template-parts/menu', 'social' ); ?>
 			</div>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Main Menu', 'luigi' ); ?>">
-				<?php
-					wp_nav_menu(
-						array(
-							'theme_location'  => 'primary_menu',
-							'container'       => 'div',
-							'container_class' => 'primary-menu',
-							'walker'          => new Aria_Walker_Nav_Menu(),
-							'items_wrap'     => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
-						)
-					);
-				?>
+				<?php get_template_part( 'template-parts/menu', 'primary' ); ?>
 			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->
 
