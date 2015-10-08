@@ -30,3 +30,23 @@
 	padding: 0;
 	list-style: none;
 }
+
+// Containers at various screen widths
+.container {
+	padding-left: @double;
+	padding-right: @double;
+
+	@media( min-width: @screen-sm ) {
+		width: @screen-sm - (@double * 2);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media( min-width: @screen-md ) {
+		width: @screen-md - (@double * 2);
+	}
+
+	@media( min-width: @screen-lg ) {
+		width: @screen-lg - (@double * 2);
+	}
+}

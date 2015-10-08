@@ -2,9 +2,7 @@
 // Header
 //
 .site-header {
-	max-width: 100%;
-	padding-left: @double;
-	padding-right: @double;
+	&:extend(.container);
 	text-align: center;
 
 	.row {
@@ -22,7 +20,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		height: auto;
-		max-width: 10em;
+		max-width: 7em;
 		font-family: @font-alt;
 		font-size: @font-logo-sml;
 		font-weight: @normal;
@@ -35,7 +33,7 @@
 		display: inline-block;
 		position: relative;
 		top: -@double;
-		max-width: 30em;
+		max-width: 40em;
 		font-size: @font-tiny;
 		font-weight: @semibold;
 		line-height: @line-sml;
@@ -47,6 +45,7 @@
 		color: @text-light;
 		font-size: @font-tiny;
 		font-weight: @semibold;
+		line-height: @double;
 
 		.bp-phone {
 			display: inline-block;
@@ -68,6 +67,30 @@
 			font-size: @font-sml;
 			line-height: @line-sml;
 		}
+
+		.bp-contact-card {
+			font-size: @font-sml;
+		}
 	}
 
+	@media(min-width: @screen-md) {
+
+		.bp-contact-card,
+		.luigi-social-menu {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+
+		.luigi-social-menu {
+			left: auto;
+			right: 0;
+			padding: 0;
+
+			li  {
+				padding-bottom: 0;
+			}
+		}
+	}
 }
