@@ -43,6 +43,9 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
         // Load the navigation menu walker for aria support
         add_action( 'wp', 'luigi_load_aria_nav_walker' );
 
+        // Dequeue styles from plugins we don't need in the footer
+        add_action( 'wp_footer', 'luigi_dequeue_footer_assets' );
+
     }
     add_action( 'after_setup_theme', 'luigi_setup_theme' );
 }
@@ -79,5 +82,16 @@ if ( !function_exists( 'luigi_load_aria_nav_walker' ) ) {
      */
     function luigi_load_aria_nav_walker() {
         include_once( 'lib/WAI-ARIA-Walker_Nav_Menu/aria-walker-nav-menu.php' );
+    }
+}
+
+if ( !function_exists( 'luigi_dequeue_footer_assets' ) ) {
+    /**
+     * Dequeue styles from plugins we don't need in the footer
+     *
+     * @since 0.0.1
+     */
+    function luigi_dequeue_footer_assets() {
+        wp_dequeue_style( 'bpfwp-default' );
     }
 }
