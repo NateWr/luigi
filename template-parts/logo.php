@@ -8,7 +8,7 @@
  * @package luigi
  */
 ?>
-<a class="home-link" href="<?php home_url(); ?>" title="<?php esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+<a class="home-link" href="<?php echo home_url(); ?>" title="<?php esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 	<?php if ( empty( get_theme_mod( 'logo' ) ) ) : ?>
 		<?php echo get_bloginfo( 'name', 'display' ); ?>
 	<?php else : ?>
