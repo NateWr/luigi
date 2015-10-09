@@ -1,9 +1,9 @@
 <?php
 /**
- * Functions exclusively used on the frontend
+ * Functions used only on the frontend
  *
  * @brief These functions are only used on the frontend and so only need to be
- *  loaded for those requests
+ *  loaded for those requests.
  *
  * @package    luigi
  */
