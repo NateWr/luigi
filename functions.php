@@ -46,6 +46,7 @@ if ( !function_exists( 'luigi_load_context' ) ) {
      */
     function luigi_load_context() {
         add_action( 'get_header', 'luigi_load_frontend' );
+        add_action( 'init', 'luigi_load_customizer' );
     }
 }
 
@@ -59,5 +60,16 @@ if ( !function_exists( 'luigi_load_frontend' ) ) {
         include_once( 'includes/load-frontend.php' );
         include_once( 'lib/WAI-ARIA-Walker_Nav_Menu/aria-walker-nav-menu.php' );
         include_once( 'includes/template-helpers.php' );
+    }
+}
+
+if ( !function_exists( 'luigi_load_customizer' ) ) {
+    /**
+     * Load files required by the customizer
+     *
+     * @since 0.0.1
+     */
+    function luigi_load_customizer() {
+        include_once( 'includes/load-customizer.php' );
     }
 }
