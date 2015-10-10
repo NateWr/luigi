@@ -1,2 +1,0 @@
-/*! luigi 2015-10-08 */
-jQuery(function(a){a('[role="menubar"]').on("focus.aria  mouseenter.aria",'[aria-haspopup="true"]',function(b){a(b.currentTarget).attr("aria-expanded",!0)}),a('[role="menubar"]').on("blur.aria  mouseleave.aria",'[aria-haspopup="true"]',function(b){a(b.currentTarget).attr("aria-expanded",!1)})}),jQuery(document).ready(function(a){});
