@@ -50,3 +50,10 @@
 		width: @screen-lg - (@double * 2);
 	}
 }
+
+// Transform vendor prefixes
+.transform( @transform ) {
+	-webkit-transform: @transform;
+	-ms-transform: @transform;
+	transform: @transform;
+}
