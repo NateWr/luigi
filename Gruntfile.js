@@ -41,8 +41,14 @@ module.exports = function(grunt) {
 				files: {
 					'assets/js/frontend.js': [
 						'lib/WAI-ARIA-Walker_Nav_Menu/wai-aria.js',
+						'assets/src/js/selector-cache.js',
 						'assets/src/js/frontend.js',
 						'assets/src/js/frontend-*.js'
+					],
+					'assets/js/customizer-preview.js': [
+						'assets/src/js/customizer-ajax.js',
+						'assets/src/js/customizer-preview.js',
+						'assets/src/js/customizer-preview-*.js'
 					]
 				}
 			}
@@ -55,7 +61,8 @@ module.exports = function(grunt) {
 			},
 			build: {
 				files: {
-					'assets/js/frontend.js' : 'assets/js/frontend.js'
+					'assets/js/frontend.js' : 'assets/js/frontend.js',
+					'assets/js/customizer-preview.js' : 'assets/js/customizer-preview.js'
 				}
 			}
 		},

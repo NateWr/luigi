@@ -8,6 +8,26 @@
  * @package    luigi
  */
 
+if ( !function_exists( 'luigi_print_logo' ) ) {
+	/**
+	 * Print the logo
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_print_logo() {
+
+		$logo_url = wp_get_attachment_url( get_option( 'site_logo' ) );
+		if ( !$logo_url ) {
+			return;
+		}
+		?>
+
+		<img src="<?php echo $logo_url; ?>" class="logo-image" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+
+		<?php
+	}
+}
+
 if ( !function_exists( 'luigi_print_phone' ) ) {
 	/**
 	 * Print the phone number from their Business Profile

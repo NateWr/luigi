@@ -9,13 +9,13 @@
  */
 ?>
 <a class="home-link" href="<?php echo home_url(); ?>" title="<?php esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-	<?php if ( empty( get_theme_mod( 'logo' ) ) ) : ?>
+	<?php if ( empty( get_option( 'site_logo' ) ) ) : ?>
 		<?php echo get_bloginfo( 'name', 'display' ); ?>
 	<?php else : ?>
-		<img src="<?php echo esc_url( get_theme_mod( 'logo' ) ); ?>" class="logo-image" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+		<?php luigi_print_logo(); ?>
 	<?php endif; ?>
 </a>
-<?php if ( empty( get_theme_mod( 'logo' ) ) && !empty( get_bloginfo( 'description' ) ) ) : ?>
+<?php if ( empty( get_option( 'site_logo' ) ) && !empty( get_bloginfo( 'description' ) ) ) : ?>
 	<span class="site-tagline">
 		<?php echo get_bloginfo( 'description', 'display' ); ?>
 	</span>

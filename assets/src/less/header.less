@@ -27,12 +27,17 @@
 		line-height: @line-logo;
 		color: @primary;
 		text-decoration: none;
+
+		img {
+			display: block;
+			margin: 0 auto;
+			max-height: 93px;
+		}
 	}
 
 	.site-tagline {
-		display: inline-block;
-		position: relative;
-		top: -@double;
+		display: block;
+		margin: -@double auto 0;
 		max-width: 40em;
 		font-size: @font-tiny;
 		font-weight: @semibold;
@@ -42,6 +47,7 @@
 	}
 
 	.bp-contact-card {
+		margin-top: @double;
 		color: @text-light;
 		font-size: @font-tiny;
 		font-weight: @semibold;
@@ -81,6 +87,7 @@
 			top: 50%;
 			left: 0;
 			transform: translateY(-50%);
+			margin: 0;
 		}
 
 		.luigi-social-menu {
