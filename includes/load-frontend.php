@@ -40,8 +40,11 @@ if ( !function_exists( 'luigi_enqueue_assets' ) ) {
 			)
 		);
 
+        // Maybe load minified scripts
+        $min = WP_DEBUG ? '' : 'min.';
+
         // Enqueue frontend script
-        wp_enqueue_script( 'luigi-js', get_stylesheet_directory_uri() . '/assets/js/frontend.js', array( 'jquery' ), '0.0.1', true );
+        wp_enqueue_script( 'luigi-js', get_stylesheet_directory_uri() . '/assets/js/frontend.' . $min . 'js', array( 'jquery' ), '0.0.1', true );
     }
 	add_action( 'wp_enqueue_scripts', 'luigi_enqueue_assets' );
 }

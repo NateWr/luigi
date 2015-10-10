@@ -61,8 +61,8 @@ module.exports = function(grunt) {
 			},
 			build: {
 				files: {
-					'assets/js/frontend.js' : 'assets/js/frontend.js',
-					'assets/js/customizer-preview.js' : 'assets/js/customizer-preview.js'
+					'assets/js/frontend.min.js' : 'assets/js/frontend.js',
+					'assets/js/customizer-preview.min.js' : 'assets/js/customizer-preview.js'
 				}
 			}
 		},

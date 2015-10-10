@@ -1,4 +1,6 @@
 node_modules
 style.css
 assets/js/customizer-preview.js
+assets/js/customizer-preview.min.js
 assets/js/frontend.js
+assets/js/frontend.min.js

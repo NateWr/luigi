@@ -54,7 +54,10 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 	 */
 	function luigi_customizer_enqueue_preview_assets() {
 
-		wp_enqueue_script( 'luigi-customizer-preview-js', get_stylesheet_directory_uri() . '/assets/js/customizer-preview.js', array( 'jquery', 'luigi-js' ), '0.0.1', true );
+		// Maybe load minified scripts
+		$min = WP_DEBUG ? '' : 'min.';
+
+		wp_enqueue_script( 'luigi-customizer-preview-js', get_stylesheet_directory_uri() . '/assets/js/customizer-preview.' . $min . 'js', array( 'jquery', 'luigi-js' ), '0.0.1', true );
 
 		$upload_dir = wp_upload_dir();
 		wp_localize_script( 'luigi-customizer-preview-js', 'luigi_theme_customizer', array(
