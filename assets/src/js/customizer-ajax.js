@@ -19,11 +19,11 @@ var Luigi_Customizer_Ajax;
 
 			// A request that fails without providing an error message
 			if ( typeof r.data == 'undefined' || typeof r.data.error == 'undefined' || typeof r.data.msg == 'undefined' ) {
-				console.log( r );
+				alert( luigi_theme_customizer.strings.unknown_error );
 				return;
 			}
 
-			console.log( r ); // @todo display the error visibly
+			alert( r.data.msg );
 		}
 
 		params.action = 'luigi-customizer';

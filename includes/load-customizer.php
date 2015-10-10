@@ -63,6 +63,9 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 		wp_localize_script( 'luigi-customizer-preview-js', 'luigi_theme_customizer', array(
 			'nonce'          => wp_create_nonce( 'luigi-customizer-ajax' ),
 			'upload_dir_url' => $upload_dir['baseurl'],
+			'strings'        => array(
+				'unknown_error' => __( 'An unknown error occurred. Please try again. If the problem continues, please refresh the page.', 'luigi' ),
+			),
 		) );
 	}
 	add_action( 'customize_preview_init', 'luigi_customizer_enqueue_preview_assets' );
