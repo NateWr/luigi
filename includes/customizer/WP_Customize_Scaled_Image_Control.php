@@ -35,6 +35,20 @@ if ( !class_exists( 'Luigi_WP_Customize_Scaled_Image_Control' ) ) {
 		public $scale_default = '';
 
 		/**
+		 * Minimum allowed scale value
+		 *
+		 * @since 0.0.1
+		 */
+		public $min = 0;
+
+		/**
+		 * Maximum allowed scale value
+		 *
+		 * @since 0.0.1
+		 */
+		public $max = 100;
+
+		/**
 		 * Constructor.
 		 *
 		 * @see WP_Customize_Media_Control::__construct()
@@ -78,7 +92,7 @@ if ( !class_exists( 'Luigi_WP_Customize_Scaled_Image_Control' ) ) {
 				<div class="description">
 					<?php esc_html_e( 'Scale', 'luigi' ); ?>
 				</div>
-				<input type="range" value="{{ data.scale_value }}" data-customize-setting-link="{{ data.scale_setting }}" min="50" max="200" >
+				<input type="range" value="{{ data.scale_value }}" data-customize-setting-link="{{ data.scale_setting }}" min="{{ data.min }}" max="{{ data.max }}" >
 			</div>
 
 			<?php
@@ -97,6 +111,8 @@ if ( !class_exists( 'Luigi_WP_Customize_Scaled_Image_Control' ) ) {
 			$this->json['scale_value'] = $this->value( $this->scale );
 			$this->json['scale_setting'] = $this->scale;
 			$this->json['scale_default'] = $this->scale_default;
+			$this->json['min'] = $this->min;
+			$this->json['max'] = $this->max;
 		}
 	}
 }

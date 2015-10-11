@@ -53,6 +53,8 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 					),
 					'priority'  => 1,
 					'mime_type' => 'image',
+					'min'       => 50,
+					'max'       => 200,
 				)
 			)
 		);
