@@ -1,0 +1,51 @@
+//
+// Styles for the customizer controls
+//
+.customize-control-scaled_image {
+	position: relative;
+	padding-bottom: 40px;
+
+	.placeholder {
+		padding: 2em 1em;
+		background: #ccc;
+		border-radius: 3px;
+		text-align: center;
+	}
+
+	.actions {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+
+		> button {
+			float: right;
+			margin-left: 0.5em;
+
+			&:last-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.scale {
+		position: absolute;
+		left: -9999px;
+		visibility: hidden;
+		padding-top: 1em;
+
+		&.is-visible {
+			position: relative;
+			left: auto;
+			visibility: visible;
+		}
+
+		.description {
+			font-style: italic;
+		}
+
+		input[type="range"] {
+			width: 100%;
+			cursor: pointer;
+		}
+	}
+}

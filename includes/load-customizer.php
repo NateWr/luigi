@@ -95,10 +95,12 @@ if ( !function_exists( 'luigi_customizer_enqueue_control_assetes' ) ) {
 	 */
 	function luigi_customizer_enqueue_control_assetes() {
 
+		wp_enqueue_style( 'luigi-customizer-control', get_stylesheet_directory_uri() . '/assets/css/customizer-control.css', '0.0.1' );
+
 		// Maybe load minified scripts
 		$min = WP_DEBUG ? '' : 'min.';
 
-		wp_enqueue_script( 'luigi-customizer-control-js', get_stylesheet_directory_uri() . '/assets/js/customizer-control.' . $min . 'js', array( 'customize-controls', ), '0.0.1', true );
+		wp_enqueue_script( 'luigi-customizer-control-js', get_stylesheet_directory_uri() . '/assets/js/customizer-control.' . $min . 'js', array( 'customize-controls' ), '0.0.1', true );
 	}
 	add_action( 'customize_controls_enqueue_scripts', 'luigi_customizer_enqueue_control_assetes' );
 }
