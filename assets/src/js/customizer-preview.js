@@ -64,6 +64,7 @@
 	 */
 	wp.customize( 'site_logo', function( val ) {
 		val.bind( function( to ) {
+			cache.clear( 'logo' );
 
 			// Logo removed
 			if ( !to ) {
@@ -85,15 +86,28 @@
 						site_logo: to
 					},
 					function( response, params ) {
-						cache.get( 'home_link', '#masthead .home-link' ).html(
-							'<img src="' + luigi_theme_customizer.upload_dir_url + '/' + response.data.file + '" class="logo-image">'
-						);
+						var img = $( '<img src="' + luigi_theme_customizer.upload_dir_url + '/' + response.data.file + '" class="logo-image">' );
+						if ( wp.customize.get().site_logo_scale != 93 ) {
+							img.css( 'max-height', wp.customize.get().site_logo_scale );
+						}
+						cache.get( 'home_link', '#masthead .home-link' ).html( img );
 						cache.get( 'tagline', '#masthead .site-tagline' ).remove();
 						cache.clear( 'tagline' );
 						cache.clear( 'home_link' );
 					}
 				);
 			}
+		} );
+	} );
+
+	/**
+	 * Update the site logo scale
+	 *
+	 * @since 0.1
+	 */
+	wp.customize( 'site_logo_scale', function( val ) {
+		val.bind( function( to ) {
+			cache.get( 'logo', '#masthead .logo-image' ).css( 'max-height', to + 'px' );
 		} );
 	} );
 

@@ -20,9 +20,12 @@ if ( !function_exists( 'luigi_print_logo' ) ) {
 		if ( !$logo_url ) {
 			return;
 		}
+
+		$scale = get_theme_mod( 'site_logo_scale', 93 );
+		$scale = $scale == 93 ? '' : ' style="max-height: ' . absint( $scale ) . 'px"';
 		?>
 
-		<img src="<?php echo $logo_url; ?>" class="logo-image" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+		<img src="<?php echo $logo_url; ?>" class="logo-image" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"<?php echo $scale; ?>>
 
 		<?php
 	}

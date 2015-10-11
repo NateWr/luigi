@@ -16,6 +16,8 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 	 * @since 0.0.1
 	 */
 	function luigi_customizer_add_controls( $wp_customize ) {
+		include( 'customizer/WP_Customize_Scaled_Image_Control.php' );
+		$wp_customize->register_control_type( 'Luigi_WP_Customize_Scaled_Image_Control' );
 
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
@@ -29,14 +31,26 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 			)
 		);
 
+		$wp_customize->add_setting(
+			'site_logo_scale',
+			array(
+				'default'           => 93,
+				'sanitize_callback' => 'absint',
+				'transport'         => 'postMessage',
+			)
+		);
+
 		$wp_customize->add_control(
-			new WP_Customize_Media_Control(
+			new Luigi_WP_Customize_Scaled_Image_Control(
 				$wp_customize,
 				'site_logo',
 				array(
 					'label'     => __( 'Logo', 'luigi' ),
 					'section'   => 'title_tagline',
-					'settings ' => 'site_logo',
+					'settings'  => array(
+						'site_logo' => 'site_logo',
+						'site_logo_scale' => 'site_logo_scale',
+					),
 					'priority'  => 1,
 					'mime_type' => 'image',
 				)
@@ -69,4 +83,20 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 		) );
 	}
 	add_action( 'customize_preview_init', 'luigi_customizer_enqueue_preview_assets' );
+}
+
+if ( !function_exists( 'luigi_customizer_enqueue_control_assetes' ) ) {
+	/**
+	 * Load assets to handle the customizer control panel
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_customizer_enqueue_control_assetes() {
+
+		// Maybe load minified scripts
+		$min = WP_DEBUG ? '' : 'min.';
+
+		wp_enqueue_script( 'luigi-customizer-control-js', get_stylesheet_directory_uri() . '/assets/js/customizer-control.' . $min . 'js', array( 'customize-controls', ), '0.0.1', true );
+	}
+	add_action( 'customize_controls_enqueue_scripts', 'luigi_customizer_enqueue_control_assetes' );
 }

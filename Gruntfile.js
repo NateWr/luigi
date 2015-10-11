@@ -17,10 +17,8 @@ module.exports = function(grunt) {
 					ieCompat: true
 				},
 				files: {
-					'style.css': [
-						'assets/src/less/style.less',
-						'assets/src/less/style-*.less'
-					]
+					'style.css': 'assets/src/less/style.less',
+					'assets/css/customizer-preview.css': 'assets/src/less/customizer/customizer-preview.less'
 				}
 			}
 		},
@@ -49,6 +47,9 @@ module.exports = function(grunt) {
 						'assets/src/js/customizer-ajax.js',
 						'assets/src/js/customizer-preview.js',
 						'assets/src/js/customizer-preview-*.js'
+					],
+					'assets/js/customizer-control.js': [
+						'assets/src/js/customizer-control.js',
 					]
 				}
 			}
@@ -62,7 +63,8 @@ module.exports = function(grunt) {
 			build: {
 				files: {
 					'assets/js/frontend.min.js' : 'assets/js/frontend.js',
-					'assets/js/customizer-preview.min.js' : 'assets/js/customizer-preview.js'
+					'assets/js/customizer-preview.min.js' : 'assets/js/customizer-preview.js',
+					'assets/js/customizer-control.min.js' : 'assets/js/customizer-control.js'
 				}
 			}
 		},
