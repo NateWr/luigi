@@ -11,6 +11,10 @@
 		border-radius: 3px;
 		text-align: center;
 		cursor: pointer;
+
+		&:active {
+			background: #aaa;
+		}
 	}
 
 	.actions {
@@ -18,7 +22,7 @@
 		bottom: 0;
 		right: 0;
 
-		> button {
+		> button.button { // fight specificity in max-width 782px core styles
 			float: right;
 			margin-left: 0.5em;
 
