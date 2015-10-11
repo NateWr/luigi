@@ -60,7 +60,6 @@ if ( !class_exists( 'Luigi_WP_Customize_Scaled_Image_Control' ) ) {
 			$setting = current( $this->settings );
 			if ( is_object( $setting ) ) {
 				$this->scale_default = $setting->default;
-				error_log( $this->scale_default );
 			}
 		}
 
