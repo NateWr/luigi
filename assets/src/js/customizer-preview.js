@@ -95,6 +95,7 @@
 						cache.get( 'tagline', '#masthead .site-tagline' ).remove();
 						cache.clear( 'tagline' );
 						cache.clear( 'home_link' );
+						cache.clear( 'logo' );
 					}
 				);
 			}
