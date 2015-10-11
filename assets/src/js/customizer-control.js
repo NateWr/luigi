@@ -77,6 +77,9 @@
 				var $this = $(this);
 				control.settings[$this.data( 'customize-setting-link' )]( $this.val() );
 			} );
+
+			// Open the media modal when the placeholder is clicked
+			control.container.on( 'click', '.placeholder', control.openFrame );
 		},
 
 		/**
