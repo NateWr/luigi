@@ -88,7 +88,7 @@
 					function( response, params ) {
 						var img = $( '<img src="' + luigi_theme_customizer.upload_dir_url + '/' + response.data.file + '" class="logo-image">' );
 						if ( wp.customize.get().site_logo_scale != 93 ) {
-							img.css( 'max-height', wp.customize.get().site_logo_scale );
+							img.css( 'max-height', wp.customize.get().site_logo_scale + 'px' );
 						}
 						cache.get( 'home_link', '#masthead .home-link' ).html( img );
 						cache.get( 'tagline', '#masthead .site-tagline' ).remove();
