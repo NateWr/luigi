@@ -70,6 +70,8 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 	 */
 	function luigi_customizer_enqueue_preview_assets() {
 
+		wp_enqueue_style( 'luigi-customizer-preview', get_stylesheet_directory_uri() . '/assets/css/customizer-preview.css', '0.0.1' );
+
 		// Maybe load minified scripts
 		$min = WP_DEBUG ? '' : 'min.';
 

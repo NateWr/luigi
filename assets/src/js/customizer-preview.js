@@ -83,7 +83,8 @@
 				ajax(
 					{
 						route: 'site_logo',
-						site_logo: to
+						site_logo: to,
+						spinner: '#masthead .home-link'
 					},
 					function( response, params ) {
 						var img = $( '<img src="' + luigi_theme_customizer.upload_dir_url + '/' + response.data.file + '" class="logo-image">' );
