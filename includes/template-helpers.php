@@ -16,7 +16,7 @@ if ( !function_exists( 'luigi_print_logo' ) ) {
 	 */
 	function luigi_print_logo() {
 
-		$logo_url = wp_get_attachment_url( get_option( 'site_logo' ) );
+		$logo_url = wp_get_attachment_url( get_theme_mod( 'site_logo' ) );
 		if ( !$logo_url ) {
 			return;
 		}

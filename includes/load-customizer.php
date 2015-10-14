@@ -25,7 +25,6 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 		$wp_customize->add_setting(
 			'site_logo',
 			array(
-				'type'              => 'option',
 				'sanitize_callback' => 'absint',
 				'transport'         => 'postMessage',
 			)
