@@ -21,6 +21,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+		$wp_customize->get_section( 'title_tagline' )->title = esc_html__( 'Logo, Site Title and Tagline', 'luigi' );
 
 		$wp_customize->add_setting(
 			'site_logo',
