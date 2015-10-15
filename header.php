@@ -37,9 +37,7 @@
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="row">
-				<?php if ( is_front_page() ) : ?><h1><?php endif; ?>
 				<?php get_template_part( 'template-parts/logo' ); ?>
-				<?php if ( is_front_page() ) : ?></h1><?php endif; ?>
 				<?php luigi_print_phone(); ?>
 				<?php get_template_part( 'template-parts/menu', 'social' ); ?>
 			</div>

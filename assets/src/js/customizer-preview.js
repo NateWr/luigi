@@ -128,7 +128,7 @@
 	 */
 	$( function() {
 		wp.customize.preview.bind( 'active', function() {
-			add_trigger( 'header_logo', cache.get( 'header_h1', '#masthead h1' ), 'site_logo' );
+			add_trigger( 'header_logo', cache.get( 'header_brand', '#masthead .brand' ), 'site_logo' );
 		});
 	} );
 

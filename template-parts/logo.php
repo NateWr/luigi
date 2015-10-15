@@ -7,16 +7,20 @@
  *
  * @package luigi
  */
+$brand_element = is_front_page() ? 'h1' : 'div';
 ?>
-<a class="home-link" href="<?php echo home_url(); ?>" title="<?php esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-	<?php if ( empty( get_option( 'site_logo' ) ) ) : ?>
-		<?php echo get_bloginfo( 'name', 'display' ); ?>
-	<?php else : ?>
-		<?php luigi_print_logo(); ?>
+
+<<?php echo $brand_element; ?> class="brand">
+	<a class="home-link" href="<?php echo home_url(); ?>" title="<?php esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+		<?php if ( empty( get_option( 'site_logo' ) ) ) : ?>
+			<?php echo get_bloginfo( 'name', 'display' ); ?>
+		<?php else : ?>
+			<?php luigi_print_logo(); ?>
+		<?php endif; ?>
+	</a>
+	<?php if ( empty( get_option( 'site_logo' ) ) && !empty( get_bloginfo( 'description' ) ) ) : ?>
+		<span class="site-tagline">
+			<?php echo get_bloginfo( 'description', 'display' ); ?>
+		</span>
 	<?php endif; ?>
-</a>
-<?php if ( empty( get_option( 'site_logo' ) ) && !empty( get_bloginfo( 'description' ) ) ) : ?>
-	<span class="site-tagline">
-		<?php echo get_bloginfo( 'description', 'display' ); ?>
-	</span>
-<?php endif; ?>
+</<?php echo $brand_element; ?>>
