@@ -45,12 +45,12 @@ module.exports = function(grunt) {
 						'assets/src/js/frontend-*.js'
 					],
 					'assets/js/customizer-preview.js': [
-						'assets/src/js/customizer-ajax.js',
-						'assets/src/js/customizer-preview.js',
-						'assets/src/js/customizer-preview-*.js'
+						'assets/src/js/customizer-preview-*.js',
+						'assets/src/js/customizer-preview.js'
 					],
 					'assets/js/customizer-control.js': [
-						'assets/src/js/customizer-control.js',
+						'assets/src/js/customizer-control-*.js',
+						'assets/src/js/customizer-control.js'
 					]
 				}
 			}
