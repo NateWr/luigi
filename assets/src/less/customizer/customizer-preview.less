@@ -28,3 +28,49 @@
 		content: '';
 	}
 }
+
+.luigi-preview-trigger {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	.transform(translate(-50%,-50%));
+	line-height: 40px;
+	border: none;
+	border-radius: 50%;
+	background: @text-light;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: normal;
+	color: #fff;
+	text-align: center;
+	box-shadow: rgba(0,0,0,0.2);
+
+	&:before {
+		content: "\f464";
+		display: block;
+	    font-family: "dashicons";
+		font-size: 20px;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	}
+}
+
+.luigi-preview-trigger-container:hover {
+
+	.luigi-preview-trigger {
+		display: block;
+
+		&:hover,
+		&:focus {
+			background: @text;
+		}
+	}
+}
+
+#luigi-preview-trigger-header_logo:before {
+	content: "\f128";
+}
