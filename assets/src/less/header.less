@@ -3,13 +3,14 @@
 //
 .site-header {
 	&:extend(.container);
-	text-align: center;
-
-	.row {
-		position: relative;
-		padding-top: @double;
-		padding-bottom: @double;
-	}
+	position: fixed;
+	top: 0;
+	padding-left: @base;
+	padding-right: @base;
+	height: 50px;
+	width: 100%;
+	text-align: left;
+	background: rgba(255,255,255,0.9);
 
 	.brand {
 		position: relative;
@@ -18,28 +19,32 @@
 
 	.home-link {
 		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		height: auto;
-		max-width: 7em;
 		font-family: @font-alt;
 		font-size: @font-logo-sml;
 		font-weight: @normal;
-		line-height: @line-logo;
+		line-height: @line-logo-sml;
 		color: @primary;
 		text-decoration: none;
+		white-space: nowrap;
+		overflow-x: hidden;
 
 		img {
 			display: block;
 			margin: 0 auto;
-			max-height: 93px;
+			max-height: 50px;
+			max-width: 200px;
 		}
 	}
 
+	.site-tagline,
+	.bp-contact-card,
+	.luigi-social-menu {
+		display: none;
+		padding-top: @base;
+		padding-bottom: @base;
+	}
+
 	.site-tagline {
-		display: block;
-		margin: -@double auto 0;
-		max-width: 40em;
 		font-size: @font-tiny;
 		font-weight: @semibold;
 		line-height: @line-sml;
@@ -47,7 +52,6 @@
 	}
 
 	.bp-contact-card {
-		margin-top: @double;
 		color: @text-light;
 		font-size: @font-tiny;
 		font-weight: @semibold;
@@ -59,14 +63,83 @@
 		}
 	}
 
-	.luigi-social-menu {
-		padding: @double 0 @base; // Extra space on bottom is taken by <li>s
+	.primary-menu {
+		display: none;
 	}
+}
+
+.luigi-menu-open {
+	overflow-y: hidden;
+
+	.site-header {
+		height: 100%;
+		overflow-y: scroll;
+
+		.site-tagline,
+		.bp-contact-card,
+		.luigi-social-menu,
+		.primary-menu {
+			display: block;
+		}
+
+		.primary-menu {
+			margin-left: -@base;
+			margin-right: -@base;
+
+			a:hover,
+			a:focus {
+				background: @primary;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.site-header {
 
 	@media(min-width: @screen-xs) {
+		position: relative;
+		padding-left: @double;
+		padding-right: @double;
+		height: auto;
+		background: transparent;
+		text-align: center;
+
+		.row {
+			position: relative;
+			padding-top: @double;
+		}
 
 		.home-link {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			height: auto;
+			max-width: 7em;
 			font-size: @font-logo;
+			line-height: @line-logo;
+			overflow-x: initial;
+
+			img {
+				max-height: 93px;
+				max-width: auto;
+			}
+		}
+
+		.site-tagline,
+		.bp-contact-card,
+		.luigi-social-menu,
+		.primary-menu {
+			display: block;
+		}
+
+		.site-tagline {
+			margin: -@double auto 0;
+			max-width: 40em;
+		}
+
+		.bp-contact-card {
+			margin-top: @double;
 		}
 
 		.site-tagline {
@@ -77,9 +150,17 @@
 		.bp-contact-card {
 			font-size: @font-sml;
 		}
+
+		.luigi-social-menu {
+			padding: @double 0 @base; // Extra space on bottom is taken by <li>s
+		}
 	}
 
 	@media(min-width: @screen-md) {
+
+		.row {
+			padding-bottom: @double;
+		}
 
 		.bp-contact-card,
 		.luigi-social-menu {
@@ -99,5 +180,38 @@
 				padding-bottom: 0;
 			}
 		}
+	}
+}
+
+// Button to open/close the navigation menu on small screens
+#luigi-primary-nav-control {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: auto;
+	height: 50px;
+	padding: @base;
+	font-size: @font-tiny;
+	font-weight: @semibold;
+	text-transform: uppercase;
+	line-height: @triple;
+	background: @primary;
+	color: #fff;
+	text-decoration: none;
+
+	@media(min-width: @screen-xs) {
+		display: none;
+	}
+}
+
+// Scroll away with the admin bar
+.admin-bar .site-header {
+	position: absolute;
+	top: 46px;
+
+	@media(min-width: @screen-xs) {
+		position: relative;
+		top: 0;
 	}
 }

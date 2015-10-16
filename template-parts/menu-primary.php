@@ -13,5 +13,6 @@ wp_nav_menu(
 		'container'       => 'div',
 		'container_class' => 'primary-menu',
 		'walker'          => new Aria_Walker_Nav_Menu(),
+		'depth'           => 3,
 	)
 );
