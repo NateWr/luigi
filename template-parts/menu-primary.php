@@ -13,6 +13,5 @@ wp_nav_menu(
 		'container'       => 'div',
 		'container_class' => 'primary-menu',
 		'walker'          => new Aria_Walker_Nav_Menu(),
-		'items_wrap'     => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
 	)
 );
