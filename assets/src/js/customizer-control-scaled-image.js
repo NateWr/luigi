@@ -70,8 +70,7 @@
 
 			// Update scale setting value when changed
 			control.container.on( 'change input propertychange', '[data-customize-setting-link]', function() {
-				var $this = $(this);
-				control.settings[$this.data( 'customize-setting-link' )]( $this.val() );
+				control.settings[$(this).data( 'customize-setting-link' )]( $(this).val() );
 			} );
 
 			// Open the media modal when the placeholder is clicked
