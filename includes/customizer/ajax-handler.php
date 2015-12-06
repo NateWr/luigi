@@ -95,7 +95,7 @@ if ( !class_exists( 'Luigi_Customier_Ajax_Handler' ) ) {
 				$this->send_error_missing_data( $missing_msg );
 			}
 
-			$attachment = wp_get_attachment_metadata( absint( $_POST['site_logo' ] ) );
+			$attachment = wp_get_attachment_metadata( absint( $_POST['site_logo'] ) );
 			if ( empty( $attachment ) ) {
 				$this->send_error_missing_data( $missing_msg );
 			}
