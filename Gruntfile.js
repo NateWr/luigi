@@ -28,7 +28,8 @@ module.exports = function(grunt) {
 		jshint: {
 			test: {
 				src: [
-					'assets/src/js/*.js',
+					'assets/src/js/**/*.js',
+					'!assets/src/js/content-layout-control/templates/**/*.js',
 					'lib/WAI-ARIA-Walker_Nav_Menu/*.js'
 				]
 			}
@@ -45,13 +46,16 @@ module.exports = function(grunt) {
 						'assets/src/js/frontend-*.js'
 					],
 					'assets/js/customizer-preview.js': [
+						'assets/src/js/content-layout-control/components/luigi-content-block-preview.js',
 						'assets/src/js/customizer-preview-*.js',
 						'assets/src/js/customizer-preview.js'
 					],
 					'assets/js/customizer-control.js': [
+						'assets/src/js/content-layout-control/components/luigi-content-block-control.js',
 						'assets/src/js/customizer-control-*.js',
 						'assets/src/js/customizer-control.js'
-					]
+					],
+					'assets/js/content-layout-control/templates/components/luigi-content-block.js': 'assets/src/js/content-layout-control/templates/components/luigi-content-block.js'
 				}
 			}
 		},
@@ -77,7 +81,7 @@ module.exports = function(grunt) {
 				tasks: ['less']
 			},
 			js: {
-				files: ['assets/src/js/*.js', 'lib/WAI-ARIA-Walker_Nav_Menu/*.js'],
+				files: ['assets/src/js/**', 'lib/WAI-ARIA-Walker_Nav_Menu/*.js'],
 				tasks: ['jshint', 'concat', 'uglify']
 			}
 		},
