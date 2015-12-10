@@ -71,5 +71,6 @@ if ( !function_exists( 'luigi_load_customizer' ) ) {
      */
     function luigi_load_customizer() {
         include_once( 'includes/load-customizer.php' );
+        include_once( 'includes/template-helpers.php' );
     }
 }

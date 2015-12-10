@@ -36,7 +36,7 @@ if ( !function_exists( 'luigi_enqueue_assets' ) ) {
 				 * @param string $url The URL to the font definitions
 				 */
 				'luigi_font_uri',
-				'//fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Open+Sans:400,400italic,600,600italic,700,700italic&subset=latin,latin-ext'
+				'//fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Open+Sans:300,400,400italic,600,600italic,700,700italic&subset=latin,latin-ext'
 			)
 		);
 

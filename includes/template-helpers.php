@@ -55,3 +55,23 @@ if ( !function_exists( 'luigi_print_phone' ) ) {
 		}
 	}
 }
+
+if ( !function_exists( 'luigi_wrap_first_word' ) ) {
+	/**
+	 * Wrap the first word of a string in a <span> tag for styling
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_wrap_first_word( $string ) {
+
+		$words = explode( ' ', $string );
+		$first = $words[0];
+
+		$rest = '';
+		if ( count( $words ) > 1 ) {
+			$rest = join( ' ', array_splice( $words, 1 ) );
+		}
+
+		return '<span class="luigi-first-word">' . $first . '</span>' . $rest;
+	}
+}
