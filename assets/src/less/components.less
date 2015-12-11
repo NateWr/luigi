@@ -44,6 +44,7 @@
 	}
 }
 
+// Dropdown caret
 .luigi-caret-down {
 	content: '';
 	display: inline-block;
@@ -57,67 +58,62 @@
 	vertical-align: middle;
 }
 
-.clc-component-layout {
-	width: 100%;
-	padding: @double * 2;
-}
+// Button
+.luigi-button {
+	display: inline-block;
+	padding: @half @base;;
+	font-family: @font;
+	font-weight: @semibold;
+	font-size: @font-tiny;
+	line-height: @line-sml;
+	background: @text;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
 
-.clc-component-luigi-content-block {
-	text-align: center;
-
-	.image-position-left,
-	.image-position-right {
-		.clearfix;
-
-		.image,
-		.text {
-			float: left;
-			width: 50%;
-			padding: @double;
-		}
-
-		.text {
-			float: right;
-		}
+	&:hover,
+	&:focus {
+		background: @primary-lift;
 	}
 
-	.image-position-right {
-
-		.image {
-			float: right;
-		}
-
-		.text {
-			float: left;
-		}
-	}
-
-	.title,
-	.title_line_one {
-		display: block;
-		margin: 0 auto;
-		max-width: 20em;
-		font-size: 60px;
-		line-height: 60px;
-	}
-
-	.title_line_one {
-		margin-bottom: -20px;
-		font-family: @font-alt;
-		font-weight: @normal;
-		color: @primary;
-		font-size: 51px;
-	}
-
-	.title {
-		text-transform: uppercase;
-		font-weight: @light;
-	}
-
-	.content {
-		display: block;
-		margin: 0 auto;
-		font-size: @font-base;;
+	@media(min-width: @screen-sm) {
+		padding: @base @double;
+		font-size: @font-sml;
 		line-height: @line-base;
 	}
+}
+
+.luigi-button-primary {
+	background: @primary;
+	color: #fff;
+}
+
+.luigi-button-light {
+	background: @bg;
+	color: @text;
+}
+
+// Icons
+.luigi-icon {
+	display: inline-block;
+	width: 1em;
+	background-position: center center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+
+.luigi-icon-location {
+	background-image: url( 'assets/img/icon_location.png' );
+}
+
+.luigi-icon-phone {
+	background-image: url( 'assets/img/icon_phone.png' );
+}
+
+.luigi-icon-w-location {
+	background-image: url( 'assets/img/icon_w_location.png' );
+}
+
+.luigi-icon-w-phone {
+	background-image: url( 'assets/img/icon_w_phone.png' );
 }

@@ -75,3 +75,55 @@ if ( !function_exists( 'luigi_wrap_first_word' ) ) {
 		return '<span class="luigi-first-word">' . $first . '</span>' . $rest;
 	}
 }
+
+if ( !function_exists( 'luigi_bp_setting_exists' ) ) {
+	/**
+	 * Check if a phone number exists in the system
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_bp_setting_exists( $setting ) {
+
+		global $bpfwp_controller;
+		if ( !isset( $bpfwp_controller ) ) {
+			return false;
+		}
+
+		$setting = $bpfwp_controller->settings->get_setting( $setting );
+		return !empty( $setting );
+	}
+}
+
+if ( !function_exists( 'luigi_print_hero_contact' ) ) {
+	/**
+	 * Check if we have the information we need to print the contact setting in
+	 * the hero block.
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_print_hero_contact( $contact ) {
+		if ( empty( $contact ) ) {
+			return false;
+		}
+
+		if ( $contact == 'phone' ) {
+			return luigi_bp_setting_exists( 'phone' );
+		} elseif ( $contact == 'find' ) {
+			return luigi_bp_setting_exists( 'address' );
+		}
+
+		return false;
+	}
+}
+
+if ( !function_exists( 'luigi_get_attachment_img_src_url' ) ) {
+	/**
+	 * Retrive the URL for an attachment image
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_get_attachment_img_src_url( $attachment_id, $size ) {
+		$img = wp_get_attachment_image_src( $attachment_id, $size );
+		return $img[0];
+	}
+}

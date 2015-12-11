@@ -1,0 +1,56 @@
+//
+// Content Block
+// Content Layout Control component
+//
+.clc-component-luigi-content-block {
+	text-align: center;
+
+	.image-position-left,
+	.image-position-right {
+		.clearfix;
+
+		.image,
+		.text {
+			float: left;
+			width: 50%;
+			padding: @double;
+		}
+
+		.text {
+			float: right;
+		}
+	}
+
+	.image-position-right {
+
+		.image {
+			float: right;
+		}
+
+		.text {
+			float: left;
+		}
+	}
+
+	// .title,
+	// .title_line_one {
+	// 	font-size: 60px;
+	// 	line-height: 60px;
+	// }
+	//
+	// .title_line_one {
+	// 	font-size: 51px;
+	// }
+
+	.content {
+		display: block;
+		margin: 0 auto;
+		font-size: @font-sml;
+		line-height: @line-sml;
+
+		@media(min-width: @screen-sm) {
+			font-size: @font-base;
+			line-height: @line-base;
+		}
+	}
+}

@@ -1,0 +1,116 @@
+//
+// Hero Block
+// Content Layout Control component
+//
+.clc-component-luigi-hero-block {
+	position: relative;
+	padding: 50px 0 0; // sit the image below the collapsed header
+	width: 100%;
+
+	.background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: @bg-dark;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+
+	.text {
+		position: relative;
+		padding: 60px @double;
+		color: #fff;
+		text-align: center;
+	}
+
+	.title_line_one {
+		text-shadow: 0 0 20px rgba(0,0,0,0.9);
+	}
+
+	a {
+		color: #fff;
+	}
+
+	.links {
+
+		a {
+			&:extend(.luigi-button);
+			&:extend(.luigi-button-light);
+
+			&:hover,
+			&:focus {
+				&:extend(.luigi-button:hover);
+			}
+		}
+	}
+
+	.contact {
+
+		a {
+			display: inline-block;
+			padding: @half @base;
+			border: 2px solid transparent;
+			font-size: @font-tiny;
+			font-weight: @semibold;
+			line-height: @line-tiny;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+
+		.luigi-icon {
+			position: relative;
+			top: 2px;
+			height: @font-sml;
+		}
+
+		a:hover,
+		a:focus {
+			border-color: #fff;
+		}
+	}
+
+	@media(min-width: @screen-sm) {
+		padding: 0;
+
+		.text {
+			padding: 200px 0;
+			margin: 0 auto;
+			max-width: 80%;
+		}
+
+		.title_line_one {
+			margin-bottom: -20px;
+			font-size: 90px;
+			line-height: 60px;
+		}
+
+		.title {
+			font-size: 99px;
+			line-height: 99px;
+		}
+
+		.contact a {
+			padding: @base @double;
+			font-size: @font-sml;
+			line-height: @line-sml;
+		}
+	}
+
+	@media(min-width: @screen-md) {
+
+		.text {
+			max-width: @screen-sm;
+		}
+	}
+
+	@media(min-width: @screen-lg) {
+
+		.text {
+			padding: 300px 0;
+			max-width: @screen-sm;
+		}
+	}
+}

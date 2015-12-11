@@ -47,15 +47,18 @@ module.exports = function(grunt) {
 					],
 					'assets/js/customizer-preview.js': [
 						'assets/src/js/content-layout-control/components/luigi-content-block-preview.js',
+						'assets/src/js/content-layout-control/components/luigi-hero-block-preview.js',
 						'assets/src/js/customizer-preview-*.js',
 						'assets/src/js/customizer-preview.js'
 					],
 					'assets/js/customizer-control.js': [
 						'assets/src/js/content-layout-control/components/luigi-content-block-control.js',
+						'assets/src/js/content-layout-control/components/luigi-hero-block-control.js',
 						'assets/src/js/customizer-control-*.js',
 						'assets/src/js/customizer-control.js'
 					],
-					'assets/js/content-layout-control/templates/components/luigi-content-block.js': 'assets/src/js/content-layout-control/templates/components/luigi-content-block.js'
+					'assets/js/content-layout-control/templates/components/luigi-content-block.js': 'assets/src/js/content-layout-control/templates/components/luigi-content-block.js',
+					'assets/js/content-layout-control/templates/components/luigi-hero-block.js': 'assets/src/js/content-layout-control/templates/components/luigi-hero-block.js'
 				}
 			}
 		},

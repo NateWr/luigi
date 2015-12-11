@@ -1,6 +1,6 @@
 <?php
 /**
- * Layout template for the content-block component
+ * Layout template for the luigi-content-block component
  *
  * @param $this->title_line_one string Top title text string
  * @param $this->title string Bottom title text string

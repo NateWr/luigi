@@ -24,7 +24,7 @@ var Luigi_Customizer_Ajax;
 		 */
 		function display_error( r ) {
 			if ( typeof r.data == 'undefined' || typeof r.data.error == 'undefined' || typeof r.data.msg == 'undefined' ) {
-				alert( luigi_theme_customizer.strings.unknown_error );
+				alert( luigi_theme_customizer_preview.strings.unknown_error );
 			} else {
 				alert( r.data.msg );
 			}
@@ -72,7 +72,7 @@ var Luigi_Customizer_Ajax;
 		}
 
 		params.action = 'luigi-customizer';
-		params.nonce = luigi_theme_customizer.nonce;
+		params.nonce = luigi_theme_customizer_preview.nonce;
 
 		start_spinner();
 

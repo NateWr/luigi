@@ -1,0 +1,83 @@
+//
+// Content Layout Control
+//
+// These styles and those in the components subdirectory apply to the layout
+// pieces which form part of the content-layout-control library, and which are
+// controlled from the customizer.
+.clc-component-layout {
+	width: 100%;
+	padding: @quadruple 0;
+
+
+	// Shared between content-block and hero-block
+	.text {
+
+		h2 {
+			margin: 0;
+		}
+	}
+
+	.title,
+	.title_line_one {
+		display: block;
+		margin: 0 auto;
+		max-width: 20em;
+		font-size: 50px;
+		line-height: 50px;
+	}
+
+	.title_line_one {
+		margin-bottom: -5px;
+		font-family: @font-alt;
+		font-weight: @normal;
+		color: @primary;
+		line-height: 30px;
+	}
+
+	.title {
+		text-transform: uppercase;
+		font-weight: @light;
+	}
+
+	.links {
+		&:extend(.unstyled_list);
+		margin-top: @double;
+
+		> li {
+			display: inline-block;
+			margin-right: 0.5em;
+			margin-bottom: @double;
+		}
+
+		a {
+			&:extend(.luigi-button);
+
+			&:hover,
+			&:focus {
+				&:extend(.luigi-button:hover);
+			}
+		}
+
+		li:first-child a {
+			&:extend(.luigi-button-primary);
+
+			&:hover,
+			&:focus {
+				&:extend(.luigi-button:hover);
+			}
+		}
+	}
+
+	@media(min-width: @screen-sm) {
+
+		.title_line_one {
+			font-size: 51px;
+			line-height: 40px;
+		}
+
+		.title {
+			font-size: 60px;
+			line-height: 60px;
+		}
+	}
+}
