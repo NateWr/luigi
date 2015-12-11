@@ -36,6 +36,10 @@
 		text-transform: initial;
 	}
 
+	.sub-menu .sub-menu a {
+		padding-left: 4em;
+	}
+
 	// Add dropdown caret
 	[aria-expanded] > a:after {
 		&:extend(.luigi-caret-down);
@@ -85,12 +89,10 @@
 			color: #fff;
 		}
 
-		// Indent menu items from third-level deep
-		> ul > li > ul  li[aria-expanded="true"] > .sub-menu {
-
-			a {
-				padding-left: 2em;
-			}
+		[aria-expanded="true"] [aria-expanded="true"] > ul {
+			position: relative;
+			top: auto;
+			left: auto;
 		}
 	}
 }
