@@ -39,10 +39,11 @@
 		settingChanged: function( data ) {
 			if ( data.setting == 'image_transparency' ) {
 				this.updateBackgroundTransparency( data.val );
-				return;
+			} else if ( data.setting == 'title' ) {
+				this.$el.find( '.' + data.setting ).html( this.wrapFirstWord( data.val ) );
+			} else {
+				this.$el.find( '.' + data.setting ).html( data.val );
 			}
-
-			clc.Views.component_views['luigi-content-block'].prototype.settingChanged( data );
 		},
 
 		/**
