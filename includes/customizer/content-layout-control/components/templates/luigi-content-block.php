@@ -15,11 +15,14 @@
 <div class="clc-wrapper<?php if ( $this->image ) : ?> image-position-<?php esc_attr_e( $this->image_position ); endif; ?>">
 	<?php if ( $this->image ) : ?>
 		<div class="image">
-			<?php echo wp_get_attachment_image( $this->image ); ?>
+			<?php echo wp_get_attachment_image( $this->image, 'luigi-medium' ); ?>
 		</div>
 	<?php endif; ?>
 	<div class="text">
-		<h2><span class="title_line_one"><?php echo $this->title_line_one; ?></span><span class="title"><?php echo luigi_wrap_first_word( $this->title ); ?></span></h2>
+		<h2>
+			<span class="title_line_one"><?php echo $this->title_line_one; ?></span>
+			<span class="title"><?php echo luigi_wrap_first_word( $this->title ); ?></span>
+		</h2>
 		<div class="content">
 			<?php echo $this->content; ?>
 		</div>

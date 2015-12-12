@@ -6,14 +6,15 @@
 // controlled from the customizer.
 .clc-component-layout {
 	width: 100%;
-	padding: @quadruple 0;
+	padding: 60px @double;
 
 
 	// Shared between content-block and hero-block
 	.text {
 
 		h2 {
-			margin: 0;
+			margin-top: 0;
+			margin-bottom: 0;
 		}
 	}
 
@@ -41,7 +42,7 @@
 
 	.links {
 		&:extend(.unstyled_list);
-		margin-top: @double;
+		margin-top: @triple;
 
 		> li {
 			display: inline-block;
@@ -69,6 +70,7 @@
 	}
 
 	@media(min-width: @screen-sm) {
+		padding: 120px @double;
 
 		.title_line_one {
 			font-size: 51px;

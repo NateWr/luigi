@@ -3,54 +3,105 @@
 // Content Layout Control component
 //
 .clc-component-luigi-content-block {
+	position: relative;
+	max-width: 1400px;
+	margin: 0 auto;
 	text-align: center;
 
-	.image-position-left,
-	.image-position-right {
-		.clearfix;
+	.image {
+		margin-bottom: 40px;
 
-		.image,
-		.text {
-			float: left;
-			width: 50%;
-			padding: @double;
-		}
-
-		.text {
-			float: right;
+		img {
+			display: block;
+			width: auto;
+			height: auto;
+			margin: 0 auto;
 		}
 	}
-
-	.image-position-right {
-
-		.image {
-			float: right;
-		}
-
-		.text {
-			float: left;
-		}
-	}
-
-	// .title,
-	// .title_line_one {
-	// 	font-size: 60px;
-	// 	line-height: 60px;
-	// }
-	//
-	// .title_line_one {
-	// 	font-size: 51px;
-	// }
 
 	.content {
-		display: block;
-		margin: 0 auto;
+		position: relative;
+		margin: @double auto 0;
+		padding-top: @quadruple;
+		max-width: 30em;
 		font-size: @font-sml;
-		line-height: @line-sml;
+		line-height: @line-lead;
 
-		@media(min-width: @screen-sm) {
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 33%;
+			border-top: @border-line-light;
+		}
+	}
+
+	.links {
+		margin-bottom: -@double;
+	}
+
+	@media(min-width: @screen-xs) {
+
+		.image {
+			margin-bottom: 60px;
+		}
+	}
+
+	@media(min-width: @screen-sm) {
+		padding-top: 0;
+		padding-bottom: 0;
+
+		.image-position-left,
+		.image-position-right {
+			.clearfix();
+			min-height: 450px; // Image should always fit
+
+			.image {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 50%;
+				transform: translateY(-50%);
+				margin-bottom: 0;
+				padding-left: @double;
+				padding-right: @double;
+			}
+
+			.text {
+				float: right;
+				width: 50%;
+				padding-left: @double;
+				padding-right: @double;
+			}
+		}
+
+		.text {
+			// Ensure the text is the tallest component for optimal vertical
+			// centering
+			padding-top: 120px;
+			padding-bottom: 120px;
+
+			h2,
+			.links {
+				max-width: 550px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		.content {
 			font-size: @font-base;
 			line-height: @line-base;
+		}
+	}
+
+	@media(min-width: @screen-md) {
+
+		.text {
+			padding-top: 200px;
+			padding-bottom: 200px;
 		}
 	}
 }

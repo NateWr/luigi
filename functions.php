@@ -34,6 +34,8 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
                 'social_menu'	=> esc_html__( 'Social Profiles Menu', 'luigi' ),
             )
         );
+
+        add_image_size( 'luigi-medium', 450, 450, true );
     }
     add_action( 'after_setup_theme', 'luigi_setup_theme' );
 }
