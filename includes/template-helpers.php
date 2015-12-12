@@ -127,3 +127,17 @@ if ( !function_exists( 'luigi_get_attachment_img_src_url' ) ) {
 		return $img[0];
 	}
 }
+
+if ( !function_exists( 'luigi_clc_the_content' ) ) {
+	/**
+	 * Print `the_content` without the `wpautop` filter. Designed to be used
+	 * to print the content from the `content-layout-control` lib.
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_clc_the_content() {
+		remove_filter( 'the_content', 'wpautop' );
+		the_content();
+		add_filter( 'the_content', 'wpauto' );
+	}
+}

@@ -7,7 +7,7 @@ get_header(); ?>
 
 	<?php /* Start the Loop */ ?>
 	<?php while ( have_posts() ) : the_post(); ?>
-	<?php the_content(); ?>
+	<?php luigi_clc_the_content(); ?>
 	<?php endwhile; ?>
 
 	</main><!-- #main -->
