@@ -30,7 +30,7 @@
 	 * @augments wp.Backbone.View
 	 * @since 0.1
 	 */
-	clc.Views.component_views['luigi-hero-block'] = clc.Views.component_views['content-block'].extend({
+	clc.Views.component_views['luigi-hero-block'] = clc.Views.component_views['luigi-content-block'].extend({
 		/**
 		 * Handle individual settings updates
 		 *
@@ -39,9 +39,10 @@
 		settingChanged: function( data ) {
 			if ( data.setting == 'image_transparency' ) {
 				this.updateBackgroundTransparency( data.val );
-			} else {
-				this.$el.find( '.' + data.setting ).html( data.val );
+				return;
 			}
+
+			clc.Views.component_views['luigi-content-block'].prototype.settingChanged( data );
 		},
 
 		/**

@@ -29,6 +29,30 @@
 	 * @augments wp.Backbone.View
 	 * @since 0.1
 	 */
-	clc.Views.component_views['luigi-content-block'] = clc.Views.component_views['content-block'].extend();
+	clc.Views.component_views['luigi-content-block'] = clc.Views.component_views['content-block'].extend({
+		/**
+		 * Handle individual settings updates
+		 *
+		 * @since 0.1
+		 */
+		settingChanged: function( data ) {
+			if ( data.setting == 'title' ) {
+				this.$el.find( '.' + data.setting ).html( this.wrapFirstWord( data.val ) );
+			} else {
+				this.$el.find( '.' + data.setting ).html( data.val );
+			}
+		},
+
+		/**
+		 * Wrap the first word of a string in a span for styling
+		 *
+		 * @since 0.1
+		 */
+		wrapFirstWord: function( string ) {
+			string = string.split( ' ' );
+			var first = string.splice( 0, 1 );
+			return '<span class="luigi-first-word">' + first[0] + '</span>' + string.join( ' ' );
+		}
+	});
 
 } )( jQuery );
