@@ -6,17 +6,23 @@
  * @param $this->title string Bottom title text string
  * @param $this->links array List of links [ url: 'http://...', link_text: 'Click Here']
  * @param $this->image int Image attachment ID
+ * @param $this->image_transparency int Image transparancy, 0-100 (0 = opacity: 1)
  * @param $this->contact string What kind of contact detail to display: phone|find (or empty string)
  * @param $this->contact_text string Text string used in combination with the `find` contact type
  * @since 0.1
  */
 global $bpfwp_controller;
-
+if ( $this->image ) {
+	$background_style = "background-image: url('" . luigi_get_attachment_img_src_url( $this->image, 'full' ) . "');";
+	if ( $this->image_transparency ) {
+		$background_style .= "opacity: " . $this->get_image_opacity() . ";";
+	}
+}
 ?>
 
 <div class="clc-wrapper">
 	<?php if ( $this->image ) : ?>
-		<div class="background" style="background-image: url('<?php echo luigi_get_attachment_img_src_url( $this->image, 'full' ); ?>')"></div>
+		<div class="background" style="<?php echo $background_style; ?>"></div>
 	<?php endif; ?>
 	<div class="text">
 		<h2><span class="title_line_one"><?php echo $this->title_line_one; ?></span><span class="title"><?php echo luigi_wrap_first_word( $this->title ); ?></span></h2>

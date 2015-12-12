@@ -41,12 +41,20 @@ if ( !class_exists( 'Luigi_CLC_Component_Hero_Block' ) ) {
 		public $contact_text = '';
 
 		/**
+		 * Image transparency
+		 *
+		 * @param int 0-100 (0 = opacity: 1.0)
+		 * @since 0.1
+		 */
+		public $image_transparency = 0;
+
+		/**
 		 * Settings expected by this component
 		 *
 		 * @param array Setting keys
 		 * @since 0.1
 		 */
-		public $settings = array( 'title_line_one', 'title', 'links', 'image', 'contact', 'contact_text' );
+		public $settings = array( 'title_line_one', 'title', 'links', 'image', 'image_transparency', 'contact', 'contact_text' );
 
 		/**
 		 * Initialize
@@ -70,6 +78,7 @@ if ( !class_exists( 'Luigi_CLC_Component_Hero_Block' ) ) {
 			$new_val['title_line_one'] = isset( $val['title_line_one'] ) ? sanitize_text_field( $val['title_line_one'] ) : $this->title_line_one;
 			$new_val['contact'] = isset( $val['contact'] ) ? $this->sanitize_contact( $val['contact'] ) : $this->contact;
 			$new_val['contact_text'] = isset( $val['contact_text'] ) ? sanitize_text_field( $val['contact_text'] ) : $this->contact_text;
+			$new_val['image_transparency'] = isset( $val['image_transparency'] ) ? absint( $val['image_transparency'] ) : $this->image_transparency;
 
 			unset( $new_val['content'] );
 
@@ -103,6 +112,24 @@ if ( !class_exists( 'Luigi_CLC_Component_Hero_Block' ) ) {
 		 */
 		public function control_template() {
 			include( get_template_directory() . '/assets/js/content-layout-control/templates/components/luigi-hero-block.js' );
+		}
+
+		/**
+		 * Calculate the opacity value for image_transparency
+		 *
+		 * @since 0.1
+		 */
+		public function get_image_opacity() {
+
+			if ( !$this->image_transparency ) {
+				return 1;
+			}
+
+			if ( $this->image_transparency == 100 ) {
+				return 0;
+			}
+
+			return ( 100 - $this->image_transparency ) / 100;
 		}
 	}
 }

@@ -14,6 +14,12 @@
 			</div>
 		<# } else { #>
 			<div class="thumb loading"></div>
+			<div class="darken">
+				<div class="description">
+					<?php echo $this->i18n['image_transparency']; ?>
+				</div>
+				<input type="range" value="{{ data.model.get('image_transparency') }}" data-clc-setting-link="image_transparency" min="0" max="100" >
+			</div>
 		<# } #>
 		<div class="buttons">
 			<# if ( !data.model.get( 'image' ) ) { #>
