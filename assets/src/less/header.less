@@ -9,6 +9,7 @@
 	padding-right: @base;
 	height: 50px;
 	width: 100%;
+	max-width: @screen-xl;
 	text-align: left;
 	background: rgba(255,255,255,0.9);
 	z-index: 999;
@@ -143,7 +144,13 @@
 		}
 
 		.bp-contact-card {
+			float: left;
 			margin-top: @double;
+			padding: 0 0 10px;
+			width: 50%;
+			line-height: 32px;
+			font-size: @font-sml;
+			text-align: left;
 		}
 
 		.site-tagline {
@@ -151,12 +158,12 @@
 			line-height: @line-sml;
 		}
 
-		.bp-contact-card {
-			font-size: @font-sml;
-		}
-
 		.luigi-social-menu {
-			padding: @double 0 @base; // Extra space on bottom is taken by <li>s
+			float:  left;
+			margin-top: @double;
+			padding: 0; // Extra space on bottom is taken by <li>s
+			width: 50%;
+			text-align: right;
 		}
 	}
 
