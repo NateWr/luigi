@@ -8,7 +8,7 @@
 	 * @augments Backbone.Model
 	 * @since 0.1
 	 */
-	clc.Models.component_models['luigi-hero-block'] = clc.Models.component_models['content-block'].extend({
+	clc.Models.components['luigi-hero-block'] = clc.Models.components['content-block'].extend({
 		defaults: {
 			name:               '',
 			description:        '',
@@ -26,17 +26,17 @@
 	/**
 	* View class for the Luigi Hero Block form
 	*
-	* @augments wp.customize.Views.component_views['content-block']
+	* @augments wp.customize.Views.component_controls['content-block']
 	* @augments wp.customize.ContentLayoutControl.Views.BaseComponentForm
 	* @augments wp.Backbone.View
 	* @since 0.1
 	*/
-	clc.Views.component_views['luigi-hero-block'] = clc.Views.component_views['content-block'].extend({
+	clc.Views.component_controls['luigi-hero-block'] = clc.Views.component_controls['content-block'].extend({
 		template: wp.template( 'clc-component-luigi-hero-block' ),
 
 		className: 'clc-component-luigi-hero-block clc-component-content-block',
 
-		events: _.extend({}, clc.Views.component_views['content-block'].prototype.events, {
+		events: _.extend({}, clc.Views.component_controls['content-block'].prototype.events, {
 			'change input[type="radio"]': 'contactChanged',
 			'change input[type="range"]': 'imageTransparencyChanged',
 		}),

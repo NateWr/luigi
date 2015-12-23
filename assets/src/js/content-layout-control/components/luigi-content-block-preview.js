@@ -8,7 +8,7 @@
 	 * @augments Backbone.Model
 	 * @since 0.1
 	 */
-	clc.Models.component_models['luigi-content-block'] = clc.Models.Component.extend({
+	clc.Models.components['luigi-content-block'] = clc.Models.Component.extend({
 		defaults: {
 			name:           '',
 			description:    '',
@@ -29,7 +29,7 @@
 	 * @augments wp.Backbone.View
 	 * @since 0.1
 	 */
-	clc.Views.component_views['luigi-content-block'] = clc.Views.component_views['content-block'].extend({
+	clc.Views.component_previews['luigi-content-block'] = clc.Views.component_previews['content-block'].extend({
 		/**
 		 * Handle individual settings updates
 		 *

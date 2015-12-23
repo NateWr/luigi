@@ -15,9 +15,8 @@ CLC_Content_Layout_Control(
 	array(
 		'url' => get_template_directory_uri() . '/lib/content-layout-control',
 		'i18n' => array(
-			'close' => __( 'Close', 'luigi' ),
-			'delete' => __( 'Delete', 'luigi' ),
-			'control-toggle' => __( 'Open/close this component', 'luigi' ),
+			'delete'                        => esc_attr__( 'Delete', 'luigi' ),
+			'control-toggle'                => esc_attr__( 'Open/close this component', 'luigi' ),
 		),
 	)
 );
@@ -96,10 +95,17 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 				array(
 					'section'    => 'content_layout_control',
 					'priority'   => 1,
-					'components' => array( 'luigi-hero-block', 'luigi-content-block' ),
+					'components' => array( 'content-block', 'posts' ),
 					'i18n' => array(
-						'add_component'  => esc_html( 'Add Component', 'luigi' ),
-						'edit_component' => esc_html( 'Edit', 'luigi' ),
+						'add_component'                 => esc_html__( 'Add Component', 'luigi' ),
+						'edit_component'                => esc_html__( 'Edit', 'luigi' ),
+						'close'                         => esc_attr__( 'Close', 'luigi' ),
+						'post_search_label'             => esc_html__( 'Search content', 'luigi' ),
+						'links_add_button'              => esc_html__( 'Add Link', 'luigi' ),
+						'links_url'                     => esc_html__( 'URL', 'luigi' ),
+						'links_text'                    => esc_html__( 'Link Text', 'luigi' ),
+						'links_search_existing_content' => esc_html__( 'Search existing content', 'luigi' ),
+						'links_back'                    => esc_html__( 'Back to link form', 'luigi' ),
 					),
 				)
 			)
@@ -121,7 +127,7 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 		// Maybe load minified scripts
 		$min = WP_DEBUG ? '' : 'min.';
 
-		wp_enqueue_script( 'luigi-customizer-preview-js', get_stylesheet_directory_uri() . '/assets/js/customizer-preview.' . $min . 'js', array( 'luigi-js', 'customize-preview', 'clc-customize-preview-js', 'clc-component-content-block-preview-js' ), '0.0.1', true );
+		wp_enqueue_script( 'luigi-customizer-preview-js', get_stylesheet_directory_uri() . '/assets/js/customizer-preview.' . $min . 'js', array( 'luigi-js', 'customize-preview', 'content-layout-control-js', 'clc-component-content-block-preview-js' ), '0.0.1', true );
 
 		$upload_dir = wp_upload_dir();
 		wp_localize_script( 'luigi-customizer-preview-js', 'luigi_theme_customizer', array(
@@ -132,7 +138,7 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 			),
 		) );
 	}
-	add_action( 'customize_preview_init', 'luigi_customizer_enqueue_preview_assets' );
+//	add_action( 'customize_preview_init', 'luigi_customizer_enqueue_preview_assets' );
 }
 
 if ( !function_exists( 'luigi_customizer_enqueue_control_assets' ) ) {
@@ -148,13 +154,13 @@ if ( !function_exists( 'luigi_customizer_enqueue_control_assets' ) ) {
 		// Maybe load minified scripts
 		$min = WP_DEBUG ? '' : 'min.';
 
-		wp_enqueue_script( 'luigi-customizer-control-js', get_stylesheet_directory_uri() . '/assets/js/customizer-control.' . $min . 'js', array( 'customize-controls', 'clc-customize-control-js', 'clc-component-content-block-control-js' ), '0.0.1', true );
+		wp_enqueue_script( 'luigi-customizer-control-js', get_stylesheet_directory_uri() . '/assets/js/customizer-control.' . $min . 'js', array( 'customize-controls', 'content-layout-control-js' ), '0.0.1', true );
 
 		wp_localize_script( 'luigi-customizer-control-js', 'luigi_theme_customizer_control', array(
 			'business_profile_active' => defined( 'BPFWP_VERSION' ),
 		) );
 	}
-	add_action( 'customize_controls_enqueue_scripts', 'luigi_customizer_enqueue_control_assets' );
+//	add_action( 'customize_controls_enqueue_scripts', 'luigi_customizer_enqueue_control_assets' );
 }
 
 if ( !function_exists( 'luigi_customizer_register_content_layout_control_components' ) ) {
@@ -166,57 +172,91 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 	function luigi_customizer_register_content_layout_control_components( $components ) {
 
 		$content_block_i18n = array(
-			'title'                         => esc_attr__( 'Title', 'luigi' ),
-			'content'                       => esc_attr__( 'Content', 'luigi' ),
-			'image'                         => esc_attr__( 'Image', 'luigi' ),
-			'image_placeholder'             => esc_attr__( 'No image selected', 'luigi' ),
-			'image_position'                => esc_attr__( 'Image Position', 'luigi' ),
-			'image_position_left'           => esc_attr__( 'Left', 'luigi' ),
-			'image_position_right'          => esc_attr__( 'Right', 'luigi' ),
-			'image_select_button'           => esc_attr__( 'Select Image', 'luigi' ),
-			'image_change_button'           => esc_attr__( 'Change Image', 'luigi' ),
-			'image_remove_button'           => esc_attr__( 'Remove', 'luigi' ),
-			'links'                         => esc_attr__( 'Links', 'luigi' ),
-			'links_add_button'              => esc_attr__( 'Add Link', 'luigi' ),
-			'links_remove_button'           => esc_attr__( 'Remove', 'luigi' ),
-			'links_url'                     => esc_attr__( 'URL', 'luigi' ),
-			'links_text'                    => esc_attr__( 'Link Text', 'luigi' ),
-			'links_search_existing_content' => esc_attr__( 'Search existing content', 'luigi' ),
+			'title'                         => esc_html__( 'Title', 'luigi' ),
+			'content'                       => esc_html__( 'Content', 'luigi' ),
+			'image'                         => esc_html__( 'Image', 'luigi' ),
+			'image_placeholder'             => esc_html__( 'No image selected', 'luigi' ),
+			'image_position'                => esc_html__( 'Image Position', 'luigi' ),
+			'image_position_left'           => esc_html__( 'Left', 'luigi' ),
+			'image_position_right'          => esc_html__( 'Right', 'luigi' ),
+			'image_select_button'           => esc_html__( 'Select Image', 'luigi' ),
+			'image_change_button'           => esc_html__( 'Change Image', 'luigi' ),
+			'image_remove_button'           => esc_html__( 'Remove', 'luigi' ),
+			'links'                         => esc_html__( 'Links', 'luigi' ),
+			'links_add_button'              => esc_html__( 'Add Link', 'luigi' ),
+			'links_remove_button'           => esc_html__( 'Remove', 'luigi' ),
 		);
 
-		$components['luigi-hero-block'] = array(
-			'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-hero-block.php',
-			'class'       => 'Luigi_CLC_Component_Hero_Block',
-			'name'        => __( 'Hero Block', 'luigi' ),
-			'description' => __( 'A prominent call to action on a full-width background image.', 'luigi' ),
-			'i18n'        => array_merge(
-				$content_block_i18n,
-				array(
-					'title_line_one'                => esc_attr__( 'Title (top)', 'luigi' ),
-					'title'                         => esc_attr__( 'Title (bottom)', 'luigi' ),
-					'contact'                       => esc_attr__( 'Contact Detail', 'luigi' ),
-					'none'                          => esc_attr__( 'None', 'luigi' ),
-					'phone'                         => esc_attr__( 'Phone Number', 'luigi' ),
-					'find'                          => esc_attr__( 'Contact Popup', 'luigi' ),
-					'find_text_default'             => esc_attr__( 'Find Us', 'luigi' ),
-					'image_transparency'            => esc_attr__( 'Darken Image', 'luigi' ),
-				)
+		$components['content-block'] = array(
+			'file'        => CLC_Content_Layout_Control::$dir . '/components/content-block.php',
+			'class'       => 'CLC_Component_Content_Block',
+			'name'        => esc_html__( 'Content Block', 'luigi' ),
+			'description' => esc_html__( 'A simple content block with an image, title, text and links.', 'luigi' ),
+			'i18n'        => $content_block_i18n,
+		);
+
+		$components['posts'] = array(
+			'file'        => CLC_Content_Layout_Control::$dir . '/components/posts.php',
+			'class'       => 'CLC_Component_Posts',
+			'name'        => esc_html__( 'Post', 'luigi' ),
+			'description' => esc_html__( 'Select a post to display.', 'luigi' ),
+			'i18n'        => array(
+				'posts_loading' => esc_html__( 'Loading', 'luigi' ),
+				'posts_remove_button' => esc_html__( 'Remove', 'luigi' ),
+				'placeholder'         => esc_html__( 'No post selected.', 'luigi' ),
+				'posts_add_button'    => esc_html__( 'Add Post', 'luigi' ),
 			),
 		);
 
-		$components['luigi-content-block'] = array(
-			'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-content-block.php',
-			'class'       => 'Luigi_CLC_Component_Content_Block',
-			'name'        => __( 'Content Block', 'luigi' ),
-			'description' => __( 'A simple content block with an image, title, text and links.', 'luigi' ),
-			'i18n'        => array_merge(
-				$content_block_i18n,
-				array(
-					'title_line_one'                => esc_attr__( 'Title (top)', 'luigi' ),
-					'title'                         => esc_attr__( 'Title (bottom)', 'luigi' ),
-				)
-			),
-		);
+		//
+		// $components['luigi-hero-block'] = array(
+		// 	'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-hero-block.php',
+		// 	'class'       => 'Luigi_CLC_Component_Hero_Block',
+		// 	'name'        => __( 'Hero Block', 'luigi' ),
+		// 	'description' => __( 'A prominent call to action on a full-width background image.', 'luigi' ),
+		// 	'i18n'        => array_merge(
+		// 		$content_block_i18n,
+		// 		array(
+		// 			'title_line_one'                => esc_attr__( 'Title (top)', 'luigi' ),
+		// 			'title'                         => esc_attr__( 'Title (bottom)', 'luigi' ),
+		// 			'contact'                       => esc_attr__( 'Contact Detail', 'luigi' ),
+		// 			'none'                          => esc_attr__( 'None', 'luigi' ),
+		// 			'phone'                         => esc_attr__( 'Phone Number', 'luigi' ),
+		// 			'find'                          => esc_attr__( 'Contact Popup', 'luigi' ),
+		// 			'find_text_default'             => esc_attr__( 'Find Us', 'luigi' ),
+		// 			'image_transparency'            => esc_attr__( 'Darken Image', 'luigi' ),
+		// 		)
+		// 	),
+		// );
+		//
+		// $components['luigi-content-block'] = array(
+		// 	'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-content-block.php',
+		// 	'class'       => 'Luigi_CLC_Component_Content_Block',
+		// 	'name'        => __( 'Content Block', 'luigi' ),
+		// 	'description' => __( 'A simple content block with an image, title, text and links.', 'luigi' ),
+		// 	'i18n'        => array_merge(
+		// 		$content_block_i18n,
+		// 		array(
+		// 			'title_line_one'                => esc_attr__( 'Title (top)', 'luigi' ),
+		// 			'title'                         => esc_attr__( 'Title (bottom)', 'luigi' ),
+		// 		)
+		// 	),
+		// );
+		//
+		// $components['luigi-post-review'] = array(
+		// 	'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-post-review.php',
+		// 	'class'       => 'Luigi_CLC_Component_Review',
+		// 	'name'        => __( 'Review', 'luigi' ),
+		// 	'description' => __( 'Add a full-width display of your review.', 'luigi' ),
+		// 	'i18n'        => array(
+		// 		'post_label'         => __( 'Review', 'luigi' ),
+		// 		'post_placeholder'   => __( 'No review selected', 'luigi' ),
+		// 		'add_post_button'    => __( 'Add', 'luigi' ),
+		// 		'remove_post_button' => __( 'Remove', 'luigi' ),
+		// 		'change_post_button' => __( 'Change', 'luigi' ),
+		// 		'post_search_label'  => __( 'Search', 'luigi' ),
+		// 	)
+		// );
 
 		return $components;
 	}
