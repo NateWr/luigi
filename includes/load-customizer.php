@@ -95,7 +95,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 				array(
 					'section'    => 'content_layout_control',
 					'priority'   => 1,
-					'components' => array( 'content-block', 'posts' ),
+					'components' => array( 'content-block', 'posts', 'luigi-posts-reviews' ),
 					'i18n' => array(
 						'add_component'                 => esc_html__( 'Add Component', 'luigi' ),
 						'edit_component'                => esc_html__( 'Edit', 'luigi' ),
@@ -127,7 +127,7 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 		// Maybe load minified scripts
 		$min = WP_DEBUG ? '' : 'min.';
 
-		wp_enqueue_script( 'luigi-customizer-preview-js', get_stylesheet_directory_uri() . '/assets/js/customizer-preview.' . $min . 'js', array( 'luigi-js', 'customize-preview', 'content-layout-control-js', 'clc-component-content-block-preview-js' ), '0.0.1', true );
+		wp_enqueue_script( 'luigi-customizer-preview-js', get_stylesheet_directory_uri() . '/assets/js/customizer-preview.' . $min . 'js', array( 'luigi-js', 'customize-preview', 'content-layout-preview-js' ), '0.0.1', true );
 
 		$upload_dir = wp_upload_dir();
 		wp_localize_script( 'luigi-customizer-preview-js', 'luigi_theme_customizer', array(
@@ -138,7 +138,7 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 			),
 		) );
 	}
-//	add_action( 'customize_preview_init', 'luigi_customizer_enqueue_preview_assets' );
+	add_action( 'customize_preview_init', 'luigi_customizer_enqueue_preview_assets' );
 }
 
 if ( !function_exists( 'luigi_customizer_enqueue_control_assets' ) ) {
@@ -160,7 +160,7 @@ if ( !function_exists( 'luigi_customizer_enqueue_control_assets' ) ) {
 			'business_profile_active' => defined( 'BPFWP_VERSION' ),
 		) );
 	}
-//	add_action( 'customize_controls_enqueue_scripts', 'luigi_customizer_enqueue_control_assets' );
+	add_action( 'customize_controls_enqueue_scripts', 'luigi_customizer_enqueue_control_assets' );
 }
 
 if ( !function_exists( 'luigi_customizer_register_content_layout_control_components' ) ) {
@@ -200,11 +200,26 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 			'class'       => 'CLC_Component_Posts',
 			'name'        => esc_html__( 'Post', 'luigi' ),
 			'description' => esc_html__( 'Select a post to display.', 'luigi' ),
+			'limit_posts' => 3,
 			'i18n'        => array(
 				'posts_loading' => esc_html__( 'Loading', 'luigi' ),
 				'posts_remove_button' => esc_html__( 'Remove', 'luigi' ),
 				'placeholder'         => esc_html__( 'No post selected.', 'luigi' ),
 				'posts_add_button'    => esc_html__( 'Add Post', 'luigi' ),
+			),
+		);
+
+		$components['luigi-posts-reviews'] = array(
+			'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-posts-reviews.php',
+			'class'       => 'Luigi_CLC_Component_Reviews',
+			'name'        => esc_html__( 'Review', 'luigi' ),
+			'description' => esc_html__( 'Select a review to display.', 'luigi' ),
+			'limit_posts' => 3,
+			'i18n'        => array(
+				'posts_loading' => esc_html__( 'Loading', 'luigi' ),
+				'posts_remove_button' => esc_html__( 'Remove', 'luigi' ),
+				'placeholder'         => esc_html__( 'No review selected.', 'luigi' ),
+				'posts_add_button'    => esc_html__( 'Add Review', 'luigi' ),
 			),
 		);
 
