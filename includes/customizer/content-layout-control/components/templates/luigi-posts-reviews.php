@@ -8,8 +8,9 @@
 ?>
 
 <div class="clc-wrapper">
-	<?php foreach( $this->posts as $post_id ) : ?>
-        [good-reviews review=<?php echo absint( $post_id ); ?>]
+	<?php foreach( $this->items as $post ) : ?>
+		<?php if ( empty( $post['ID'] ) ) { continue; } ?>
+		[good-reviews review=<?php echo absint( $post['ID'] ); ?>]
 	<?php endforeach; ?>
 </div>
 <?php
