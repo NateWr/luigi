@@ -47,16 +47,20 @@ module.exports = function(grunt) {
 					],
 					'assets/js/customizer-preview.js': [
 						'assets/src/js/content-layout-control/components/model/luigi-content-block.js',
+						'assets/src/js/content-layout-control/components/model/luigi-hero-block.js',
 						'assets/src/js/content-layout-control/components/model/luigi-posts-reviews.js',
 						'assets/src/js/content-layout-control/components/preview/luigi-content-block.js',
+						'assets/src/js/content-layout-control/components/preview/luigi-hero-block.js',
 						'assets/src/js/content-layout-control/components/preview/luigi-posts-reviews.js',
 						'assets/src/js/customizer-preview-*.js',
 						'assets/src/js/customizer-preview.js'
 					],
 					'assets/js/customizer-control.js': [
 						'assets/src/js/content-layout-control/components/model/luigi-content-block.js',
+						'assets/src/js/content-layout-control/components/model/luigi-hero-block.js',
 						'assets/src/js/content-layout-control/components/model/luigi-posts-reviews.js',
 						'assets/src/js/content-layout-control/components/control/luigi-content-block.js',
+						'assets/src/js/content-layout-control/components/control/luigi-hero-block.js',
 						'assets/src/js/content-layout-control/components/control/luigi-posts-reviews.js',
 						'assets/src/js/customizer-control-*.js',
 						'assets/src/js/customizer-control.js'

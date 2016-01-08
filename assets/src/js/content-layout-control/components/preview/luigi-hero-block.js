@@ -3,29 +3,9 @@
 	var clc = wp.customize.ContentLayoutControl;
 
 	/**
-	 * Model class for the Hero Block component
-	 *
-	 * @augments Backbone.Model
-	 * @since 0.1
-	 */
-	clc.Models.components['luigi-hero-block'] = clc.Models.Component.extend({
-		defaults: {
-			name:               '',
-			description:        '',
-			type:               'luigi-hero-block',
-			image:              0,
-			image_transparency: 0,
-			title_line_one:     '',
-			title:              '',
-			links:              [],
-			contact:            '',
-			order:              0
-		}
-	});
-
-	/**
 	 * View class for the Hero Block layout
 	 *
+	 * @augments clc.Views.component_previews['luigi-content-block']
 	 * @augments wp.customize.ContentLayoutControl.Views.BaseComponentForm
 	 * @augments wp.Backbone.View
 	 * @since 0.1

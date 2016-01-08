@@ -95,7 +95,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 				array(
 					'section'    => 'content_layout_control',
 					'priority'   => 1,
-					'components' => array( 'luigi-content-block', 'luigi-posts-reviews' ),
+					'components' => array( 'luigi-hero-block', 'luigi-content-block', 'luigi-posts-reviews' ),
 					'i18n' => array(
 						'add_component'                 => esc_html__( 'Add Component', 'luigi' ),
 						'edit_component'                => esc_html__( 'Edit', 'luigi' ),
@@ -187,6 +187,26 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 			'links_remove_button'           => esc_html__( 'Remove', 'luigi' ),
 		);
 
+		$components['luigi-hero-block'] = array(
+			'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-hero-block.php',
+			'class'       => 'Luigi_CLC_Component_Hero_Block',
+			'name'        => __( 'Hero Block', 'luigi' ),
+			'description' => __( 'A prominent call to action on a full-width background image.', 'luigi' ),
+			'i18n'        => array_merge(
+				$content_block_i18n,
+				array(
+					'title_line_one'                => esc_attr__( 'Title (top)', 'luigi' ),
+					'title'                         => esc_attr__( 'Title (bottom)', 'luigi' ),
+					'contact'                       => esc_attr__( 'Contact Detail', 'luigi' ),
+					'none'                          => esc_attr__( 'None', 'luigi' ),
+					'phone'                         => esc_attr__( 'Phone Number', 'luigi' ),
+					'find'                          => esc_attr__( 'Contact Popup', 'luigi' ),
+					'find_text_default'             => esc_attr__( 'Find Us', 'luigi' ),
+					'image_transparency'            => esc_attr__( 'Darken Image', 'luigi' ),
+				)
+			),
+		);
+
 		$components['luigi-content-block'] = array(
 			'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-content-block.php',
 			'class'       => 'Luigi_CLC_Component_Content_Block',
@@ -214,56 +234,6 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 				'posts_add_button'    => esc_html__( 'Add Review', 'luigi' ),
 			),
 		);
-
-		//
-		// $components['luigi-hero-block'] = array(
-		// 	'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-hero-block.php',
-		// 	'class'       => 'Luigi_CLC_Component_Hero_Block',
-		// 	'name'        => __( 'Hero Block', 'luigi' ),
-		// 	'description' => __( 'A prominent call to action on a full-width background image.', 'luigi' ),
-		// 	'i18n'        => array_merge(
-		// 		$content_block_i18n,
-		// 		array(
-		// 			'title_line_one'                => esc_attr__( 'Title (top)', 'luigi' ),
-		// 			'title'                         => esc_attr__( 'Title (bottom)', 'luigi' ),
-		// 			'contact'                       => esc_attr__( 'Contact Detail', 'luigi' ),
-		// 			'none'                          => esc_attr__( 'None', 'luigi' ),
-		// 			'phone'                         => esc_attr__( 'Phone Number', 'luigi' ),
-		// 			'find'                          => esc_attr__( 'Contact Popup', 'luigi' ),
-		// 			'find_text_default'             => esc_attr__( 'Find Us', 'luigi' ),
-		// 			'image_transparency'            => esc_attr__( 'Darken Image', 'luigi' ),
-		// 		)
-		// 	),
-		// );
-		//
-		// $components['luigi-content-block'] = array(
-		// 	'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-content-block.php',
-		// 	'class'       => 'Luigi_CLC_Component_Content_Block',
-		// 	'name'        => __( 'Content Block', 'luigi' ),
-		// 	'description' => __( 'A simple content block with an image, title, text and links.', 'luigi' ),
-		// 	'i18n'        => array_merge(
-		// 		$content_block_i18n,
-		// 		array(
-		// 			'title_line_one'                => esc_attr__( 'Title (top)', 'luigi' ),
-		// 			'title'                         => esc_attr__( 'Title (bottom)', 'luigi' ),
-		// 		)
-		// 	),
-		// );
-		//
-		// $components['luigi-post-review'] = array(
-		// 	'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-post-review.php',
-		// 	'class'       => 'Luigi_CLC_Component_Review',
-		// 	'name'        => __( 'Review', 'luigi' ),
-		// 	'description' => __( 'Add a full-width display of your review.', 'luigi' ),
-		// 	'i18n'        => array(
-		// 		'post_label'         => __( 'Review', 'luigi' ),
-		// 		'post_placeholder'   => __( 'No review selected', 'luigi' ),
-		// 		'add_post_button'    => __( 'Add', 'luigi' ),
-		// 		'remove_post_button' => __( 'Remove', 'luigi' ),
-		// 		'change_post_button' => __( 'Change', 'luigi' ),
-		// 		'post_search_label'  => __( 'Search', 'luigi' ),
-		// 	)
-		// );
 
 		return $components;
 	}
