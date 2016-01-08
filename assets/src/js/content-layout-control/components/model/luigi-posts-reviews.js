@@ -14,7 +14,7 @@
 			description:    '',
 			type:           'luigi-posts-reviews',
 			title:          '',
-			posts:          [],
+			items:          [],
 			limit_posts:    1,
 			post_types:     'grfwp-review',
 			order:          0
