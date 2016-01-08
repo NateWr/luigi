@@ -95,7 +95,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 				array(
 					'section'    => 'content_layout_control',
 					'priority'   => 1,
-					'components' => array( 'content-block', 'posts', 'luigi-posts-reviews' ),
+					'components' => array( 'luigi-content-block', 'luigi-posts-reviews' ),
 					'i18n' => array(
 						'add_component'                 => esc_html__( 'Add Component', 'luigi' ),
 						'edit_component'                => esc_html__( 'Edit', 'luigi' ),
@@ -104,8 +104,8 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 						'links_add_button'              => esc_html__( 'Add Link', 'luigi' ),
 						'links_url'                     => esc_html__( 'URL', 'luigi' ),
 						'links_text'                    => esc_html__( 'Link Text', 'luigi' ),
-						'links_search_existing_content' => esc_html__( 'Search existing content', 'luigi' ),
-						'links_back'                    => esc_html__( 'Back to link form', 'luigi' ),
+						'links_search_existing_content' => esc_html__( 'Search existing content &rarr;', 'luigi' ),
+						'links_back'                    => esc_html__( '&larr; Back to link form', 'luigi' ),
 					),
 				)
 			)
@@ -187,12 +187,18 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 			'links_remove_button'           => esc_html__( 'Remove', 'luigi' ),
 		);
 
-		$components['content-block'] = array(
-			'file'        => CLC_Content_Layout_Control::$dir . '/components/content-block.php',
-			'class'       => 'CLC_Component_Content_Block',
+		$components['luigi-content-block'] = array(
+			'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-content-block.php',
+			'class'       => 'Luigi_CLC_Component_Content_Block',
 			'name'        => esc_html__( 'Content Block', 'luigi' ),
 			'description' => esc_html__( 'A simple content block with an image, title, text and links.', 'luigi' ),
-			'i18n'        => $content_block_i18n,
+			'i18n'        => array_merge(
+				$content_block_i18n,
+				array(
+					'title_line_one' => esc_attr__( 'Title (top)', 'luigi' ),
+					'title' => esc_attr__( 'Title (bottom)', 'luigi' ),
+				)
+			),
 		);
 
 		$components['luigi-posts-reviews'] = array(

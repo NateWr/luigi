@@ -1,5 +1,6 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;
 if ( !class_exists( 'Luigi_CLC_Component_Review' ) ) {
+	include_once( CLC_Content_Layout_Control::$dir . '/components/posts.php' );
 	/**
 	 * Select and render reviews
 	 *

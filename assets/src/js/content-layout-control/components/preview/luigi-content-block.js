@@ -3,26 +3,6 @@
 	var clc = wp.customize.ContentLayoutControl;
 
 	/**
-	 * Model class for the Content Block component
-	 *
-	 * @augments Backbone.Model
-	 * @since 0.1
-	 */
-	clc.Models.components['luigi-content-block'] = clc.Models.Component.extend({
-		defaults: {
-			name:           '',
-			description:    '',
-			type:           'content-block',
-			image:          0,
-			image_position: 'left',
-			title_line_one: '',
-			title:          '',
-			content:        '',
-			order:          0
-		}
-	});
-
-	/**
 	 * View class for the Content Block layout
 	 *
 	 * @augments wp.customize.ContentLayoutControl.Views.BaseComponentForm
@@ -38,6 +18,8 @@
 		settingChanged: function( data ) {
 			if ( data.setting == 'title' ) {
 				this.$el.find( '.' + data.setting ).html( this.wrapFirstWord( data.val ) );
+			} else if ( data.setting == 'image-position' ) {
+				this.updateImagePosition( data.val );
 			} else {
 				this.$el.find( '.' + data.setting ).html( data.val );
 			}
