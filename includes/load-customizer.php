@@ -195,20 +195,6 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 			'i18n'        => $content_block_i18n,
 		);
 
-		$components['posts'] = array(
-			'file'        => CLC_Content_Layout_Control::$dir . '/components/posts.php',
-			'class'       => 'CLC_Component_Posts',
-			'name'        => esc_html__( 'Post', 'luigi' ),
-			'description' => esc_html__( 'Select a post to display.', 'luigi' ),
-			'limit_posts' => 3,
-			'i18n'        => array(
-				'posts_loading' => esc_html__( 'Loading', 'luigi' ),
-				'posts_remove_button' => esc_html__( 'Remove', 'luigi' ),
-				'placeholder'         => esc_html__( 'No post selected.', 'luigi' ),
-				'posts_add_button'    => esc_html__( 'Add Post', 'luigi' ),
-			),
-		);
-
 		$components['luigi-posts-reviews'] = array(
 			'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-posts-reviews.php',
 			'class'       => 'Luigi_CLC_Component_Reviews',
