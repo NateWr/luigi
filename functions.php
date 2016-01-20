@@ -20,59 +20,72 @@
  */
 
 if ( !function_exists( 'luigi_setup_theme' ) ) {
-    /**
-     * Initialize the theme
-     * @since 0.0.1
-     */
-    function luigi_setup_theme() {
+	/**
+	 * Initialize the theme
+	 * @since 0.0.1
+	 */
+	function luigi_setup_theme() {
 
-        luigi_load_context();
+		luigi_load_context();
 
-        register_nav_menus(
-            array(
-                'primary_menu'	=> esc_html__( 'Primary Navigation Menu', 'luigi' ),
-                'social_menu'	=> esc_html__( 'Social Profiles Menu', 'luigi' ),
-            )
-        );
+		add_theme_support( 'title-tag' );
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
-        add_image_size( 'luigi-medium', 450, 450, true );
-    }
-    add_action( 'after_setup_theme', 'luigi_setup_theme' );
+		register_nav_menus(
+			array(
+				'primary_menu' => esc_html__( 'Primary Navigation Menu', 'luigi' ),
+				'social_menu'  => esc_html__( 'Social Profiles Menu', 'luigi' ),
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'        => __( 'Primary Sidebar', 'luigi' ),
+				'id'          => 'primary-sidebar',
+				'description' => __( 'This sidebar will appear beside most pages and posts', 'luigi' ),
+			)
+		);
+
+		add_image_size( 'luigi-medium', 450, 450, true );
+	}
+	add_action( 'after_setup_theme', 'luigi_setup_theme' );
 }
 
 if ( !function_exists( 'luigi_load_context' ) ) {
-    /**
-     * Load files when required for a given context
-     *
-     * @since 0.0.1
-     */
-    function luigi_load_context() {
-        add_action( 'get_header', 'luigi_load_frontend' );
-        add_action( 'init', 'luigi_load_customizer' );
-    }
+	/**
+	 * Load files when required for a given context
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_load_context() {
+		add_action( 'get_header', 'luigi_load_frontend' );
+		add_action( 'init', 'luigi_load_customizer' );
+	}
 }
 
 if ( !function_exists( 'luigi_load_frontend' ) ) {
-    /**
-     * Load files required to render the frontend
-     *
-     * @since 0.0.1
-     */
-    function luigi_load_frontend() {
-        include_once( 'includes/load-frontend.php' );
-        include_once( 'lib/WAI-ARIA-Walker_Nav_Menu/aria-walker-nav-menu.php' );
-        include_once( 'includes/template-helpers.php' );
-    }
+	/**
+	 * Load files required to render the frontend
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_load_frontend() {
+		include_once( 'includes/load-frontend.php' );
+		include_once( 'lib/WAI-ARIA-Walker_Nav_Menu/aria-walker-nav-menu.php' );
+		include_once( 'includes/template-helpers.php' );
+	}
 }
 
 if ( !function_exists( 'luigi_load_customizer' ) ) {
-    /**
-     * Load files required by the customizer
-     *
-     * @since 0.0.1
-     */
-    function luigi_load_customizer() {
-        include_once( 'includes/load-customizer.php' );
-        include_once( 'includes/template-helpers.php' );
-    }
+	/**
+	 * Load files required by the customizer
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_load_customizer() {
+		include_once( 'includes/load-customizer.php' );
+		include_once( 'includes/template-helpers.php' );
+	}
 }

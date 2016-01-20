@@ -4,6 +4,24 @@
 .site-content {
 
 	@media(min-width: @screen-sm) {
-		margin-top: @double;
+		width: @screen-sm;
+		margin: @double auto;
 	}
+
+	@media(min-width: @screen-md) {
+		width: @screen-md;
+	}
+
+	@media(min-width: @screen-lg) {
+		width: @screen-lg;
+	}
+
+	@media(min-width: @screen-xl) {
+		width: @screen-xl;
+	}
+}
+
+// Allow full-width components on home page
+.home.page .site-content {
+	width: 100%;
 }

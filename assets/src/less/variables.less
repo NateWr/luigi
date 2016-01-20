@@ -29,6 +29,7 @@
 @semibold:            600;
 @bold:                700;
 
+@font-tinier:         12px;
 @font-tiny:           14px;
 @font-sml:            16px;
 @font-base:           18px;
@@ -38,6 +39,7 @@
 @font-logo:           92px;
 @font-logo-sml:       40px; // Fit the words on small screens
 
+@line-tiner:          20px;
 @line-tiny:           20px;
 @line-sml:            20px;
 @line-base:           25px;
@@ -60,6 +62,14 @@
 @screen-md:           992px;
 @screen-lg:           1200px;
 @screen-xl:           1400px;
+
+// Widths
+@sidebar-width:       300px;
+@container-sm:        @screen-sm - @double;
+@container-md:        @screen-md - @double - @sidebar-width;
+@container-lg:        @screen-lg - @double - @sidebar-width;
+@container-xl:        @screen-xl - @double - @sidebar-width;
+
 
 // Paths
 @path-img:            'assets/img/';

@@ -8,6 +8,13 @@
 	width: 100%;
 	padding: 60px @double;
 
+	&+ .clc-component-layout:not(.clc-component-luigi-hero-block) {
+		border-bottom: @border-line-light;
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
 
 	// Shared between content-block and hero-block
 	.text {
@@ -70,6 +77,9 @@
 	}
 
 	@media(min-width: @screen-sm) {
+		width: @screen-sm;
+		margin-left: auto;
+		margin-right: auto;
 		padding: 120px @double;
 
 		.title_line_one {
@@ -81,5 +91,17 @@
 			font-size: 60px;
 			line-height: 60px;
 		}
+	}
+
+	@media(min-width: @screen-md) {
+		width: @screen-md;
+	}
+
+	@media(min-width: @screen-lg) {
+		width: @screen-lg;
+	}
+
+	@media(min-width: @screen-xl) {
+		width: @screen-xl;
 	}
 }
