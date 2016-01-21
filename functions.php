@@ -22,6 +22,7 @@
 if ( !function_exists( 'luigi_setup_theme' ) ) {
 	/**
 	 * Initialize the theme
+     *
 	 * @since 0.0.1
 	 */
 	function luigi_setup_theme() {

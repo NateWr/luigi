@@ -1,0 +1,181 @@
+//
+// Styles for handling the output of the Good Reviews for WP plugin
+//
+@gr-author-width: 280px; // review author profil
+
+.gr-reviews {
+
+	.gr-review {
+		margin: 80px auto;
+		max-width: @container-full-lg;
+	}
+
+	.gr-review-body,
+	.gr-author {
+		margin: @double 0;
+	}
+
+	.gr-review {
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.gr-review-rating {
+		margin-bottom: @double;
+	}
+
+	.gr-rating-stars {
+		.clearfix();
+		font-size: @font-lead;
+		line-height: @line-lead;
+
+		.dashicons {
+			display: block;
+			float: left;
+			width: @line-lead;
+			height: @line-lead;
+			font-size: @font-lead;
+			line-height: @line-lead;
+			text-align: left;
+			color: @primary;
+		}
+	}
+
+	.gr-rating-numbers {
+		font-size: @font-bigger;
+		font-weight: @light;
+		color: @primary;
+	}
+
+	.gr-review-body {
+		font-size: @font-base;
+		font-style: italic;
+	}
+
+	.gr-review-date {
+		font-size: @font-tinier;
+		font-weight: @semibold;
+		text-transform: uppercase;
+		color: @text-light;
+	}
+
+	.gr-review-url {
+		font-size: @font-tinier;
+		margin-left: 1em;
+	}
+
+	.gr-author {
+		position: relative;
+		display: block;
+		font-style: normal;
+		font-weight: @semibold;
+		line-height: @line-base;
+	}
+
+	.gr-author-affiliation {
+		font-size: @font-tiny;
+		font-weight: @normal;
+		color: @text-light;
+	}
+
+	.gr-author-img {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 80px;
+		height: 80px;
+		vertical-align: middle;
+		text-align: center;
+
+		img {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+		}
+	}
+
+	.gr-item-has-image {
+
+		.gr-author {
+			min-height: 80px;
+		}
+
+		.gr-author-text {
+			position: relative;
+			padding-left: 80px + @double;
+			top: 15px;
+		}
+	}
+
+	@media(min-width: @screen-sm) {
+
+		.gr-review {
+			.clearfix();
+		}
+
+		.gr-content {
+			float: right;
+			width: @container-primary-sm - @gr-author-width - @double;
+		}
+
+		.gr-author {
+			float: left;
+			width: @gr-author-width;
+		}
+
+		.gr-review-has-rating .gr-author {
+			margin-top: 35px;
+		}
+	}
+
+	@media(min-width: @screen-md) {
+
+		.gr-content {
+			width: @container-primary-md - @gr-author-width - @double;
+		}
+	}
+
+	@media(min-width: @screen-lg) {
+
+		.gr-content {
+			width: @container-primary-lg - @gr-author-width - @double;
+		}
+	}
+
+	@media(min-width: @screen-xl) {
+
+		.gr-content {
+			width: @container-primary-xl - @gr-author-width - @double;
+		}
+	}
+}
+
+.luigi-primary-sidebar-inactive {
+
+	@media(min-width: @screen-sm) {
+
+		.gr-content {
+			width: @container-full-sm - @gr-author-width - @double;
+		}
+	}
+
+	@media(min-width: @screen-md) {
+
+		.gr-content {
+			width: @container-full-md - @gr-author-width - @double;
+		}
+	}
+
+	@media(min-width: @screen-lg) {
+
+		.gr-content {
+			width: @container-full-lg - @gr-author-width - @double;
+		}
+	}
+}

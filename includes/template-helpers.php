@@ -138,6 +138,6 @@ if ( !function_exists( 'luigi_clc_the_content' ) ) {
 	function luigi_clc_the_content() {
 		remove_filter( 'the_content', 'wpautop' );
 		the_content();
-		add_filter( 'the_content', 'wpauto' );
+		add_filter( 'the_content', 'wpautop' );
 	}
 }
