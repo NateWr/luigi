@@ -64,11 +64,16 @@
 @screen-xl:           1400px;
 
 // Widths
-@sidebar-width:       300px;
-@container-sm:        @screen-sm - @double;
-@container-md:        @screen-md - @double - @sidebar-width;
-@container-lg:        @screen-lg - @double - @sidebar-width;
-@container-xl:        @screen-xl - @double - @sidebar-width;
+@sidebar-width:        300px;
+@gutter:               @double;
+@container-primary-sm: @screen-sm - (@gutter * 2);
+@container-primary-md: @screen-md - (@gutter * 3) - @sidebar-width;
+@container-primary-lg: @screen-lg - (@gutter * 3) - @sidebar-width;
+@container-primary-xl: @screen-xl - (@gutter * 3) - @sidebar-width;
+@container-full-sm:    @screen-sm - (@gutter * 2);
+@container-full-md:    @screen-md - (@gutter * 2);
+@container-full-lg:    @screen-lg - (@gutter * 2);
+@container-full-xl:    @screen-xl - (@gutter * 2);
 
 
 // Paths

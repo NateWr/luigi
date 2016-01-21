@@ -2,26 +2,93 @@
 // Site layout scaffold
 //
 .site-content {
+	padding-left: @gutter / 2;
+	padding-right: @gutter / 2;
+}
 
-	@media(min-width: @screen-sm) {
+
+@media(min-width: @screen-sm) {
+
+	.site-content {
+		.clearfix();
 		width: @screen-sm;
 		margin: @double auto;
+		padding-left: @gutter;
+		padding-right: @gutter;
 	}
 
-	@media(min-width: @screen-md) {
+}
+
+@media(min-width: @screen-md) {
+
+	.site-content {
 		width: @screen-md;
 	}
 
-	@media(min-width: @screen-lg) {
+	.content-area {
+		float: left;
+		width: @container-primary-md;
+	}
+
+	.sidebar-area {
+		float: right;
+		width: @sidebar-width;
+	}
+}
+
+@media(min-width: @screen-lg) {
+
+	.site-content {
 		width: @screen-lg;
 	}
 
-	@media(min-width: @screen-xl) {
+	.content-area {
+		width: @container-primary-lg;
+	}
+}
+
+@media(min-width: @screen-xl) {
+
+	.site-content {
 		width: @screen-xl;
+	}
+
+	.content-area {
+		width: @container-primary-xl;
 	}
 }
 
 // Allow full-width components on home page
-.home.page .site-content {
+.home.page .site-content,
+.home.page .content-area {
 	width: 100%;
+	padding: 0;
+}
+
+// Allow full-width primary content area when no sidebar is present
+.luigi-primary-sidebar-inactive {
+
+	@media(min-width: @screen-md) {
+
+		.content-area {
+			float: none;
+			width: @container-full-md;
+		}
+	}
+
+	@media(min-width: @screen-lg) {
+
+		.content-area {
+			float: none;
+			width: @container-full-lg;
+		}
+	}
+
+	@media(min-width: @screen-xl) {
+
+		.content-area {
+			float: none;
+			width: @container-full-xl;
+		}
+	}
 }
