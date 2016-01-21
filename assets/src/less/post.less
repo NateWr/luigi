@@ -1,0 +1,69 @@
+//
+// Post styles including title, post meta, and summary view
+//
+.post-summary {
+
+	.entry-date {
+		font-size: @font-tinier;
+		font-weight: @semibold;
+		text-transform: uppercase;
+		color: @text-light;
+	}
+
+	.entry-title {
+		margin: 0;
+		font-size: @font-base;
+		line-height: @line-base;
+		font-weight: @semibold;
+
+		a {
+			color: @text;
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				color: @primary-lift;
+			}
+		}
+	}
+
+	.entry-content p {
+		margin-top: @base + @half;
+		margin-bottom: @base + @half;
+	}
+
+	.more {
+		font-size: @font-sml;
+		font-weight: @semibold;
+		line-height: @line-sml;
+		text-decoration: none;
+	}
+
+	@media(min-width: @screen-sm) {
+
+		.entry-title {
+			font-size: @font-lead;
+			line-height: @line-lead;
+		}
+	}
+}
+
+.entry-title {
+	font-size: @font-title;
+	line-height: @line-title;
+	font-weight: @bold;
+}
+
+.entry-content {
+	font-size: @font-sml;
+	line-height: @line-lead;
+
+	p {
+		margin-top: @double;
+		margin-bottom: @double;
+	}
+
+	@media(min-width: @screen-sm) {
+		font-size: @font-base;
+	}
+}

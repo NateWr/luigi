@@ -7,12 +7,12 @@
  * @package luigi
  */
 ?>
-<article>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-summary' ); ?>>
 	<header class="entry-header">
 		<time class="entry-date published updated" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
 			<?php the_date(); ?>
 		</time>
-		<h3>
+		<h3 class="entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark">
 				<?php the_title(); ?>
 			</a>
@@ -21,7 +21,7 @@
 	<div class="entry-content">
 		<?php the_excerpt(); ?>
 	</div>
-	<a href="<?php the_permalink(); ?>">
+	<a href="<?php the_permalink(); ?>" class="more">
 		<?php _e( 'Read More', 'luigi' ); ?>
 	</a>
 </article>
