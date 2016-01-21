@@ -258,18 +258,12 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 		);
 
 		$components['luigi-mixer'] = array(
-			'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-mixer.php',
-			'class'       => 'Luigi_CLC_Component_Mixer',
-			'name'        => esc_html__( 'Mix-and-Match', 'luigi' ),
-			'description' => esc_html__( 'Pair two items in a row. Select from opening hours, a map, latest posts and more.', 'luigi' ),
-			'valid_options' => array(
-				'blog'          => __( 'Latest Blog Posts', 'luigi' ),
-				'opening_hours' => __( 'Opening Hours', 'luigi' ),
-				'contact'       => __( 'Contact Details', 'luigi' ),
-				'map'           => __( 'Map', 'luigi' ),
-				'booking_form'  => __( 'Booking Form', 'luigi' ),
-			),
-			'i18n'        => array(
+			'file'          => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-mixer.php',
+			'class'         => 'Luigi_CLC_Component_Mixer',
+			'name'          => esc_html__( 'Mix-and-Match', 'luigi' ),
+			'description'   => esc_html__( 'Pair two items in a row. Select from opening hours, a map, latest posts and more.', 'luigi' ),
+			'valid_options' => luigi_customizer_clc_mixer_options(),
+			'i18n'          => array(
 				'left'  => esc_html__( 'Left Content', 'luigi' ),
 				'right' => esc_html__( 'Right Content', 'luigi' ),
 				'left_title'  => esc_html__( 'Left Title', 'luigi' ),
@@ -280,4 +274,38 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 		return $components;
 	}
 	add_filter( 'clc_register_components', 'luigi_customizer_register_content_layout_control_components' );
+}
+
+if ( !function_exists( 'luigi_customizer_clc_mixer_options' ) ) {
+	/**
+	 * Compile the list of valid options for the mixer component based on
+	 * active plugins and settings
+	 *
+	 * @since 0.1
+	 */
+	function luigi_customizer_clc_mixer_options() {
+
+		$options = array( 'blog' => __( 'Latest Blog Posts', 'luigi' ) );
+
+		if ( luigi_bp_setting_exists( 'opening-hours' ) ) {
+			$options['opening_hours'] = __( 'Opening Hours', 'luigi' );
+		}
+
+		global $bpfwp_controller;
+		if ( isset( $bpfwp_controller ) ) {
+			$options['contact'] = __( 'Contact Card', 'luigi' );
+
+			$address = $bpfwp_controller->settings->get_setting( 'address' );
+			if ( !empty( $address['text'] ) || ( !empty( $address['lat'] ) && !empty( $address['lon'] ) ) ) {
+				$options['map'] = __( 'Map', 'luigi' );
+			}
+		}
+
+		global $rtb_controller;
+		if ( isset( $rtb_controller ) ) {
+			$options['booking_form'] = __( 'Booking Form', 'luigi' );
+		}
+
+		return $options;
+	}
 }
