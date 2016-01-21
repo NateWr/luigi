@@ -1,0 +1,59 @@
+//
+// Mix-and-match common content
+// Content Layout Control component
+//
+.clc-component-luigi-mixer {
+
+	.luigi-clc-mixer {
+
+		> h2 {
+			margin-top: 0;
+			margin-bottom: @quadruple;
+			font-size: @font-lead;
+			line-height: @line-lead;
+			text-align: center;
+			font-weight: @light;
+			text-transform: uppercase;
+
+			.luigi-first-word {
+				font-weight: @bold;
+			}
+		}
+
+		+ .luigi-clc-mixer {
+			margin-top: 60px;
+		}
+	}
+
+	@media(min-width: @screen-sm) {
+		.clearfix();
+		padding-left: 0;
+		padding-right: 0;
+
+		.luigi-clc-mixer {
+			display: block;
+			float: left;
+			width: 50%;
+			text-align: initial;
+			padding: 0 @double;
+
+			&:only-child {
+				float: none;
+				margin: 0 auto;
+				width: 66%;
+			}
+
+			+ .luigi-clc-mixer {
+				margin-top: 0;
+			}
+		}
+	}
+
+	@media(min-width: @screen-xl) {
+
+		.luigi-clc-mixer {
+			padding-left: @quadruple;
+			padding-right: @quadruple;
+		}
+	}
+}
