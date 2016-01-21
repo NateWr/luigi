@@ -5,7 +5,8 @@
 	/**
 	 * View class for the Reviews layout
 	 *
-	 * @augments wp.customize.ContentLayoutControl.Views.BaseComponentForm
+	 * @augments wp.customize.ContentLayoutControl.Views.component_previews.posts
+	 * @augments wp.customize.ContentLayoutControl.Views.BaseComponentPreview
 	 * @augments wp.Backbone.View
 	 * @since 0.1
 	 */

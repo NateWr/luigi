@@ -5,7 +5,8 @@
 	/**
 	 * View class for the Content Block layout
 	 *
-	 * @augments wp.customize.ContentLayoutControl.Views.BaseComponentForm
+	 * @augments clc.Views.component_previews['content-block']
+	 * @augments wp.customize.ContentLayoutControl.Views.BaseComponentPreview
 	 * @augments wp.Backbone.View
 	 * @since 0.1
 	 */

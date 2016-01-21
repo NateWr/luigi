@@ -49,9 +49,11 @@ module.exports = function(grunt) {
 						'assets/src/js/content-layout-control/components/model/luigi-content-block.js',
 						'assets/src/js/content-layout-control/components/model/luigi-hero-block.js',
 						'assets/src/js/content-layout-control/components/model/luigi-posts-reviews.js',
+						'assets/src/js/content-layout-control/components/model/luigi-mixer.js',
 						'assets/src/js/content-layout-control/components/preview/luigi-content-block.js',
 						'assets/src/js/content-layout-control/components/preview/luigi-hero-block.js',
 						'assets/src/js/content-layout-control/components/preview/luigi-posts-reviews.js',
+						'assets/src/js/content-layout-control/components/preview/luigi-mixer.js',
 						'assets/src/js/customizer-preview-*.js',
 						'assets/src/js/customizer-preview.js'
 					],
@@ -59,15 +61,18 @@ module.exports = function(grunt) {
 						'assets/src/js/content-layout-control/components/model/luigi-content-block.js',
 						'assets/src/js/content-layout-control/components/model/luigi-hero-block.js',
 						'assets/src/js/content-layout-control/components/model/luigi-posts-reviews.js',
+						'assets/src/js/content-layout-control/components/model/luigi-mixer.js',
 						'assets/src/js/content-layout-control/components/control/luigi-content-block.js',
 						'assets/src/js/content-layout-control/components/control/luigi-hero-block.js',
 						'assets/src/js/content-layout-control/components/control/luigi-posts-reviews.js',
+						'assets/src/js/content-layout-control/components/control/luigi-mixer.js',
 						'assets/src/js/customizer-control-*.js',
 						'assets/src/js/customizer-control.js'
 					],
 					'assets/js/content-layout-control/templates/components/luigi-content-block.js': 'assets/src/js/content-layout-control/templates/components/luigi-content-block.js',
 					'assets/js/content-layout-control/templates/components/luigi-hero-block.js': 'assets/src/js/content-layout-control/templates/components/luigi-hero-block.js',
 					'assets/js/content-layout-control/templates/components/luigi-posts-reviews.js': 'assets/src/js/content-layout-control/templates/components/luigi-posts-reviews.js',
+					'assets/js/content-layout-control/templates/components/luigi-mixer.js': 'assets/src/js/content-layout-control/templates/components/luigi-mixer.js',
 				}
 			}
 		},

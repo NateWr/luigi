@@ -78,7 +78,7 @@ if ( !function_exists( 'luigi_wrap_first_word' ) ) {
 
 if ( !function_exists( 'luigi_bp_setting_exists' ) ) {
 	/**
-	 * Check if a phone number exists in the system
+	 * Check if a setting in exists in their business profile
 	 *
 	 * @since 0.0.1
 	 */
@@ -90,6 +90,24 @@ if ( !function_exists( 'luigi_bp_setting_exists' ) ) {
 		}
 
 		$setting = $bpfwp_controller->settings->get_setting( $setting );
+		return !empty( $setting );
+	}
+}
+
+if ( !function_exists( 'luigi_rtb_setting_exists' ) ) {
+	/**
+	 * Check if a setting exists in restaurant reservations
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_rtb_setting_exists( $setting ) {
+
+		global $rtb_controller;
+		if ( !isset( $rtb_controller ) ) {
+			return false;
+		}
+
+		$setting = $rtb_controller->settings->get_setting( $setting );
 		return !empty( $setting );
 	}
 }
@@ -139,5 +157,34 @@ if ( !function_exists( 'luigi_clc_the_content' ) ) {
 		remove_filter( 'the_content', 'wpautop' );
 		the_content();
 		add_filter( 'the_content', 'wpautop' );
+	}
+}
+
+if ( !function_exists( 'luigi_print_mixer_content' ) ) {
+	/**
+	 * Print requested content in the Mixer component for the
+	 * `content-layout-control` lib.
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_print_mixer_content( $type ) {
+
+		switch( $type ) {
+			case 'blog':
+				echo '[luigi-recent-posts posts=2]';
+				break;
+			case 'opening_hours':
+				include( get_template_directory() . '/includes/customizer/content-layout-control/components/templates/luigi-mixer-opening-hours.php' );
+				break;
+			case 'contact':
+				echo '[contact-card show_map=0 show_opening_hours=0]';
+				break;
+			case 'map':
+				echo '[contact-card show_name=0 show_address=0 show_get_directions=0 show_phone=0 show_contact=0 show_opening_hours=0 show_booking_link=0]';
+				break;
+			case 'booking_form':
+				echo '[booking-form]';
+				break;
+		}
 	}
 }

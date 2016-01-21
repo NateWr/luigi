@@ -95,7 +95,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 				array(
 					'section'    => 'content_layout_control',
 					'priority'   => 1,
-					'components' => array( 'luigi-hero-block', 'luigi-content-block', 'luigi-posts-reviews' ),
+					'components' => array( 'luigi-hero-block', 'luigi-content-block', 'luigi-posts-reviews', 'luigi-mixer' ),
 					'i18n' => array(
 						'add_component'                 => esc_html__( 'Add Component', 'luigi' ),
 						'edit_component'                => esc_html__( 'Edit', 'luigi' ),
@@ -137,8 +137,30 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 				'unknown_error' => __( 'An unknown error occurred. Please try again. If the problem continues, please refresh the page.', 'luigi' ),
 			),
 		) );
+
+		// Load maps handler for Business Profile
+		add_action( 'wp_footer', 'luigi_customizer_load_bpfwp_map_handlers' );
 	}
 	add_action( 'customize_preview_init', 'luigi_customizer_enqueue_preview_assets' );
+}
+
+if ( !function_exists( 'luigi_customizer_load_bpfwp_map_handlers' ) ) {
+	/**
+	 * Print a hidden map using Business Profile's native functions to ensure
+	 * that the map handler is loaded and initialized properly. This way, if a
+	 * customizer setting adds a map live, it will update properly.
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_customizer_load_bpfwp_map_handlers() {
+		?>
+
+		<div style="display:none;">
+			<?php bpwfwp_print_map(); ?>
+		</div>
+
+		<?php
+	}
 }
 
 if ( !function_exists( 'luigi_customizer_enqueue_control_assets' ) ) {
@@ -225,13 +247,33 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 			'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-posts-reviews.php',
 			'class'       => 'Luigi_CLC_Component_Reviews',
 			'name'        => esc_html__( 'Review', 'luigi' ),
-			'description' => esc_html__( 'Select a review to display.', 'luigi' ),
+			'description' => esc_html__( 'Display one or more reviews.', 'luigi' ),
 			'limit_posts' => 3,
 			'i18n'        => array(
 				'posts_loading' => esc_html__( 'Loading', 'luigi' ),
 				'posts_remove_button' => esc_html__( 'Remove', 'luigi' ),
 				'placeholder'         => esc_html__( 'No review selected.', 'luigi' ),
 				'posts_add_button'    => esc_html__( 'Add Review', 'luigi' ),
+			),
+		);
+
+		$components['luigi-mixer'] = array(
+			'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-mixer.php',
+			'class'       => 'Luigi_CLC_Component_Mixer',
+			'name'        => esc_html__( 'Mix-and-Match', 'luigi' ),
+			'description' => esc_html__( 'Pair two items in a row. Select from opening hours, a map, latest posts and more.', 'luigi' ),
+			'valid_options' => array(
+				'blog'          => __( 'Latest Blog Posts', 'luigi' ),
+				'opening_hours' => __( 'Opening Hours', 'luigi' ),
+				'contact'       => __( 'Contact Details', 'luigi' ),
+				'map'           => __( 'Map', 'luigi' ),
+				'booking_form'  => __( 'Booking Form', 'luigi' ),
+			),
+			'i18n'        => array(
+				'left'  => esc_html__( 'Left Content', 'luigi' ),
+				'right' => esc_html__( 'Right Content', 'luigi' ),
+				'left_title'  => esc_html__( 'Left Title', 'luigi' ),
+				'right_title' => esc_html__( 'Right Title', 'luigi' ),
 			),
 		);
 

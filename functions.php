@@ -63,6 +63,7 @@ if ( !function_exists( 'luigi_load_context' ) ) {
 	function luigi_load_context() {
 		add_action( 'get_header', 'luigi_load_frontend' );
 		add_action( 'init', 'luigi_load_customizer' );
+		add_action( 'widgets_init', 'luigi_load_widgets' );
 	}
 }
 
@@ -76,6 +77,7 @@ if ( !function_exists( 'luigi_load_frontend' ) ) {
 		include_once( 'includes/load-frontend.php' );
 		include_once( 'lib/WAI-ARIA-Walker_Nav_Menu/aria-walker-nav-menu.php' );
 		include_once( 'includes/template-helpers.php' );
+		include_once( 'includes/template-shortcodes.php' );
 	}
 }
 
@@ -88,5 +90,20 @@ if ( !function_exists( 'luigi_load_customizer' ) ) {
 	function luigi_load_customizer() {
 		include_once( 'includes/load-customizer.php' );
 		include_once( 'includes/template-helpers.php' );
+		include_once( 'includes/template-shortcodes.php' );
+	}
+}
+
+if ( !function_exists( 'luigi_load_widgets' ) ) {
+	/**
+	 * Load files handling widgets
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_load_widgets() {
+		include( get_template_directory() . '/includes/widgets/luigi-recent-posts.php' );
+
+		unregister_widget( 'WP_Widget_Recent_Posts' );
+		register_widget( 'Luigi_Widget_Recent_Posts' );
 	}
 }

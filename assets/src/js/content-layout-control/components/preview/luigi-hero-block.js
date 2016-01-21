@@ -6,7 +6,7 @@
 	 * View class for the Hero Block layout
 	 *
 	 * @augments clc.Views.component_previews['luigi-content-block']
-	 * @augments wp.customize.ContentLayoutControl.Views.BaseComponentForm
+	 * @augments wp.customize.ContentLayoutControl.Views.BaseComponentPreview
 	 * @augments wp.Backbone.View
 	 * @since 0.1
 	 */
