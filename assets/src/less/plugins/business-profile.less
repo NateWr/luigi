@@ -20,6 +20,13 @@
 	margin-bottom: @triple;
 }
 
+.luigi-contact-card-address-wrapper.hidden,
+.luigi-contact-card-contact-wrapper.hidden {
+	position: absolute;
+	top: 0;
+	left: -9999px;
+}
+
 .bp-name,
 .bp-phone,
 .bp-contact,
@@ -82,7 +89,7 @@
 }
 
 .bp-opening-hours {
-	max-width: 400px;
+	max-width: 500px;
 	margin: 60px auto;
 	text-align: center;
 
@@ -99,7 +106,7 @@
 
 	.bp-weekday {
 		.clearfix();
-		padding: 0 1em;
+		padding: @half 1em;
 		text-align: left;
 		font-size: @font-tiny;
 		line-height: @line-big;
