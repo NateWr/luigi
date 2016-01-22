@@ -169,6 +169,8 @@ if ( !function_exists( 'luigi_print_mixer_content' ) ) {
 	 */
 	function luigi_print_mixer_content( $type ) {
 
+		ob_start();
+
 		switch( $type ) {
 			case 'blog':
 				echo '[luigi-recent-posts posts=2]';
@@ -177,7 +179,7 @@ if ( !function_exists( 'luigi_print_mixer_content' ) ) {
 				include( get_template_directory() . '/includes/customizer/content-layout-control/components/templates/luigi-mixer-opening-hours.php' );
 				break;
 			case 'contact':
-				echo '[contact-card show_map=0 show_opening_hours=0]';
+				echo '[contact-card show_opening_hours=0]';
 				break;
 			case 'map':
 				echo '[contact-card show_name=0 show_address=0 show_get_directions=0 show_phone=0 show_contact=0 show_opening_hours=0 show_booking_link=0]';
@@ -186,5 +188,7 @@ if ( !function_exists( 'luigi_print_mixer_content' ) ) {
 				echo '[booking-form]';
 				break;
 		}
+
+		echo apply_filters( 'luigi_print_mixer_content', ob_get_clean() );
 	}
 }
