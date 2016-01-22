@@ -61,7 +61,7 @@
 // Button
 .luigi-button {
 	display: inline-block;
-	padding: @half @base;;
+	padding: @half @base;
 	font-family: @font;
 	font-weight: @semibold;
 	font-size: @font-tiny;
@@ -74,6 +74,7 @@
 	&:hover,
 	&:focus {
 		background: @primary-lift;
+		color: @text;
 	}
 
 	@media(min-width: @screen-sm) {
@@ -93,6 +94,17 @@
 	color: @text;
 }
 
+.luigi-button-sml {
+	font-size: @font-tinier;
+	line-height: @line-tinier;
+
+	@media(min-width: @screen-sm) {
+		padding: @half @double;
+		font-size: @font-tinier;
+		line-height: @line-tinier;
+	}
+}
+
 // Icons
 .luigi-icon {
 	display: inline-block;
@@ -103,17 +115,33 @@
 }
 
 .luigi-icon-location {
-	background-image: url( 'assets/img/icon_location.png' );
+	background-image: url( @path-icon-location );
 }
 
 .luigi-icon-phone {
-	background-image: url( 'assets/img/icon_phone.png' );
+	background-image: url( @path-icon-phone );
+}
+
+.luigi-icon-contact {
+	background-image: url( @path-icon-contact );
+}
+
+.luigi-icon-time {
+	background-image: url( @path-icon-time );
 }
 
 .luigi-icon-w-location {
-	background-image: url( 'assets/img/icon_w_location.png' );
+	background-image: url( @path-icon-w-location );
 }
 
 .luigi-icon-w-phone {
-	background-image: url( 'assets/img/icon_w_phone.png' );
+	background-image: url( @path-icon-w-phone );
+}
+
+.luigi-icon-w-contact {
+	background-image: url( @path-icon-w-contact );
+}
+
+.luigi-icon-w-time {
+	background-image: url( @path-icon-w-time );
 }

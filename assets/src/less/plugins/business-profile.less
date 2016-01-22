@@ -5,14 +5,155 @@
 	font-style: normal; // overwrite default <address> styling
 }
 
-.bp-phone {
-	padding-left: @triple;
-	background-image: url( @path-icon-phone );
+.bp-name,
+.bp-address,
+.bp-phone,
+.bp-contact,
+.luigi-contact-card-links,
+.bp-opening-hours .bp-title {
+	padding-left: @quadruple;
+}
+
+.luigi-contact-card-address-wrapper,
+.luigi-contact-card-contact-wrapper,
+.luigi-contact-card-links {
+	margin-bottom: @triple;
+}
+
+.bp-name,
+.bp-phone,
+.bp-contact,
+.bp-opening-hours .bp-title {
 	background-position: left center;
 	background-repeat: no-repeat;
-	background-size: auto @font-sml;
+	background-size: auto @font-base;
+}
+
+.bp-name {
+	.luigi-icon-location;
+	font-weight: @semibold;
+	margin-bottom: @base;
+}
+
+.bp-address {
+	font-size: @font-sml;
+	line-height: @line-sml;
+}
+
+.bp-phone,
+.bp-contact {
+	font-weight: @semibold;
+}
+
+.bp-phone {
+	.luigi-icon-phone;
+	margin-bottom: @triple;
+}
+
+.bp-contact {
+	.luigi-icon-contact;
+}
+
+.luigi-contact-card-links {
+
+	> div {
+		display: inline-block;
+		margin-bottom: @base;
+	}
+
+	a {
+		&:extend(.luigi-button);
+		&:extend(.luigi-button-sml);
+
+		&:hover,
+		&:focus {
+			&:extend(.luigi-button:hover);
+		}
+	}
+
+	> div:first-child a {
+		&:extend(.luigi-button-primary);
+
+		&:hover,
+		&:focus {
+			&:extend(.luigi-button:hover);
+		}
+	}
+}
+
+.bp-opening-hours {
+	max-width: 400px;
+	margin: 60px auto;
+	text-align: center;
+
+	.bp-title {
+		.luigi-icon-time;
+		display: inline-block;
+		padding-left: 25px;
+		margin-bottom: @quadruple;
+		font-size: @font-lead;
+		line-height: @line-lead;
+		font-weight: @bold;
+		text-transform: uppercase;
+	}
+
+	.bp-weekday {
+		.clearfix();
+		padding: 0 1em;
+		text-align: left;
+		font-size: @font-tiny;
+		line-height: @line-big;
+		font-weight: @semibold;
+
+		&:nth-child(odd) {
+			background: rgba(0,0,0,0.03);
+		}
+
+		&:nth-child(even) {
+			background: rgba(255,255,255,0.5);
+		}
+	}
+
+	.bp-times {
+		float: right;
+		font-weight: @normal;
+	}
 }
 
 .bp-map {
-	min-height: 300px;
+	min-height: 370px;
+
+	p {
+		margin: @base 0;
+		font-size: @font-tinier;
+		line-height: 15px;
+		font-weight: @normal;
+
+		a {
+			font-weight: @semibold;
+		}
+	}
+}
+
+.bp-map-info-window {
+	width: 200px;
+	max-width: 100%;
+}
+
+@media(min-width: @screen-sm) {
+
+	.bp-contact-card,
+	.luigi-contact-card-links {
+		.clearfix();
+	}
+
+	.luigi-contact-card-address-wrapper,
+	.luigi-contact-card-contact-wrapper {
+		float: left;
+		width: 50%;
+	}
+
+	.luigi-contact-card-contact-wrapper {
+		padding-left: @double;
+	}
 }

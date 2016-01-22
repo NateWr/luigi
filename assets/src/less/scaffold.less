@@ -2,6 +2,7 @@
 // Site layout scaffold
 //
 .site-content {
+	margin-top: 120px;
 	padding-left: @gutter / 2;
 	padding-right: @gutter / 2;
 }
@@ -12,7 +13,8 @@
 	.site-content {
 		.clearfix();
 		width: @screen-sm;
-		margin: @double auto;
+		margin-left: auto;
+		margin-right: auto;
 		padding-left: @gutter;
 		padding-right: @gutter;
 	}
@@ -55,6 +57,15 @@
 
 	.content-area {
 		width: @container-primary-xl;
+	}
+}
+
+// Collapse top margin on home page so hero image can sit up top
+.home.page .site-content {
+	margin-top: 50px;
+
+	@media(min-width: @screen-sm) {
+		margin-top: @double;
 	}
 }
 
