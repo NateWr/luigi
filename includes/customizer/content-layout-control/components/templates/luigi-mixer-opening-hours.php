@@ -13,7 +13,7 @@ if ( !isset( $bpfwp_controller ) ) {
 [contact-card show_name=0 show_address=0 show_get_directions=0 show_phone=0 show_contact=0 show_map=0 show_booking_link=0]
 
 <?php if ( luigi_rtb_setting_exists( 'booking-page' ) ) : global $rtb_controller; ?>
-	<a href="<?php echo esc_url( $rtb_controller->settings->get_setting( 'booking-page' ) ); ?>" class="booking">
+	<a href="<?php echo esc_url( get_permalink( $rtb_controller->settings->get_setting( 'booking-page' ) ) ); ?>" class="booking">
 		<?php _e( 'Make a Reservation', 'luigi' ); ?>
 	</a>
 <?php endif;
