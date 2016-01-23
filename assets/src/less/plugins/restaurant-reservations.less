@@ -67,12 +67,61 @@
 		padding-bottom: 11px;
 	}
 
-	.rtb-checkbox,
-	.rtb-radio,
 	.rtb-textarea {
 
 		label {
 			border-bottom: none;
+		}
+	}
+
+	.rtb-checkbox input,
+	.rtb-radio input,
+	.rtb-confirm input,
+	.optin > div input {
+		position: relative;
+		top: -1px;
+		vertical-align: middle;
+		margin-right: 0.5em;
+	}
+
+	.rtb-checkbox,
+	.rtb-radio {
+		border: @border-line;
+
+		label {
+			border: none;
+		}
+
+		label:first-child {
+			border-bottom: @border-line;
+		}
+
+		label:not(:first-child) {
+			padding-left: @quadruple;
+			background: #fff;
+			font-weight: @normal;
+			text-transform: none;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	.rtb-confirm,
+	.optin > div {
+
+		label {
+			font-weight: @normal;
+			text-transform: none;
+
+			&:before {
+				display: none;
+			}
+
+			&:hover {
+				border-color: @primary;
+			}
 		}
 	}
 
@@ -97,25 +146,9 @@
 		padding-left: @double - 3px;
 	}
 
-	// Mailchimp opt-in field
+	// Mailchimp opt-in fieldset
 	.mc-optin {
 		margin-top: 0;
-
-		label {
-			font-weight: @normal;
-			text-transform: none;
-
-			&:before {
-				display: none;
-			}
-		}
-
-		input {
-			position: relative;
-			top: -1px;
-			vertical-align: middle;
-			margin-right: 0.5em;
-		}
 	}
 
 	@media(min-width: @screen-xs) {
@@ -148,7 +181,7 @@
 
 			> div,
 			legend {
-				padding-right: @triple;
+				margin-right: @triple;
 			}
 		}
 
