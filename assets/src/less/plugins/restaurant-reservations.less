@@ -138,6 +138,39 @@
 		display: none;
 	}
 
+	.rtb-error {
+		position: relative;
+		padding: @base (@base + @half) @base 45px;
+		background: @no;
+		font-size: @font-sml;
+		line-height: @line-sml;
+		font-weight: @semibold;
+		font-style: italic;
+		color: #fff;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: @double;
+			transform: rotate(45deg);
+			margin-top: -4px;
+			width: 8px;
+			height: 8px;
+			background: #fff;
+		}
+
+		&:after {
+			&:extend(.luigi-caret-down);
+			position: absolute;
+			top: 50%;
+			left: 16px;
+			border-width: 8px;
+			border-top-color: @no;
+			margin-top: -6px;
+		}
+	}
+
 	// Outline of picker input fields when picker opened
 	.picker__input.picker__input--active {
 		outline: 0;
