@@ -69,17 +69,12 @@
 	}
 
 	a {
-		&:extend(.luigi-button);
-		&:extend(.luigi-button-sml);
-
-		&:hover,
-		&:focus {
-			&:extend(.luigi-button:hover);
-		}
+		&:extend(.luigi-button all);
+		&:extend(.luigi-button-sml all);
 	}
 
 	> div:first-child a {
-		&:extend(.luigi-button-primary);
+		&:extend(.luigi-button-primary all);
 
 		&:hover,
 		&:focus {

@@ -1,0 +1,215 @@
+//
+// Styles for handling the output of the Restaurant Reservations plugin
+//
+.rtb-booking-form {
+
+	fieldset {
+
+		> div {
+			margin-top: @triple;
+		}
+	}
+
+	label {
+		display: block;
+		margin: 0;
+		padding: 11px @base 12px;
+		border: @border-line;
+
+		&:before {
+			&:extend(.luigi-icon);
+			&:extend(.luigi-icon-message);
+			content: '';
+			position: relative;
+			top: -1px;
+			width: @font-sml;
+			height: @font-sml;
+			margin-right: @base;
+			vertical-align: middle;
+		}
+	}
+
+	.rtb-text.date label:before {
+		&:extend(.luigi-icon-date);
+	}
+
+	.rtb-text.time label:before {
+		&:extend(.luigi-icon-time);
+	}
+
+	.rtb-select.party label:before {
+		&:extend(.luigi-icon-party);
+	}
+
+	.rtb-text.name label:before {
+		&:extend(.luigi-icon-name);
+	}
+
+	.rtb-text.email label:before {
+		&:extend(.luigi-icon-contact);
+	}
+
+	.rtb-text.phone label:before {
+		&:extend(.luigi-icon-phone);
+	}
+
+	.rtb-text label,
+	.rtb-select label {
+		border-bottom: none;
+	}
+
+	.rtb-text input,
+	.rtb-select select {
+		width: 100%;
+	}
+
+	.rtb-select select {
+		padding-bottom: 11px;
+	}
+
+	.rtb-checkbox,
+	.rtb-radio,
+	.rtb-textarea {
+
+		label {
+			border-bottom: none;
+		}
+	}
+
+	.rtb-text.date input,
+	.rtb-text.time input {
+		cursor: pointer;
+	}
+
+	.message {
+		margin-top: 0;
+	}
+
+	.add-message {
+		display: none;
+	}
+
+	// Outline of picker input fields when picker opened
+	.picker__input.picker__input--active {
+		outline: 0;
+		border-left: 4px solid;
+		border-color: @primary;
+		padding-left: @double - 3px;
+	}
+
+	// Mailchimp opt-in field
+	.mc-optin {
+		margin-top: 0;
+
+		label {
+			font-weight: @normal;
+			text-transform: none;
+
+			&:before {
+				display: none;
+			}
+		}
+
+		input {
+			position: relative;
+			top: -1px;
+			vertical-align: middle;
+			margin-right: 0.5em;
+		}
+	}
+
+	@media(min-width: @screen-xs) {
+
+		.rtb-text,
+		.rtb-select {
+			.clearfix();
+
+			label {
+				float: left;
+				width: 40%;
+				border-right: none;
+				border-bottom: @border-line;
+			}
+		}
+
+		.rtb-text input,
+		.rtb-select select {
+			float: right;
+			width: 60%;
+		}
+	}
+
+	@media(min-width: @screen-sm) {
+		.clearfix();
+
+		fieldset {
+			float: left;
+			width: 50%;
+
+			> div,
+			legend {
+				padding-right: @triple;
+			}
+		}
+
+		fieldset.contact legend {
+			opacity: 0;
+		}
+
+		.message-set,
+		.optin {
+			float: none;
+			width: 100%;
+		}
+
+		button {
+			clear: left;
+			display: block;
+		}
+	}
+}
+
+@media(min-width: @screen-lg) {
+
+	.luigi-primary-sidebar-inactive .rtb-booking-form {
+
+		.rtb-text label,
+		.rtb-select label {
+			width: 30%;
+		}
+
+		.rtb-text input,
+		.rtb-select select {
+			width: 70%;
+		}
+	}
+}
+
+// Date and time picker
+.picker {
+
+	.picker__holder {
+		cursor: pointer;
+	}
+
+	button {
+		color: @text;
+	}
+
+	.picker__list {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.picker__list-item:first-child {
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
+	&.picker--time .picker__button--clear {
+		width: 100%;
+		margin: 0;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+}

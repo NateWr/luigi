@@ -1,0 +1,83 @@
+//
+// Post styles for common form elements
+//
+fieldset {
+	margin: @triple 0;
+	padding: 0;
+	border: none;
+}
+
+legend {
+	font-size: 22px;
+	font-weight: @bold;
+	text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+select,
+textarea {
+	display: block;
+	padding: 11px @double 12px;
+	border: @border-line;
+	background: @bg-lift;
+	font-size: @font-tiny;
+	line-height: @line-tiny;
+
+	&:hover {
+		border-color: @primary;
+	}
+
+	&:focus {
+		outline: 0;
+		border-left: 4px solid;
+		border-color: @primary;
+		padding-left: @double - 3px;
+	}
+}
+
+select {
+	cursor: pointer;
+}
+
+textarea {
+	width: 100%;
+	min-height: 10em;
+}
+
+label {
+	display: inline-block;
+	margin-top: @triple;
+	margin-bottom: @half;
+	font-size: @font-tiny;
+	line-height: @line-tiny;
+	font-weight: @bold;
+	text-transform:uppercase;
+	cursor: pointer;
+}
+
+input[type="button"],
+button {
+	&:extend(.luigi-button all);
+}
+
+input[disabled],
+button[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+button[readonly],
+select[readonly],
+textarea[readonly] {
+	cursor: not-allowed;
+}

@@ -67,6 +67,7 @@
 	font-size: @font-tiny;
 	line-height: @line-sml;
 	background: @text;
+	border: none;
 	color: #fff;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -75,6 +76,10 @@
 	&:focus {
 		background: @primary-lift;
 		color: @text;
+	}
+
+	&:active {
+		background: @primary;
 	}
 
 	@media(min-width: @screen-sm) {
@@ -128,6 +133,22 @@
 
 .luigi-icon-time {
 	background-image: url( @path-icon-time );
+}
+
+.luigi-icon-date {
+	background-image: url( @path-icon-date );
+}
+
+.luigi-icon-name {
+	background-image: url( @path-icon-name );
+}
+
+.luigi-icon-party {
+	background-image: url( @path-icon-party );
+}
+
+.luigi-icon-message {
+	background-image: url( @path-icon-message );
 }
 
 .luigi-icon-w-location {

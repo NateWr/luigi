@@ -64,6 +64,8 @@ if ( !function_exists( 'luigi_load_context' ) ) {
 		add_action( 'get_header', 'luigi_load_frontend' );
 		add_action( 'init', 'luigi_load_customizer' );
 		add_action( 'widgets_init', 'luigi_load_widgets' );
+		add_action( 'admin_init', 'luigi_load_admin' );
+		add_action( 'init', 'luigi_load_init' );
 	}
 }
 
@@ -78,6 +80,7 @@ if ( !function_exists( 'luigi_load_frontend' ) ) {
 		include_once( 'lib/WAI-ARIA-Walker_Nav_Menu/aria-walker-nav-menu.php' );
 		include_once( 'includes/template-helpers.php' );
 		include_once( 'includes/template-shortcodes.php' );
+		include_once( 'includes/integrations/restaurant-reservations.php' );
 	}
 }
 
@@ -101,9 +104,31 @@ if ( !function_exists( 'luigi_load_widgets' ) ) {
 	 * @since 0.0.1
 	 */
 	function luigi_load_widgets() {
-		include( get_template_directory() . '/includes/widgets/luigi-recent-posts.php' );
+		include_once( 'includes/widgets/luigi-recent-posts.php' );
 
 		unregister_widget( 'WP_Widget_Recent_Posts' );
 		register_widget( 'Luigi_Widget_Recent_Posts' );
+	}
+}
+
+if ( !function_exists( 'luigi_load_admin' ) ) {
+	/**
+	 * Load files handling admin area
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_load_admin() {
+		include_once( 'includes/integrations/restaurant-reservations.php' );
+	}
+}
+
+if ( !function_exists( 'luigi_load_init' ) ) {
+	/**
+	 * Load files required globally that need to run during the `init` hook
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_load_init() {
+		include_once( 'includes/integrations/restaurant-reservations.php' );
 	}
 }
