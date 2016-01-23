@@ -114,3 +114,116 @@
 .luigi-clc-mixer-contact .bp-map {
 	min-height: 300px;
 }
+
+// Booking form
+.luigi-clc-mixer-booking_form {
+
+	fieldset,
+	fieldset > div:nth-child(2) {
+		margin-top: 0;
+	}
+
+	legend {
+		position: absolute;
+		top: 0;
+		left: -9999px;
+	}
+
+	.rtb-booking-form { // extra specificity to overwrite default styles
+
+		@media(min-width: @screen-xs) {
+
+			.rtb-text,
+			.rtb-select {
+
+				label {
+					float: none;
+					width: 100%;
+					border-bottom: none;
+					border-right: @border-line;
+				}
+			}
+
+			.rtb-text input,
+			.rtb-select select {
+				float: none;
+				width: 100%;
+			}
+		}
+
+		// Don't switch to 2-column form until later
+		@media(min-width: @screen-sm) and (max-width: (@screen-lg - 1)) {
+
+			fieldset {
+				float: none;
+				width: 100%;
+
+				> div,
+				legend {
+					margin-right: 0;
+				}
+			}
+		}
+
+		@media(min-width: @screen-md) {
+
+			.rtb-text,
+			.rtb-select {
+
+				label {
+					float: left;
+					width: 40%;
+					border-right: none;
+					border-bottom: @border-line;
+				}
+			}
+
+			.rtb-text input,
+			.rtb-select select {
+				float: right;
+				width: 60%;
+			}
+		}
+
+		form { // extra specificity to overwrite default styles
+
+			@media(min-width: @screen-lg) {
+
+				.rtb-text label,
+				.rtb-select label {
+					border-right: @border-line;
+					border-bottom: none;
+				}
+
+				.rtb-text label,
+				.rtb-select label,
+				.rtb-text input,
+				.rtb-select select {
+					width: 100%;
+				}
+			}
+
+			@media(min-width: @screen-xl) {
+
+				.rtb-text,
+				.rtb-select {
+
+					label {
+						width: 50%;
+						border-right: none;
+						border-bottom: @border-line;
+					}
+				}
+
+				.rtb-text input,
+				.rtb-select select {
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	button {
+		margin: 0 auto;
+	}
+}
