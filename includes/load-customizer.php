@@ -243,19 +243,22 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 			),
 		);
 
-		$components['luigi-posts-reviews'] = array(
-			'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-posts-reviews.php',
-			'class'       => 'Luigi_CLC_Component_Reviews',
-			'name'        => esc_html__( 'Review', 'luigi' ),
-			'description' => esc_html__( 'Display one or more reviews.', 'luigi' ),
-			'limit_posts' => 3,
-			'i18n'        => array(
-				'posts_loading' => esc_html__( 'Loading', 'luigi' ),
-				'posts_remove_button' => esc_html__( 'Remove', 'luigi' ),
-				'placeholder'         => esc_html__( 'No review selected.', 'luigi' ),
-				'posts_add_button'    => esc_html__( 'Add Review', 'luigi' ),
-			),
-		);
+		global $grfwp_controller;
+		if ( isset( $grfwp_controller ) ) {
+			$components['luigi-posts-reviews'] = array(
+				'file'        => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-posts-reviews.php',
+				'class'       => 'Luigi_CLC_Component_Reviews',
+				'name'        => esc_html__( 'Review', 'luigi' ),
+				'description' => esc_html__( 'Display one or more reviews.', 'luigi' ),
+				'limit_posts' => 3,
+				'i18n'        => array(
+					'posts_loading' => esc_html__( 'Loading', 'luigi' ),
+					'posts_remove_button' => esc_html__( 'Remove', 'luigi' ),
+					'placeholder'         => esc_html__( 'No review selected.', 'luigi' ),
+					'posts_add_button'    => esc_html__( 'Add Review', 'luigi' ),
+				),
+			);
+		}
 
 		$components['luigi-mixer'] = array(
 			'file'          => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-mixer.php',
