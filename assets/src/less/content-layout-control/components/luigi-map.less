@@ -1,0 +1,25 @@
+//
+// Map component
+// Content Layout Control component
+//
+.clc-component-luigi-map {
+	position: relative;
+	top: -1px; // cover border from previous component
+	padding: 0;
+	width: 100%;
+	max-width: 100%;
+
+	.bp-map {
+
+		@media(min-width: @screen-sm) {
+			min-height: 500px;
+		}
+
+		@media(min-width: @screen-lg) {
+			min-height: 700px;
+		}
+	}
+}
+.site-main .clc-component-layout.clc-component-luigi-map {
+	border-bottom: none;
+}

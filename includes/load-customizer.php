@@ -95,7 +95,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 				array(
 					'section'    => 'content_layout_control',
 					'priority'   => 1,
-					'components' => array( 'luigi-hero-block', 'luigi-content-block', 'luigi-posts-reviews', 'luigi-mixer' ),
+					'components' => array( 'luigi-hero-block', 'luigi-content-block', 'luigi-posts-reviews', 'luigi-mixer', 'luigi-map' ),
 					'i18n' => array(
 						'add_component'                 => esc_html__( 'Add Component', 'luigi' ),
 						'edit_component'                => esc_html__( 'Edit', 'luigi' ),
@@ -270,6 +270,19 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 				'right_title' => esc_html__( 'Right Title', 'luigi' ),
 			),
 		);
+
+		global $bpfwp_controller;
+		if ( isset( $bpfwp_controller ) ) {
+			$components['luigi-map'] = array(
+				'file'          => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-map.php',
+				'class'         => 'Luigi_CLC_Component_Map',
+				'name'          => esc_html__( 'Map', 'luigi' ),
+				'description'   => esc_html__( 'A full-width map identifying your location.', 'luigi' ),
+				'i18n'          => array(
+					'description' => sprintf( esc_html__( 'To change the address, edit your %sBusiness Profile%s.', 'luigi' ), '<a href="' . admin_url( 'admin.php?page=bpfwp-settings' ) . '">', '</a>' ),
+				),
+			);
+		}
 
 		return $components;
 	}
