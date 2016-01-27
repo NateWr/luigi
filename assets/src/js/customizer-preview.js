@@ -95,7 +95,7 @@
 						spinner: '#masthead .home-link'
 					},
 					function( response, params ) {
-						var img = $( '<img src="' + luigi_theme_customizer_preview.upload_dir_url + '/' + response.data.file + '" class="logo-image">' );
+						var img = $( '<img src="' + luigi_theme_customizer.upload_dir_url + '/' + response.data.file + '" class="logo-image">' );
 						if ( wp.customize.get().site_logo_scale != 93 ) {
 							img.css( 'max-height', wp.customize.get().site_logo_scale + 'px' );
 						}
@@ -118,6 +118,62 @@
 	wp.customize( 'site_logo_scale', function( val ) {
 		val.bind( function( to ) {
 			cache.get( 'logo', '#masthead .logo-image' ).css( 'max-height', to + 'px' );
+		} );
+	} );
+
+	/**
+	 * Update the footer logo
+	 *
+	 * @since 0.0.1
+	 */
+	wp.customize( 'footer_logo', function( val ) {
+		val.bind( function( to ) {
+			cache.clear( 'logo_footer' );
+
+			// Logo removed
+			if ( !to ) {
+				cache.get( 'home_link_footer', '#colophon .home-link' ).text( wp.customize.get().blogname );
+				cache.clear( 'home_link_footer' );
+
+				if ( !cache.get( 'tagline_footer', '#colophon .site-tagline' ).length ) {
+					cache.get( 'home_link_footer', '#colophon .home-link' ).after(
+						$( '<span class="site-tagline"></span>' ).text( wp.customize.get().blogdescription )
+					);
+					cache.clear( 'tagline_footer' );
+				}
+
+			// Logo added
+			} else {
+				ajax(
+					{
+						route: 'site_logo',
+						site_logo: to,
+						spinner: '#colophon .home-link'
+					},
+					function( response, params ) {
+						var img = $( '<img src="' + luigi_theme_customizer.upload_dir_url + '/' + response.data.file + '" class="logo-image">' );
+						if ( wp.customize.get().footer_logo_scale != 72 ) {
+							img.css( 'max-height', wp.customize.get().footer_logo_scale + 'px' );
+						}
+						cache.get( 'home_link_footer', '#colophon .home-link' ).html( img );
+						cache.get( 'tagline_footer', '#colophon .site-tagline' ).remove();
+						cache.clear( 'tagline_footer' );
+						cache.clear( 'home_link_footer' );
+						cache.clear( 'logo_footer' );
+					}
+				);
+			}
+		} );
+	} );
+
+	/**
+	 * Update the footer logo scale
+	 *
+	 * @since 0.0.1
+	 */
+	wp.customize( 'footer_logo_scale', function( val ) {
+		val.bind( function( to ) {
+			cache.get( 'logo_footer', '#colophon .logo-image' ).css( 'max-height', to + 'px' );
 		} );
 	} );
 

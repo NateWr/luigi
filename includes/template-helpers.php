@@ -14,20 +14,31 @@ if ( !function_exists( 'luigi_print_logo' ) ) {
 	 *
 	 * @since 0.0.1
 	 */
-	function luigi_print_logo() {
+	function luigi_print_logo( $logo_setting = 'site_logo', $scale_setting = 'site_logo_scale' ) {
 
-		$logo_url = wp_get_attachment_url( get_theme_mod( 'site_logo' ) );
+		$logo_url = wp_get_attachment_url( get_theme_mod( $logo_setting ) );
 		if ( !$logo_url ) {
 			return;
 		}
 
-		$scale = get_theme_mod( 'site_logo_scale', 93 );
+		$scale = get_theme_mod( $scale_setting, 93 );
 		$scale = $scale == 93 ? '' : ' style="max-height: ' . absint( $scale ) . 'px"';
 		?>
 
 		<img src="<?php echo $logo_url; ?>" class="logo-image" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"<?php echo $scale; ?>>
 
 		<?php
+	}
+}
+
+if ( !function_exists( 'luigi_print_footer_logo' ) ) {
+	/**
+	 * Print the footer logo
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_print_footer_logo() {
+		luigi_print_logo( 'footer_logo', 'footer_logo_scale' );
 	}
 }
 

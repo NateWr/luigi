@@ -35,6 +35,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 		$wp_customize->get_section( 'title_tagline' )->title = esc_html__( 'Logo, Site Title and Tagline', 'luigi' );
 
+		// Logo
 		$wp_customize->add_setting(
 			'site_logo',
 			array(
@@ -71,6 +72,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 			)
 		);
 
+		// Content Layout Control
 		$wp_customize->add_section(
 			'content_layout_control',
 			array(
@@ -108,6 +110,87 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 						'links_back'                    => esc_html__( '&larr; Back to link form', 'luigi' ),
 					),
 				)
+			)
+		);
+
+		// Footer
+		$wp_customize->add_section(
+			'footer',
+			array(
+				'capability' => 'edit_theme_options',
+				'title'      => __( 'Footer', 'luigi' ),
+			)
+		);
+
+		$wp_customize->add_setting(
+			'footer_logo',
+			array(
+				'sanitize_callback' => 'absint',
+				'transport'         => 'postMessage',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'footer_logo_scale',
+			array(
+				'default'           => 72,
+				'sanitize_callback' => 'absint',
+				'transport'         => 'postMessage',
+			)
+		);
+
+		$wp_customize->add_control(
+			new Luigi_WP_Customize_Scaled_Image_Control(
+				$wp_customize,
+				'footer_logo',
+				array(
+					'label'     => __( 'Logo', 'luigi' ),
+					'section'   => 'footer',
+					'settings'  => array(
+						'footer_logo' => 'footer_logo',
+						'footer_logo_scale' => 'footer_logo_scale',
+					),
+					'priority'  => 1,
+					'mime_type' => 'image',
+					'min'       => 40,
+					'max'       => 150,
+				)
+			)
+		);
+
+		$wp_customize->add_setting(
+			'footer_description',
+			array(
+				'default'           => '',
+				'sanitize_callback' => 'wp_kses_post',
+				'transport'         => 'postMessage',
+			)
+		);
+
+		$wp_customize->add_control(
+			'footer_description',
+			array(
+				'label'          => __( 'Site Description', 'thespot' ),
+				'section'        => 'footer',
+				'type'           => 'textarea',
+			)
+		);
+
+		$wp_customize->add_setting(
+			'copyright',
+			array(
+				'default'           => '',
+				'sanitize_callback' => 'sanitize_text_field',
+				'transport'         => 'postMessage',
+			)
+		);
+
+		$wp_customize->add_control(
+			'copyright',
+			array(
+				'label'          => __( 'Copyright', 'thespot' ),
+				'section'        => 'footer',
+				'type'           => 'text',
 			)
 		);
 	}

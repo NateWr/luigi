@@ -1,0 +1,111 @@
+//
+// Footer
+//
+.site-footer {
+	padding-top: 60px;
+	padding-bottom: 20px;
+	background: @bg-lift;
+
+	.identity {
+		margin-bottom: @triple;
+	}
+
+	.home-link {
+		display: block;
+		font-family: @font-alt;
+		font-size: @font-logo-sml;
+		font-weight: @normal;
+		line-height: @line-logo-sml;
+		color: @primary;
+		text-decoration: none;
+
+		img {
+			display: block;
+			max-width: 200px;
+			max-height: 72px;
+		}
+	}
+
+	.site-tagline {
+		display: block;
+		margin-top: -@base;
+		font-size: @font-tinier;
+		font-weight: @semibold;
+		line-height: @line-sml;
+		text-transform: uppercase;
+	}
+
+	.description {
+		margin-top: @triple;
+		margin-bottom: @triple;
+		font-size: @font-tiny;
+		line-height: @line-base;
+	}
+
+	.copyright {
+		margin-top: @double;
+		font-size: @font-tinier;
+		line-height: @line-tinier;
+		color: @text-light;
+	}
+
+}
+
+@media(min-width: @screen-sm) {
+
+	.site-footer-top {
+		.clearfix();
+
+		.identity,
+		.contact {
+			float: left;
+			width: 50%;
+		}
+
+		.identity {
+			margin-bottom: 0;
+			padding-right: @double;
+		}
+
+		.contact {
+			float: right;
+			padding-right: @double;
+		}
+	}
+
+	.site-footer-btm {
+		.clearfix();
+		margin-top: 40px;
+
+		.luigi-social-menu {
+			float: right;
+			width: 50%;
+			text-align: right;
+		}
+
+		.copyright {
+			float: left;
+			width: 50%;
+			margin-top: 0;
+			padding-top: @half;
+			padding-bottom: @half;
+		}
+	}
+}
+
+// Smaller text in contact card on small screens
+@media(max-width: (@screen-md - 1)) {
+
+	.site-footer {
+
+		.bp-name,
+		.bp-phone,
+		.bp-contact {
+			font-size: @font-sml;
+		}
+
+		.bp-address {
+			font-size: @font-tiny;
+		}
+	}
+}

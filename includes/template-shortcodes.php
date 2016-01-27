@@ -124,7 +124,7 @@ if ( !function_exists( 'luigi_shortcode_bpfwp_contact_card' ) ) {
 			</div>
 			<?php if ( $bpfwp_controller->display_settings['show_get_directions'] || ( isset( $bpfwp_controller->display_settings['show_booking_link'] ) && $bpfwp_controller->display_settings['show_booking_link'] ) ) : ?>
 				<div class="luigi-contact-card-links">
-					<?php if ( $bpfwp_controller->display_settings['show_get_directions'] && $bpfwp_controller->settings->get_setting( 'address'  ) ) : ?>
+					<?php if ( $bpfwp_controller->display_settings['show_get_directions'] && $bpfwp_controller->settings->get_setting( 'address'  ) ) : $address = $bpfwp_controller->settings->get_setting( 'address'  ); ?> 
 						<div class="bp-directions">
 							<a href="//maps.google.com/maps?saddr=current+location&daddr=<?php echo urlencode( esc_attr( $address['text'] ) ); ?>"><?php _e( 'Get directions', 'luigi' ); ?></a>
 						</div>
