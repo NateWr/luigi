@@ -30,7 +30,16 @@
 	 * @since 0.0.1
 	 */
 	function has_logo() {
-		return typeof wp.customize.get().site_logo !== 'undefined' && wp.customize.get().site_logo !== '0' && wp.customize.get().site_logo !== '';
+		return typeof wp.customize.get().site_logo !== 'undefined' && wp.customize.get().site_logo !== 0 && wp.customize.get().site_logo !== '';
+	}
+
+	/**
+	 * Check if a footer logo is being used
+	 *
+	 * @since 0.0.1
+	 */
+	function has_footer_logo() {
+		return typeof wp.customize.get().footer_logo !== 'undefined' && wp.customize.get().footer_logo !== 0 && wp.customize.get().footer_logo !== '';
 	}
 
 	/**
@@ -42,6 +51,9 @@
 		val.bind( function( to ) {
 			if ( !has_logo() ) {
 				cache.get( 'home_link', '#masthead .home-link' ).text( to );
+			}
+			if ( !has_footer_logo() ) {
+				cache.get( 'footer_home_link', '#colophon .home-link' ).text( to );
 			}
 		} );
 	} );
@@ -58,6 +70,15 @@
 					cache.get( 'tagline', '#masthead .site-tagline' ).text( to );
 				} else {
 					cache.get( 'home_link', '#masthead .home-link' ).after(
+						$( '<span class="site-tagline"></span>' ).text( to )
+					);
+				}
+			}
+			if ( !has_footer_logo() ) {
+				if ( cache.get( 'footer_tagline', '#colophon .site-tagline' ).length ) {
+					cache.get( 'footer_tagline', '#colophon .site-tagline' ).text( to );
+				} else {
+					cache.get( 'footer_home_link', '#colophon .home-link' ).after(
 						$( '<span class="site-tagline"></span>' ).text( to )
 					);
 				}
@@ -174,6 +195,42 @@
 	wp.customize( 'footer_logo_scale', function( val ) {
 		val.bind( function( to ) {
 			cache.get( 'logo_footer', '#colophon .logo-image' ).css( 'max-height', to + 'px' );
+		} );
+	} );
+
+	/**
+	 * Update the site title if it's being displayed
+	 *
+	 * @since 0.0.1
+	 */
+	wp.customize( 'footer_description', function( val ) {
+		val.bind( function( to ) {
+			if ( cache.get( 'footer_description', '#colophon .identity .description' ).length ) {
+				cache.get( 'footer_description', '#colophon .identity .description' ).text( to );
+			} else {
+				cache.get( 'footer_identity', '#colophon .identity' ).append(
+					$( '<div class="description"></div>' ).text( to )
+				);
+				cache.clear( 'footer_description' );
+			}
+		} );
+	} );
+
+	/**
+	 * Update the site title if it's being displayed
+	 *
+	 * @since 0.0.1
+	 */
+	wp.customize( 'copyright', function( val ) {
+		val.bind( function( to ) {
+			if ( cache.get( 'copyright', '#colophon .site-footer-btm .copyright' ).length ) {
+				cache.get( 'copyright', '#colophon .site-footer-btm .copyright' ).text( to );
+			} else {
+				cache.get( 'footer_bottom', '#colophon .site-footer-btm' ).append(
+					$( '<div class="copyright"></div>' ).text( to )
+				);
+				cache.clear( 'copyright' );
+			}
 		} );
 	} );
 
