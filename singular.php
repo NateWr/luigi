@@ -1,10 +1,8 @@
 <?php
 /**
- * The template for displaying all pages
+ * The template for displaying all singular posts and pages
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other 'pages' on your WordPress site will use a different template.
+ * This is the template that displays all single post or page requests.
  *
  * @package luigi
  */
