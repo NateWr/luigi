@@ -67,10 +67,20 @@
 		&:hover,
 		&:focus {
 			background: @text;
+			color: #fff;
 		}
 	}
 }
 
 #luigi-preview-trigger-header_logo:before {
 	content: "\f128";
+}
+
+#colophon .luigi-preview-trigger-container.home-link {
+	position: relative;
+
+	.luigi-preview-trigger{
+		left: 0;
+		transform: translateY(-50%);
+	}
 }

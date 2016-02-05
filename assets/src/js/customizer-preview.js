@@ -242,6 +242,7 @@
 	$( function() {
 		wp.customize.preview.bind( 'active', function() {
 			add_trigger( 'header_logo', cache.get( 'header_brand', '#masthead .brand' ), 'site_logo' );
+			add_trigger( 'footer_logo', cache.get( 'footer_logo', '#colophon .identity .home-link' ), 'footer_logo' );
 		});
 	} );
 
