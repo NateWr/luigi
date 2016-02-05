@@ -1,0 +1,324 @@
+//
+// Styles for the Food and Drink Menu plugin
+//
+.fdm-menu {
+    &:extend(.unstyled_list);
+
+    ul {
+        &:extend(.unstyled_list);
+    }
+}
+
+.fdm-section + .fdm-section,
+.fdm-column + .fdm-column {
+    margin-top: @triple * 3;
+}
+
+.fdm-section-header h3 {
+    margin-top: 0;
+    margin-bottom: 50px;
+    padding-bottom: @base - 1;
+    font-size: @font-lead;
+    line-height: @line-lead;
+    text-transform: uppercase;
+    border-bottom: @border-line-light;
+}
+
+.fdm-item {
+    margin-bottom: 50px;
+}
+
+.fdm-item-image {
+    display: block;
+    margin-bottom: @double;
+    border: @border-line-light;
+}
+
+.fdm-item-panel {
+    position: relative;
+    padding-right: 80px; // price
+}
+
+.fdm-item-special {
+    position: relative;
+    top: -@triple;
+    margin-top: @triple;
+    margin-bottom: -@triple;
+    font-size: @font-tiny;
+    font-weight: @semibold;
+    line-height: @triple;
+    text-transform: uppercase;
+    color: @no;
+}
+
+.fdm-item-offer {
+    color: #0082E4;
+}
+
+.fdm-item-featured {
+    color: #6CB500;
+}
+
+.fdm-item-title {
+    margin-top: 0;
+    margin-bottom: @base;
+    font-size: @font-base;
+    line-height: @line-base;
+    font-weight: @bold;
+    text-transform: uppercase;
+}
+
+.fdm-item-price-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: @font-sml;
+    font-weight: @semibold;
+    line-height: @line-base;
+    color: @primary;
+    text-align: right;
+
+    > span {
+        display: block;
+    }
+}
+
+.fdm-item-has-price-discount .fdm-item-price {
+    font-weight: @normal;
+    font-style: italic;
+    color: @text-light;
+    text-decoration: line-through;
+}
+
+.fdm-item-content p {
+    font-size: @font-sml;
+    line-height: @line-sml;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.fdm-menu .fdm-menu-item-flags {
+    margin-top: @base;
+}
+
+.fdm-menu-item-flags li {
+    display: inline-block;
+    margin-right: 0.5em;
+    line-height: 40px;
+    vertical-align: middle;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.fdm-item-flag-text {
+    margin-right: @base;
+    font-size: @font-tiny;
+    font-weight: @semibold;
+    line-height: @line-tiny;
+    text-transform: uppercase;
+    color: @primary;
+}
+
+.fdm-src-panel {
+    padding-top: @double;
+    font-size: @font-tiny;
+    color: @text-light;
+
+    .src-title {
+        margin: 0;
+        line-height: @line-base;
+        font-weight: @semibold;
+        text-transform: uppercase;
+    }
+}
+
+.fdm-item-src-desc {
+    margin: 0;
+    line-height: @line-sml;
+}
+
+.fdm-item-src-map {
+    display: block;
+    margin: @base auto;
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+@media(min-width: @screen-xs) {
+
+    .fdm-item {
+        .clearfix;
+    }
+
+    .fdm-item-image {
+        display: block;
+        float: left;
+        width: 20%;
+        clear: left;
+    }
+
+    .fdm-item-has-image .fdm-item-panel {
+        float: right;
+        padding-left: @double;
+        width: 80%;
+    }
+
+    .fdm-item-special {
+        position: absolute;
+        top: -@triple;
+        margin: auto;
+    }
+
+    .fdm-src-panel {
+        clear: both;
+    }
+}
+
+@media(min-width: @screen-sm) {
+
+    .fdm-menu {
+        .clearfix;
+    }
+
+    .fdm-column {
+        float: left;
+        width: 50%;
+        padding-right: @double;
+
+        + .fdm-column {
+            margin-top: 0;
+            padding-right: 0;
+            padding-left: @double;
+        }
+    }
+}
+
+// Menu Item Flag icons
+.fdm-icon {
+    background-image: url('assets/img/item-flags.png');
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    display: block;
+	background-position: 32px 32px;
+}
+
+.fdm-icon-chili {
+    background-position: 0 0;
+}
+
+.fdm-icon-chili-2 {
+    background-position: -32px 0;
+}
+
+.fdm-icon-chili-3 {
+    background-position: -64px 0;
+}
+
+.fdm-icon-decaf {
+    background-position: -96px 0;
+}
+
+.fdm-icon-fair-trade {
+    background-position: -128px 0;
+}
+
+.fdm-icon-free-range {
+    background-position: 0 -32px;
+}
+
+.fdm-icon-halal {
+    background-position: -32px -32px;
+}
+
+.fdm-icon-has-dairy {
+    background-position: -64px -32px;
+}
+
+.fdm-icon-has-peanuts {
+    background-position: -96px -32px;
+}
+
+.fdm-icon-has-sesame {
+    background-position: -128px -32px;
+}
+
+.fdm-icon-has-shellfish {
+    background-position: 0 -64px;
+}
+
+.fdm-icon-kosher {
+    background-position: -32px -64px;
+}
+
+.fdm-icon-local {
+    background-position: -64px -64px;
+}
+
+.fdm-icon-low-sodium {
+    background-position: -96px -64px;
+}
+
+.fdm-icon-no-dairy {
+    background-position: -128px -64px;
+}
+
+.fdm-icon-no-gluten {
+    background-position: 0 -96px;
+}
+
+.fdm-icon-no-gm {
+    background-position: -32px -96px;
+}
+
+.fdm-icon-no-peanuts {
+    background-position: -64px -96px;
+}
+
+.fdm-icon-no-sesame {
+    background-position: -96px -96px;
+}
+
+.fdm-icon-no-shellfish {
+    background-position: -128px -96px;
+}
+
+.fdm-icon-no-sugar {
+    background-position: 0 -128px;
+}
+
+.fdm-icon-organic {
+    background-position: -32px -128px;
+}
+
+.fdm-icon-superfood {
+    background-position: -64px -128px;
+}
+
+.fdm-icon-superfood-2 {
+    background-position: -96px -128px;
+}
+
+.fdm-icon-vegan {
+    background-position: -128px -128px;
+}
+
+.fdm-icon-vegetarian {
+    background-position: -160px 0;
+}
+
+.fdm-icon-vegetarian-2 {
+    background-position: -160px -32px;
+}
+
+.fdm-icon-wholegrain {
+    background-position: -160px -64px;
+}

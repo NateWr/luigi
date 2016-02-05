@@ -4,7 +4,7 @@
  *
  * @package    luigi
  */
-if ( !function_exists( 'luigi_move_message-field' ) ) {
+if ( !function_exists( 'luigi_move_message_field' ) ) {
 	/**
 	 * Move the message field into its own fieldset
 	 *

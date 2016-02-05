@@ -65,7 +65,7 @@ if ( !function_exists( 'luigi_load_context' ) ) {
 		add_action( 'init', 'luigi_load_customizer' );
 		add_action( 'widgets_init', 'luigi_load_widgets' );
 		add_action( 'admin_init', 'luigi_load_admin' );
-		add_action( 'init', 'luigi_load_init' );
+		add_action( 'init', 'luigi_load_init', 5 );
 	}
 }
 
@@ -81,6 +81,7 @@ if ( !function_exists( 'luigi_load_frontend' ) ) {
 		include_once( 'includes/template-helpers.php' );
 		include_once( 'includes/template-shortcodes.php' );
 		include_once( 'includes/integrations/restaurant-reservations.php' );
+		include_once( 'includes/integrations/food-and-drink-menu.php' );
 	}
 }
 
@@ -130,5 +131,6 @@ if ( !function_exists( 'luigi_load_init' ) ) {
 	 */
 	function luigi_load_init() {
 		include_once( 'includes/integrations/restaurant-reservations.php' );
+		include_once( 'includes/integrations/food-and-drink-menu.php' );
 	}
 }

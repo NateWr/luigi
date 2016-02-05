@@ -59,6 +59,9 @@ if ( !function_exists( 'luigi_dequeue_footer_assets' ) ) {
 		wp_dequeue_style( 'bpfwp-default' );
 		wp_dequeue_style( 'gr-reviews' );
 		wp_dequeue_style( 'rtb-booking-form' );
+		wp_dequeue_style( 'fdm-css-base' );
+		wp_dequeue_style( 'fdm-css-classic' );
+		wp_dequeue_style( 'fdm-css-base-pro' );
 	}
 	add_action( 'wp_footer', 'luigi_dequeue_footer_assets' );
 }
