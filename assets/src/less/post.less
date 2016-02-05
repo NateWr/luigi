@@ -1,7 +1,54 @@
 //
 // Post styles including title, post meta, and summary view
 //
+
+.entry-header {
+	margin-bottom: 60px;
+}
+
+.entry-title {
+	margin: 0;
+	max-width: @max-text-width;
+	font-size: @font-title;
+	line-height: @line-title;
+	font-weight: @bold;
+	text-transform: uppercase;
+}
+
+.entry-meta {
+	margin-top: 60px;
+	font-weight: @semibold;
+	text-transform: uppercase;
+}
+
+.entry-content {
+	font-size: @font-sml;
+	line-height: @line-lead;
+
+	p {
+		margin-top: @double;
+		margin-bottom: @double;
+		max-width: @max-text-width;
+	}
+
+	@media(min-width: @screen-sm) {
+		font-size: @font-base;
+	}
+}
+
+.entry-footer {
+	margin-top: 60px;
+}
+
 .post-summary {
+
+	.entry-header {
+		margin-bottom: 0;
+	}
+
+	.entry-meta {
+		margin-top: 0;
+	}
 
 	.entry-date {
 		font-size: @font-tinier;
@@ -48,22 +95,6 @@
 	}
 }
 
-.entry-title {
-	font-size: @font-title;
-	line-height: @line-title;
-	font-weight: @bold;
-}
-
-.entry-content {
-	font-size: @font-sml;
-	line-height: @line-lead;
-
-	p {
-		margin-top: @double;
-		margin-bottom: @double;
-	}
-
-	@media(min-width: @screen-sm) {
-		font-size: @font-base;
-	}
+.post-edit-link {
+	&:extend(.luigi-button all );
 }

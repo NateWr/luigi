@@ -59,7 +59,7 @@ class Luigi_Widget_Recent_Posts extends WP_Widget_Recent_Posts {
 		<ul>
 		<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 			<li>
-				<?php get_template_part( 'template-parts/post', 'summary' ); ?>
+				<?php get_template_part( 'content' ); ?>
 			</li>
 		<?php endwhile; ?>
 		</ul>

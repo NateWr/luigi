@@ -167,3 +167,22 @@
 .luigi-icon-w-time {
 	background-image: url( @path-icon-w-time );
 }
+
+// Search form
+.search-form {
+	margin-top: @triple;
+	margin-bottom: @triple;
+
+	label {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.search-field {
+		font-weight: @normal;
+	}
+
+	.search-submit {
+		&:extend( .luigi-button all );
+	}
+}
