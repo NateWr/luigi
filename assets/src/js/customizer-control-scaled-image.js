@@ -51,7 +51,7 @@
 			/**
 			 * ------
 			 * END: code above should be an exact copy of wp.customize.MediaControl.ready(),
-			 * except for a modification of the next lin.
+			 * except for a modification of the next line.
 			 * ------
 			 */
 			// Re-render whenever the control's setting changes.
