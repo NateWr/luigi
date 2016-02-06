@@ -13,6 +13,7 @@
 	line-height: @line-title;
 	font-weight: @bold;
 	text-transform: uppercase;
+	word-wrap: break-word;
 }
 
 .entry-meta {
@@ -24,15 +25,43 @@
 .entry-content {
 	font-size: @font-sml;
 	line-height: @line-lead;
+	word-wrap: break-word;
 
 	p {
-		margin-top: @double;
-		margin-bottom: @double;
+		margin-top: @triple;
+		margin-bottom: @triple;
+		word-wrap: break-word;
+	}
+
+	p,
+	ul {
 		max-width: @max-text-width;
 	}
 
 	@media(min-width: @screen-sm) {
 		font-size: @font-base;
+	}
+
+	.alignleft {
+		float: left;
+		margin-right: @double;
+	}
+
+	.alignright {
+		float: right;
+		margin-left: @double;
+	}
+
+	figure.aligncenter {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.page-links {
+		margin-top: @triple;
+		font-size: @font-sml;
+		font-weight: @semibold;
+		line-height: @line-sml;
 	}
 }
 
@@ -96,5 +125,21 @@
 }
 
 .post-edit-link {
-	&:extend(.luigi-button all );
+	&:extend(.luigi-button-link all );
+	&:extend(.luigi-button-link-primary all );
+}
+
+.post-password-form {
+
+	label {
+		margin-top: 0;
+	}
+
+	input[type="password"] {
+		margin-top: @base;
+	}
+
+	input[type="submit"] {
+		&:extend(.luigi-button all);
+	}
 }

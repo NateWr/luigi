@@ -62,7 +62,6 @@
 .luigi-button {
 	display: inline-block;
 	padding: @half @base;
-	font-family: @font;
 	font-weight: @semibold;
 	font-size: @font-tiny;
 	line-height: @line-sml;
@@ -100,6 +99,12 @@
 	color: @text;
 }
 
+.luigi-button-wire {
+	background: transparent;
+	color: @text;
+	border: 2px solid;
+}
+
 .luigi-button-sml {
 	font-size: @font-tinier;
 	line-height: @line-tinier;
@@ -109,6 +114,37 @@
 		font-size: @font-tinier;
 		line-height: @line-tinier;
 	}
+}
+
+.luigi-button-link {
+	display: inline-block;
+	font-weight: @semibold;
+	font-size: @font-tiny;
+	line-height: @line-tiny;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: @text;
+
+	&:hover,
+	&:focus {
+		outline: 0;
+		text-decoration: underline;
+		color: @text;
+	}
+}
+
+.luigi-button-link-primary {
+	color: @primary;
+
+	&:hover,
+	&:focus {
+		color: @primary-lift;
+	}
+}
+
+.luigi-button-link-sml {
+	font-size: @font-tinier;
+	line-height: @line-tinier;
 }
 
 // Icons

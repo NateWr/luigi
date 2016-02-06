@@ -23,8 +23,17 @@ a {
 	}
 }
 
-img {
+img,
+figure {
+	margin: 0;
+	height: auto;
 	max-width: 100%;
+}
+
+figcaption {
+	font-size: @font-tiny;
+	line-height: @line-tiny;
+	margin-bottom: @base;
 }
 
 h1,
@@ -122,14 +131,18 @@ dd {
 	padding-bottom: @half;
 }
 
-ul {
+ul,
+ol {
 	margin-top: @triple;
 	margin-bottom: @triple;
 	padding-left: @triple;
+}
 
-	ul {
-		margin: 0;
-	}
+ul ul,
+ol ol,
+ol ul,
+ul ol {
+	margin: 0;
 }
 
 acronym {
