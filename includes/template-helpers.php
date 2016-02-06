@@ -203,3 +203,40 @@ if ( !function_exists( 'luigi_print_mixer_content' ) ) {
 		echo apply_filters( 'luigi_print_mixer_content', ob_get_clean() );
 	}
 }
+
+if ( !function_exists( '_s_categorized_blog' ) ) {
+	/**
+	 * Returns true if a blog has more than 1 category.
+	 *
+	 * Helper function taken from _s: https://github.com/Automattic/_s/
+	 *
+	 * @return bool
+	 * @since 0.0.1
+	 */
+	function luigi_categorized_blog() {
+		if ( false === ( $all_the_cool_cats = get_transient( 'luigi_categories' ) ) ) {
+			$all_the_cool_cats = get_categories( array(
+				'fields'     => 'ids',
+				'hide_empty' => 1,
+				'number'     => 2,
+			) );
+			$all_the_cool_cats = count( $all_the_cool_cats );
+			set_transient( 'luigi_categories', $all_the_cool_cats );
+		}
+		return $all_the_cool_cats > 1;
+	}
+
+	/**
+	 * Flush out the transients used in luigi_categorized_blog
+	 *
+	 * @since 0.0.1.
+	 */
+	function luigi_category_transient_flusher() {
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return;
+		}
+		delete_transient( 'luigi_categories' );
+	}
+	add_action( 'edit_category', 'luigi_category_transient_flusher' );
+	add_action( 'save_post',     'luigi_category_transient_flusher' );
+}

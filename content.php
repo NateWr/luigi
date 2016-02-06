@@ -38,16 +38,30 @@
 
 	<?php if ( is_single() ) : ?>
 		<footer class="entry-footer">
+
 			<?php
-				edit_post_link(
-					sprintf(
-						/* translators: %s: Name of current post */
-						esc_html__( 'Edit %s', 'luigi' ),
-						the_title( '<span class="screen-reader-text">"', '"</span>', false )
-					),
-					'<span class="edit-link">',
-					'</span>'
-				);
+			if ( 'post' === get_post_type() ) {
+				/* translators: used between list items, there is a space after the comma */
+				$categories_list = get_the_category_list( esc_html__( ', ', 'luigi' ) );
+				if ( $categories_list && luigi_categorized_blog() ) {
+					printf( '<div class="cat-links">' . esc_html__( 'Posted in: %1$s', 'luigi' ) . '</div>', $categories_list );
+				}
+				/* translators: used between list items, there is a space after the comma */
+				$tags_list = get_the_tag_list( '', esc_html__( ', ', 'luigi' ) );
+				if ( $tags_list ) {
+					printf( '<div class="tags-links">' . esc_html__( 'Tagged: %1$s', 'luigi' ) . '</div>', $tags_list );
+				}
+			}
+
+			edit_post_link(
+				sprintf(
+					/* translators: %s: Name of current post */
+					esc_html__( 'Edit %s', 'luigi' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				),
+				'<div class="edit-link">',
+				'</div>'
+			);
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
