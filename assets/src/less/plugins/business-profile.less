@@ -2,6 +2,12 @@
 // Styles for handling the output of the Business Profile plugin
 //
 .bp-contact-card {
+	margin-left: auto;
+	margin-right: auto;
+	padding: @double;
+	max-width: 600px;
+	border: @border-line-light;
+	background: @bg-lift;
 	font-style: normal; // overwrite default <address> styling
 }
 
@@ -84,9 +90,23 @@
 }
 
 .bp-opening-hours {
-	max-width: 500px;
-	margin: 60px auto;
+	margin-left: -@triple;
+	margin-right: -@triple;
+	padding-left: @triple;
+	padding-right: @triple;
 	text-align: center;
+
+	&:not(:last-child) {
+		margin-bottom: 60px;
+		padding-bottom: 60px;
+		border-bottom: @border-line-light;
+	}
+
+	&:not(:first-child) {
+		margin-top: 60px;
+		padding-top: 60px;
+		border-top: @border-line-light;
+	}
 
 	.bp-title {
 		.luigi-icon-time;
@@ -142,6 +162,13 @@
 	max-width: 100%;
 }
 
+@media(min-width: @screen-xs) {
+
+	.bp-contact-card {
+		padding: @triple;
+	}
+}
+
 @media(min-width: @screen-sm) {
 
 	.bp-contact-card,
@@ -158,5 +185,19 @@
 
 	.luigi-contact-card-contact-wrapper {
 		padding-left: @double;
+	}
+}
+
+@media(min-width: @screen-lg) {
+
+	.bp-contact-card {
+		padding: 60px;
+	}
+
+	.bp-opening-hours {
+		margin-left: -60px;
+		margin-right: -60px;
+		padding-left: 60px;
+		padding-right: 60px;
 	}
 }
