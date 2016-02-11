@@ -74,7 +74,13 @@
 }
 
 .post-summary {
+	margin-top: 100px;
 	max-width: 35em;
+
+	// No page header
+	&:first-child {
+		margin-top: 0;
+	}
 
 	.entry-header {
 		margin-bottom: 0;
@@ -125,10 +131,6 @@
 			line-height: @line-lead;
 		}
 	}
-}
-
-body.blog .post-summary&:not(:first-child) {
-	margin-top: 100px;
 }
 
 .post-edit-link {
