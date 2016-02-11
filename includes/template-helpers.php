@@ -240,3 +240,17 @@ if ( !function_exists( '_s_categorized_blog' ) ) {
 	add_action( 'edit_category', 'luigi_category_transient_flusher' );
 	add_action( 'save_post',     'luigi_category_transient_flusher' );
 }
+
+if ( !function_exists( 'luigi_menu_has_two_cols' ) ) {
+	/**
+	 * Check if a menu has two columns
+	 *
+	 * @since 0.1
+	 */
+	function luigi_menu_has_two_cols( $id = 0 ) {
+		$id = $id ? $id : get_the_ID();
+		$has_two_cols = get_post_meta( get_the_ID(), 'fdm_menu_column_two', true );
+
+		return !empty( $has_two_cols );
+	}
+}

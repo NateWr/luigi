@@ -74,7 +74,11 @@ if ( !function_exists( 'luigi_add_body_classes' ) ) {
 	 */
 	function luigi_add_body_classes( $classes ) {
 
-		if ( ( is_front_page() && !is_home() ) || is_page_template( 'page-full-width.php' ) || !is_active_sidebar( 'primary-sidebar' ) ) {
+		if ( ( is_front_page() && !is_home() ) ||
+				is_page_template( 'page-full-width.php' ) ||
+				!is_active_sidebar( 'primary-sidebar' ) ||
+				( get_post_type() == 'fdm-menu' && luigi_menu_has_two_cols() )
+			) {
 			$classes[] = 'luigi-primary-sidebar-inactive';
 		}
 
