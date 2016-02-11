@@ -4,7 +4,7 @@
  *
  * @package luigi
  */
-if ( !is_front_page() && is_active_sidebar( 'primary-sidebar' ) ) :
+if ( ( !is_front_page() || is_home() ) && is_active_sidebar( 'primary-sidebar' ) ) :
 ?>
 
 <section id="secondary" class="sidebar-area">

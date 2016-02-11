@@ -74,7 +74,7 @@ if ( !function_exists( 'luigi_add_body_classes' ) ) {
 	 */
 	function luigi_add_body_classes( $classes ) {
 
-		if ( is_front_page() || !is_active_sidebar( 'primary-sidebar' ) ) {
+		if ( ( is_front_page() && !is_home() ) || !is_active_sidebar( 'primary-sidebar' ) ) {
 			$classes[] = 'luigi-primary-sidebar-inactive';
 		}
 

@@ -1,16 +1,28 @@
 <?php
+/**
+ * The main template file.
+ *
+ * This template will be loaded whenever an appropriate template file could not
+ * be found. This template should never be used but is here to provide a safe
+ * fallback.
+ *
+ * @package luigi
+ */
 
 get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-		<?php /* Start the Loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php luigi_clc_the_content(); ?>
-		<?php endwhile; ?>
+		<?php
+		while ( have_posts() ) : the_post();
+			get_template_part( 'content', get_post_type() );
+		endwhile;
+		?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-<?php get_footer();
+<?php
+get_sidebar();
+get_footer();
