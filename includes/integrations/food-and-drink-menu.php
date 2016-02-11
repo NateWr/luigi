@@ -40,13 +40,13 @@ if ( !function_exists( 'luigi_fdm_remove_style_settings' ) ) {
 	add_filter( 'fdm_settings_page', 'luigi_fdm_remove_style_settings', 200 );
 }
 
-if ( !function_exists( 'luigi_fdm_remove_menu_section_frontend_urls' ) ) {
+if ( !function_exists( 'luigi_fdm_remove_taxonomy_frontend_urls' ) ) {
 	/**
 	 * Remove Menu Section and Item Flag taxonomy archives on the frontend
 	 *
 	 * @since 0.1
 	 */
-	function luigi_fdm_remove_menu_section_frontend_urls( $args ) {
+	function luigi_fdm_remove_taxonomy_frontend_urls( $args ) {
 		$args['fdm-menu-section']['public'] = false;
 		$args['fdm-menu-section']['show_ui'] = true;
 
@@ -57,5 +57,19 @@ if ( !function_exists( 'luigi_fdm_remove_menu_section_frontend_urls' ) ) {
 
 		return $args;
 	}
-	add_filter( 'fdm_menu_item_taxonomies', 'luigi_fdm_remove_menu_section_frontend_urls', 20 );
+	add_filter( 'fdm_menu_item_taxonomies', 'luigi_fdm_remove_taxonomy_frontend_urls', 20 );
+}
+
+if ( !function_exists( 'luigi_fdm_exclude_menu_item_from_search' ) ) {
+	/**
+	 * Exclude menu item post type from search
+	 *
+	 * @since 0.1
+	 */
+	function luigi_fdm_exclude_menu_item_from_search( $args ) {
+		$args['exclude_from_search'] = true;
+
+		return $args;
+	}
+	add_filter( 'fdm_menu_item_args', 'luigi_fdm_exclude_menu_item_from_search' );
 }
