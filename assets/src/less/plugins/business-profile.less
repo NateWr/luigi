@@ -95,6 +95,7 @@
 	padding-left: @triple;
 	padding-right: @triple;
 	text-align: center;
+	clear: both;
 
 	&:not(:last-child) {
 		margin-bottom: 60px;
@@ -106,6 +107,14 @@
 		margin-top: 60px;
 		padding-top: 60px;
 		border-top: @border-line-light;
+	}
+
+	// Hacky workaround because meta tags mess with nth-child statements
+	&:nth-child(10) {
+		margin-top: 0;
+		padding-top: 0;
+		border-top: 0;
+		margin-bottom: 0;
 	}
 
 	.bp-title {
