@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying a single review's content
+ * The template for displaying a single review
  *
  * This just calls the_content(). The Good Reviews plugin will automatically
  * return complete markup that can be used on single or archive pages.
