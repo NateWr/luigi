@@ -39,3 +39,23 @@ if ( !function_exists( 'luigi_fdm_remove_style_settings' ) ) {
 	}
 	add_filter( 'fdm_settings_page', 'luigi_fdm_remove_style_settings', 200 );
 }
+
+if ( !function_exists( 'luigi_fdm_remove_menu_section_frontend_urls' ) ) {
+	/**
+	 * Remove Menu Section and Item Flag taxonomy archives on the frontend
+	 *
+	 * @since 0.1
+	 */
+	function luigi_fdm_remove_menu_section_frontend_urls( $args ) {
+		$args['fdm-menu-section']['public'] = false;
+		$args['fdm-menu-section']['show_ui'] = true;
+
+		if ( isset( $args['fdm-menu-item-flag'] ) ) {
+			$args['fdm-menu-item-flag']['public'] = false;
+			$args['fdm-menu-item-flag']['show_ui'] = true;
+		}
+
+		return $args;
+	}
+	add_filter( 'fdm_menu_item_taxonomies', 'luigi_fdm_remove_menu_section_frontend_urls', 20 );
+}
