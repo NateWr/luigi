@@ -25,7 +25,12 @@ get_header(); ?>
 				get_template_part( 'content', 'search' );
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_navigation(
+				array(
+					'prev_text' => esc_html__( '&larr; Older posts', 'lugi' ),
+					'next_text' => esc_html__( 'Newer posts &rarr;', 'lugi' ),
+				)
+			);
 
 		else :
 			get_template_part( 'content', 'none' );
