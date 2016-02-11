@@ -74,6 +74,7 @@
 }
 
 .post-summary {
+	max-width: 35em;
 
 	.entry-header {
 		margin-bottom: 0;
@@ -113,10 +114,8 @@
 	}
 
 	.more {
-		font-size: @font-sml;
-		font-weight: @semibold;
-		line-height: @line-sml;
-		text-decoration: none;
+		&:extend(.luigi-button all);
+		margin-top: 10px;
 	}
 
 	@media(min-width: @screen-sm) {
@@ -126,6 +125,10 @@
 			line-height: @line-lead;
 		}
 	}
+}
+
+body.blog .post-summary&:not(:first-child) {
+	margin-top: 100px;
 }
 
 .post-edit-link {

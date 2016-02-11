@@ -32,6 +32,13 @@
 				) );
 			} else {
 				the_excerpt();
+				?>
+
+				<a href="<?php echo esc_url( get_permalink() ); ?>" class="more">
+					<?php printf( esc_html__( 'Read More%s about %s%s', 'luigi' ), '<span class="screen-reader-text">', get_the_title(), '</span>' ); ?>
+				</a>
+
+				<?php
 			}
 		?>
 	</div><!-- .entry-content -->

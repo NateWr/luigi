@@ -4,36 +4,10 @@
 .comments-area {
 	margin-top: 120px;
 
-	.comments-title {
-		margin-bottom: @triple * 2;
-	}
-
-	.comment-navigation {
-		margin: @triple 0;
-		padding: @base 0;
+	// Navigation above the comments
+	.comments-title + .comment-navigation {
+		border-top: none;
 		border-bottom: @border-line;
-	}
-
-	.nav-links {
-		.clearfix();
-
-		a {
-			&:extend(.luigi-button-link all);
-			&:extend(.luigi-button-link-sml all);
-		}
-	}
-
-	.nav-previous {
-		float: left;
-	}
-
-	.nav-next {
-		float: right;
-	}
-
-	.comment-list + .comment-navigation {
-		border-bottom: none;
-		border-top: @border-line;
 	}
 
 	.comment-list {

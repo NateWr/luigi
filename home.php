@@ -12,7 +12,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		
+
 		<header>
 			<h1 class="entry-title">
 				<?php single_post_title(); ?>
@@ -23,6 +23,13 @@ get_header(); ?>
 			while ( have_posts() ) : the_post();
 				get_template_part( 'content' );
 			endwhile;
+
+			the_posts_navigation(
+				array(
+					'prev_text' => esc_html__( '&larr; Older posts', 'lugi' ),
+					'next_text' => esc_html__( 'Newer posts &rarr;', 'lugi' ),
+				)
+			);
 		?>
 
 	</main><!-- #main -->

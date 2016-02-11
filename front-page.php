@@ -22,6 +22,15 @@ get_header(); ?>
 					luigi_clc_the_content();
 				}
 			}
+
+			if ( is_home() ) {
+				the_posts_navigation(
+					array(
+						'prev_text' => esc_html__( '&larr; Older posts', 'lugi' ),
+						'next_text' => esc_html__( 'Newer posts &rarr;', 'lugi' ),
+					)
+				);
+			}
 		?>
 
 	</main><!-- #main -->

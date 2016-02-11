@@ -223,3 +223,28 @@
 		&:extend( .luigi-button all );
 	}
 }
+
+// Posts navigation
+.navigation {
+	margin: 60px 0;
+	padding: @base 0;
+	border-top: @border-line;
+
+	.nav-links {
+		.clearfix();
+	}
+
+	.nav-previous {
+		float: left;
+	}
+
+	.nav-next {
+		float: right;
+	}
+
+	a {
+		&:extend(.luigi-button-link all);
+		&:extend(.luigi-button-link-sml all);
+	}
+
+}
