@@ -219,3 +219,84 @@
 		}
 	}
 }
+
+@media(min-width: @screen-md) {
+
+	.widget-area {
+
+		.rtb-booking-form form {
+
+			fieldset,
+			label {
+				float: none;
+				width: 100%;
+			}
+
+			fieldset > div {
+				margin-right: 0;
+			}
+
+			label {
+				border-right: @border-line;
+				border-bottom: none;
+			}
+
+			fieldset legend {
+				font-size: @font-base;
+				line-height: @line-base;
+				opacity: 1;
+			}
+
+			.rtb-text input,
+			.rtb-select select {
+				width: 100%;
+			}
+
+			.rtb-checkbox,
+			.rtb-radio {
+				border: @border-line;
+
+				label {
+					border: none;
+				}
+
+				label:first-child {
+					border-bottom: @border-line;
+				}
+
+				label:not(:first-child) {
+					padding-left: @quadruple;
+					background: #fff;
+					font-weight: @normal;
+					text-transform: none;
+
+					&:before {
+						display: none;
+					}
+				}
+			}
+
+			.rtb-confirm,
+			.optin > div {
+
+				label {
+					border-bottom: @border-line;
+					font-weight: @normal;
+					text-transform: none;
+
+					&:before {
+						display: none;
+					}
+
+					&:hover {
+						border-color: @primary;
+					}
+				}
+			}
+
+			button {
+				width: 100%;
+			}
+		}
+	}
+}
