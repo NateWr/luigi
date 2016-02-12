@@ -220,9 +220,49 @@
 	}
 }
 
-@media(min-width: @screen-md) {
+.widget-area {
 
-	.widget-area {
+	@media(min-width: @screen-xs) {
+
+		.fdm-item-image {
+			float: none;
+			width: auto;
+			clear: none;
+		}
+
+		.fdm-item-has-image .fdm-item-panel {
+			float: none;
+			padding-left: 0;
+			width: auto;
+		}
+
+		.fdm-item-special {
+			position: relative;
+			top: 0;
+		}
+
+		// Adjust the price wrapper when an special is set on the menu item
+		.fdm-item-price-wrapper:nth-child(3) {
+			top: 30px;
+		}
+
+		.fdm-columns-2 {
+
+			.fdm-column {
+				float: none;
+				width: 100%;
+				padding: 0;
+
+				+ .fdm-column {
+					margin-top: @triple * 3;
+					padding: 0;
+				}
+			}
+		}
+
+	}
+
+	@media(min-width: @screen-md) {
 
 		.rtb-booking-form form {
 
@@ -296,6 +336,34 @@
 
 			button {
 				width: 100%;
+			}
+		}
+
+		.bp-contact-card {
+			padding: 0;
+			background: transparent;
+			border: none;
+
+			.bp-opening-hours {
+				margin: @triple 0;
+				padding: 0;
+				border: none;
+			}
+
+			.bp-title {
+				margin-bottom: @base;
+				font-size: @font-tiny;
+				line-height: @line-tiny;
+				font-weight: @semibold;
+			}
+
+			.bp-map {
+				height: 270px;
+				min-height: 270px;
+
+				.bp-map-info-window {
+					max-width: 150px;
+				}
 			}
 		}
 	}
