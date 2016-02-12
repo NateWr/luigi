@@ -366,5 +366,56 @@
 				}
 			}
 		}
+
+		.gr-reviews {
+
+			.gr-review {
+				margin: 40px 0;
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.gr-content,
+			.gr-author {
+				float: none;
+				width: auto;
+			}
+
+			.gr-review-has-rating .gr-author {
+				margin-top: @double;
+			}
+
+			.gr-review-body {
+				margin: @base 0;
+				font-size: @font-sml;
+				line-height: @line-base;
+
+				p:first-child {
+					margin-top: 0;
+				}
+
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.gr-rating-stars {
+				margin-bottom: @base;
+
+				.dashicons {
+					width: 25px;
+					height: 25px;
+					font-size: 20px;
+					line-height: 25px;
+				}
+			}
+
+		}
 	}
 }
