@@ -262,6 +262,89 @@
 		color: @text;
 	}
 
+	.picker__header {
+		margin-top: @double;
+		margin-bottom: @double;
+	}
+
+	.picker__month {
+		font-weight: @bold;
+		text-transform: uppercase;
+	}
+
+	.picker__year {
+		font-size: 1em;
+		font-weight: @light;
+		font-style: normal;
+		color: @text;
+	}
+
+	.picker__nav--next:before,
+	.picker__nav--prev:before {
+		position: relative;
+		top: 0.25em;
+		border-width: 0.25em;
+	}
+
+	.picker__table,
+	.picker__table tr {
+		border: none;
+	}
+
+	.picker__table {
+
+		th,
+		td {
+			text-align: center;
+		}
+	}
+
+	.picker__weekday {
+		background: transparent;
+		color: @text;
+		font-size: @font-sml;
+		line-height: @line-base;
+		font-weight: @semibold;
+	}
+
+	.picker__day {
+		padding: 0.5em 0;
+	}
+
+	.picker__day--outfocus,
+	.picker__day--disabled {
+		color: @text-light;
+	}
+
+	.picker__footer {
+		margin-top: @double;
+		margin-bottom: @double;
+
+		button {
+			font-size: @font-sml;
+			line-height: @line-sml;
+			text-transform: none;
+			font-weight: @semibold;
+			font-style: italic;
+
+			&:before {
+				margin-right: 1em;
+			}
+		}
+
+		.picker__button--close:before {
+			top: 0;
+			width: @double;
+			height: @double;
+			border: 1px solid;
+			border-radius: 50%;
+			font-size: @font-sml;
+			line-height: @double - 2;
+			text-align: center;
+			color: @text;
+		}
+	}
+
 	.picker__list {
 		padding-top: 0;
 		padding-bottom: 0;
