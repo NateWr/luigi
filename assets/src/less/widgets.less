@@ -259,7 +259,6 @@
 				}
 			}
 		}
-
 	}
 
 	@media(min-width: @screen-md) {
@@ -344,17 +343,31 @@
 			background: transparent;
 			border: none;
 
+			.luigi-contact-card-address-wrapper,
+			.luigi-contact-card-contact-wrapper {
+				float: none;
+				width: 100%;
+				padding-left: 0;
+			}
+
+			.luigi-contact-card-links {
+				padding-left: 0;
+			}
+
 			.bp-opening-hours {
 				margin: @triple 0;
 				padding: 0;
 				border: none;
+				text-align: left;
 			}
 
 			.bp-title {
 				margin-bottom: @base;
-				font-size: @font-tiny;
-				line-height: @line-tiny;
-				font-weight: @semibold;
+				padding-left: 0;
+				background: none;
+				font-size: @font-base;
+				line-height: @line-base;
+				font-weight: @bold;
 			}
 
 			.bp-map {
