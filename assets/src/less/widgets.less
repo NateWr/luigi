@@ -181,7 +181,7 @@
 	}
 
 	li {
-		padding-bottom: @triple;
+		padding-bottom: @quadruple;
 	}
 
 	.entry-header {
@@ -189,8 +189,8 @@
 	}
 
 	.entry-title {
-		font-size: @font-tiny;
-		line-height: @line-tiny;
+		font-size: @font-base;
+		line-height: @line-base;
 		text-transform: none;
 
 		a {
@@ -200,22 +200,29 @@
 
 	.entry-meta {
 		margin-top: 0;
-
-		time {
-			font-size: @font-tinier;
-			line-height: @line-tinier;
-			font-weight: @normal;
-			color: @text-light;
-			text-transform: none;
-		}
 	}
 
 	.entry-content {
 		font-size: @font-tiny;
-		line-height: @line-tiny;
+		line-height: @line-base;
 
 		p {
 			margin: 0;
+		}
+	}
+
+	.more {
+		font-size: @font-tiny;
+		// remove button styles
+		padding: 0;
+		background: none;
+		text-transform: none;
+		color: @primary;
+
+		&:hover,
+		&:focus {
+			background: none;
+			color: @primary-lift;
 		}
 	}
 }
