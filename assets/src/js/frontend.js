@@ -24,6 +24,15 @@ jQuery(document).ready(function ($) {
     } );
 
     /**
+     * Disable scrollwheel on the full-screen map for the homepage
+     *
+     * @since 0.1
+     */
+    $( '.clc-component-luigi-map .bp-map' ).on( 'bpfwp.map_initialized', function( e, id, map, info_window ) {
+        map.setOptions( { scrollwheel: false } );
+    } );
+
+    /**
      * Remove open menu class is window size is bigger now
      *
      * @since 0.0.1
