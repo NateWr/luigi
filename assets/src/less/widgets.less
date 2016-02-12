@@ -227,7 +227,8 @@
 	}
 }
 
-.widget-area {
+// Reset styles for thing display in sidebar areas (except full-width sidebar)
+.widget-area:not(.footer-full-widget-container) {
 
 	@media(min-width: @screen-xs) {
 
@@ -437,5 +438,48 @@
 			}
 
 		}
+	}
+}
+
+// Footer sidebars
+.footer-widget-container,
+.footer-full-widget-container {
+	padding-top: 60px;
+	border-top: @border-line-light;
+	text-align: center;
+}
+
+.footer-widget-container {
+
+	> li {
+		display: inline-block;
+		width: @sidebar-width;
+		padding: 0 @gutter 100px;
+		border-top: none;
+		text-align: left;
+		vertical-align: top;
+	}
+}
+
+.footer-full-widget-container {
+
+	.widget_search {
+
+		.search-form {
+			max-width: none;
+		}
+	}
+
+	.rtb-booking-form,
+	.bp-contact-card,
+	.fdm-menu,
+	.gr-reviews,
+	.widget_recent_entries article {
+		text-align: left;
+	}
+
+	.widget_recent_entries article {
+		margin-left: auto;
+		margin-right: auto;
 	}
 }

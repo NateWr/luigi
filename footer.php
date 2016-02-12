@@ -10,6 +10,23 @@
 
 		</div><!-- #content -->
 
+		<?php if ( is_active_sidebar( 'footer-full' ) ) : ?>
+			<section class="site-footer-widgets-full">
+				<ul id="sidebar" class="widget-area footer-full-widget-container">
+					<?php dynamic_sidebar( 'footer-full' ); ?>
+				</ul>
+			</section>
+		<?php endif; ?>
+
+		<?php if ( is_active_sidebar( 'footer' ) ) : ?>
+			<section class="site-footer-widgets ">
+				<ul id="sidebar" class="widget-area footer-widget-container">
+					<?php dynamic_sidebar( 'footer' ); ?>
+				</ul>
+			</section>
+		<?php endif; ?>
+
+
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="site-footer-container">
 				<div class="site-footer-top">

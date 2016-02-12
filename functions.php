@@ -48,6 +48,22 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
 			)
 		);
 
+		register_sidebar(
+			array(
+				'name'        => __( 'Footer (full-width)', 'luigi' ),
+				'id'          => 'footer-full',
+				'description' => __( 'Display full-width widgets (one per row) in the footer.', 'luigi' ),
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'        => __( 'Footer (side-by-side)', 'luigi' ),
+				'id'          => 'footer',
+				'description' => __( 'Display widgets (up to 3 per row) side by side in the footer.', 'luigi' ),
+			)
+		);
+
 		add_image_size( 'luigi-medium', 450, 450, true );
 	}
 	add_action( 'after_setup_theme', 'luigi_setup_theme' );
