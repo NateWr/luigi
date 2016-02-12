@@ -59,7 +59,22 @@ class Luigi_Widget_Recent_Posts extends WP_Widget_Recent_Posts {
 		<ul>
 		<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 			<li>
-				<?php get_template_part( 'content' ); ?>
+
+				<article id="post-<?php the_ID(); ?>" <?php post_class( is_single() ? '' : 'post-summary' ); ?>>
+					<header class="entry-header">
+						<?php
+							the_title( '<div class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></div>' );
+							if ( $show_date ) {
+								get_template_part( 'template-parts/post', 'meta' );
+							}
+						?>
+					</header><!-- .entry-header -->
+
+					<div class="entry-content">
+						<?php the_excerpt(); ?>
+					</div><!-- .entry-content -->
+				</article><!-- #post-## -->
+
 			</li>
 		<?php endwhile; ?>
 		</ul>

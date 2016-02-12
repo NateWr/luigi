@@ -13,7 +13,7 @@
 	line-height: 0; // collapse space added by inline <ul>
 
 	ul {
-		&:extend(.unstyled_list);
+		&:extend(.unstyled-list);
 		.clearfix();
 		display: inline-block;
 	}
@@ -246,5 +246,43 @@
 		&:extend(.luigi-button-link all);
 		&:extend(.luigi-button-link-sml all);
 	}
+}
 
+// Custom list bullet points
+.luigi-list-item {
+	list-style: none;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		position: relative;
+		top: -0.15em;
+		width: 8px;
+		height: 8px;
+		margin-right: 1em;
+		background: @primary;
+		vertical-align: middle;
+	}
+}
+
+// Limit large horizontal displacement in highly nested lists
+.limit-large-list-nesting {
+
+	ul ul ul ul ul {
+		padding-left: 0.25em;
+
+		li {
+			padding-top: 0;
+
+			&:before {
+				content: none;
+			}
+
+			a {
+				padding-left: 1.5em;
+				font-weight: normal;
+				text-decoration: none;
+			}
+		}
+	}
 }
