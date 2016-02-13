@@ -60,7 +60,7 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
 			array(
 				'name'        => __( 'Footer (side-by-side)', 'luigi' ),
 				'id'          => 'footer',
-				'description' => __( 'Display widgets (up to 3 per row) side by side in the footer.', 'luigi' ),
+				'description' => __( 'Display widgets (many widgets per row) side by side in the footer.', 'luigi' ),
 			)
 		);
 
