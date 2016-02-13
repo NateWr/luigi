@@ -82,6 +82,10 @@
 		background: @primary;
 	}
 
+	&:disabled {
+		background: @text-light;
+	}
+
 	@media(min-width: @screen-sm) {
 		padding: @base @double;
 		font-size: @font-sml;
@@ -100,9 +104,36 @@
 }
 
 .luigi-button-wire {
+	padding: (@half - 1) (@base - 1);
 	background: transparent;
 	color: @text;
 	border: 2px solid;
+	line-height: @line-sml - 2;
+
+	&:hover,
+	&:focus {
+		color: @primary-lift;
+		border-color: @primary-lift;
+	}
+
+	&:disabled {
+		color: @text-light;
+	}
+
+	@media(min-width: @screen-sm) {
+		padding: (@base - 1) (@double - 1);
+		line-height: @line-base - 2;
+	}
+}
+
+.luigi-button-wire-primary {
+	color: @primary;
+	border-color: @primary;
+
+	&:disabled {
+		color: @text-light;
+		border-color: @text-light;
+	}
 }
 
 .luigi-button-sml {
@@ -130,6 +161,10 @@
 		outline: 0;
 		text-decoration: underline;
 		color: @text;
+	}
+
+	&:disabled {
+		color: @text-light;
 	}
 }
 

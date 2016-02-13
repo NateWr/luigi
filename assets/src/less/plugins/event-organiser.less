@@ -1,0 +1,234 @@
+//
+// Styles for handling the output of the Event Organiser plugin
+//
+
+// Full calendar
+.fc-toolbar {
+	.clearfix();
+
+	.fc-left {
+		float: left;
+	}
+
+	.fc-right {
+		float: right;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: @font-lead;
+		line-height: 45px; // height of buttons in row
+		font-weight: @light;
+	}
+
+	.fc-button-group {
+		display: inline-block;
+		margin-right: @base;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.fc-icon-left-single-arrow:before {
+		content: "\02039";
+		font-size: 24px;
+		line-height: 16px;
+	}
+
+	.fc-icon-right-single-arrow:before {
+		content: "\0203A";
+		font-size: 24px;
+		line-height: 16px;
+	}
+
+	.fc-prev-button,
+	.fc-next-button {
+		&:extend(.luigi-button-wire all);
+	}
+}
+
+.fc-month-view {
+	position: relative;
+	margin-top: @base;
+
+	table {
+		width: 100%;
+		border: none;
+		table-layout: fixed;
+	}
+
+	tr {
+		border: none;
+	}
+
+	th,
+	td {
+		padding: 0;
+	}
+
+	> table {
+		width: 100%;
+		border: none;
+
+		> thead {
+
+			th,
+			td {
+				border: none;
+			}
+
+			.fc-row {
+				position: absolute;
+				top: 0;
+				min-height: 0;
+				margin: 0;
+			}
+
+		}
+
+		> tbody {
+
+			table td {
+				border: @border-line;
+			}
+		}
+	}
+
+	.fc-day-header {
+		padding-left: @half;
+		background: transparent;
+		font-size: @font-tiny;
+		font-weight: @normal;
+		line-height: 35px;
+		color: @text-light;
+		text-align: left;
+	}
+
+	.fc-row {
+		position: relative;
+		min-height: 4em;
+	}
+
+	.fc-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		> table {
+			height: 100%;
+		}
+
+		.fc-day {
+			background: @bg-lift;
+		}
+
+		.fc-other-month,
+		.fc-past {
+			background: transparent;
+		}
+	}
+
+	.fc-content-skeleton {
+		position: relative;
+
+		td {
+			padding: @half;
+			border: none;
+		}
+
+		tbody {
+
+			td {
+				padding: 0;
+			}
+		}
+	}
+
+	.fc-day-number {
+		font-size: @font-sml;
+		line-height: @line-sml;
+		font-weight: @light;
+		text-align: right;
+	}
+
+	.fc-past {
+		color: @text-light;
+	}
+
+	.fc-day-grid-event {
+		display: block;
+		margin: @half 0;
+		margin-left: 4px; // no border
+		padding: 0 @half;
+		font-size: @font-tiny;
+		line-height: 15px;
+		font-weight: @semibold;
+		text-decoration: none;
+		background: transparent !important;
+		color: @text !important;
+
+		&:hover,
+		&:focus {
+			color: @primary !important;
+		}
+
+		&[class*="eo-event-cat"] {
+			border-left: 4px solid;
+			margin-left: 0;
+
+			&:hover,
+			&:focus {
+				border-color: @primary !important;
+			}
+		}
+
+		.fc-time {
+			font-size: @font-tinier;
+			line-height: @line-tinier;
+			font-weight: @normal;
+		}
+
+		.fc-title {
+			display: block;
+		}
+	}
+
+	@media(min-width: @screen-sm) {
+
+		.fc-row {
+			min-height: 6em;
+		}
+
+		.fc-day-number {
+			font-size: @font-base;
+			line-height: @line-base;
+		}
+	}
+
+	@media(min-width: @screen-md) {
+
+		.fc-row {
+			min-height: 8em;
+		}
+
+		.fc-day-number {
+			font-size: 20px;
+			line-height: @line-base;
+		}
+	}
+
+	@media(min-width: @screen-lg) {
+
+		.fc-row {
+			min-height: 12em;
+		}
+
+		.fc-day-number {
+			font-size: 22px;
+			line-height: @line-base;
+		}
+	}
+}
