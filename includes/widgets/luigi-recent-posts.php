@@ -60,7 +60,7 @@ class Luigi_Widget_Recent_Posts extends WP_Widget_Recent_Posts {
 		<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 			<li>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class( is_single() ? '' : 'post-summary' ); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-summary' ); ?>>
 					<header class="entry-header">
 						<?php
 							if ( $show_date ) {
