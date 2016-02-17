@@ -63,7 +63,8 @@
 	}
 }
 
-.fc-month-view {
+// Shared styles for monthly views (full and collapsed)
+.fc-view {
 	position: relative;
 	margin-top: @base;
 
@@ -82,16 +83,43 @@
 		padding: 0;
 	}
 
+	.fc-day-grid-event {
+		display: block;
+		margin: @half 0;
+		margin-left: 4px; // no border
+		padding: 0 (@base - 4);
+		font-weight: @semibold;
+		text-decoration: none;
+		color: @text !important;
+
+		&:hover,
+		&:focus {
+			color: @primary !important;
+		}
+
+		&[class*="eo-event-cat"] {
+			background: transparent !important;
+			border-left: 4px solid transparent;
+			margin-left: 0;
+		}
+
+		.fc-time {
+			font-size: @font-tiny;
+			line-height: @line-tiny;
+			font-weight: @normal;
+		}
+
+		.fc-title {
+			display: block;
+		}
+	}
+}
+
+.fc-month-view {
+
 	> table {
-		width: 100%;
-		border: none;
 
 		> thead {
-
-			th,
-			td {
-				border: none;
-			}
 
 			.fc-row {
 				position: absolute;
@@ -174,29 +202,13 @@
 	}
 
 	.fc-day-grid-event {
-		display: block;
-		margin: @half 0;
 		margin-left: 4px; // no border
-		padding: 0 @half;
 		font-size: @font-tiny;
 		line-height: 15px;
-		font-weight: @semibold;
-		text-decoration: none;
-		color: @text !important;
-
-		&:hover,
-		&:focus {
-			color: @primary !important;
-		}
-
-		&[class*="eo-event-cat"] {
-			background: transparent !important;
-			border-left: 4px solid transparent;
-			margin-left: 0;
-		}
 
 		&.eo-multi-day {
 			padding: 0;
+			border-left-color: @border;
 
 			.fc-content {
 				padding: @half;
@@ -209,11 +221,6 @@
 		.fc-time {
 			font-size: @font-tinier;
 			line-height: @line-tinier;
-			font-weight: @normal;
-		}
-
-		.fc-title {
-			display: block;
 		}
 	}
 
@@ -250,6 +257,32 @@
 		.fc-day-number {
 			font-size: 22px;
 			line-height: @line-base;
+		}
+	}
+}
+
+.fc-listMonth-view {
+
+	.fc-content-skeleton {
+
+		thead td {
+			padding: @quadruple 0 @base;
+			border-bottom: @border-line-light;
+			font-size: @font-tiny;
+			line-height: @line-tiny;
+			color: @text-light;
+		}
+	}
+
+	.fc-list-header-left {
+		&:extend(.screen-reader-text all);
+	}
+
+	.fc-event-container {
+		padding: @half 0;
+
+		a {
+			color: @text;
 		}
 	}
 }
