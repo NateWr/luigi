@@ -17,7 +17,7 @@
 	h2 {
 		margin: 0;
 		font-size: @font-lead;
-		line-height: 45px; // height of buttons in row
+		line-height: 30px; // height of buttons in row
 		font-weight: @light;
 	}
 
@@ -30,21 +30,36 @@
 		}
 	}
 
+	.fc-prev-button,
+	.fc-next-button {
+		&:extend(.luigi-button-wire all);
+	}
+
 	.fc-icon-left-single-arrow:before {
 		content: "\02039";
-		font-size: 24px;
+		font-size: 16px;
 		line-height: 16px;
 	}
 
 	.fc-icon-right-single-arrow:before {
 		content: "\0203A";
-		font-size: 24px;
+		font-size: 16px;
 		line-height: 16px;
 	}
 
-	.fc-prev-button,
-	.fc-next-button {
-		&:extend(.luigi-button-wire all);
+	@media(min-width: @screen-sm) {
+
+		h2 {
+			line-height: 45px; // height of buttons in row
+		}
+
+		.fc-icon-left-single-arrow:before {
+			font-size: 24px;
+		}
+
+		.fc-icon-right-single-arrow:before {
+			font-size: 24px;
+		}
 	}
 }
 
@@ -107,7 +122,7 @@
 
 	.fc-row {
 		position: relative;
-		min-height: 4em;
+		min-height: 6em;
 	}
 
 	.fc-bg {
@@ -167,7 +182,6 @@
 		line-height: 15px;
 		font-weight: @semibold;
 		text-decoration: none;
-		background: transparent !important;
 		color: @text !important;
 
 		&:hover,
@@ -176,12 +190,19 @@
 		}
 
 		&[class*="eo-event-cat"] {
-			border-left: 4px solid;
+			background: transparent !important;
+			border-left: 4px solid transparent;
 			margin-left: 0;
+		}
 
-			&:hover,
-			&:focus {
-				border-color: @primary !important;
+		&.eo-multi-day {
+			padding: 0;
+
+			.fc-content {
+				padding: @half;
+				background: #eee;
+				border: @border-line;
+				border-left: none
 			}
 		}
 
@@ -199,7 +220,7 @@
 	@media(min-width: @screen-sm) {
 
 		.fc-row {
-			min-height: 6em;
+			min-height: 8em;
 		}
 
 		.fc-day-number {
@@ -211,7 +232,7 @@
 	@media(min-width: @screen-md) {
 
 		.fc-row {
-			min-height: 8em;
+			min-height: 10em;
 		}
 
 		.fc-day-number {
@@ -231,4 +252,46 @@
 			line-height: @line-base;
 		}
 	}
+}
+
+//
+// Styles for qtip popups lib used by Event Organiser
+//
+.qtip{
+	display: none;
+	position: absolute;
+	top: -28000px;
+	left: -28000px;
+	min-width: 50px;
+	max-width: 250px;
+	font-size: @font-tiny;
+	line-height: @line-tiny;
+	background: @bg-dark;
+	color: #fff;
+
+	@media(min-width: @screen-md) {
+		max-width: 480px;
+	}
+
+	@media(max-width: (@screen-md - 1) ) {
+		display: none !important;
+	}
+}
+
+.qtip-content{
+	position: relative;
+	padding: @base;
+	overflow: hidden;
+	word-wrap: break-word;
+}
+
+.qtip-titlebar{
+	position: relative;
+	margin-top: @base;
+	margin-bottom: @double;
+	padding: 0 @base;
+	font-size: @font-base;
+	line-height: @line-base;
+	font-weight: @bold;
+	text-transform: uppercase;
 }

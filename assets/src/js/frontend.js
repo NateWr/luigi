@@ -33,6 +33,18 @@ jQuery(document).ready(function ($) {
     } );
 
     /**
+     * Override base color for Event Organiser calendar
+     *
+     * @since 0.1
+     */
+    if ( typeof wp !== 'undefined' && typeof wp.hooks !== 'undefined' && typeof wp.hooks.addFilter !== 'undefined' ) {
+        wp.hooks.addFilter( 'eventorganiser.fullcalendar_options', function( args, calendar ) {
+            delete args.eventColor;
+            return args;
+        } );
+    }
+
+    /**
      * Remove open menu class is window size is bigger now
      *
      * @since 0.0.1
