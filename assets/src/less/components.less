@@ -321,3 +321,114 @@
 		}
 	}
 }
+
+// Adjust <select> fields to be a bit smaller
+.luigi-small-select {
+	padding: 6px @base 7px;
+	margin-top: @half;
+	margin-bottom: @half;
+
+	&:focus {
+		padding-left: 7px;
+	}
+}
+
+// jQuery UI datepicker
+.ui-datepicker {
+	width: 25em;
+	padding: @base;
+	max-width: 100%;
+	background: @bg-lift;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+	select {
+		&:extend(.luigi-small-select all);
+		display: inline-block;
+		margin-left: 2px;
+	}
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+	display: block;
+	position: absolute;
+	top: @double;
+	left: @base;
+	width: @double;
+	height: @double;
+	text-align: center;
+	cursor: pointer;
+
+	&:before {
+		content: "\f341";
+		display: block;
+	    font-family: "dashicons";
+		font-size: 20px;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	}
+
+
+	> span {
+		&:extend(.screen-reader-text all);
+	}
+}
+
+.ui-datepicker-next {
+	left: auto;
+	right: @base;
+
+	&:before {
+		content: "\f345";
+	}
+}
+
+.ui-datepicker-title {
+	margin-bottom: @base;
+	font-size: @font-tiny;
+	font-weight: @bold;
+	text-align: center;
+}
+
+.ui-datepicker-calendar {
+	width: 100%;
+
+	td {
+		padding: 0;
+		text-align: center;
+	}
+
+	th,
+	a {
+		padding: @base;
+		text-align: center;
+	}
+
+	thead {
+		font-size: @font-tiny;
+	}
+
+	tbody {
+		background: @bg-lift;
+
+		tr {
+			border-top: @border-line;
+
+			&:first-child {
+				border-top: none;
+			}
+		}
+	}
+
+	a {
+		display: block;
+		line-height: @triple;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			background: @primary-lift;
+			color: @text;
+		}
+	}
+}

@@ -5,20 +5,31 @@
 // Full calendar
 .fc-toolbar {
 	.clearfix();
+	text-align: center;
 
 	.fc-left {
 		float: left;
+		margin-bottom: @base;
 	}
 
 	.fc-right {
 		float: right;
+		margin-bottom: @base;
 	}
 
-	h2 {
-		margin: 0;
-		font-size: @font-lead;
-		line-height: 30px; // height of buttons in row
-		font-weight: @light;
+	.fc-center {
+		display: inline-block;
+
+		> div > * {
+			float: left;
+			display: block;
+			margin-left: @half;
+			margin-right: @half;
+		}
+
+		button {
+			&:extend(.luigi-button-wire all);
+		}
 	}
 
 	.fc-button-group {
@@ -28,6 +39,22 @@
 		&:last-child {
 			margin-right: 0;
 		}
+	}
+
+	h2 {
+		margin: 0;
+		font-size: @font-lead;
+		line-height: 30px; // height of buttons in row
+		font-weight: @light;
+	}
+
+	select {
+		&:extend(.luigi-small-select all);
+	}
+
+	h2,
+	select {
+		display: inline-block;
 	}
 
 	.fc-prev-button,
@@ -66,7 +93,6 @@
 // Shared styles for monthly views (full and collapsed)
 .fc-view {
 	position: relative;
-	margin-top: @base;
 
 	table {
 		width: 100%;
