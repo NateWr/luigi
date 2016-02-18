@@ -301,7 +301,6 @@
 
 .fc-agendaDay-view {
 
-
 	.fc-time-grid {
 
 		.fc-event {
@@ -315,14 +314,6 @@
 
 // Covers basic day, week and calendar
 .fc-basic-view {
-
-	> table {
-		border: @border-line;
-
-		> tbody {
-			border-top: @border-line;
-		}
-	}
 
 	.fc-bg td,
 	.fc-content-skeleton {
@@ -368,9 +359,22 @@
 	}
 }
 
+.fc-basicWeek-view,
+.fc-basicDay-view {
+
+	> table {
+		border: @border-line;
+
+		> tbody {
+			border-top: @border-line;
+		}
+	}
+}
+
 .fc-month-view {
 
 	> table {
+		border: @border-line;
 
 		> thead {
 
@@ -384,7 +388,6 @@
 		}
 
 		> tbody {
-			border: none;
 
 			> tr > td td {
 				border-top: @border-line;
