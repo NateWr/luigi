@@ -167,138 +167,6 @@
 	}
 }
 
-.fc-month-view {
-
-	> table {
-
-		> thead {
-
-			.fc-row {
-				position: absolute;
-				top: 0;
-				min-height: 0;
-				margin: 0;
-			}
-
-		}
-
-		> tbody {
-
-			table td {
-				border: @border-line;
-			}
-		}
-	}
-
-	.fc-day-header {
-		padding: @half;
-		line-height: @line-sml;
-		text-align: left;
-	}
-
-	.fc-row {
-		min-height: 6em;
-	}
-
-	.fc-bg {
-
-		.fc-day {
-			background: @bg-lift;
-		}
-
-		.fc-other-month,
-		.fc-past {
-			background: transparent;
-		}
-	}
-
-	.fc-content-skeleton {
-		position: relative;
-
-		td {
-			padding: @half;
-			border: none;
-		}
-
-		tbody {
-
-			td {
-				padding: 0;
-			}
-		}
-	}
-
-	.fc-day-number {
-		font-size: @font-sml;
-		line-height: @line-sml;
-		font-weight: @light;
-		text-align: right;
-	}
-
-	.fc-past {
-		color: @text-light;
-	}
-
-	.fc-event {
-		margin-left: 4px; // no border
-		font-size: @font-tiny;
-		line-height: 15px;
-
-		&.eo-multi-day {
-			padding: 0;
-			border-left-color: @border;
-
-			.fc-content {
-				padding: @half;
-				background: #eee;
-				border: @border-line;
-				border-left: none
-			}
-		}
-
-		.fc-time {
-			font-size: @font-tinier;
-			line-height: @line-tinier;
-		}
-	}
-
-	@media(min-width: @screen-sm) {
-
-		.fc-row {
-			min-height: 8em;
-		}
-
-		.fc-day-number {
-			font-size: @font-base;
-			line-height: @line-base;
-		}
-	}
-
-	@media(min-width: @screen-md) {
-
-		.fc-row {
-			min-height: 10em;
-		}
-
-		.fc-day-number {
-			font-size: 20px;
-			line-height: @line-base;
-		}
-	}
-
-	@media(min-width: @screen-lg) {
-
-		.fc-row {
-			min-height: 12em;
-		}
-
-		.fc-day-number {
-			font-size: 22px;
-			line-height: @line-base;
-		}
-	}
-}
-
 .fc-listMonth-view {
 
 	.fc-content-skeleton {
@@ -445,7 +313,8 @@
 	}
 }
 
-.fc-basicWeek-view {
+// Covers basic day, week and calendar
+.fc-basic-view {
 
 	> table {
 		border: @border-line;
@@ -462,6 +331,10 @@
 
 	.fc-bg td {
 		border-right: @border-line;
+
+		&:last-child {
+			border-right: none;
+		}
 	}
 
 	.fc-content-skeleton {
@@ -488,8 +361,152 @@
 				padding: @half;
 				background: #eee;
 				border: @border-line;
-				border-left: none
+				border-left: none;
+				border-right: none;
 			}
+		}
+	}
+}
+
+.fc-month-view {
+
+	> table {
+
+		> thead {
+
+			.fc-row {
+				position: absolute;
+				top: 0;
+				min-height: 0;
+				margin: 0;
+			}
+
+		}
+
+		> tbody {
+			border: none;
+
+			> tr > td td {
+				border-top: @border-line;
+				border-bottom: @border-line;
+
+				&:last-child {
+					border-right: none;
+				}
+			}
+		}
+	}
+
+	.fc-row:first-child .fc-bg .fc-day {
+		border-top: none;
+	}
+
+	.fc-day-header {
+		padding: @half;
+		line-height: @line-sml;
+		text-align: left;
+	}
+
+	.fc-row {
+		min-height: 6em;
+	}
+
+	.fc-bg {
+
+		.fc-day {
+			background: @bg-lift;
+		}
+
+		.fc-other-month,
+		.fc-past {
+			background: transparent;
+		}
+	}
+
+	.fc-content-skeleton {
+		position: relative;
+
+		td {
+			padding: @half;
+			border: none;
+		}
+
+		tbody {
+
+			td {
+				padding: 0;
+			}
+		}
+	}
+
+	.fc-day-number {
+		font-size: @font-sml;
+		line-height: @line-sml;
+		font-weight: @light;
+		text-align: right;
+	}
+
+	.fc-past {
+		color: @text-light;
+	}
+
+	.fc-event {
+		margin-left: 4px; // no border
+		font-size: @font-tiny;
+		line-height: 15px;
+
+		&.eo-multi-day {
+			padding: 0;
+			border-left-color: @border;
+
+			.fc-content {
+				padding: @half;
+				background: #eee;
+				border: @border-line;
+				border-left: none;
+				border-right: none;
+			}
+		}
+
+		.fc-time {
+			font-size: @font-tinier;
+			line-height: @line-tinier;
+		}
+	}
+
+	@media(min-width: @screen-sm) {
+
+		.fc-row {
+			min-height: 8em;
+		}
+
+		.fc-day-number {
+			font-size: @font-base;
+			line-height: @line-base;
+		}
+	}
+
+	@media(min-width: @screen-md) {
+
+		.fc-row {
+			min-height: 10em;
+		}
+
+		.fc-day-number {
+			font-size: 20px;
+			line-height: @line-base;
+		}
+	}
+
+	@media(min-width: @screen-lg) {
+
+		.fc-row {
+			min-height: 12em;
+		}
+
+		.fc-day-number {
+			font-size: 22px;
+			line-height: @line-base;
 		}
 	}
 }
