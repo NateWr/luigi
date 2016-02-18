@@ -325,7 +325,8 @@
 	}
 }
 
-.fc-agendaWeek-view {
+// Weekly and daily agenda view
+.fc-agenda-view {
 
 	> table {
 		border: @border-line;
@@ -426,6 +427,20 @@
 				font-size: @font-tinier;
 				line-height: @line-tinier;
 			}
+		}
+	}
+}
+
+.fc-agendaDay-view {
+
+
+	.fc-time-grid {
+
+		.fc-event {
+			right: 0 !important;
+			width: auto !important;
+			margin-right: 0 !important;
+			box-shadow: 0 0 1px @border-light;
 		}
 	}
 }
