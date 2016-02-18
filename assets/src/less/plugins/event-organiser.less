@@ -430,6 +430,55 @@
 	}
 }
 
+.fc-basicWeek-view {
+
+	> table {
+		border: @border-line;
+
+		> tbody {
+			border-top: @border-line;
+		}
+	}
+
+	.fc-bg td,
+	.fc-content-skeleton {
+		min-height: 4em;
+	}
+
+	.fc-bg td {
+		border-right: @border-line;
+	}
+
+	.fc-content-skeleton {
+		position: relative;
+	}
+
+	.fc-event {
+
+		.fc-time {
+			font-size: @font-tinier;
+			line-height: @line-tinier;
+		}
+
+		.fc-title {
+			font-size: @font-tiny;
+			line-height: @line-tiny;
+		}
+
+		&.eo-multi-day {
+			padding: 0;
+			border-left-color: @border;
+
+			.fc-content {
+				padding: @half;
+				background: #eee;
+				border: @border-line;
+				border-left: none
+			}
+		}
+	}
+}
+
 //
 // Styles for qtip popups lib used by Event Organiser
 //
