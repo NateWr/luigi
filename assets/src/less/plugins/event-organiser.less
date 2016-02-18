@@ -2,7 +2,7 @@
 // Styles for handling the output of the Event Organiser plugin
 //
 
-// Full calendar
+// Full calendar header
 .fc-toolbar {
 	.clearfix();
 	text-align: center;
@@ -90,7 +90,7 @@
 	}
 }
 
-// Shared styles for monthly views (full and collapsed)
+// Shared styles for calendar views (full and collapsed)
 .fc-view {
 	position: relative;
 
@@ -109,7 +109,33 @@
 		padding: 0;
 	}
 
-	.fc-day-grid-event {
+	.fc-day-header {
+		padding: @base @half;
+		background: transparent;
+		font-size: @font-tiny;
+		line-height: @line-tiny;
+		font-weight: @normal;
+		color: @text-light;
+		text-align: center;
+	}
+
+	.fc-row {
+		position: relative;
+	}
+
+	.fc-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		> table {
+			height: 100%;
+		}
+	}
+
+	.fc-event {
 		display: block;
 		margin: @half 0;
 		margin-left: 4px; // no border
@@ -165,30 +191,16 @@
 	}
 
 	.fc-day-header {
-		padding-left: @half;
-		background: transparent;
-		font-size: @font-tiny;
-		font-weight: @normal;
-		line-height: 35px;
-		color: @text-light;
+		padding: @half;
+		line-height: @line-sml;
 		text-align: left;
 	}
 
 	.fc-row {
-		position: relative;
 		min-height: 6em;
 	}
 
 	.fc-bg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-
-		> table {
-			height: 100%;
-		}
 
 		.fc-day {
 			background: @bg-lift;
@@ -227,7 +239,7 @@
 		color: @text-light;
 	}
 
-	.fc-day-grid-event {
+	.fc-event {
 		margin-left: 4px; // no border
 		font-size: @font-tiny;
 		line-height: 15px;
@@ -309,6 +321,111 @@
 
 		a {
 			color: @text;
+		}
+	}
+}
+
+.fc-agendaWeek-view {
+
+	> table {
+		border: @border-line;
+	}
+
+	hr.fc-widget-header {
+		display: none;
+	}
+
+	.fc-time-grid-container {
+		position: relative;
+	}
+
+	th {
+		background: transparent;
+	}
+
+	.fc-widget-content td {
+		font-size: @font-tiny;
+		line-height: @line-tiny;
+	}
+
+	.fc-bg {
+
+		td {
+			border-left: @border-line;
+
+			&:first-child {
+				border-left: none;
+			}
+		}
+	}
+
+	.fc-day-grid {
+		min-height: @line-base * 2;
+		border-top: @border-line;
+		border-bottom: @border-line;
+		background: @bg-lift;
+
+		td {
+			height: @line-base * 2;
+		}
+	}
+
+	.fc-widget-content .fc-axis span {
+		display: inline-block;
+		padding-left: @half;
+		padding-right: @half;
+	}
+
+	.fc-slats {
+
+		td {
+			height: @triple;
+		}
+
+		tr {
+			border-bottom: @border-line-light;
+		}
+
+		.fc-minor {
+			border-bottom: @border-line;
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	.fc-event-container {
+		position: relative;
+	}
+
+	.fc-time-grid {
+
+		.fc-content-skeleton {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+
+		.fc-event {
+			position: absolute;
+			left: 0;
+			right: auto !important;
+			width: 100% !important;
+			margin: 0 2px 0 0 !important;
+			background: @bg-lift !important;
+			box-shadow: 1px 1px @border-light;
+			overflow: hidden;
+
+			&[class*="eo-event-cat"] {
+				background: @bg-lift !important;
+			}
+
+			.fc-time {
+				font-size: @font-tinier;
+				line-height: @line-tinier;
+			}
 		}
 	}
 }
