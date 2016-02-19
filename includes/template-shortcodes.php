@@ -31,6 +31,7 @@ if ( !function_exists( 'luigi_shortcode_recent_posts' ) ) {
 			'Luigi_Widget_Recent_Posts',
 			array(
 				'number' => (int) $atts['posts'],
+				'show_date' => true,
 			),
 			array(
 				'before_widget' => '',
