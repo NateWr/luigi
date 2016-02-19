@@ -32,6 +32,7 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+		add_theme_support( 'event-organiser' );
 
 		register_nav_menus(
 			array(
@@ -97,7 +98,7 @@ if ( !function_exists( 'luigi_load_frontend' ) ) {
 		include_once( 'includes/template-shortcodes.php' );
 		include_once( 'includes/integrations/restaurant-reservations.php' );
 		include_once( 'includes/integrations/food-and-drink-menu.php' );
-		include_once( 'includes/integrations/business-profile.php' );
+		include_once( 'includes/integrations/event-organiser.php' );
 	}
 }
 

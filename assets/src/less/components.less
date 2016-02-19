@@ -239,6 +239,16 @@
 	background-image: url( @path-icon-w-time );
 }
 
+// Dashicons
+.luigi-dashicon {
+	display: inline-block;
+	font-family: "dashicons";
+	font-size: 20px;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 // Search form
 .search-form {
 	margin-top: @triple;
@@ -360,12 +370,9 @@
 	cursor: pointer;
 
 	&:before {
+		&:extend(.luigi-dashicon);
 		content: "\f341";
 		display: block;
-	    font-family: "dashicons";
-		font-size: 20px;
-	    -webkit-font-smoothing: antialiased;
-	    -moz-osx-font-smoothing: grayscale;
 	}
 
 

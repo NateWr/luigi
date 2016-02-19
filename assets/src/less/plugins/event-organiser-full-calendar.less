@@ -1,0 +1,563 @@
+//
+// Styles for handling the output of the Event Organiser plugin's Full Calendar
+//
+
+// Full calendar header
+.fc-toolbar {
+	.clearfix();
+	text-align: center;
+
+	.fc-left {
+		float: left;
+		margin-bottom: @base;
+	}
+
+	.fc-right {
+		float: right;
+		margin-bottom: @base;
+	}
+
+	.fc-center {
+		display: inline-block;
+		margin-bottom: @base;
+
+		> div > * {
+			float: left;
+			display: block;
+			margin-left: @half;
+			margin-right: @half;
+		}
+
+		button {
+			&:extend(.luigi-button-wire all);
+		}
+	}
+
+	.fc-button-group,
+	button,
+	.fc-header-dropdown {
+		display: inline-block;
+		margin-right: @base;
+		vertical-align: top;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	h2 {
+		margin: 0;
+		padding-right: @base;
+		font-size: @font-lead;
+		line-height: 30px; // height of buttons in row
+		font-weight: @light;
+	}
+
+	select {
+		&:extend(.luigi-small-select all);
+	}
+
+	h2,
+	select {
+		display: inline-block;
+	}
+
+	.fc-prev-button,
+	.fc-next-button {
+		&:extend(.luigi-button-wire all);
+	}
+
+	.fc-icon-left-single-arrow:before {
+		content: "\02039";
+		font-size: 16px;
+		line-height: 16px;
+	}
+
+	.fc-icon-right-single-arrow:before {
+		content: "\0203A";
+		font-size: 16px;
+		line-height: 16px;
+	}
+
+	@media(min-width: @screen-sm) {
+
+		h2 {
+			line-height: 45px; // height of buttons in row
+		}
+
+		.fc-icon-left-single-arrow:before {
+			font-size: 24px;
+		}
+
+		.fc-icon-right-single-arrow:before {
+			font-size: 24px;
+		}
+	}
+}
+
+// Shared styles for calendar views (full and collapsed)
+.fc-view {
+	position: relative;
+
+	table {
+		width: 100%;
+		border: none;
+		table-layout: fixed;
+	}
+
+	tr {
+		border: none;
+	}
+
+	th,
+	td {
+		padding: 0;
+	}
+
+	.fc-day-header {
+		padding: @base @half;
+		background: transparent;
+		font-size: @font-tiny;
+		line-height: @line-tiny;
+		font-weight: @normal;
+		color: @text-light;
+		text-align: center;
+	}
+
+	.fc-row {
+		position: relative;
+	}
+
+	.fc-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		> table {
+			height: 100%;
+		}
+	}
+
+	.fc-event {
+		display: block;
+		margin: @half 0;
+		margin-left: 4px; // no border
+		padding: 0 (@base - 4);
+		font-weight: @semibold;
+		text-decoration: none;
+		color: @text !important;
+
+		&:hover,
+		&:focus {
+			color: @primary !important;
+		}
+
+		&[class*="eo-event-cat"] {
+			background: transparent !important;
+			border-left: 4px solid transparent;
+			margin-left: 0;
+		}
+
+		.fc-time {
+			font-size: @font-tiny;
+			line-height: @line-tiny;
+			font-weight: @normal;
+		}
+
+		.fc-title {
+			display: block;
+		}
+	}
+}
+
+.fc-listMonth-view {
+
+	.fc-content-skeleton {
+
+		thead td {
+			padding: @quadruple 0 @base;
+			border-bottom: @border-line-light;
+			font-size: @font-tiny;
+			line-height: @line-tiny;
+			color: @text-light;
+		}
+	}
+
+	.fc-list-header-left {
+		&:extend(.screen-reader-text all);
+	}
+
+	.fc-event-container {
+		padding: @half 0;
+
+		a {
+			color: @text;
+		}
+	}
+}
+
+// Weekly and daily agenda view
+.fc-agenda-view {
+
+	> table {
+		border: @border-line;
+	}
+
+	hr.fc-widget-header {
+		display: none;
+	}
+
+	.fc-time-grid-container {
+		position: relative;
+	}
+
+	th {
+		background: transparent;
+	}
+
+	.fc-widget-content td {
+		font-size: @font-tiny;
+		line-height: @line-tiny;
+	}
+
+	.fc-bg {
+
+		td {
+			border-left: @border-line;
+
+			&:first-child {
+				border-left: none;
+			}
+		}
+	}
+
+	.fc-day-grid {
+		min-height: @line-base * 2;
+		border-top: @border-line;
+		border-bottom: @border-line;
+		background: @bg-lift;
+
+		td {
+			height: @line-base * 2;
+		}
+	}
+
+	.fc-widget-content .fc-axis span {
+		display: inline-block;
+		padding-left: @half;
+		padding-right: @half;
+	}
+
+	.fc-slats {
+
+		td {
+			height: @triple;
+		}
+
+		tr {
+			border-bottom: @border-line-light;
+		}
+
+		.fc-minor {
+			border-bottom: @border-line;
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	.fc-event-container {
+		position: relative;
+	}
+
+	.fc-time-grid {
+
+		.fc-content-skeleton {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+
+		.fc-event {
+			position: absolute;
+			left: 0;
+			right: auto !important;
+			width: 100% !important;
+			margin: 0 2px 0 0 !important;
+			background: @bg-lift !important;
+			box-shadow: 1px 1px @border-light;
+			overflow: hidden;
+
+			&[class*="eo-event-cat"] {
+				background: @bg-lift !important;
+			}
+
+			.fc-time {
+				font-size: @font-tinier;
+				line-height: @line-tinier;
+			}
+		}
+	}
+}
+
+.fc-agendaDay-view {
+
+	.fc-time-grid {
+
+		.fc-event {
+			right: 0 !important;
+			width: auto !important;
+			margin-right: 0 !important;
+			box-shadow: 0 0 1px @border-light;
+		}
+	}
+}
+
+// Covers basic day, week and calendar
+.fc-basic-view {
+
+	.fc-bg td,
+	.fc-content-skeleton {
+		min-height: 4em;
+	}
+
+	.fc-bg td {
+		border-right: @border-line;
+
+		&:last-child {
+			border-right: none;
+		}
+	}
+
+	.fc-content-skeleton {
+		position: relative;
+	}
+
+	.fc-event {
+
+		.fc-time {
+			font-size: @font-tinier;
+			line-height: @line-tinier;
+		}
+
+		.fc-title {
+			font-size: @font-tiny;
+			line-height: @line-tiny;
+		}
+
+		&.eo-multi-day {
+			padding: 0;
+			border-left-color: @border;
+
+			.fc-content {
+				padding: @half;
+				background: #eee;
+				border: @border-line;
+				border-left: none;
+				border-right: none;
+			}
+		}
+	}
+}
+
+.fc-basicWeek-view,
+.fc-basicDay-view {
+
+	> table {
+		border: @border-line;
+
+		> tbody {
+			border-top: @border-line;
+		}
+	}
+}
+
+.fc-month-view {
+
+	> table {
+		border: @border-line;
+
+		> thead {
+
+			.fc-row {
+				position: absolute;
+				top: 0;
+				min-height: 0;
+				margin: 0;
+				z-index: 1;
+			}
+
+		}
+
+		> tbody {
+
+			> tr > td td {
+				border-top: @border-line;
+				border-bottom: @border-line;
+
+				&:last-child {
+					border-right: none;
+				}
+			}
+		}
+	}
+
+	.fc-row:first-child .fc-bg .fc-day {
+		border-top: none;
+	}
+
+	.fc-day-header {
+		padding: @half;
+		line-height: @line-base;
+		text-align: left;
+	}
+
+	.fc-row {
+		min-height: 6em;
+	}
+
+	.fc-bg {
+
+		.fc-day {
+			background: @bg-lift;
+		}
+
+		.fc-other-month,
+		.fc-past {
+			background: transparent;
+		}
+	}
+
+	.fc-content-skeleton {
+		position: relative;
+
+		td {
+			padding: @half;
+			border: none;
+		}
+
+		tbody {
+
+			td {
+				padding: 0;
+			}
+		}
+	}
+
+	.fc-day-number {
+		font-size: @font-sml;
+		line-height: @line-sml;
+		font-weight: @light;
+		text-align: right;
+	}
+
+	.fc-past {
+		color: @text-light;
+	}
+
+	.fc-event {
+		margin-left: 4px; // no border
+		font-size: @font-tiny;
+		line-height: 15px;
+
+		&.eo-multi-day {
+			padding: 0;
+			border-left-color: @border;
+
+			.fc-content {
+				padding: @half;
+				background: #eee;
+				border: @border-line;
+				border-left: none;
+				border-right: none;
+			}
+		}
+
+		.fc-time {
+			font-size: @font-tinier;
+			line-height: @line-tinier;
+		}
+	}
+
+	@media(min-width: @screen-sm) {
+
+		.fc-row {
+			min-height: 8em;
+		}
+
+		.fc-day-number {
+			font-size: @font-base;
+			line-height: @line-base;
+		}
+	}
+
+	@media(min-width: @screen-md) {
+
+		.fc-row {
+			min-height: 10em;
+		}
+
+		.fc-day-number {
+			font-size: 20px;
+			line-height: @line-base;
+		}
+	}
+
+	@media(min-width: @screen-lg) {
+
+		.fc-row {
+			min-height: 12em;
+		}
+
+		.fc-day-number {
+			font-size: 22px;
+			line-height: @line-base;
+		}
+	}
+}
+
+//
+// Styles for qtip popups lib used by Event Organiser
+//
+.qtip{
+	display: none;
+	position: absolute;
+	top: -28000px;
+	left: -28000px;
+	min-width: 50px;
+	max-width: 250px;
+	font-size: @font-tiny;
+	line-height: @line-tiny;
+	background: @bg-dark;
+	color: #fff;
+
+	@media(min-width: @screen-md) {
+		max-width: 480px;
+	}
+
+	@media(max-width: (@screen-md - 1) ) {
+		display: none !important;
+	}
+}
+
+.qtip-content{
+	position: relative;
+	padding: @base;
+	overflow: hidden;
+	word-wrap: break-word;
+}
+
+.qtip-titlebar{
+	position: relative;
+	margin-top: @base;
+	margin-bottom: @double;
+	padding: 0 @base;
+	font-size: @font-base;
+	line-height: @line-base;
+	font-weight: @bold;
+	text-transform: uppercase;
+}

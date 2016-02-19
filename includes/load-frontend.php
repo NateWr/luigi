@@ -74,10 +74,12 @@ if ( !function_exists( 'luigi_add_body_classes' ) ) {
 	 */
 	function luigi_add_body_classes( $classes ) {
 
+		// Add class if sidebar is not shown
 		if ( ( is_front_page() && !is_home() ) ||
 				is_page_template( 'page-full-width.php' ) ||
 				!is_active_sidebar( 'primary-sidebar' ) ||
-				( get_post_type() == 'fdm-menu' && luigi_menu_has_two_cols() )
+				( get_post_type() == 'fdm-menu' && luigi_menu_has_two_cols() ) ||
+				( get_post_type() == 'event' && is_single() )
 			) {
 			$classes[] = 'luigi-primary-sidebar-inactive';
 		}
@@ -85,4 +87,38 @@ if ( !function_exists( 'luigi_add_body_classes' ) ) {
 		return $classes;
 	}
 	add_action( 'body_class', 'luigi_add_body_classes' );
+}
+
+if ( !function_exists( 'luigi_set_map_options' ) ) {
+	/**
+	 * Define a custom style for Google Maps
+	 *
+	 * Used to alter maps from Business Profile and Event Organiser.
+	 *
+	 * @since 0.1
+	 */
+	function luigi_set_map_options( $opts ) {
+
+		// Don't override styles set by any other code
+		// @TODO use color for theme mods
+		if ( empty( $opts['styles'] ) ) {
+			$opts['styles'] = array(
+				array(
+					'stylers' => array(
+						array( 'hue' => '#9a8f45' )
+					)
+				),
+				array(
+					'featureType' => 'water',
+					'stylers' => array(
+						array( 'hue' => '#0000ff' )
+					)
+				),
+			);
+		}
+
+		return $opts;
+	}
+	add_filter( 'bpfwp_google_map_options', 'luigi_set_map_options' );
+	add_filter( 'eventorganiser_venue_map_options', 'luigi_set_map_options' );
 }

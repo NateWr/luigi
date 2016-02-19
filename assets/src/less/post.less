@@ -8,11 +8,16 @@
 
 .entry-title {
 	margin: 0;
-	font-size: @font-title;
-	line-height: @line-title;
+	font-size: @font-bigger;
+	line-height: @line-bigger;
 	font-weight: @bold;
 	text-transform: uppercase;
 	word-wrap: break-word;
+
+	@media(min-width: @screen-sm) {
+		font-size: @font-title;
+		line-height: @line-title;
+	}
 }
 
 .entry-meta {
@@ -30,6 +35,14 @@
 		margin-top: @triple;
 		margin-bottom: @triple;
 		word-wrap: break-word;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	@media(min-width: @screen-sm) {
