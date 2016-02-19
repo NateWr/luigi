@@ -50,5 +50,3 @@
 				<?php esc_attr_e( 'Browse', 'luigi' ); ?>
 			</a>
 		</header><!-- #masthead -->
-
-		<div id="content" class="site-content">

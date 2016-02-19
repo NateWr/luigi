@@ -8,8 +8,6 @@
  */
 ?>
 
-		</div><!-- #content -->
-
 		<?php if ( is_active_sidebar( 'footer-full' ) ) : ?>
 			<section class="site-footer-widgets-full">
 				<ul id="sidebar" class="widget-area footer-full-widget-container">

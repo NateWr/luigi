@@ -9,37 +9,39 @@
 
 get_header(); ?>
 
-<section id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+<div id="content" class="site-content">
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-			<header class="entry-header">
-				<h1 class="entry-title">
-					<?php printf( esc_html__( 'Search Results for: %s', 'luigi' ), '<span>' . get_search_query() . '</span>' ); ?>
-				</h1>
-			</header><!-- .entry-header -->
+				<header class="entry-header">
+					<h1 class="entry-title">
+						<?php printf( esc_html__( 'Search Results for: %s', 'luigi' ), '<span>' . get_search_query() . '</span>' ); ?>
+					</h1>
+				</header><!-- .entry-header -->
 
-			<?php
-			while ( have_posts() ) : the_post();
-				get_template_part( 'content', 'search' );
-			endwhile;
+				<?php
+				while ( have_posts() ) : the_post();
+					get_template_part( 'content', 'search' );
+				endwhile;
 
-			the_posts_navigation(
-				array(
-					'prev_text' => esc_html__( '&larr; Older posts', 'lugi' ),
-					'next_text' => esc_html__( 'Newer posts &rarr;', 'lugi' ),
-				)
-			);
+				the_posts_navigation(
+					array(
+						'prev_text' => esc_html__( '&larr; Older posts', 'lugi' ),
+						'next_text' => esc_html__( 'Newer posts &rarr;', 'lugi' ),
+					)
+				);
 
-		else :
-			get_template_part( 'content', 'none' );
+			else :
+				get_template_part( 'content', 'none' );
 
-		endif; ?>
+			endif; ?>
 
-	</main><!-- #main -->
-</section><!-- #primary -->
+		</main><!-- #main -->
+	</section><!-- #primary -->
+	<?php get_sidebar(); ?>
+</div><!-- #content -->
 
 <?php
-get_sidebar();
 get_footer();
