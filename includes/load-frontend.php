@@ -99,7 +99,7 @@ if ( !function_exists( 'luigi_add_body_classes' ) ) {
 			}
 		} elseif ( is_home() ) {
 			$narrow_content = true;
-		} elseif ( is_page() && !is_page_template( 'page-full-width.php' ) ) {
+		} elseif ( is_page() && !is_front_page() && !is_page_template( 'page-full-width.php' ) ) {
 			$narrow_content = true;
 		}
 		if ( $narrow_content ) {
