@@ -14,6 +14,8 @@ if ( !function_exists( 'luigi_eo_customize_archive_title' ) ) {
 
 		if ( is_post_type_archive( 'event' ) ) {
 			return post_type_archive_title( '', false );
+		} else if ( is_tax( 'event-category' ) || is_tax( 'event-tag' ) ) {
+			return single_term_title( esc_html__( 'Events: ', 'luigi' ), false);
 		}
 
 		return $title;
