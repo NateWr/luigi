@@ -295,18 +295,19 @@
 
 // Custom list bullet points
 .luigi-list-item {
+	position: relative;
+	padding-left: 20px;
 	list-style: none;
 
 	&:before {
 		content: '';
-		display: inline-block;
-		position: relative;
-		top: -0.15em;
+		display: block;
+		position: absolute;
+		top: 0.4em;
+		left: 0;
 		width: 8px;
 		height: 8px;
-		margin-right: 1em;
 		background: @primary;
-		vertical-align: middle;
 	}
 }
 

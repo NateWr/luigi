@@ -30,7 +30,10 @@
 .widget_pages,
 .widget_meta,
 .widget_nav_menu,
-.widget_recent_comments {
+.widget_recent_comments,
+.EO_Event_List_Widget,
+.eo__event_categories,
+.eo-agenda-widget {
 
 	> ul {
 		padding-left: 0;
@@ -38,8 +41,8 @@
 
 	li {
 		&:extend(.luigi-list-item all);
-		padding-top: 0.5em;
-		padding-bottom: 0.5em;
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
 
 		ul {
 			padding-top: 0.5em;
@@ -85,11 +88,13 @@
 		text-transform: uppercase;
 	}
 
-	#prev {
+	#prev,
+	#eo-widget-prev-month { // Event Organiser
 		text-align: left;
 	}
 
-	#next {
+	#next,
+	#eo-widget-next-month { // Event Organiser
 		text-align: right;
 	}
 }
@@ -218,6 +223,77 @@
 		}
 	}
 }
+
+// Event Organiser Agenda
+.eo-agenda-widget {
+
+	.dates {
+		margin-top: -@triple;
+
+		> li {
+			padding-left: 0;
+			margin-top: @half;
+			font-weight: @semibold;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	.a-date {
+		padding-top: @base;
+		padding-left: 0;
+		font-weight: @normal;
+
+		> li {
+			margin-top: @base;
+			margin-bottom: @base;
+		}
+
+		.meta {
+			display: block !important;
+			margin-top: @half;
+		}
+	}
+}
+
+.eo-agenda-widget-nav {
+	position: relative;
+	display: block;
+	height: @triple;
+	text-align: right;
+	z-index: 2;
+
+	> span {
+		position: relative;
+		display: inline-block;
+		width: @triple;
+		height: @triple;
+		color: transparent;
+		text-align: center;
+		overflow: hidden;
+		cursor: pointer;
+
+		&:before {
+			&:extend(.luigi-dashicon);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			color: @text;
+		}
+	}
+}
+
+.eo-agenda-widget-nav-prev:before {
+	content: "\f341";
+}
+
+.eo-agenda-widget-nav-next:before {
+	content: "\f345";
+}
+
 
 // Reset styles for thing display in sidebar areas (except full-width sidebar)
 .widget-area:not(.footer-full-widget-container) {
