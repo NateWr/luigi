@@ -84,6 +84,28 @@ if ( !function_exists( 'luigi_add_body_classes' ) ) {
 			$classes[] = 'luigi-primary-sidebar-inactive';
 		}
 
+		// Add class if this is a page where we want to display a narrow
+		// content column
+		$narrow_content = false;
+		if ( is_single() ) {
+			if ( get_post_type() == 'post' || get_post_type() == 'fdm-menu-item' ||
+					( get_post_type() == 'fdm-menu' && !luigi_menu_has_two_cols() ) ||
+					( is_page() && !is_page_template( 'page-full-width.php' ) ) ) {
+				$narrow_content = true;
+			}
+		} elseif ( is_archive() ) {
+			if ( get_post_type() !== 'grfwp-review' ) {
+				$narrow_content = true;
+			}
+		} elseif ( is_home() ) {
+			$narrow_content = true;
+		} elseif ( is_page() && !is_page_template( 'page-full-width.php' ) ) {
+			$narrow_content = true;
+		}
+		if ( $narrow_content ) {
+			$classes[] = 'narrow-content-page';
+		}
+
 		return $classes;
 	}
 	add_action( 'body_class', 'luigi_add_body_classes' );

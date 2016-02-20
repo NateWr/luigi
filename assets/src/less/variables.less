@@ -68,16 +68,18 @@
 @screen-xl:           1400px;
 
 // Widths
+@content-width:        600px;
+@content-width-lg:     800px;
 @sidebar-width:        300px;
 @gutter:               @double;
-@container-primary-sm: @screen-sm - (@gutter * 2);
-@container-primary-md: @screen-md - (@gutter * 3) - @sidebar-width;
-@container-primary-lg: @screen-lg - (@gutter * 3) - @sidebar-width;
-@container-primary-xl: @screen-xl - (@gutter * 3) - @sidebar-width;
 @container-full-sm:    @screen-sm - (@gutter * 2);
 @container-full-md:    @screen-md - (@gutter * 2);
 @container-full-lg:    @screen-lg - (@gutter * 2);
 @container-full-xl:    @screen-xl - (@gutter * 2);
+@container-primary-sm: @container-full-sm - (@gutter * 2);
+@container-primary-md: @container-full-md - (@gutter * 3) - @sidebar-width;
+@container-primary-lg: @container-full-lg - (@gutter * 3) - @sidebar-width;
+@container-primary-xl: @container-full-xl - (@gutter * 3) - @sidebar-width;
 
 
 // Paths

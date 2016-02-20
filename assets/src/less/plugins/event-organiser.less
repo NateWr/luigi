@@ -20,23 +20,25 @@
 	}
 }
 
+// Mimic the narrow content layout for single event pages
 .post-single-event {
 
 	@media(min-width: @screen-md) {
 		.clearfix();
-
-		.entry-header {
-			padding-right: @sidebar-width;
-		}
 
 		.event-content {
 			float: left;
 			width: @container-primary-md;
 		}
 
-		.event-details {
+		.event-sidebar {
 			float: right;
 			width: @sidebar-width;
+		}
+
+		.entry-content,
+		.entry-footer {
+			width: @content-width;
 		}
 
 		.entry-meta {
@@ -48,8 +50,19 @@
 
 	@media(min-width: @screen-lg) {
 
+		.entry-header {
+			padding-left: 120px; // Align with main content column
+		}
+
 		.event-content {
 			width: @container-primary-lg;
+		}
+
+		.entry-content,
+		.entry-footer {
+			width: @content-width;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
@@ -58,10 +71,16 @@
 		.event-content {
 			width: @container-primary-xl;
 		}
+
+		.entry-content,
+		.entry-footer {
+			width: @content-width-lg;
+		}
 	}
 }
 
 .event-meta-item {
+	position: relative;
 	margin-bottom: @quadruple;
 	font-size: @font-tiny;
 	line-height: @line-tiny;
@@ -71,24 +90,23 @@
 
 	&:before {
 		&:extend(.luigi-dashicon);
-		vertical-align: top;
-		width: 1.5em;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 
-	&.venue {
-		font-weight: @semibold;
-
-		&:before {
-			content: "\f230";
-		}
-	}
-
+	&.venue,
 	&.short-date {
+		padding-left: 2em;
 		font-weight: @semibold;
+	}
 
-		&:before {
-			content: "\f508";
-		}
+	&.venue:before {
+		content: "\f230";
+	}
+
+	&.short-date:before {
+		content: "\f508";
 	}
 
 	&.recurrence-description {

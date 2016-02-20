@@ -14,7 +14,7 @@
 			<?php the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' ); ?>
 		</header>
 
-		<div class="event-details">
+		<div class="event-sidebar">
 			<?php get_template_part( 'template-parts/event', 'meta' ); ?>
 		</div>
 
