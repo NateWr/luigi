@@ -181,3 +181,25 @@
 		float: left;
 	}
 }
+
+// Event List shortcode
+// [eo-events]
+.eo-events-shortcode {
+	font-size: @font-sml;
+	line-height: @line-sml;
+
+	li {
+		&:extend(.luigi-list-item all);
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+
+		li:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	a {
+		font-weight: @semibold;
+		text-decoration: none;
+	}
+}
