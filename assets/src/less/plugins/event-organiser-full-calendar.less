@@ -2,6 +2,23 @@
 // Styles for handling the output of the Event Organiser plugin's Full Calendar
 //
 
+.entry-content {
+
+	.eo-fullcalendar {
+		margin-top: @triple;
+		margin-bottom: @triple;
+
+		// hidden loading div is at nth-child(1)
+		&:nth-child(2) {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
 // Full calendar header
 .fc-toolbar {
 	.clearfix();
