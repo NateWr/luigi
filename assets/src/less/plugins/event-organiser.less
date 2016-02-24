@@ -8,15 +8,17 @@
 	.site-content {
 		margin-top: @triple * 2;
 	}
+}
 
-	.eo-venue-map {
-		margin-top: 50px; // spacing for collapsed nav
-		height: 200px;
+// Venue map at the top of venue archives and single events
+.event-single-venue-map,
+.venue-archive-map {
+	margin-top: 50px; // spacing for collapsed nav
+	height: 200px;
 
-		@media(min-width: @screen-sm) {
-			margin-top: 0;
-			height: 400px;
-		}
+	@media(min-width: @screen-sm) {
+		margin-top: 0;
+		height: 400px;
 	}
 }
 
@@ -162,5 +164,20 @@
 			padding: 0 0.5em;
 			color: transparent;
 		}
+	}
+}
+
+// Swap the next/prev links in event archives
+.tax-event-category,
+.tax-event-tag,
+.tax-event-venue,
+.post-type-archive-event {
+
+	.nav-previous {
+		float: right;
+	}
+
+	.nav-next {
+		float: left;
 	}
 }

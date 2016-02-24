@@ -1,11 +1,17 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying the events archive page
  *
  * @package luigi
  */
 
 get_header(); ?>
+
+<?php
+ 	if ( have_posts() ) {
+		echo luigi_eo_maybe_print_venue_map( get_queried_object_id(), array( 'scrollwheel' => false, 'class' => 'venue-archive-map' ) );
+	}
+?>
 
 <div id="content" class="site-content">
 	<div id="primary" class="content-area">
@@ -18,20 +24,18 @@ get_header(); ?>
 					<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 				</header>
 
+				<?php $description = eo_get_venue_description( get_queried_object_id() );
+					if ( $description ) : ?>
+						<div class="entry-content">
+							<?php echo $description; ?>
+						</div>
+				<?php endif; ?>
+
 				<?php while ( have_posts() ) : the_post();
 					get_template_part( 'content', get_post_type() );
 				endwhile;
 
-				if ( is_tax( 'event-category' ) || is_tax( 'event-tag' ) ) {
-					luigi_eo_the_posts_navigation();
-				} else {
-					the_posts_navigation(
-						array(
-							'prev_text' => esc_html__( '&larr; Older posts', 'lugi' ),
-							'next_text' => esc_html__( 'Newer posts &rarr;', 'lugi' ),
-						)
-					);
-				}
+				luigi_eo_the_posts_navigation();
 
 			else :
 				get_template_part( 'content', 'none' );

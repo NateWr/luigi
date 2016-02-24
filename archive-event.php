@@ -22,12 +22,7 @@ get_header(); ?>
 					get_template_part( 'content', get_post_type() );
 				endwhile;
 
-				the_posts_navigation(
-					array(
-						'prev_text' => esc_html__( '&larr; Older events', 'lugi' ),
-						'next_text' => esc_html__( 'Later events &rarr;', 'lugi' ),
-					)
-				);
+				luigi_eo_the_posts_navigation();
 
 			else :
 				get_template_part( 'content', 'none' );

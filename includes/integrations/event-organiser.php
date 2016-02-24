@@ -16,6 +16,8 @@ if ( !function_exists( 'luigi_eo_customize_archive_title' ) ) {
 			return post_type_archive_title( '', false );
 		} else if ( is_tax( 'event-category' ) || is_tax( 'event-tag' ) ) {
 			return single_term_title( esc_html__( 'Events: ', 'luigi' ), false);
+		} else if ( is_tax( 'event-venue' ) ) {
+			return single_term_title( '', false );
 		}
 
 		return $title;
@@ -109,7 +111,7 @@ if ( !function_exists( 'luigi_eo_maybe_print_venue_map' ) ) {
 	 */
 	function luigi_eo_maybe_print_venue_map( $venue = 0, $map_args = array() ) {
 
-		if ( !function_exists( 'eo_get_venue' ) || !function_exists( 'eo_get_venue_map' ) ) {
+		if ( !function_exists( 'eo_get_venue' ) || !function_exists( 'eo_get_venue_map' ) || !function_exists( 'eo_venue_has_latlng' ) ) {
 			return '';
 		}
 
@@ -117,8 +119,8 @@ if ( !function_exists( 'luigi_eo_maybe_print_venue_map' ) ) {
 			$venue = eo_get_venue();
 		}
 
-		if ( $venue ) {
-			return eo_get_venue_map( eo_get_venue(), $map_args );
+		if ( $venue && eo_venue_has_latlng( $venue ) ) {
+			return eo_get_venue_map( $venue, $map_args );
 		}
 
 		return '';
@@ -163,5 +165,25 @@ if ( !function_exists( 'luigi_eo_venue_name' ) ) {
 		} else {
 			echo '';
 		}
+	}
+}
+
+if ( !function_exists( 'luigi_eo_the_posts_navigation' ) ) {
+	/**
+	 * Swap the language for older/later events
+	 *
+	 * The event archives are in ASC order rather than DSC order, so page 2
+	 * shows events later than page 1. For this reason, the language for
+	 * "next" and "prev" pages needs to be reversed.
+	 *
+	 * @since 0.1
+	 */
+	function luigi_eo_the_posts_navigation() {
+		the_posts_navigation(
+			array(
+				'next_text' => esc_html__( '&larr; Older events', 'lugi' ),
+				'prev_text' => esc_html__( 'Later events &rarr;', 'lugi' ),
+			)
+		);
 	}
 }
