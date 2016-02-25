@@ -97,7 +97,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 				array(
 					'section'    => 'content_layout_control',
 					'priority'   => 1,
-					'components' => array( 'luigi-hero-block', 'luigi-content-block', 'luigi-posts-reviews', 'luigi-mixer', 'luigi-map' ),
+					'components' => array( 'luigi-hero-block', 'luigi-content-block', 'luigi-posts-reviews', 'luigi-mixer', 'luigi-map', 'luigi-eo-calendar' ),
 					'i18n' => array(
 						'add_component'                 => esc_html__( 'Add Component', 'luigi' ),
 						'edit_component'                => esc_html__( 'Edit', 'luigi' ),
@@ -223,27 +223,9 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 
 		// Load maps handler for Business Profile
 		add_action( 'wp_footer', 'luigi_customizer_load_bpfwp_map_handlers' );
+		add_action( 'wp_footer', 'luigi_eo_customizer_load_calendar_handlers', 1 );
 	}
 	add_action( 'customize_preview_init', 'luigi_customizer_enqueue_preview_assets' );
-}
-
-if ( !function_exists( 'luigi_customizer_load_bpfwp_map_handlers' ) ) {
-	/**
-	 * Print a hidden map using Business Profile's native functions to ensure
-	 * that the map handler is loaded and initialized properly. This way, if a
-	 * customizer setting adds a map live, it will update properly.
-	 *
-	 * @since 0.0.1
-	 */
-	function luigi_customizer_load_bpfwp_map_handlers() {
-		?>
-
-		<div style="display:none;">
-			<?php bpwfwp_print_map(); ?>
-		</div>
-
-		<?php
-	}
 }
 
 if ( !function_exists( 'luigi_customizer_enqueue_control_assets' ) ) {
@@ -366,6 +348,18 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 				'description'   => esc_html__( 'A full-width map identifying your location.', 'luigi' ),
 				'i18n'          => array(
 					'description' => sprintf( esc_html__( 'To change the address, edit your %sBusiness Profile%s.', 'luigi' ), '<a href="' . admin_url( 'admin.php?page=bpfwp-settings' ) . '">', '</a>' ),
+				),
+			);
+		}
+
+		if ( defined( 'EVENT_ORGANISER_VER' ) && strnatcmp( EVENT_ORGANISER_VER, '3' ) >= 0 ) {
+			$components['luigi-eo-calendar'] = array(
+				'file'          => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-eo-calendar.php',
+				'class'         => 'Luigi_CLC_Component_EO_Calendar',
+				'name'          => esc_html__( 'Event Calendar', 'luigi' ),
+				'description'   => esc_html__( 'A monthly calendar displaying your upcoming events.', 'luigi' ),
+				'i18n'          => array(
+					'description' => sprintf( esc_html__( 'Add and edit events from your %sevents management page%s.', 'luigi' ), '<a href="' . admin_url( 'edit.php?post_type=event' ) . '">', '</a>' ),
 				),
 			);
 		}

@@ -187,3 +187,23 @@ if ( !function_exists( 'luigi_eo_the_posts_navigation' ) ) {
 		);
 	}
 }
+
+if ( !function_exists( 'luigi_eo_customizer_load_calendar_handlers' ) ) {
+	/**
+	 * Print a hidden map using Business Profile's native functions to ensure
+	 * that the map handler is loaded and initialized properly. This is used by
+	 * the customer to ensure that if a map is loaded in during customization,
+	 * it will update properly.
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_eo_customizer_load_calendar_handlers() {
+		?>
+
+		<div style="display:none;">
+			<?php echo do_shortcode( '[eo_fullcalendar]' ); ?>
+		</div>
+
+		<?php
+	}
+}

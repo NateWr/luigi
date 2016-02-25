@@ -114,6 +114,8 @@ if ( !function_exists( 'luigi_load_customizer' ) ) {
 		include_once( 'includes/load-customizer.php' );
 		include_once( 'includes/template-helpers.php' );
 		include_once( 'includes/template-shortcodes.php' );
+		include_once( 'includes/integrations/business-profile.php' );
+		include_once( 'includes/integrations/event-organiser.php' );
 	}
 }
 

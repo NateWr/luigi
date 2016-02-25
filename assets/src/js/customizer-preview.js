@@ -1,6 +1,11 @@
 /**
  * Render the customizer preview
  */
+
+// Store Event Organiser full calendar args to be globally available
+//
+var luigi_eo_calendar_args = {};
+
 ( function( $, Luigi_Selector_Cache ) {
 
 	/**
@@ -244,6 +249,17 @@
 			add_trigger( 'header_logo', cache.get( 'header_brand', '#masthead .brand' ), 'site_logo' );
 			add_trigger( 'footer_logo', cache.get( 'footer_logo', '#colophon .identity .home-link' ), 'footer_logo' );
 		});
+
+		// Store the calendar args so they can be used when instantiating
+		// calendars added via the customizer
+		if ( typeof wp !== 'undefined' && typeof wp.hooks !== 'undefined' && typeof wp.hooks.addFilter !== 'undefined' ) {
+			wp.hooks.addFilter( 'eventorganiser.fullcalendar_options', function( args, calendar ) {
+
+				luigi_eo_calendar_args = args;
+
+				return args;
+			}, 100 );
+		}
 	} );
 
 } )( jQuery, Luigi_Selector_Cache );
