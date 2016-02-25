@@ -352,11 +352,15 @@
 	background: @bg-lift;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 
-	select {
+	// Can be select dropdowns or just text. This styling brings consistent
+	// sizing to the elements whether select or text.
+	.ui-datepicker-month,
+	.ui-datepicker-year {
 		&:extend(.luigi-small-select all);
 		display: inline-block;
 		margin-left: 2px;
 	}
+
 }
 
 .ui-datepicker-prev,

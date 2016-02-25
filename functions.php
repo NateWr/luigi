@@ -99,6 +99,7 @@ if ( !function_exists( 'luigi_load_frontend' ) ) {
 		include_once( 'includes/integrations/restaurant-reservations.php' );
 		include_once( 'includes/integrations/food-and-drink-menu.php' );
 		include_once( 'includes/integrations/event-organiser.php' );
+		include_once( 'includes/integrations/ninja-forms.php' );
 	}
 }
 

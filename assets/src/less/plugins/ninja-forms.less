@@ -1,0 +1,179 @@
+//
+// Styles for handling the output of the Ninja Forms plugin
+//
+
+// Hide the honeypot
+.hp-wrap,
+.honeypot-wrap {
+	&:extend(.screen-reader-text all);
+}
+
+.ninja-forms-cont {
+
+	.field-wrap {
+		margin-top: @triple;
+		margin-bottom: @triple;
+	}
+
+	label {
+		display: block;
+		margin-top: 0;
+	}
+
+	.label-below label {
+		margin-top: @half;
+		margin-bottom: 0;
+		color: @text-light;
+	}
+
+	@media(min-width: @screen-xs) {
+
+		.label-left,
+		.label-right {
+			.clearfix();
+
+			label {
+				float: left;
+				padding: 11px @double 12px 0; // match input fields
+				margin-bottom: 0;
+				width: 40%;
+
+				+ .ninja-forms-field-description {
+					float: left;
+					clear: left;
+					padding-right: @double;
+					width: 40%;
+				}
+			}
+
+			.ninja-forms-field {
+				float: right;
+				width: 60%;
+			}
+		}
+
+		.label-right {
+
+			label {
+				float: right;
+				padding-right: 0;
+				padding-left: @double;
+
+				+ .ninja-forms-field-description {
+					float: right;
+					clear: right;
+					padding-left: @double;
+					width: 40%;
+				}
+			}
+
+			.ninja-forms-field {
+				float: left;
+			}
+		}
+	}
+
+	.checkbox-wrap {
+
+		&.label-left,
+		&.label-right {
+
+			.ninja-forms-field,
+			label {
+				display: inline;
+				float: none;
+				width: auto;
+				padding-right: 0.5em;
+			}
+
+			label {
+				font-size: @font-sml;
+				line-height: @line-sml;
+				font-weight: @normal;
+				text-transform: none;
+			}
+		}
+
+		&.label-left label {
+			padding-right: 0.5em;
+		}
+
+		&.label-right label {
+			padding-left: 0.5em;
+		}
+	}
+
+	#pass-strength-result {
+		display: inline-block;
+		margin-top: @half;
+		padding: @half @base;
+		background: #ddd;
+		font-size: @font-tiny;
+		line-height: @line-tiny;
+		font-weight: @semibold;
+
+		&.bad,
+		&.good,
+		&.short,
+		&.strong {
+			color: #fff;
+		}
+
+		&.bad {
+			background: @no;
+		}
+
+		&.good {
+			background: @yes;
+		}
+
+		&.short {
+			background: @warn;
+		}
+
+		&.strong {
+			background: @yes;
+		}
+	}
+
+	.submit-wrap input[type="submit"] {
+		&:extend(.luigi-button all);
+	}
+}
+
+.ninja-forms-field-description,
+.ninja-forms-cont .description {
+	font-size: @font-sml;
+	line-height: @line-sml;
+	margin: @half 0;
+}
+
+.ninja-forms-pass2 {
+	margin-top: @triple;
+}
+
+.ninja-forms-star-rating {
+	display: inline-block;
+	width: @double + @half;
+	height: @double + @half;
+	line-height: @double + @half;
+	cursor: pointer;
+
+	&:before {
+		&:extend(.luigi-dashicon);
+		content: "\f154";
+	}
+
+	a {
+		&:extend(.screen-reader-text all);
+	}
+}
+
+.ninja-forms-star-rating-on,
+.ninja-forms-star-rating-hover {
+
+	&:before {
+		content: "\f155";
+		color: @primary;
+	}
+}
