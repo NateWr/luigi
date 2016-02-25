@@ -71,6 +71,21 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
 	add_action( 'after_setup_theme', 'luigi_setup_theme' );
 }
 
+if ( !function_exists( 'luigi_load_typecase' ) ) {
+	/**
+	 * Load files required to integrate with Typecase
+	 *
+	 * This requires an early hook priority on `after_setup_theme` so it gets
+	 * a separate load chain
+	 *
+	 * @since 0.1
+	 */
+	function luigi_load_typecase() {
+		include_once( 'includes/integrations/typecase.php' );
+	}
+	add_action( 'after_setup_theme', 'luigi_load_typecase', -1 );
+}
+
 if ( !function_exists( 'luigi_load_context' ) ) {
 	/**
 	 * Load files when required for a given context
