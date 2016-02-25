@@ -45,6 +45,13 @@ if ( !function_exists( 'luigi_enqueue_assets' ) ) {
 
 		// Enqueue frontend script
 		wp_enqueue_script( 'luigi-js', get_stylesheet_directory_uri() . '/assets/js/frontend.' . $min . 'js', array( 'jquery' ), '0.0.1', true );
+		wp_localize_script(
+			'luigi-js',
+			'luigi_js_data',
+			array(
+				'ajax_url' => admin_url('admin-ajax.php'),
+			)
+		);
 	}
 	add_action( 'wp_enqueue_scripts', 'luigi_enqueue_assets' );
 }

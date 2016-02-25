@@ -7,7 +7,7 @@
  *
  * @since 0.0.1
  */
-var luigi_resize_throttle_timer;
+var luigi = luigi || {};
 
 jQuery(document).ready(function ($) {
 
@@ -64,7 +64,6 @@ jQuery(document).ready(function ($) {
 			// 768px
 			args.defaultView = ( $(window).width() < 768 && calendar.responsive )  ? _eoResponsiveViewMap[calendar.defaultview] : calendar.defaultview;
 			args.windowResize = function(view) {
-				console.log( 'hello there', view );
 				if( view.calendar.options.responsive && $(window).width() < 768 ){
 					$(this).fullCalendar( 'changeView', _eoResponsiveViewMap[view.calendar.options.previousView] );
 				} else {
@@ -88,8 +87,100 @@ jQuery(document).ready(function ($) {
 	}
 
 	window.onresize = function() {
-		clearTimeout( luigi_resize_throttle_timer );
-		luigi_resize_throttle_timer = setTimeout( window_resized, 500 );
+		clearTimeout( luigi.resize_throttle_timer );
+		luigi.resize_throttle_timer = setTimeout( window_resized, 500 );
 	};
+
+	/**
+	 * Add content to a modal and open it
+	 *
+	 * @since 0.1
+	 */
+	luigi.openModal = function( content, invoker ) {
+		$( 'body' ).addClass( 'luigi-modal-is-visible' )
+			.find( '.luigi-modal' ).addClass( 'is-visible' )
+			.find( '.luigi-modal-content' ).html( content );
+
+		setTimeout( function() {
+			$( '.luigi-modal-close' ).focus();
+		}, 300 );
+
+		if ( typeof invoker !== 'undefined' ) {
+			luigi.modal_invoker = invoker;
+		}
+	};
+
+	/**
+	 * Close the modal and remove the content
+	 *
+	 * @since 0.1
+	 */
+	luigi.closeModal = function() {
+		$( 'body' ).removeClass( 'luigi-modal-is-visible' )
+			.find( '.luigi-modal' ).removeClass( 'is-visible' )
+			.find( '.luigi-modal-content' ).empty();
+
+		if ( typeof luigi.modal_invoker !== 'undefind' ) {
+			luigi.modal_invoker.focus();
+		}
+	};
+	$( '.luigi-modal' ).click( function(e) {
+		var target = $( e.target );
+		if ( target.is( '.luigi-modal' ) || target.is( '.luigi-modal-close' ) ) {
+			luigi.closeModal();
+		}
+	} );
+
+	/**
+	 * Load a contact card modal
+	 *
+	 * @since 0.1
+	 */
+	$( 'body' ).on( 'click', '.luigi-load-contact-card', function(e) {
+
+		e.preventDefault();
+
+		luigi.openModal( '<span class="luigi-loading-spinner"></span>', $( e.currentTarget ) );
+
+		var params = {
+			action: 'luigi-bpfwp-get-contact-card-modal'
+		};
+
+		$.post(
+			luigi_js_data.ajax_url,
+			$.param( params ),
+			function( r ) {
+
+				if ( r.success ) {
+					if ( typeof r.data === 'undefined' || typeof r.data.output === 'undefined' ) {
+						alert( r );
+						luigi.closeModal();
+					}
+
+					luigi.openModal( r.data.output );
+
+					if ( typeof bpfwp_map === 'undefined' && typeof r.data.script_data !== 'undefined' ) {
+						$( 'body' ).append( $( '<script type="text/javascript"></script>' ).html(
+								'/* <![CDATA[ */' +
+								'var bpfwp_map = ' + JSON.stringify( r.data.script_data ) +
+								'/* ]]> */'
+							)
+						);
+					}
+
+					if ( typeof bp_initialize_map === 'undefined' && typeof r.data.script !== 'undefined' ) {
+						$( 'body' ).append( $( '<script type="text/javascript"></script>' ).attr( 'src', r.data.script ) );
+					} else {
+						bp_initialize_map();
+					}
+
+				} else {
+					alert( r );
+					luigi.closeModal();
+				}
+
+			}
+		);
+	} );
 
 });

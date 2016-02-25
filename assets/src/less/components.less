@@ -454,3 +454,94 @@
 		}
 	}
 }
+
+// Hides the outer scrollbar when a modal is visible
+// Assigned to the <body> when a modal is visible
+.luigi-modal-is-visible {
+	overflow: hidden !important;
+}
+
+// Modal
+.luigi-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 1000;
+	overflow-y: auto;
+	cursor: pointer;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, visibility 0.3s;
+	-moz-transition: opacity 0.3s, visibility 0.3s;
+	transition: opacity 0.3s, visibility 0.3s;
+
+	&.is-visible {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.luigi-modal-panel {
+	position: relative;
+	width: 90%;
+	max-width: 600px;
+	background: @bg-lift;
+	margin: @triple auto;
+	padding-top: @triple;
+	cursor: auto;
+	.transform(translateY(-30px));
+	-webkit-transition-property: -webkit-transform;
+	-moz-transition-property: -moz-transform;
+	transition-property: transform;
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
+.is-visible .luigi-modal-panel {
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
+	transform: translateY(0);
+}
+
+
+.luigi-modal-close {
+	position: absolute;
+	top: @base;
+	right: @base;
+	font-size: @font-tiny;
+	line-height: @line-tiny;
+	font-weight: @semibold;
+	font-style: italic;
+	color: @text;
+	text-decoration: none;
+
+	&:after {
+		content: "\D7";
+		display: inline-block;
+		top: 0;
+		width: 20px;
+		height: 20px;
+		margin-left: 0.25em;
+		border: 1px solid;
+		border-radius: 50%;
+		font-size: 16px;
+		line-height: 18px;
+		text-align: center;
+		vertical-align: top;
+	}
+
+	&:focus {
+		outline: 0;
+
+		&:after {
+			background: @text;
+			color: #fff;
+		}
+	}
+}

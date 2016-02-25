@@ -80,6 +80,15 @@
 		</footer>
 	</div><!-- #page -->
 
+	<div class="luigi-modal">
+		<div class="luigi-modal-panel">
+			<a href="#" class="luigi-modal-close">
+				<?php esc_html_e( 'Close', 'luigi' ); ?>
+			</a>
+			<div class="luigi-modal-content"></div>
+		</div>
+	</div>
+
 	<?php wp_footer(); ?>
 </body>
 </html>
