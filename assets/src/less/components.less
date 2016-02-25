@@ -346,11 +346,17 @@
 
 // jQuery UI datepicker
 .ui-datepicker {
-	width: 25em;
+	position: absolute;
+	top: -9999px; // Hide the datepicker off-screen until it's requested
+	width: 16em;
 	padding: @base;
 	max-width: 100%;
 	background: @bg-lift;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+	@media(min-width: @screen-md) {
+		width: 25em;
+	}
 
 	// Can be select dropdowns or just text. This styling brings consistent
 	// sizing to the elements whether select or text.
@@ -412,8 +418,12 @@
 
 	th,
 	a {
-		padding: @base;
+		padding: @half;
 		text-align: center;
+
+		@media(min-width: @screen-md) {
+			padding: @base;
+		}
 	}
 
 	thead {
