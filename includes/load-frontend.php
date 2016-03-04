@@ -24,21 +24,19 @@ if ( !function_exists( 'luigi_enqueue_assets' ) ) {
 		wp_enqueue_style( 'luigi', get_stylesheet_uri() );
 
 		// Load fonts
-		wp_enqueue_style(
-			'luigi-fonts',
-			apply_filters(
-				/**
-				 * Filter the URL to load fonts. Modify this to load different
-				 * fonts, weights or subsets from Google.
-				 *
-				 * @since 0.0.1
-				 *
-				 * @param string $url The URL to the font definitions
-				 */
-				'luigi_font_uri',
-				'//fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Open+Sans:300,400,400italic,600,600italic,700,700italic&subset=latin,latin-ext'
-			)
+		$font_uri = apply_filters(
+			/**
+			* Filter the URL to load fonts. Modify this to load different
+			* fonts, weights or subsets from Google.
+			*
+			* @since 0.0.1
+			*
+			* @param string $url The URL to the font definitions
+			*/
+			'luigi_font_uri',
+			'//fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Open+Sans:300,400,400italic,600,600italic,700,700italic&subset=latin,latin-ext'
 		);
+		wp_enqueue_style( 'luigi-fonts', $font_uri );
 
 		// Maybe load minified scripts
 		$min = WP_DEBUG ? '' : 'min.';
@@ -150,4 +148,37 @@ if ( !function_exists( 'luigi_set_map_options' ) ) {
 	}
 	add_filter( 'bpfwp_google_map_options', 'luigi_set_map_options' );
 	add_filter( 'eventorganiser_venue_map_options', 'luigi_set_map_options' );
+}
+
+/**
+ * Return an empty font URI to prevent loading the default fonts
+ *
+ * @since 0.1
+ */
+if ( !function_exists( 'luigi_font_uri_empty' ) ) {
+	function luigi_font_uri_empty() {
+		return '';
+	}
+}
+
+/**
+ * Return a font URI that does not include Open Sans
+ *
+ * @since 0.1
+ */
+if ( !function_exists( 'luigi_font_uri_no_open_sans' ) ) {
+	function luigi_font_uri_no_open_sans() {
+		return '//fonts.googleapis.com/css?family=Bilbo+Swash+Caps&subset=latin,latin-ext';
+	}
+}
+
+/**
+ * Return a font URI that does not include Bilbo Swash Caps
+ *
+ * @since 0.1
+ */
+if ( !function_exists( 'luigi_font_uri_no_bilbo' ) ) {
+	function luigi_font_uri_no_bilbo() {
+		return '//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,600italic,700,700italic&subset=latin,latin-ext';
+	}
 }
