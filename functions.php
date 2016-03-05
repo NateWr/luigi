@@ -166,6 +166,7 @@ if ( !function_exists( 'luigi_load_init' ) ) {
 	 * @since 0.0.1
 	 */
 	function luigi_load_init() {
+		include_once( 'includes/load-theme-setup.php' );
 		include_once( 'includes/integrations/restaurant-reservations.php' );
 		include_once( 'includes/integrations/food-and-drink-menu.php' );
 	}
