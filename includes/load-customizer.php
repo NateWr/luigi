@@ -326,20 +326,6 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 			);
 		}
 
-		$components['luigi-mixer'] = array(
-			'file'          => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-mixer.php',
-			'class'         => 'Luigi_CLC_Component_Mixer',
-			'name'          => esc_html__( 'Mix-and-Match', 'luigi' ),
-			'description'   => esc_html__( 'Pair two items in a row. Select from opening hours, a map, latest posts and more.', 'luigi' ),
-			'valid_options' => luigi_customizer_clc_mixer_options(),
-			'i18n'          => array(
-				'left'  => esc_html__( 'Left Content', 'luigi' ),
-				'right' => esc_html__( 'Right Content', 'luigi' ),
-				'left_title'  => esc_html__( 'Left Title', 'luigi' ),
-				'right_title' => esc_html__( 'Right Title', 'luigi' ),
-			),
-		);
-
 		global $bpfwp_controller;
 		if ( isset( $bpfwp_controller ) ) {
 			$components['luigi-map'] = array(
@@ -361,6 +347,23 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 				'description'   => esc_html__( 'A monthly calendar displaying your upcoming events.', 'luigi' ),
 				'i18n'          => array(
 					'description' => sprintf( esc_html__( 'Add and edit events from your %sevents management page%s.', 'luigi' ), '<a href="' . admin_url( 'edit.php?post_type=event' ) . '">', '</a>' ),
+				),
+			);
+		}
+
+		global $rtb_controller;
+		if ( isset( $bpfwp_controller ) || $rtb_controller ) {
+			$components['luigi-mixer'] = array(
+				'file'          => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-mixer.php',
+				'class'         => 'Luigi_CLC_Component_Mixer',
+				'name'          => esc_html__( 'Mix-and-Match', 'luigi' ),
+				'description'   => esc_html__( 'Pair two items in a row. Select from opening hours, a map, latest posts and more.', 'luigi' ),
+				'valid_options' => luigi_customizer_clc_mixer_options(),
+				'i18n'          => array(
+					'left'  => esc_html__( 'Left Content', 'luigi' ),
+					'right' => esc_html__( 'Right Content', 'luigi' ),
+					'left_title'  => esc_html__( 'Left Title', 'luigi' ),
+					'right_title' => esc_html__( 'Right Title', 'luigi' ),
 				),
 			);
 		}

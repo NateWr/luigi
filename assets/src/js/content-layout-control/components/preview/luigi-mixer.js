@@ -34,7 +34,7 @@
 			this.$el.html( html );
 
 			// Re-initialize any maps which may have been added
-			if ( typeof bp_initialize_map !== 'undefined' && typeof typeof google !== 'undefined' || typeof google.maps != 'undefined' ) {
+			if ( typeof bp_initialize_map !== 'undefined' && typeof google !== 'undefined' && typeof google.maps != 'undefined' ) {
 				bp_initialize_map();
 			}
 		},

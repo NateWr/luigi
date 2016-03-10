@@ -68,6 +68,10 @@ if ( !function_exists( 'luigi_shortcode_bpfwp_contact_card' ) ) {
 		$defaults = apply_filters( 'bpwfp_contact_card_defaults', $defaults );
 
 		global $bpfwp_controller;
+		if ( empty( $bpfwp_controller ) ) {
+			return '';
+		}
+
 		$bpfwp_controller->display_settings = shortcode_atts( $defaults, $args, 'contact-card' );
 
 		// Setup components and callback functions to render them
