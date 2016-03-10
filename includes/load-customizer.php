@@ -98,6 +98,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 					'section'    => 'content_layout_control',
 					'priority'   => 1,
 					'components' => array( 'luigi-hero-block', 'luigi-content-block', 'luigi-posts-reviews', 'luigi-mixer', 'luigi-map', 'luigi-eo-calendar' ),
+					'active_callback' => 'luigi_customizer_clc_active_callback',
 					'i18n' => array(
 						'add_component'                 => esc_html__( 'Add Component', 'luigi' ),
 						'edit_component'                => esc_html__( 'Edit', 'luigi' ),
@@ -400,5 +401,16 @@ if ( !function_exists( 'luigi_customizer_clc_mixer_options' ) ) {
 		}
 
 		return $options;
+	}
+}
+
+if ( !function_exists( 'luigi_customizer_clc_active_callback' ) ) {
+	/**
+	 * Active callback function for displaying the content layout control
+	 *
+	 * @since 0.1
+	 */
+	function luigi_customizer_clc_active_callback() {
+		return is_page() && is_front_page();
 	}
 }
