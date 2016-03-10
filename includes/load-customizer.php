@@ -437,6 +437,11 @@ if ( !function_exists( 'luigi_customizer_clc_maybe_control_post_edit' ) ) {
 			return;
 		}
 
+		$clc_enabled = apply_filters( 'luigi_enable_clc_post_editor_override', true );
+		if ( !$clc_enabled ) {
+			return;
+		}
+
 		remove_post_type_support( $post->post_type, 'editor' );
 		remove_post_type_support( $post->post_type, 'revisions' );
 		remove_meta_box( 'submitdiv', 'page', 'side' );
