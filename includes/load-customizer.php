@@ -246,6 +246,7 @@ if ( !function_exists( 'luigi_customizer_enqueue_control_assets' ) ) {
 
 		wp_localize_script( 'luigi-customizer-control-js', 'luigi_theme_customizer_control', array(
 			'business_profile_active' => defined( 'BPFWP_VERSION' ),
+
 		) );
 	}
 	add_action( 'customize_controls_enqueue_scripts', 'luigi_customizer_enqueue_control_assets' );
@@ -478,7 +479,8 @@ if ( !function_exists( 'luigi_customizer_clc_print_meta_box' ) ) {
 
 		$args = array(
 			'url' => get_permalink( $post ),
-			'return' => get_edit_post_link( $post->ID, 'raw' )
+			'return' => get_edit_post_link( $post->ID, 'raw' ),
+			'clc_onload_focus_control' => '1',
 		);
 		$url = admin_url( 'customize.php' ) . '?' . http_build_query( $args );
 
