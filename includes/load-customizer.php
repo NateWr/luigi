@@ -77,7 +77,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 			'content_layout_control',
 			array(
 				'capability' => 'edit_posts',
-				'title'      => __( 'Homepage Layout', 'luigi' ),
+				'title'      => __( 'Homepage Editor', 'luigi' ),
 			)
 		);
 
@@ -415,5 +415,90 @@ if ( !function_exists( 'luigi_customizer_clc_active_callback' ) ) {
 	 */
 	function luigi_customizer_clc_active_callback() {
 		return is_page() && is_front_page();
+	}
+}
+
+if ( !function_exists( 'luigi_customizer_clc_maybe_control_post_edit' ) ) {
+	/**
+	 * Remove the editor from pages that the content-layout-control works with.
+	 *
+	 * @since 0.1
+	 */
+	function luigi_customizer_clc_maybe_control_post_edit() {
+
+		global $post;
+		if ( !is_a( $post, 'WP_Post' ) || $post->post_type !== 'page' ) {
+			return;
+		}
+
+		$page_on_front = get_option('page_on_front');
+		if ( $post->ID !== $page_on_front ) {
+			return;
+		}
+
+		remove_post_type_support( $post->post_type, 'editor' );
+		remove_post_type_support( $post->post_type, 'revisions' );
+		remove_meta_box( 'submitdiv', 'page', 'side' );
+		remove_meta_box( 'pageparentdiv', 'page', 'side' );
+		remove_meta_box( 'authordiv', 'page', 'normal' );
+		remove_meta_box( 'postcustom', 'page', 'normal' );
+		remove_meta_box( 'postexcerpt', 'page', 'normal' );
+		remove_meta_box( 'commentsdiv', 'page', 'normal' );
+		remove_meta_box( 'postimagediv', 'page', 'side' );
+		remove_meta_box( 'slugdiv', 'page', 'normal' );
+		remove_meta_box( 'trackbacksdiv', 'page', 'normal' );
+		remove_meta_box( 'commentsdiv', 'page', 'normal' );
+		remove_meta_box( 'commentstatusdiv', 'page', 'normal' );
+		remove_meta_box( 'revisionsdiv', 'page', 'normal' );
+		remove_meta_box( 'wp_featherlight_options', 'page', 'side' );
+		remove_meta_box( 'ninja_forms_selector', 'page', 'side' );
+		// add_action( 'edit_form_after_title', 'luigi_customizer_clc_print_meta_box' );
+
+		add_meta_box(
+			'luigi_clc_edit_notice',
+			esc_html__( 'Homepage', 'luigi' ),
+			'luigi_customizer_clc_print_meta_box',
+			null,
+			'side'
+		);
+	}
+	add_action( 'admin_head', 'luigi_customizer_clc_maybe_control_post_edit' );
+}
+
+if ( !function_exists( 'luigi_customizer_clc_print_meta_box' ) ) {
+	/**
+	 * Print a small manual meta box under the post title which includes a
+	 * link to edit the post in the customizer.
+	 *
+	 * @since 0.1
+	 */
+	function luigi_customizer_clc_print_meta_box() {
+
+		global $post;
+
+		$args = array(
+			'url' => get_permalink( $post ),
+			'return' => get_edit_post_link( $post->ID, 'raw' )
+		);
+		$url = admin_url( 'customize.php' ) . '?' . http_build_query( $args );
+
+		?>
+
+			<p>
+				<a class="button-primary" href="<?php echo esc_url( $url ); ?>">
+					<?php esc_html_e( 'Homepage Editor', 'luigi' ); ?>
+				</a>
+			</p>
+			<p class="description">
+				<?php
+					printf(
+						__( 'Edit your homepage using the Homepage Editor in the Customizer. %sLearn More%s', 'luigi' ),
+						'<a href="http://docs.themeofthecrop.com/themes/luigi/user/faq#homepage">',
+						'</a>'
+					);
+				?>
+			</p>
+
+		<?php
 	}
 }
