@@ -103,16 +103,29 @@
 }
 
 // Map
-@media(min-width: @screen-sm) {
+.luigi-clc-mixer-map {
 
-	.luigi-clc-mixer-map .bp-map {
-		margin-top: 60px;
-		margin-bottom: 60px;
+	.bp-contact-card {
+		padding: 0;
+		margin-left: @base; // extra grab room to scroll past
+		margin-right: @base;
 	}
-}
 
-.luigi-clc-mixer-contact .bp-map {
-	min-height: 300px;
+	.bp-map {
+		min-height: 300px;
+	}
+
+	@media(min-width: @screen-sm) {
+
+		.bp-contact-card {
+			margin: 0;
+		}
+
+		.bp-map {
+			min-height: 500px;
+		}
+	}
+
 }
 
 // Booking form
