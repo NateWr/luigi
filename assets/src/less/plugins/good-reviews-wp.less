@@ -187,6 +187,31 @@
 	}
 }
 
+.narrow-content-page {
+
+	@media(min-width: @screen-sm) {
+
+		.gr-content,
+		.gr-author {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	@media(min-width: @screen-xl) {
+
+		.gr-content {
+			float: right;
+			width: @content-width-xl - @gr-author-width - @double;
+		}
+
+		.gr-author {
+			float: left;
+			width: @gr-author-width;
+		}
+	}
+}
+
 // Spacing between reviews on the archive page
 body.archive .gr-reviews {
 	margin-top: 80px;
