@@ -50,6 +50,9 @@ if ( !function_exists( 'luigi_enqueue_assets' ) ) {
 				'ajax_url' => admin_url('admin-ajax.php'),
 			)
 		);
+
+		// Load Picturefill to fix bugs with responsive images in Safari 8
+		wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/lib/picturefill/picturefill.' . $min . 'js', array(), '3.0.2', true );
 	}
 	add_action( 'wp_enqueue_scripts', 'luigi_enqueue_assets' );
 }
