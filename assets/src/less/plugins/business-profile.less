@@ -90,8 +90,8 @@
 }
 
 .bp-opening-hours {
-	margin-left: -@triple;
-	margin-right: -@triple;
+	margin-left: -@double;
+	margin-right: -@double;
 	padding-left: @triple;
 	padding-right: @triple;
 	text-align: center;
@@ -148,6 +148,11 @@
 	.bp-times {
 		float: right;
 		font-weight: @normal;
+	}
+
+	@media(min-width: @screen-sm) {
+		margin-left: -@triple;
+		margin-right: -@triple;
 	}
 }
 
