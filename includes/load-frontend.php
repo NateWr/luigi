@@ -39,7 +39,7 @@ if ( !function_exists( 'luigi_enqueue_assets' ) ) {
 		wp_enqueue_style( 'luigi-fonts', $font_uri );
 
 		// Maybe load minified scripts
-		$min = WP_DEBUG ? '' : 'min.';
+		$min = SCRIPT_DEBUG ? '' : 'min.';
 
 		// Enqueue frontend script
 		wp_enqueue_script( 'luigi-js', get_template_directory_uri() . '/assets/js/frontend.' . $min . 'js', array( 'jquery' ), '0.0.1', true );
