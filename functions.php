@@ -34,6 +34,7 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 		add_theme_support( 'post-thumbnails', array( 'fdm-menu-item', 'grfwp-review' ) );
 		add_theme_support( 'event-organiser' );
+		add_theme_support( 'theme-painter', luigi_load_theme_painter() );
 
 		register_nav_menus(
 			array(
@@ -169,5 +170,20 @@ if ( !function_exists( 'luigi_load_init' ) ) {
 		include_once( 'includes/load-theme-setup.php' );
 		include_once( 'includes/integrations/restaurant-reservations.php' );
 		include_once( 'includes/integrations/food-and-drink-menu.php' );
+	}
+}
+
+if ( !function_exists( 'luigi_load_theme_painter' ) ) {
+	/**
+	 * Load files required to work with the theme-painter lib and return
+	 * $args for get_theme_support().
+	 *
+	 * @since 0.0.1
+	 */
+	function luigi_load_theme_painter() {
+		include_once( 'lib/theme-painter/theme-painter.php' );
+		include_once( 'includes/integrations/theme-painter.php' );
+
+		return luigi_get_theme_painter_args();
 	}
 }
