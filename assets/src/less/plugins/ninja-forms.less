@@ -177,3 +177,68 @@
 		color: @primary;
 	}
 }
+
+.ninja-forms-response-msg {
+	margin-bottom: @double;
+	background: @bg-lift;
+	font-size: @font-tiny;
+	font-weight: @semibold;
+	line-height: @line-tiny;
+	text-transform: uppercase;
+
+	> div {
+		padding: (@triple - 1) @triple;
+		border: @border-line;
+	}
+}
+
+.ninja-forms-success-msg {
+	border-left: 4px solid @yes;
+
+	> div {
+		border-left: none;
+	}
+}
+
+.ninja-forms-error-msg {
+	border-left: 4px solid @no;
+
+	> div {
+		border-left: none;
+	}
+}
+
+.ninja-forms-required-items,
+.ninja-forms-req-symbol {
+	font-size: @font-tiny;
+	font-weight: @semibold;
+	font-style: italic;
+	line-height: @line-tiny;
+	color: @no;
+}
+
+.ninja-forms-field-error {
+	&:extend(.luigi-error-message);
+	top: -1px;
+
+	&:before {
+		&:extend(.luigi-error-message:before);
+		.transform(rotate(-45deg));
+		margin-top: -2px;
+	}
+
+	// Same as .luigi-error-message:after but points up
+	&:after {
+		content: '';
+		display: inline-block;
+		position: absolute;;
+		top: 50%;
+		left: 16px;
+		width: 0;
+		height: 0;
+		margin-top: -8px;
+		border: 8px solid transparent;
+		border-bottom-color: @no;
+		vertical-align: middle;
+	}
+}
