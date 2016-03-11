@@ -170,6 +170,7 @@ if ( !function_exists( 'luigi_load_init' ) ) {
 		include_once( 'includes/load-theme-setup.php' );
 		include_once( 'includes/integrations/restaurant-reservations.php' );
 		include_once( 'includes/integrations/food-and-drink-menu.php' );
+		include_once( 'includes/load-plugin-installer.php' );
 	}
 }
 
