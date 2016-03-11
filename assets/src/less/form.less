@@ -34,6 +34,7 @@ textarea {
 	background: @bg-lift;
 	font-size: @font-tiny;
 	line-height: @line-tiny;
+	height: 45px; // IE10
 	border-radius: 0; // Safari 8
 
 	&:hover {
@@ -46,6 +47,10 @@ textarea {
 		border-color: @primary;
 		padding-left: @double - 3px;
 	}
+}
+
+input[type="search"] {
+	box-sizing: border-box; // normalize.css resets this to content-box
 }
 
 select {
