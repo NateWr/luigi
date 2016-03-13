@@ -36,7 +36,7 @@ if ( !function_exists( 'luigi_get_theme_painter_args' ) ) {
 								),
 								'background-highlight' => array(
 									'label' => __( 'Background Highlight Color', 'luigi' ),
-									'description' => __( 'A background color used to bring attention to a section. Often a slightly lighter shade of the Background Color.', 'luigi' ),
+									'description' => __( 'A background color used to bring attention to a section or a panel on your site. Often a slightly lighter shade of the Background Color.', 'luigi' ),
 									'selectors' => array( luigi_tp( 'background-highlight' ), luigi_tp( 'background-highlight-important' ) ),
 									'attributes' => array( 'background', 'background!important' ),
 									'default' => '#ffffff',
