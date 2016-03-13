@@ -90,6 +90,7 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = 'body';
 				$selectors[] = '.site-header';
 				$selectors[] = '.clc-component-luigi-hero-block .links a';
+				break;
 
 			case 'background-highlight' :
 
@@ -117,11 +118,13 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.bp-contact-card';
 				$selectors[] = '.fc-agenda-view .fc-day-grid';
 				$selectors[] = '.fc-month-view .fc-bg .fc-day';
+				break;
 
 			case 'background-highlight-important' :
 
 				$selectors[] = '.fc-agenda-view .fc-time-grid .fc-event';
 				$selectors[] = '.fc-agenda-view .fc-time-grid .fc-event[class*="eo-event-cat"]';
+				break;
 
 			case 'accent' :
 
@@ -133,11 +136,13 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.luigi-button';
 				$selectors[] = '.comments-area .submit';
 				$selectors[] = '.search-form .seach-submit';
+				break;
 
 			case 'accent-border-color' :
 
 				$selectors[] = '.luigi-social-menu a:hover';
 				$selectors[] = '.luigi-social-menu a:focus';
+				break;
 
 			case 'accent-hover' :
 
@@ -153,6 +158,7 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = 'button:focus';
 				$selectors[] = 'input[type="button"]:hover';
 				$selectors[] = 'input[type="button"]:focus';
+				break;
 
 		}
 
