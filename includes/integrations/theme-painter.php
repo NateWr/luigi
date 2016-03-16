@@ -58,10 +58,18 @@ if ( !function_exists( 'luigi_get_theme_painter_args' ) ) {
 								),
 								'text' => array(
 									'label' => __( 'Text Color', 'luigi' ),
+									'description' => __( 'The main text color. This should stand out clearly from the Background Color and Background Highlight Color so it is easy to read.', 'luigi' ),
 									'selectors' => array( luigi_tp( 'text' ), luigi_tp( 'text-important' ) ),
 									'attributes' => array( 'color', 'color' ),
 									'important' => array( false, true ),
 									'default' => '#242424',
+								),
+								'text-light' => array(
+									'label' => __( 'Light Text Color', 'luigi' ),
+									'description' => __( 'A shade used for text that should be less prominent. Often a slightly lighter shade of the Text Color.', 'luigi' ),
+									'selectors' => luigi_tp( 'text-light' ),
+									'attributes' => 'color',
+									'default' => '#999999',
 								),
 							),
 						),
@@ -127,6 +135,8 @@ if ( !function_exists( 'luigi_tp' ) ) {
 
 				$selectors[] = '.fc-agenda-view .fc-time-grid .fc-event';
 				$selectors[] = '.fc-agenda-view .fc-time-grid .fc-event[class*="eo-event-cat"]';
+				$selectors[] = '.rtb-booking-form .rtb-checkbox label:not(:first-child)';
+				$selectors[] = '.rtb-booking-form .rtb-radio label:not(:first-child)';
 				break;
 
 			case 'accent' :
@@ -179,11 +189,35 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.fc-toolbar .fc-center button';
 				$selectors[] = '.fc-toolbar .fc-center .fc-prev-button';
 				$selectors[] = '.fc-toolbar .fc-center .fc-next-button';
+				$selectors[] = '.widget_rss .widgettitle a';
 				break;
 
 			case 'text-important' :
 
 				$selectors[] = '.fc-view .fc-event';
+				break;
+
+			case 'text-light' :
+
+				$selectors[] = 'blockquote';
+				$selectors[] = '.comments-area .comment-metadata > a';
+				$selectors[] = '.luigi-social-menu a';
+				$selectors[] = '.site-footer .copyright';
+				$selectors[] = '.site-header .bp-contact-card';
+				$selectors[] = '.post-summary .entry-date';
+				$selectors[] = '.widget_calendar table caption';
+				$selectors[] = '.widget_rss .rss-date';
+				$selectors[] = '.fc-view .fc-day-header';
+				$selectors[] = '.fc-listMonth-view .fc-content-skeleton thead td';
+				$selectors[] = '.fc-month-view .fc-past';
+				$selectors[] = '.fdm-section-header p';
+				$selectors[] = '.fdm-item-has-price-discount .fdm-item-price';
+				$selectors[] = '.fdm-src-panel';
+				$selectors[] = '.gr-reviews .gr-review-date';
+				$selectors[] = '.gr-reviews .gr-author-affiliation';
+				$selectors[] = '.ninja-forms-cont .label-below label';
+				$selectors[] = '.picker .picker__day--outfocus';
+				$selectors[] = '.picker .picker__day--disabled';
 				break;
 
 		}
