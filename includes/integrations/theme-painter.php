@@ -30,8 +30,16 @@ if ( !function_exists( 'luigi_get_theme_painter_args' ) ) {
 							'colors' => array(
 								'background' => array(
 									'label' => __( 'Background Color', 'luigi' ),
-									'selectors' => luigi_tp( 'background' ),
-									'attributes' => 'background',
+									'description' => __( 'The primary background color on your site.', 'luigi' ),
+									'selectors' => array(
+										luigi_tp( 'background' ),
+										luigi_tp( 'background-adjust-border-automatically' ),
+										luigi_tp( 'background-adjust-border-light-automatically' ),
+										luigi_tp( 'background-adjust-background-automatically' ),
+										luigi_tp( 'background-adjust-color-automatically' ),
+									),
+									'attributes' => array( 'background', 'border-color', 'border-color', 'background-color', 'color' ),
+									'set_values' => array( false, 'rgba(255,255,255,0.3)', 'rgba(255,255,255,0.12)', 'rgba(255,255,255,0.85)', false ),
 									'default' => '#fafafa',
 								),
 								'background-highlight' => array(
@@ -45,15 +53,17 @@ if ( !function_exists( 'luigi_get_theme_painter_args' ) ) {
 								'accent' =>array(
 									'label' => __( 'Accent Color', 'luigi' ),
 									'description' => __( 'A dominant offset color used throughout the theme for links, buttons and other attention-grabbing items.', 'luigi' ),
-									'selectors' => array( luigi_tp( 'accent' ), luigi_tp( 'accent-border-color' ) ),
-									'attributes' => array( 'color', 'border-color' ),
+									'selectors' => array( luigi_tp( 'accent' ), luigi_tp( 'accent-important' ), luigi_tp( 'accent-background-color' ), luigi_tp( 'accent-border-color' ) ),
+									'attributes' => array( 'color', 'color', 'background-color', 'border-color' ),
+									'important' => array( false, true, false, false ),
 									'default' => '#9a8f45',
 								),
-								'accent-hover' =>array(
+								'accent-lift' =>array(
 									'label' => __( 'Accent Hover Color', 'luigi' ),
 									'description' => __( 'A lighter shade of the Accent Color used for hover effects.', 'luigi' ),
-									'selectors' => array( luigi_tp( 'accent-hover' ) ),
-									'attributes' => array( 'color' ),
+									'selectors' => array( luigi_tp( 'accent-lift' ), luigi_tp( 'accent-lift-background'), luigi_tp( 'accent-lift-background-screen-sm') ),
+									'attributes' => array( 'color', 'background-color', 'background-color' ),
+									'queries' => array( '', '', '@media(min-width: 768px)' ),
 									'default' => '#9a8f45',
 								),
 								'text' => array(
@@ -90,6 +100,8 @@ if ( !function_exists( 'luigi_tp' ) ) {
 	 */
 	function luigi_tp( $color ) {
 
+		$background_is_dark = theme_painter_is_color_dark( get_theme_mod( 'theme_painter_setting_background', '#fafafa'  ) );
+
 		$selectors = array();
 
 		switch( $color ) {
@@ -100,6 +112,131 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = 'body';
 				$selectors[] = '.site-header';
 				$selectors[] = '.clc-component-luigi-hero-block .links a';
+				break;
+
+			// Swap rgba borders from dark to light for dark backgrounds
+			case 'background-adjust-border-automatically' :
+
+				if ( !$background_is_dark ) {
+					break;
+				}
+
+				$selectors[] = 'hr';
+				$selectors[] = 'table';
+				$selectors[] = 'tr';
+				$selectors[] = 'pre';
+				$selectors[] = '.comments-area comments-title + .comment-navigation';
+				$selectors[] = '.luigi-social-menu a';
+				$selectors[] = '.navigation';
+				$selectors[] = 'input[type="text"]';
+				$selectors[] = 'input[type="search"]';
+				$selectors[] = 'input[type="email"]';
+				$selectors[] = 'input[type="url"]';
+				$selectors[] = 'input[type="tel"]';
+				$selectors[] = 'input[type="number"]';
+				$selectors[] = 'input[type="date"]';
+				$selectors[] = 'input[type="month"]';
+				$selectors[] = 'input[type="week"]';
+				$selectors[] = 'input[type="datetime"]';
+				$selectors[] = 'input[type="datetime-local"]';
+				$selectors[] = 'input[type="color"]';
+				$selectors[] = 'input[type="password"]';
+				$selectors[] = 'select';
+				$selectors[] = 'textarea';
+				$selectors[] = '.fc-agenda-view > table';
+				$selectors[] = '.fc-agenda-view .fc-bg td';
+				$selectors[] = '.fc-agenda-view .fc-day-grid';
+				$selectors[] = '.fc-agenda-view .fc-slats .fc-minor';
+				$selectors[] = '.fc-basic-view .fc-bg td';
+				$selectors[] = '.fc-basic-view .fc-event.eo-multi-day';
+				$selectors[] = '.fc-basic-view .fc-event.eo-multi-day .fc-content';
+				$selectors[] = '.fc-basicWeek-view > table';
+				$selectors[] = '.fc-basicDay-view > table';
+				$selectors[] = '.fc-basicWeek-view > table > tbody';
+				$selectors[] = '.fc-basicDay-view > table > tbody';
+				$selectors[] = '.fc-month-view > table';
+				$selectors[] = '.fc-month-view > table > tbody > tr > td td';
+				$selectors[] = '.fc-month-view .fc-event.eo-multi-day .fc-content';
+				$selectors[] = '.ninja-forms-response-msg > div';
+				$selectors[] = '.rtb-booking-form label';
+				$selectors[] = '.rtb-booking-form rtb-checkbox';
+				$selectors[] = '.rtb-booking-form rtb-radio';
+				$selectors[] = '.rtb-booking-form rtb-checkbox label:first-child';
+				$selectors[] = '.rtb-booking-form rtb-radio label:first-child';
+				break;
+
+			// Swap rbga borders from dark to light for dark backgrounds
+			case 'background-adjust-border-light-automatically' :
+
+				if ( !$background_is_dark ) {
+					break;
+				}
+
+				$selectors[] = 'blockquote';
+				$selectors[] = '.comments-area .comment-content';
+				$selectors[] = '.comments-area .pingback .comment-body';
+				$selectors[] = '.site-footer';
+				$selectors[] = '.post-summary.sticky';
+				$selectors[] = '.widget-area > li';
+				$selectors[] = '.footer-widget-container';
+				$selectors[] = '.footer-full-widget-container';
+				$selectors[] = '.clc-component-layout + .clc-component-layout:not(.clc-component-luigi-hero-block)';
+				$selectors[] = '.bp-contact-card';
+				$selectors[] = '.bp-opening-hours:not(:first-child)';
+				$selectors[] = '.bp-opening-hours:not(:last-child)';
+				$selectors[] = '.fc-listMonth-view .fc-content-skeleton thead td';
+				$selectors[] = '.fc-agenda-view .fc-slats tr';
+				$selectors[] = '.event-meta-item.recurrence-description';
+				$selectors[] = '.fdm-section-header h3';
+				$selectors[] = '.fdm-item-image';
+				$selectors[] = '.clc-component-luigi-content-block .content:before';
+				break;
+
+			// Swap rbga backgrounds from dark to light for dark backgrounds
+			case 'background-adjust-background-automatically' :
+
+				if ( !$background_is_dark ) {
+					break;
+				}
+
+				// Default button
+				$selectors[] = '.luigi-button';
+				$selectors[] = '.comments-area .submit';
+				$selectors[] = '.search-form .search-submit';
+				$selectors[] = 'input[type="button"]';
+				$selectors[] = 'input[type="submit"]';
+				$selectors[] = 'button';
+				$selectors[] = '.post-summary .more';
+				$selectors[] = '.post-password-form input[type="submit"]';
+				$selectors[] = '.clc-component-layout .links a';
+				$selectors[] = '.luigi-contact-card-links a';
+				$selectors[] = '.ninja-forms-cont .submit-wrap input[type="submit"]';
+				$selectors[] = '.clc-component-luigi-hero-block .links a';
+				$selectors[] = '.luigi-clc-mixer-opening_hours .booking';
+				break;
+
+			// Swap rbga text color from light to dark for light buttons on
+			// dark backgrounds
+			case 'background-adjust-color-automatically' :
+
+				if ( !$background_is_dark ) {
+					break;
+				}
+
+				// Default button
+				$selectors[] = '.luigi-button';
+				$selectors[] = '.comments-area .submit';
+				$selectors[] = '.search-form .search-submit';
+				$selectors[] = 'input[type="button"]';
+				$selectors[] = 'input[type="submit"]';
+				$selectors[] = 'button';
+				$selectors[] = '.post-summary .more';
+				$selectors[] = '.post-password-form input[type="submit"]';
+				$selectors[] = '.clc-component-layout .links a';
+				$selectors[] = '.luigi-contact-card-links a';
+				$selectors[] = '.ninja-forms-cont .submit-wrap input[type="submit"]';
+				$selectors[] = '.clc-component-luigi-hero-block .links a';
+				$selectors[] = '.luigi-clc-mixer-opening_hours .booking';
 				break;
 
 			case 'background-highlight' :
@@ -142,35 +279,176 @@ if ( !function_exists( 'luigi_tp' ) ) {
 			case 'accent' :
 
 				$selectors[] = 'a';
-				$selectors[] = 'button';
-				$selectors[] = 'input[type="button"]';
 				$selectors[] = '.luigi-social-menu a:hover';
 				$selectors[] = '.luigi-social-menu a:focus';
-				$selectors[] = '.luigi-button';
+				$selectors[] = '.luigi-button-wire:hover';
+				$selectors[] = '.luigi-button-wire:focus';
 				$selectors[] = '.comments-area .submit';
 				$selectors[] = '.search-form .seach-submit';
+				$selectors[] = '.luigi-button-link-primary';
+				$selectors[] = '.luigi-list-item:before';
+				$selectors[] = '.site-header .home-link';
+				$selectors[] = '.site-footer .home-link';
+				$selectors[] = '.widget_recent_entries .more';
+				$selectors[] = '.clc-component-layout .title_line_one';
+				$selectors[] = '.fdm-item-price-wrapper';
+				$selectors[] = '.fdm-item-flag-text';
+				$selectors[] = '.gr-reviews .gr-rating-stars .dashicons';
+				$selectors[] = '.gr-reviews .gr-rating-numbers';
+				$selectors[] = '.ninja-forms-star-rating-on:before';
+				$selectors[] = '.ninja-forms-star-rating-hover:before';
+				$selectors[] = '.fc-toolbar .fc-center button:hover';
+				$selectors[] = '.fc-toolbar .fc-center button:focus';
+				$selectors[] = '.fc-toolbar .fc-prev-button:hover';
+				$selectors[] = '.fc-toolbar .fc-prev-button:focus';
+				$selectors[] = '.fc-toolbar .fc-next-button:hover';
+				$selectors[] = '.fc-toolbar .fc-next-button:focus';
+				$selectors[] = '.post-edit-link';
+				break;
+
+			case 'accent-important' :
+
+				$selectors[] = '.fc-view .fc-event:hover';
+				$selectors[] = '.fc-view .fc-event:focus';
+				break;
+
+			case 'accent-background-color' :
+
+				$selectors[] = '.luigi-button:active';
+				$selectors[] = '.luigi-button-primary';
+				$selectors[] = '.primary-menu a:hover';
+				$selectors[] = '.primary-menu a:focus';
+				$selectors[] = '#luigi-primary-nav-control';
+				$selectors[] = '.comments-area .submit:active';
+				$selectors[] = '.search-form .search-submit:active';
+				$selectors[] = 'input[type="button"]:active';
+				$selectors[] = 'input[type="submit"]:active';
+				$selectors[] = 'button:active';
+				$selectors[] = '.post-summary .more:active';
+				$selectors[] = '.post-password-form input[type="submit"]:active';
+				$selectors[] = '.clc-component-layout .links a:active';
+				$selectors[] = '.luigi-contact-card-links a:active';
+				$selectors[] = '.ninja-forms-cont .submit-wrap input[type="submit"]:active';
+				$selectors[] = '.clc-component-luigi-hero-block .links a:active';
+				$selectors[] = '.luigi-clc-mixer-opening_hours .booking:active';
+				$selectors[] = '.clc-component-layout .links li:first-child a';
+				$selectors[] = '.luigi-contact-card-links > div:first-child a';
+				$selectors[] = '.luigi-clc-mixer-opening_hours .booking';
+				$selectors[] = '.widget_archive li:before';
+				$selectors[] = '.widget_categories li:before';
+				$selectors[] = '.widget_pages li:before';
+				$selectors[] = '.widget_meta li:before';
+				$selectors[] = '.widget_nav_menu li:before';
+				$selectors[] = '.widget_recent_comments li:before';
+				$selectors[] = '.EO_Event_List_Widget li:before';
+				$selectors[] = '.eo__event_categories li:before';
+				$selectors[] = '.eo-agenda-widget li:before';
+				$selectors[] = '.eo-events-shortcode li:before';
 				break;
 
 			case 'accent-border-color' :
 
 				$selectors[] = '.luigi-social-menu a:hover';
 				$selectors[] = '.luigi-social-menu a:focus';
+				$selectors[] = '.luigi-button-wire:hover';
+				$selectors[] = '.luigi-button-wire:focus';
+				$selectors[] = 'input[type="text"]:hover';
+				$selectors[] = 'input[type="text"]:focus';
+				$selectors[] = 'input[type="search"]:hover';
+				$selectors[] = 'input[type="search"]:focus';
+				$selectors[] = 'input[type="email"]:hover';
+				$selectors[] = 'input[type="email"]:focus';
+				$selectors[] = 'input[type="url"]:hover';
+				$selectors[] = 'input[type="url"]:focus';
+				$selectors[] = 'input[type="tel"]:hover';
+				$selectors[] = 'input[type="tel"]:focus';
+				$selectors[] = 'input[type="number"]:hover';
+				$selectors[] = 'input[type="number"]:focus';
+				$selectors[] = 'input[type="date"]:hover';
+				$selectors[] = 'input[type="date"]:focus';
+				$selectors[] = 'input[type="month"]:hover';
+				$selectors[] = 'input[type="month"]:focus';
+				$selectors[] = 'input[type="week"]:hover';
+				$selectors[] = 'input[type="week"]:focus';
+				$selectors[] = 'input[type="datetime"]:hover';
+				$selectors[] = 'input[type="datetime"]:focus';
+				$selectors[] = 'input[type="datetime-local"]:hover';
+				$selectors[] = 'input[type="datetime-local"]:focus';
+				$selectors[] = 'input[type="color"]:hover';
+				$selectors[] = 'input[type="color"]:focus';
+				$selectors[] = 'input[type="password"]:hover';
+				$selectors[] = 'input[type="password"]:focus';
+				$selectors[] = 'select:hover';
+				$selectors[] = 'select:focus';
+				$selectors[] = 'textarea:hover';
+				$selectors[] = 'textarea:focus';
+				$selectors[] = '.rtb-booking-form .picker__input.picker__input--active';
+				$selectors[] = '.fc-toolbar .fc-center button:hover';
+				$selectors[] = '.fc-toolbar .fc-center button:focus';
+				$selectors[] = '.fc-toolbar .fc-prev-button:hover';
+				$selectors[] = '.fc-toolbar .fc-prev-button:focus';
+				$selectors[] = '.fc-toolbar .fc-next-button:hover';
+				$selectors[] = '.fc-toolbar .fc-next-button:focus';
 				break;
 
-			case 'accent-hover' :
+			case 'accent-lift' :
 
 				$selectors[] = 'a:hover';
 				$selectors[] = 'a:focus';
-				$selectors[] = '.luigi-button:hover';
-				$selectors[] = '.luigi-button:focus';
+				$selectors[] = '.luigi-button-link-primary:hover';
+				$selectors[] = '.luigi-button-link-primary:focus';
 				$selectors[] = '.comments-area .comment-metadata > a:hover';
 				$selectors[] = '.comments-area .comment-metadata > a:focus';
-				$selectors[] = '.search-form .seach-submit:hover';
-				$selectors[] = '.search-form .seach-submit:focus';
+				$selectors[] = '.ui-datepicker-calendar a:hover';
+				$selectors[] = '.ui-datepicker-calendar a:focus';
+				$selectors[] = '.post-summary .entry-title a:hover';
+				$selectors[] = '.post-summary .entry-title a:focus';
+				$selectors[] = '.widget_recent_entries .more:hover';
+				$selectors[] = '.widget_recent_entries .more:focus';
+				$selectors[] = '.post-edit-link:hover';
+				$selectors[] = '.post-edit-link:focus';
+				break;
+
+			case 'accent-lift-background' :
+
+				$selectors[] = '.luigi-button:hover';
+				$selectors[] = '.luigi-button:focus';
+				$selectors[] = '.comments-area .submit:hover';
+				$selectors[] = '.comments-area .submit:focus';
+				$selectors[] = '.search-form .search-submit:hover';
+				$selectors[] = '.search-form .search-submit:focus';
 				$selectors[] = 'button:hover';
 				$selectors[] = 'button:focus';
 				$selectors[] = 'input[type="button"]:hover';
 				$selectors[] = 'input[type="button"]:focus';
+				$selectors[] = 'input[type="submit"]:hover';
+				$selectors[] = 'input[type="submit"]:focus';
+				$selectors[] = '.post-summary .more:hover';
+				$selectors[] = '.post-summary .more:focus';
+				$selectors[] = '.post-edit-link:hover';
+				$selectors[] = '.post-edit-link:focus';
+				$selectors[] = '.clc-component-layout .links a:hover';
+				$selectors[] = '.clc-component-layout .links a:focus';
+				$selectors[] = '.clc-component-layout .links li:first-child a:hover';
+				$selectors[] = '.clc-component-layout .links li:first-child a:focus';
+				$selectors[] = '.luigi-contact-card-links a:hover';
+				$selectors[] = '.luigi-contact-card-links a:focus';
+				$selectors[] = '.luigi-contact-card-links > div:first-child a:hover';
+				$selectors[] = '.luigi-contact-card-links > div:first-child a:focus';
+				$selectors[] = '.ninja-forms-cont .submit-wrap input[type="submit"]:hover';
+				$selectors[] = '.ninja-forms-cont .submit-wrap input[type="submit"]:focus';
+				$selectors[] = '.clc-component-luigi-hero-block .links a:hover';
+				$selectors[] = '.clc-component-luigi-hero-block .links a:focus';
+				$selectors[] = '.luigi-clc-mixer-opening_hours .booking:hover';
+				$selectors[] = '.luigi-clc-mixer-opening_hours .booking:focus';
+				$selectors[] = '.luigi-social-menu a:hover';
+				$selectors[] = '.luigi-social-menu a:focus';
+				break;
+
+			case 'accent-lift-background-screen-sm' :
+
+				$selectors[] = '.primary-menu [aria-expanded=true] a:hover';
+				$selectors[] = '.primary-menu [aria-expanded=true] a:focus';
 				break;
 
 			case 'text' :
@@ -179,7 +457,6 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.primary-menu a';
 				$selectors[] = '.luigi-social-menu a';
 				$selectors[] = '.luigi-button';
-				$selectors[] = '.clc-component-luigi-hero-block .links a';
 				$selectors[] = '.post-summary .entry-title a';
 				$selectors[] = '.gr-reviews .gr-review-body';
 				$selectors[] = '.gr-reviews .gr-author';
@@ -190,6 +467,8 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.fc-toolbar .fc-center .fc-prev-button';
 				$selectors[] = '.fc-toolbar .fc-center .fc-next-button';
 				$selectors[] = '.widget_rss .widgettitle a';
+				$selectors[] = '.primary-menu [aria-expanded=true] a:hover';
+				$selectors[] = '.primary-menu [aria-expanded=true] a:focus';
 				break;
 
 			case 'text-important' :
@@ -213,6 +492,7 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.fdm-section-header p';
 				$selectors[] = '.fdm-item-has-price-discount .fdm-item-price';
 				$selectors[] = '.fdm-src-panel';
+				$selectors[] = '.fdm-item-flag-text';
 				$selectors[] = '.gr-reviews .gr-review-date';
 				$selectors[] = '.gr-reviews .gr-author-affiliation';
 				$selectors[] = '.ninja-forms-cont .label-below label';

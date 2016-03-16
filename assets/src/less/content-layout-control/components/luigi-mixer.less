@@ -84,11 +84,6 @@
 		&:extend(.luigi-button all);
 		&:extend(.luigi-button-primary all);
 		margin-top: @double;
-
-		&:hover,
-		&:focus {
-			&:extend(.luigi-button:hover);
-		}
 	}
 
 	@media(min-width: @screen-sm) {
@@ -153,7 +148,7 @@
 					float: none;
 					width: 100%;
 					border-bottom: none;
-					border-right: @border-line;
+					border-right: 1px solid;
 				}
 			}
 
@@ -187,7 +182,7 @@
 					float: left;
 					width: 40%;
 					border-right: none;
-					border-bottom: @border-line;
+					border-bottom: 1px solid;
 				}
 			}
 
@@ -204,7 +199,7 @@
 
 				.rtb-text label,
 				.rtb-select label {
-					border-right: @border-line;
+					border-right: 1px solid;
 					border-bottom: none;
 				}
 
@@ -224,7 +219,7 @@
 					label {
 						width: 50%;
 						border-right: none;
-						border-bottom: @border-line;
+						border-bottom: 1px solid;
 					}
 				}
 

@@ -378,7 +378,7 @@
 			}
 
 			label {
-				border-right: @border-line;
+				border-right: 1px solid;
 				border-bottom: none;
 			}
 
@@ -395,14 +395,14 @@
 
 			.rtb-checkbox,
 			.rtb-radio {
-				border: @border-line;
+				border: 1px solid;
 
 				label {
 					border: none;
 				}
 
 				label:first-child {
-					border-bottom: @border-line;
+					border-bottom: 1px solid;
 				}
 
 				label:not(:first-child) {
@@ -421,16 +421,12 @@
 			.optin > div {
 
 				label {
-					border-bottom: @border-line;
+					border-bottom: 1px solid;
 					font-weight: @normal;
 					text-transform: none;
 
 					&:before {
 						display: none;
-					}
-
-					&:hover {
-						border-color: @primary;
 					}
 				}
 			}

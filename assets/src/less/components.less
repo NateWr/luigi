@@ -84,6 +84,14 @@
 
 	&:disabled {
 		background: @text-light;
+		color: @text;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: @text-light;
+			color: @text;
+		}
 	}
 
 	@media(min-width: @screen-sm) {
@@ -118,21 +126,17 @@
 
 	&:disabled {
 		color: @text-light;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: @text-light;
+		}
 	}
 
 	@media(min-width: @screen-sm) {
 		padding: (@base - 1) (@double - 1);
 		line-height: @line-base - 2;
-	}
-}
-
-.luigi-button-wire-primary {
-	color: @primary;
-	border-color: @primary;
-
-	&:disabled {
-		color: @text-light;
-		border-color: @text-light;
 	}
 }
 
@@ -165,6 +169,12 @@
 
 	&:disabled {
 		color: @text-light;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: @text-light;
+		}
 	}
 }
 
