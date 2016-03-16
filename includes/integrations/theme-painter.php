@@ -38,7 +38,8 @@ if ( !function_exists( 'luigi_get_theme_painter_args' ) ) {
 									'label' => __( 'Background Highlight Color', 'luigi' ),
 									'description' => __( 'A background color used to bring attention to a section or a panel on your site. Often a slightly lighter shade of the Background Color.', 'luigi' ),
 									'selectors' => array( luigi_tp( 'background-highlight' ), luigi_tp( 'background-highlight-important' ) ),
-									'attributes' => array( 'background', 'background!important' ),
+									'attributes' => array( 'background', 'background' ),
+									'important' => array( false, true ),
 									'default' => '#ffffff',
 								),
 								'accent' =>array(
@@ -57,8 +58,9 @@ if ( !function_exists( 'luigi_get_theme_painter_args' ) ) {
 								),
 								'text' => array(
 									'label' => __( 'Text Color', 'luigi' ),
-									'selectors' => 'body',
-									'attributes' => 'color',
+									'selectors' => array( luigi_tp( 'text' ), luigi_tp( 'text-important' ) ),
+									'attributes' => array( 'color', 'color' ),
+									'important' => array( false, true ),
 									'default' => '#242424',
 								),
 							),
@@ -116,8 +118,9 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = 'select';
 				$selectors[] = 'textarea';
 				$selectors[] = '.bp-contact-card';
+				$selectors[] = '.bp-opening-hours .bp-weekday:nth-child(even)';
 				$selectors[] = '.fc-agenda-view .fc-day-grid';
-				$selectors[] = '.fc-month-view .fc-bg .fc-day';
+				$selectors[] = '.fc-month-view .fc-bg .fc-day:not(.fc-past):not(.fc-other-moth)';
 				break;
 
 			case 'background-highlight-important' :
@@ -158,6 +161,29 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = 'button:focus';
 				$selectors[] = 'input[type="button"]:hover';
 				$selectors[] = 'input[type="button"]:focus';
+				break;
+
+			case 'text' :
+
+				$selectors[] = 'body';
+				$selectors[] = '.primary-menu a';
+				$selectors[] = '.luigi-social-menu a';
+				$selectors[] = '.luigi-button';
+				$selectors[] = '.clc-component-luigi-hero-block .links a';
+				$selectors[] = '.post-summary .entry-title a';
+				$selectors[] = '.gr-reviews .gr-review-body';
+				$selectors[] = '.gr-reviews .gr-author';
+				$selectors[] = '.eo-agenda-widget-nav>span:before';
+				$selectors[] = '.navigation a';
+				$selectors[] = '.luigi-button-wire';
+				$selectors[] = '.fc-toolbar .fc-center button';
+				$selectors[] = '.fc-toolbar .fc-center .fc-prev-button';
+				$selectors[] = '.fc-toolbar .fc-center .fc-next-button';
+				break;
+
+			case 'text-important' :
+
+				$selectors[] = '.fc-view .fc-event';
 				break;
 
 		}
