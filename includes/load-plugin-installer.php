@@ -27,7 +27,6 @@ if ( !function_exists( 'luigi_register_required_plugins' ) ) {
 	 */
 	function luigi_register_required_plugins() {
 
-		error_log( 'hey there');
 		/*
 		 * Array of plugin arrays. Required keys are name and slug.
 		 * If the source is NOT from the .org repo, then source is also required.
