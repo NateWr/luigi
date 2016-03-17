@@ -53,6 +53,11 @@ if ( !function_exists( 'luigi_enqueue_assets' ) ) {
 
 		// Load Picturefill to fix bugs with responsive images in Safari 8
 		wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/lib/picturefill/picturefill.' . $min . 'js', array(), '3.0.2', true );
+
+		// Add comment reply script
+		if ( is_singular() && function_exists( 'comments_open' ) && comments_open() ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 	}
 	add_action( 'wp_enqueue_scripts', 'luigi_enqueue_assets' );
 }
