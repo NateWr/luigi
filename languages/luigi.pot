@@ -1,0 +1,1292 @@
+# Copyright (C) 2016 Theme of the Crop
+# This file is distributed under the GNU General Public License v2.0 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Luigi 0.0.1\n"
+"Report-Msgid-Bugs-To: http://themeofthecrop.com\n"
+"POT-Creation-Date: 2016-03-17 18:21:28+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+
+#: archive.php:30 front-page.php:30 home.php:30 search.php:31
+msgid "&larr; Older posts"
+msgstr ""
+
+#: archive.php:31 front-page.php:31 home.php:31 search.php:32
+msgid "Newer posts &rarr;"
+msgstr ""
+
+#: comments.php:39 comments.php:60
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:42 comments.php:63
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:43 comments.php:64
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:77
+msgid "Comments are closed."
+msgstr ""
+
+#: content-event.php:27 content-page.php:18 content.php:30
+msgid "Pages:"
+msgstr ""
+
+#: content-event.php:59 content-page.php:29 content.php:66
+#. translators: %s: Name of current post
+msgid "Edit %s"
+msgstr ""
+
+#: content-event.php:87 content.php:38
+#: includes/widgets/luigi-recent-posts.php:78
+msgid "Read More%s about %s%s"
+msgstr ""
+
+#: content-none.php:11
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:18
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-none.php:25
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content.php:52 content.php:57
+#. translators: used between list items, there is a space after the comma
+msgid ", "
+msgstr ""
+
+#: content.php:54
+msgid "Posted in: %1$s"
+msgstr ""
+
+#: content.php:59
+msgid "Tagged: %1$s"
+msgstr ""
+
+#: footer.php:86 includes/load-customizer.php:105
+msgid "Close"
+msgstr ""
+
+#: functions.php:41
+msgid "Primary Navigation Menu"
+msgstr ""
+
+#: functions.php:42
+msgid "Social Profiles Menu"
+msgstr ""
+
+#: functions.php:48
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:50
+msgid "This sidebar will appear beside most pages and posts"
+msgstr ""
+
+#: functions.php:56
+msgid "Footer (full-width)"
+msgstr ""
+
+#: functions.php:58
+msgid "Display full-width widgets (one per row) in the footer."
+msgstr ""
+
+#: functions.php:64
+msgid "Footer (side-by-side)"
+msgstr ""
+
+#: functions.php:66
+msgid "Display widgets (many widgets per row) side by side in the footer."
+msgstr ""
+
+#: header.php:45
+msgid "Main Menu"
+msgstr ""
+
+#: header.php:50
+msgid "Browse"
+msgstr ""
+
+#: includes/customizer/WP_Customize_Scaled_Image_Control.php:93
+msgid "Scale"
+msgstr ""
+
+#: includes/customizer/ajax-handler.php:35
+msgid "You have been logged out. Please login again to customize your site."
+msgstr ""
+
+#: includes/customizer/ajax-handler.php:68
+msgid ""
+"You do not have permission to modify the theme settings. Please login to an "
+"administrator account to edit the theme settings."
+msgstr ""
+
+#: includes/customizer/ajax-handler.php:80
+msgid "The request was not recognized. Please try another option."
+msgstr ""
+
+#: includes/customizer/ajax-handler.php:92
+msgid ""
+"The site logo could not be loaded because an image ID could not be found. "
+"Please try to reset your logo."
+msgstr ""
+
+#: includes/customizer/content-layout-control/components/templates/luigi-mixer-opening-hours.php:17
+msgid "Make a Reservation"
+msgstr ""
+
+#: includes/integrations/business-profile.php:47
+msgid "The Business Profile plugin is not active."
+msgstr ""
+
+#: includes/integrations/business-profile.php:47
+msgid "Contact card is not currently available"
+msgstr ""
+
+#: includes/integrations/business-profile.php:69
+#: includes/template-shortcodes.php:149
+msgid "Get directions"
+msgstr ""
+
+#: includes/integrations/event-organiser.php:18
+msgid "Events: "
+msgstr ""
+
+#: includes/integrations/event-organiser.php:85
+msgid "This event will run from %1$s to %2$s. It will happen next on %3$s."
+msgstr ""
+
+#: includes/integrations/event-organiser.php:88
+msgid "This event finished on %s"
+msgstr ""
+
+#: includes/integrations/event-organiser.php:184
+msgid "&larr; Older events"
+msgstr ""
+
+#: includes/integrations/event-organiser.php:185
+msgid "Later events &rarr;"
+msgstr ""
+
+#: includes/integrations/theme-painter.php:21
+msgid "Theme Colors"
+msgstr ""
+
+#: includes/integrations/theme-painter.php:25
+msgid "Background Color"
+msgstr ""
+
+#: includes/integrations/theme-painter.php:26
+msgid "The primary background color on your site."
+msgstr ""
+
+#: includes/integrations/theme-painter.php:51
+msgid "Background Highlight Color"
+msgstr ""
+
+#: includes/integrations/theme-painter.php:52
+msgid ""
+"A background color used to bring attention to a section or a panel on your "
+"site. Often a slightly lighter shade of the Background Color."
+msgstr ""
+
+#: includes/integrations/theme-painter.php:62
+msgid "Accent Color"
+msgstr ""
+
+#: includes/integrations/theme-painter.php:63
+msgid ""
+"A dominant offset color used throughout the theme for links, buttons and "
+"other attention-grabbing items."
+msgstr ""
+
+#: includes/integrations/theme-painter.php:85
+msgid "Accent Hover Color"
+msgstr ""
+
+#: includes/integrations/theme-painter.php:86
+msgid "A lighter shade of the Accent Color used for hover effects."
+msgstr ""
+
+#: includes/integrations/theme-painter.php:105
+msgid "Text Color"
+msgstr ""
+
+#: includes/integrations/theme-painter.php:106
+msgid ""
+"The main text color. This should stand out clearly from the Background "
+"Color and Background Highlight Color so it is easy to read."
+msgstr ""
+
+#: includes/integrations/theme-painter.php:122
+msgid "Light Text Color"
+msgstr ""
+
+#: includes/integrations/theme-painter.php:123
+msgid ""
+"A shade used for text that should be less prominent. Often a slightly "
+"lighter shade of the Text Color."
+msgstr ""
+
+#: includes/integrations/typecase.php:37
+msgid "Base Font"
+msgstr ""
+
+#: includes/integrations/typecase.php:42
+msgid "Accent Font"
+msgstr ""
+
+#: includes/load-customizer.php:18
+msgid "Delete"
+msgstr ""
+
+#: includes/load-customizer.php:19
+msgid "Open/close this component"
+msgstr ""
+
+#: includes/load-customizer.php:36
+msgid "Logo, Site Title and Tagline"
+msgstr ""
+
+#: includes/load-customizer.php:61 includes/load-customizer.php:148
+msgid "Logo"
+msgstr ""
+
+#: includes/load-customizer.php:80 includes/load-customizer.php:495
+msgid "Homepage Editor"
+msgstr ""
+
+#: includes/load-customizer.php:103
+msgid "Add Component"
+msgstr ""
+
+#: includes/load-customizer.php:104
+msgid "Edit"
+msgstr ""
+
+#: includes/load-customizer.php:106
+msgid "Search content"
+msgstr ""
+
+#: includes/load-customizer.php:107 includes/load-customizer.php:275
+msgid "Add Link"
+msgstr ""
+
+#: includes/load-customizer.php:108
+msgid "URL"
+msgstr ""
+
+#: includes/load-customizer.php:109
+msgid "Link Text"
+msgstr ""
+
+#: includes/load-customizer.php:110
+msgid "Search existing content &rarr;"
+msgstr ""
+
+#: includes/load-customizer.php:111
+msgid "&larr; Back to link form"
+msgstr ""
+
+#: includes/load-customizer.php:122
+msgid "Footer"
+msgstr ""
+
+#: includes/load-customizer.php:174
+msgid "Site Description"
+msgstr ""
+
+#: includes/load-customizer.php:192
+msgid "Copyright"
+msgstr ""
+
+#: includes/load-customizer.php:221
+msgid ""
+"An unknown error occurred. Please try again. If the problem continues, "
+"please refresh the page."
+msgstr ""
+
+#: includes/load-customizer.php:264
+msgid "Title"
+msgstr ""
+
+#: includes/load-customizer.php:265
+msgid "Content"
+msgstr ""
+
+#: includes/load-customizer.php:266
+msgid "Image"
+msgstr ""
+
+#: includes/load-customizer.php:267
+msgid "No image selected"
+msgstr ""
+
+#: includes/load-customizer.php:268
+msgid "Image Position"
+msgstr ""
+
+#: includes/load-customizer.php:269
+msgid "Left"
+msgstr ""
+
+#: includes/load-customizer.php:270
+msgid "Right"
+msgstr ""
+
+#: includes/load-customizer.php:271
+msgid "Select Image"
+msgstr ""
+
+#: includes/load-customizer.php:272
+msgid "Change Image"
+msgstr ""
+
+#: includes/load-customizer.php:273 includes/load-customizer.php:276
+#: includes/load-customizer.php:323
+msgid "Remove"
+msgstr ""
+
+#: includes/load-customizer.php:274
+msgid "Links"
+msgstr ""
+
+#: includes/load-customizer.php:282
+msgid "Hero Block"
+msgstr ""
+
+#: includes/load-customizer.php:283
+msgid "A prominent call to action on a full-width background image."
+msgstr ""
+
+#: includes/load-customizer.php:287 includes/load-customizer.php:307
+msgid "Title (top)"
+msgstr ""
+
+#: includes/load-customizer.php:288 includes/load-customizer.php:308
+msgid "Title (bottom)"
+msgstr ""
+
+#: includes/load-customizer.php:289
+msgid "Contact Detail"
+msgstr ""
+
+#: includes/load-customizer.php:290
+msgid "None"
+msgstr ""
+
+#: includes/load-customizer.php:291
+msgid "Phone Number"
+msgstr ""
+
+#: includes/load-customizer.php:292
+msgid "Contact Popup"
+msgstr ""
+
+#: includes/load-customizer.php:293
+msgid "Find Us"
+msgstr ""
+
+#: includes/load-customizer.php:294
+msgid "Darken Image"
+msgstr ""
+
+#: includes/load-customizer.php:302
+msgid "Content Block"
+msgstr ""
+
+#: includes/load-customizer.php:303
+msgid "A simple content block with an image, title, text and links."
+msgstr ""
+
+#: includes/load-customizer.php:318
+msgid "Review"
+msgstr ""
+
+#: includes/load-customizer.php:319
+msgid "Display one or more reviews."
+msgstr ""
+
+#: includes/load-customizer.php:322
+msgid "Loading"
+msgstr ""
+
+#: includes/load-customizer.php:324
+msgid "No review selected."
+msgstr ""
+
+#: includes/load-customizer.php:325
+msgid "Add Review"
+msgstr ""
+
+#: includes/load-customizer.php:335 includes/load-customizer.php:398
+msgid "Map"
+msgstr ""
+
+#: includes/load-customizer.php:336
+msgid "A full-width map identifying your location."
+msgstr ""
+
+#: includes/load-customizer.php:338
+msgid "To change the address, edit your %sBusiness Profile%s."
+msgstr ""
+
+#: includes/load-customizer.php:347
+msgid "Event Calendar"
+msgstr ""
+
+#: includes/load-customizer.php:348
+msgid "A monthly calendar displaying your upcoming events."
+msgstr ""
+
+#: includes/load-customizer.php:350
+msgid "Add and edit events from your %sevents management page%s."
+msgstr ""
+
+#: includes/load-customizer.php:360
+msgid "Mix-and-Match"
+msgstr ""
+
+#: includes/load-customizer.php:361
+msgid ""
+"Pair two items in a row. Select from opening hours, a map, latest posts and "
+"more."
+msgstr ""
+
+#: includes/load-customizer.php:364
+msgid "Left Content"
+msgstr ""
+
+#: includes/load-customizer.php:365
+msgid "Right Content"
+msgstr ""
+
+#: includes/load-customizer.php:366
+msgid "Left Title"
+msgstr ""
+
+#: includes/load-customizer.php:367
+msgid "Right Title"
+msgstr ""
+
+#: includes/load-customizer.php:386
+msgid "Latest Blog Posts"
+msgstr ""
+
+#: includes/load-customizer.php:389
+msgid "Opening Hours"
+msgstr ""
+
+#: includes/load-customizer.php:394
+msgid "Contact Card"
+msgstr ""
+
+#: includes/load-customizer.php:404
+msgid "Booking Form"
+msgstr ""
+
+#: includes/load-customizer.php:464
+msgid "Homepage"
+msgstr ""
+
+#: includes/load-customizer.php:501
+msgid ""
+"Edit your homepage using the Homepage Editor in the Customizer. %sLearn "
+"More%s"
+msgstr ""
+
+#: includes/load-plugin-installer.php:37 includes/load-theme-setup.php:63
+msgid "Food and Drink Menu"
+msgstr ""
+
+#: includes/load-plugin-installer.php:43 includes/load-theme-setup.php:78
+msgid "Restaurant Reservations"
+msgstr ""
+
+#: includes/load-plugin-installer.php:49 includes/load-theme-setup.php:88
+msgid "Business Profile"
+msgstr ""
+
+#: includes/load-plugin-installer.php:55
+msgid "Good Reviews"
+msgstr ""
+
+#: includes/load-plugin-installer.php:61 includes/load-theme-setup.php:114
+msgid "Event Organiser"
+msgstr ""
+
+#: includes/load-plugin-installer.php:67
+msgid "Ninja Forms"
+msgstr ""
+
+#: includes/load-plugin-installer.php:73
+msgid "WP Featherlight"
+msgstr ""
+
+#: includes/load-plugin-installer.php:79
+msgid "WordPress SEO by Yoast"
+msgstr ""
+
+#: includes/load-theme-setup.php:20 includes/load-theme-setup.php:21
+msgid "Theme Setup"
+msgstr ""
+
+#: includes/load-theme-setup.php:22
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: includes/load-theme-setup.php:23
+msgid "Demo Content"
+msgstr ""
+
+#: includes/load-theme-setup.php:24
+#: lib/tgmpa/class-tgm-plugin-activation.php:2595
+msgid "Install"
+msgstr ""
+
+#: includes/load-theme-setup.php:25
+msgid ""
+"You must install this plugin before you can add demo content, but you do "
+"not have permission to install plugins. Please contact your web "
+"administrator for assistance."
+msgstr ""
+
+#: includes/load-theme-setup.php:26
+msgid "Activate Plugin"
+msgstr ""
+
+#: includes/load-theme-setup.php:27
+msgid ""
+"You must activate this plugin before you can add demo content, but you do "
+"not have permission to activate plugins. Please contact your web "
+"administrator for assistance."
+msgstr ""
+
+#: includes/load-theme-setup.php:28
+msgid "Install Demo Content"
+msgstr ""
+
+#: includes/load-theme-setup.php:29
+msgid ""
+"You do not have permission to install demo content. Please contact your web "
+"administrator for assistance."
+msgstr ""
+
+#: includes/load-theme-setup.php:30
+msgid "View Demo"
+msgstr ""
+
+#: includes/load-theme-setup.php:31
+msgid "Documentation & Support"
+msgstr ""
+
+#: includes/load-theme-setup.php:32
+msgid "Help Documentation"
+msgstr ""
+
+#: includes/load-theme-setup.php:33
+msgid "Read the help guide for this theme"
+msgstr ""
+
+#: includes/load-theme-setup.php:34
+msgid "Support"
+msgstr ""
+
+#: includes/load-theme-setup.php:36
+msgid ""
+"Get %sone-on-one support%s if you are having trouble or need customizations "
+"done."
+msgstr ""
+
+#: includes/load-theme-setup.php:37
+msgid "Theme Demo"
+msgstr ""
+
+#: includes/load-theme-setup.php:39
+msgid "View an online demo of this theme"
+msgstr ""
+
+#: includes/load-theme-setup.php:40
+msgid "Installing"
+msgstr ""
+
+#: includes/load-theme-setup.php:41
+msgid "You have been logged out. Please login again before continuing."
+msgstr ""
+
+#: includes/load-theme-setup.php:42
+msgid "An unexpected error occur. Please reload the page and try again."
+msgstr ""
+
+#: includes/load-theme-setup.php:43
+msgid "Your request could not be processed. Please reload the page and try again"
+msgstr ""
+
+#: includes/load-theme-setup.php:100
+msgid "Good Reviews for WordPress"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:333
+msgid "Install Required Plugins"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:334
+msgid "Install Plugins"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:335
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:336
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:337
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:342
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:347
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:352
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:357
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:362
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:367
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:372
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:377
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:382
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:387
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:392
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:397
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:398
+msgid "Return to the dashboard"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:399
+#: lib/tgmpa/class-tgm-plugin-activation.php:3021
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:400
+#: lib/tgmpa/class-tgm-plugin-activation.php:2824
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:401
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:402
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:403
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:404
+msgid "Dismiss this notice"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:405
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:520
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:521
+msgid "Update Required"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:820
+#: lib/tgmpa/class-tgm-plugin-activation.php:3430
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:927
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:927
+#: lib/tgmpa/class-tgm-plugin-activation.php:930
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:930
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2159
+msgid "Required"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2162
+msgid "Recommended"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2178
+msgid "WordPress Repository"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2181
+msgid "External Source"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2184
+msgid "Pre-Packaged"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2201
+msgid "Not Installed"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2205
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2207
+msgid "Active"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2213
+msgid "Required Update not Available"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2216
+msgid "Requires Update"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2219
+msgid "Update recommended"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2275
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2278
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2281
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2371
+msgid "Installed version:"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2379
+msgid "Minimum required version:"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2391
+msgid "Available version:"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2414
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2428
+msgid "Plugin"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2429
+msgid "Source"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2430
+msgid "Type"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2434
+msgid "Version"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2435
+msgid "Status"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2562
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2601
+msgid "Update"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2604
+msgid "Activate"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2635
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2637
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2673
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2675
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2780
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2806
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3020
+msgid "Plugin activation failed."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3354
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3356
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3357
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3361
+msgid ""
+"The installation and activation process is starting. This process may take "
+"a while on some hosts, so please be patient."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3362
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3362
+#: lib/tgmpa/class-tgm-plugin-activation.php:3368
+msgid "Show Details"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3362
+#: lib/tgmpa/class-tgm-plugin-activation.php:3368
+msgid "Hide Details"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3363
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3364
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3367
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3368
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3369
+msgid "All installations have been completed."
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:3370
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/basic-theme/exclude/file.php:3
+#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/plugin-include.php:6
+msgid "Exclude"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/include/file.php:2
+msgid "Include"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/add-domain.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:3
+msgid "String"
+msgstr ""
+
+#: search.php:20
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/event-meta.php:46
+msgid "Upcoming Dates"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Luigi"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://themeofthecrop.com/themes/luigi"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A WordPress theme for restaurants."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Theme of the Crop"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://themeofthecrop.com"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full Width"
+msgstr ""
+
+#: comments.php:30
+msgctxt "comments title"
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: content-event.php:40
+msgctxt "Comma separating items in list of event categories"
+msgid ", "
+msgstr ""
+
+#: content-event.php:50
+msgctxt "Comma separating items in list of event tags"
+msgid ", "
+msgstr ""
+
+#: includes/integrations/event-organiser.php:44
+msgctxt "Brief format of start and end dates of recurring events."
+msgid "%s&mdash;%s"
+msgstr ""
+
+#: includes/load-theme-setup.php:65
+msgctxt ""
+"This phrase is used in the Food and Drink Menu demo content installed from "
+"the Theme Setup page."
+msgid "Demo Menu"
+msgstr ""
+
+#: includes/load-theme-setup.php:66
+msgctxt ""
+"This phrase is used in the Food and Drink Menu demo content installed from "
+"the Theme Setup page."
+msgid "Starters"
+msgstr ""
+
+#: includes/load-theme-setup.php:67
+msgctxt ""
+"This phrase is used in the Food and Drink Menu demo content installed from "
+"the Theme Setup page."
+msgid "Entrees"
+msgstr ""
+
+#: includes/load-theme-setup.php:68
+msgctxt ""
+"This phrase is used in the Food and Drink Menu demo content installed from "
+"the Theme Setup page."
+msgid "Desserts"
+msgstr ""
+
+#: includes/load-theme-setup.php:69
+msgctxt ""
+"This phrase is used in the Food and Drink Menu demo content installed from "
+"the Theme Setup page."
+msgid "Demo Menu Dish %s"
+msgstr ""
+
+#: includes/load-theme-setup.php:70
+msgctxt ""
+"This phrase is used in the Food and Drink Menu demo content installed from "
+"the Theme Setup page."
+msgid "A delicious dish made of the finest, carefully selected ingredients."
+msgstr ""
+
+#: includes/load-theme-setup.php:71
+msgctxt ""
+"This phrase is used in the Food and Drink Menu demo content installed from "
+"the Theme Setup page."
+msgid "$12.99"
+msgstr ""
+
+#: includes/load-theme-setup.php:80
+msgctxt ""
+"This phrase is used in the Restaurant Reservations demo content installed "
+"from the Theme Setup page."
+msgid "This is a demo of the Restaurant Reservations booking form"
+msgstr ""
+
+#: includes/load-theme-setup.php:81
+msgctxt ""
+"This phrase is used in the Restaurant Reservations demo content installed "
+"from the Theme Setup page."
+msgid "Booking Form Demo"
+msgstr ""
+
+#: includes/load-theme-setup.php:90
+msgctxt ""
+"This phrase is used in the Restaurant Reservations demo content installed "
+"from the Theme Setup page."
+msgid "Contact Card Demo"
+msgstr ""
+
+#: includes/load-theme-setup.php:91
+msgctxt ""
+"This phrase is used in the Restaurant Reservations demo content installed "
+"from the Theme Setup page."
+msgid ""
+"1600 Amphitheatre Parkway\n"
+"Mountain View, CA 94043"
+msgstr ""
+
+#: includes/load-theme-setup.php:92
+msgctxt ""
+"This phrase is used in the Restaurant Reservations demo content installed "
+"from the Theme Setup page."
+msgid "(123) 456-7890"
+msgstr ""
+
+#: includes/load-theme-setup.php:93
+msgctxt ""
+"This phrase is used in the Restaurant Reservations demo content installed "
+"from the Theme Setup page."
+msgid "contact@example.com"
+msgstr ""
+
+#: includes/load-theme-setup.php:116
+msgctxt ""
+"This phrase is used in the Restaurant Reservations demo content installed "
+"from the Theme Setup page."
+msgid "Event Calendar Demo"
+msgstr ""
+
+#: includes/load-theme-setup.php:117
+msgctxt ""
+"This phrase is used in the Restaurant Reservations demo content installed "
+"from the Theme Setup page."
+msgid "Demo Event %s"
+msgstr ""
+
+#: includes/load-theme-setup.php:118
+msgctxt ""
+"This phrase is used in the Restaurant Reservations demo content installed "
+"from the Theme Setup page."
+msgid "This is a sample event created with the Event Organiser plugin."
+msgstr ""
+
+#: includes/load-theme-setup.php:102
+msgctxt ""
+"This phrase is used in the Good Reviews for WordPress demo content "
+"installed from the Theme Setup page."
+msgid "Good Reviews Demo"
+msgstr ""
+
+#: includes/load-theme-setup.php:103
+msgctxt ""
+"This phrase is used in the Good Reviews for WordPress demo content "
+"installed from the Theme Setup page."
+msgid ""
+"This is a fabulous review! We were so excited by this website that we just "
+"had to go back for more. We've been three times now!"
+msgstr ""
+
+#: includes/load-theme-setup.php:104
+msgctxt ""
+"This phrase is used in the Good Reviews for WordPress demo content "
+"installed from the Theme Setup page."
+msgid "Reviewer Name %s"
+msgstr ""
+
+#: includes/load-theme-setup.php:105 includes/load-theme-setup.php:107
+msgctxt ""
+"This phrase is used in the Good Reviews for WordPress demo content "
+"installed from the Theme Setup page."
+msgid "http://example.com"
+msgstr ""
+
+#: includes/load-theme-setup.php:106
+msgctxt ""
+"This phrase is used in the Good Reviews for WordPress demo content "
+"installed from the Theme Setup page."
+msgid "Critic Magazine"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:1108
+#: lib/tgmpa/class-tgm-plugin-activation.php:2820
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:1873
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2227
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2272
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2363
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2483
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2487
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr ""
+
+#: lib/tgmpa/class-tgm-plugin-activation.php:2492
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
+msgstr ""
