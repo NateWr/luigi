@@ -25,7 +25,7 @@ if ( !function_exists( 'luigi_print_logo' ) ) {
 		$scale = $scale == 93 ? '' : ' style="max-height: ' . absint( $scale ) . 'px"';
 		?>
 
-		<img src="<?php echo $logo_url; ?>" class="logo-image" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"<?php echo $scale; ?>>
+		<img src="<?php echo esc_url( $logo_url ); ?>" class="logo-image" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"<?php echo $scale; ?>>
 
 		<?php
 	}
