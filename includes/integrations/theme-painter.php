@@ -500,7 +500,6 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = 'body';
 				$selectors[] = '.primary-menu a';
 				$selectors[] = '.luigi-social-menu a';
-				$selectors[] = '.luigi-button';
 				$selectors[] = '.post-summary .entry-title a';
 				$selectors[] = '.gr-reviews .gr-review-body';
 				$selectors[] = '.gr-reviews .gr-author';
@@ -508,8 +507,8 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.navigation a';
 				$selectors[] = '.luigi-button-wire';
 				$selectors[] = '.fc-toolbar .fc-center button';
-				$selectors[] = '.fc-toolbar .fc-center .fc-prev-button';
-				$selectors[] = '.fc-toolbar .fc-center .fc-next-button';
+				$selectors[] = '.fc-toolbar .fc-prev-button';
+				$selectors[] = '.fc-toolbar .fc-next-button';
 				$selectors[] = '.widget_rss .widgettitle a';
 				$selectors[] = '.primary-menu [aria-expanded=true] a:hover';
 				$selectors[] = '.primary-menu [aria-expanded=true] a:focus';
