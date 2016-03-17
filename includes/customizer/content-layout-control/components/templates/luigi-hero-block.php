@@ -38,7 +38,9 @@ if ( $this->image ) {
 		<?php if ( luigi_print_hero_contact( $this->contact ) ) : ?>
 			<div class="contact">
 				<?php if ( $this->contact == 'phone' ) : ?>
-					<span class="luigi-icon luigi-icon-w-phone"></span> <?php echo esc_html( $bpfwp_controller->settings->get_setting( 'phone' ) ); ?>
+					<div class="phone">
+						<span class="luigi-icon luigi-icon-w-phone"></span> <?php echo esc_html( $bpfwp_controller->settings->get_setting( 'phone' ) ); ?>
+					</div>
 				<?php elseif ( $this->contact == 'find' ) : ?>
 					<a href="#" class="luigi-load-contact-card"><span class="luigi-icon luigi-icon-w-location"></span> <span class="contact_text"><?php echo esc_html( $this->contact_text ); ?></span></a>
 				<?php endif; ?>

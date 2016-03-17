@@ -43,15 +43,18 @@
 	}
 
 	.contact {
+		font-size: @font-tiny;
+		font-weight: @semibold;
+		line-height: @line-tiny;
+		text-transform: uppercase;
+
+		> * {
+			padding: @half @base;
+		}
 
 		a {
 			display: inline-block;
-			padding: @half @base;
 			border: 2px solid transparent;
-			font-size: @font-tiny;
-			font-weight: @semibold;
-			line-height: @line-tiny;
-			text-transform: uppercase;
 			text-decoration: none;
 			background: transparent;
 		}
@@ -60,6 +63,7 @@
 			position: relative;
 			top: 2px;
 			height: @font-sml;
+			margin-right: 0.25em;
 		}
 
 		a:hover,
@@ -90,10 +94,13 @@
 			line-height: 99px;
 		}
 
-		.contact a {
-			padding: @base @double;
+		.contact {
 			font-size: @font-sml;
 			line-height: @line-sml;
+
+			> * {
+				padding: @base @double;
+			}
 		}
 	}
 
