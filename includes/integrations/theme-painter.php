@@ -15,124 +15,115 @@ if ( !function_exists( 'luigi_get_theme_painter_args' ) ) {
 			// The handle of the stylesheet to add inline styles to
 			'stylesheet' => 'luigi',
 
-			// Panels
-			'panels' => array(
+			'sections' => array(
 
-				'theme-colors' => array(
+				'general' => array(
 					'title' => __( 'Theme Colors', 'luigi' ),
-					'priority' => 30,
-
-					'sections' => array(
-
-						'general' => array(
-							'title' => __( 'General Colors', 'luigi' ),
-							'priority' => 20,
-							'colors' => array(
-								'background' => array(
-									'label' => __( 'Background Color', 'luigi' ),
-									'description' => __( 'The primary background color on your site.', 'luigi' ),
-									'selectors' => array(
-										luigi_tp( 'background' ),
-										luigi_tp( 'background-adjust-border-automatically' ),
-										luigi_tp( 'background-adjust-border-light-automatically' ),
-										luigi_tp( 'background-adjust-background-automatically' ),
-										luigi_tp( 'background-adjust-color-automatically' ),
-									),
-									'attributes' => array(
-										'background',
-										'border-color',
-										'border-color',
-										'background-color',
-										'color',
-									),
-									'set_values' => array(
-										false,
-										'rgba(255,255,255,0.3)',
-										'rgba(255,255,255,0.12)',
-										'rgba(255,255,255,0.85)',
-										false,
-									),
-									'default' => '#fafafa',
-								),
-								'background-highlight' => array(
-									'label' => __( 'Background Highlight Color', 'luigi' ),
-									'description' => __( 'A background color used to bring attention to a section or a panel on your site. Often a slightly lighter shade of the Background Color.', 'luigi' ),
-									'selectors' => array(
-										luigi_tp( 'background-highlight' ),
-										luigi_tp( 'background-highlight-important' ),
-									),
-									'attributes' => array( 'background', 'background' ),
-									'important' => array( false, true ),
-									'default' => '#ffffff',
-								),
-								'accent' =>array(
-									'label' => __( 'Accent Color', 'luigi' ),
-									'description' => __( 'A dominant offset color used throughout the theme for links, buttons and other attention-grabbing items.', 'luigi' ),
-									'selectors' => array(
-										luigi_tp( 'accent' ),
-										luigi_tp( 'accent-important' ),
-										luigi_tp( 'accent-background-color' ),
-										luigi_tp( 'accent-border-color' ),
-									),
-									'attributes' => array(
-										'color',
-										'color',
-										'background-color',
-										'border-color',
-									),
-									'important' => array(
-										false,
-										true,
-										false,
-										false,
-									),
-									'default' => '#9a8f45',
-								),
-								'accent-lift' =>array(
-									'label' => __( 'Accent Hover Color', 'luigi' ),
-									'description' => __( 'A lighter shade of the Accent Color used for hover effects.', 'luigi' ),
-									'selectors' => array(
-										luigi_tp( 'accent-lift' ),
-										luigi_tp( 'accent-lift-background'),
-										luigi_tp( 'accent-lift-background-screen-sm'),
-									),
-									'attributes' => array(
-										'color',
-										'background-color',
-										'background-color',
-									),
-									'queries' => array(
-										'',
-										'',
-										'@media(min-width: 768px)',
-									),
-									'default' => '#9a8f45',
-								),
-								'text' => array(
-									'label' => __( 'Text Color', 'luigi' ),
-									'description' => __( 'The main text color. This should stand out clearly from the Background Color and Background Highlight Color so it is easy to read.', 'luigi' ),
-									'selectors' => array(
-										luigi_tp( 'text' ),
-										luigi_tp( 'text-important' ),
-									),
-									'attributes' => array(
-										'color',
-										'color'
-									),
-									'important' => array(
-										false,
-										true
-									),
-									'default' => '#242424',
-								),
-								'text-light' => array(
-									'label' => __( 'Light Text Color', 'luigi' ),
-									'description' => __( 'A shade used for text that should be less prominent. Often a slightly lighter shade of the Text Color.', 'luigi' ),
-									'selectors' => luigi_tp( 'text-light' ),
-									'attributes' => 'color',
-									'default' => '#999999',
-								),
+					'priority' => 20,
+					'colors' => array(
+						'background' => array(
+							'label' => __( 'Background Color', 'luigi' ),
+							'description' => __( 'The primary background color on your site.', 'luigi' ),
+							'selectors' => array(
+								luigi_tp( 'background' ),
+								luigi_tp( 'background-adjust-border-automatically' ),
+								luigi_tp( 'background-adjust-border-light-automatically' ),
+								luigi_tp( 'background-adjust-background-automatically' ),
+								luigi_tp( 'background-adjust-color-automatically' ),
 							),
+							'attributes' => array(
+								'background',
+								'border-color',
+								'border-color',
+								'background-color',
+								'color',
+							),
+							'set_values' => array(
+								false,
+								'rgba(255,255,255,0.3)',
+								'rgba(255,255,255,0.12)',
+								'rgba(255,255,255,0.85)',
+								false,
+							),
+							'default' => '#fafafa',
+						),
+						'background-highlight' => array(
+							'label' => __( 'Background Highlight Color', 'luigi' ),
+							'description' => __( 'A background color used to bring attention to a section or a panel on your site. Often a slightly lighter shade of the Background Color.', 'luigi' ),
+							'selectors' => array(
+								luigi_tp( 'background-highlight' ),
+								luigi_tp( 'background-highlight-important' ),
+							),
+							'attributes' => array( 'background', 'background' ),
+							'important' => array( false, true ),
+							'default' => '#ffffff',
+						),
+						'accent' =>array(
+							'label' => __( 'Accent Color', 'luigi' ),
+							'description' => __( 'A dominant offset color used throughout the theme for links, buttons and other attention-grabbing items.', 'luigi' ),
+							'selectors' => array(
+								luigi_tp( 'accent' ),
+								luigi_tp( 'accent-important' ),
+								luigi_tp( 'accent-background-color' ),
+								luigi_tp( 'accent-border-color' ),
+							),
+							'attributes' => array(
+								'color',
+								'color',
+								'background-color',
+								'border-color',
+							),
+							'important' => array(
+								false,
+								true,
+								false,
+								false,
+							),
+							'default' => '#9a8f45',
+						),
+						'accent-lift' =>array(
+							'label' => __( 'Accent Hover Color', 'luigi' ),
+							'description' => __( 'A lighter shade of the Accent Color used for hover effects.', 'luigi' ),
+							'selectors' => array(
+								luigi_tp( 'accent-lift' ),
+								luigi_tp( 'accent-lift-background'),
+								luigi_tp( 'accent-lift-background-screen-sm'),
+							),
+							'attributes' => array(
+								'color',
+								'background-color',
+								'background-color',
+							),
+							'queries' => array(
+								'',
+								'',
+								'@media(min-width: 768px)',
+							),
+							'default' => '#9a8f45',
+						),
+						'text' => array(
+							'label' => __( 'Text Color', 'luigi' ),
+							'description' => __( 'The main text color. This should stand out clearly from the Background Color and Background Highlight Color so it is easy to read.', 'luigi' ),
+							'selectors' => array(
+								luigi_tp( 'text' ),
+								luigi_tp( 'text-important' ),
+							),
+							'attributes' => array(
+								'color',
+								'color'
+							),
+							'important' => array(
+								false,
+								true
+							),
+							'default' => '#242424',
+						),
+						'text-light' => array(
+							'label' => __( 'Light Text Color', 'luigi' ),
+							'description' => __( 'A shade used for text that should be less prominent. Often a slightly lighter shade of the Text Color.', 'luigi' ),
+							'selectors' => luigi_tp( 'text-light' ),
+							'attributes' => 'color',
+							'default' => '#999999',
 						),
 					),
 				),
