@@ -130,7 +130,6 @@ if ( !function_exists( 'luigi_set_map_options' ) ) {
 	function luigi_set_map_options( $opts ) {
 
 		// Don't override styles set by any other code
-		// @TODO use color for theme mods
 		if ( empty( $opts['styles'] ) ) {
 			$opts['styles'] = array(
 				array(
