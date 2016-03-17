@@ -44,7 +44,7 @@ if ( !function_exists( 'luigi_bpfwp_get_contact_card_modal' ) ) {
 			wp_send_json_error(
 				array(
 					'error' => 'bpfwp_inactive',
-					'msg'   => current_user_can( 'manage_options' ) ? __( 'The Business Profile plugin is not active.', 'luigi' ) : __( 'Contact card is not currently available', 'luigi' ),
+					'msg'   => current_user_can( 'activate_plugins' ) ? __( 'The Business Profile plugin is not active.', 'luigi' ) : __( 'Contact card is not currently available', 'luigi' ),
 				)
 			);
 		}
