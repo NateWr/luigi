@@ -1,9 +1,9 @@
 <div class="header">
 	<h4 class="name">
-		<?php esc_html_e( $this->name ); ?>
+		<?php echo esc_html( $this->name ); ?>
 		<span class="title">{{ data.model.get( 'title' ) }}</span>
 	</h4>
-	<a href="#" class="clc-toggle-component-form"><?php esc_html_e( CLC_Content_Layout_Control::$i18n['control-toggle'] ); ?></a>
+	<a href="#" class="clc-toggle-component-form"><?php echo esc_html( CLC_Content_Layout_Control::$i18n['control-toggle'] ); ?></a>
 </div>
 <div class="control">
 	<div class="setting">
@@ -94,5 +94,5 @@
 	<# } #>
 </div>
 <div class="footer">
-	<a href="#" class="delete"><?php esc_html_e( CLC_Content_Layout_Control::$i18n['delete'] ); ?></a>
+	<a href="#" class="delete"><?php echo esc_html( CLC_Content_Layout_Control::$i18n['delete'] ); ?></a>
 </div>

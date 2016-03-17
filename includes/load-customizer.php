@@ -171,7 +171,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 		$wp_customize->add_control(
 			'footer_description',
 			array(
-				'label'          => __( 'Site Description', 'thespot' ),
+				'label'          => __( 'Site Description', 'luigi' ),
 				'section'        => 'footer',
 				'type'           => 'textarea',
 			)
@@ -189,7 +189,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 		$wp_customize->add_control(
 			'copyright',
 			array(
-				'label'          => __( 'Copyright', 'thespot' ),
+				'label'          => __( 'Copyright', 'luigi' ),
 				'section'        => 'footer',
 				'type'           => 'text',
 			)

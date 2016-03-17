@@ -72,7 +72,7 @@
 					<?php get_template_part( 'template-parts/menu', 'social' ); ?>
 					<?php if ( get_theme_mod( 'copyright' ) ) : ?>
 						<div class="copyright">
-							<?php esc_html_e( get_theme_mod( 'copyright' ) ); ?>
+							<?php echo esc_html( get_theme_mod( 'copyright' ) ); ?>
 						</div>
 					<?php endif; ?>
 				</div>

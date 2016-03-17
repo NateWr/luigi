@@ -76,7 +76,7 @@ if ( !function_exists( 'luigi_register_required_plugins' ) ) {
 			),
 
 			array(
-				'name'        => 'WordPress SEO by Yoast',
+				'name'        => __( 'WordPress SEO by Yoast', 'luigi' ),
 				'slug'        => 'wordpress-seo',
 				'required'    => false,
 				'is_callable' => 'wpseo_init',

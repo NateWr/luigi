@@ -181,8 +181,8 @@ if ( !function_exists( 'luigi_eo_the_posts_navigation' ) ) {
 	function luigi_eo_the_posts_navigation() {
 		the_posts_navigation(
 			array(
-				'next_text' => esc_html__( '&larr; Older events', 'lugi' ),
-				'prev_text' => esc_html__( 'Later events &rarr;', 'lugi' ),
+				'next_text' => esc_html__( '&larr; Older events', 'luigi' ),
+				'prev_text' => esc_html__( 'Later events &rarr;', 'luigi' ),
 			)
 		);
 	}

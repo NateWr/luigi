@@ -30,7 +30,7 @@ if ( $this->image ) {
 			<ul class="links">
 				<?php foreach( $this->links as $link ) : ?>
 					<li>
-						<a href="<?php echo esc_url( $link['url'] ); ?>"><?php esc_html_e( $link['link_text'] ); ?></a>
+						<a href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['link_text'] ); ?></a>
 					</li>
 				<?php endforeach; ?>
 			</ul>
@@ -40,7 +40,7 @@ if ( $this->image ) {
 				<?php if ( $this->contact == 'phone' ) : ?>
 					<span class="luigi-icon luigi-icon-w-phone"></span> <?php echo esc_html( $bpfwp_controller->settings->get_setting( 'phone' ) ); ?>
 				<?php elseif ( $this->contact == 'find' ) : ?>
-					<a href="#" class="luigi-load-contact-card"><span class="luigi-icon luigi-icon-w-location"></span> <span class="contact_text"><?php esc_html_e( $this->contact_text ); ?></span></a>
+					<a href="#" class="luigi-load-contact-card"><span class="luigi-icon luigi-icon-w-location"></span> <span class="contact_text"><?php echo esc_html( $this->contact_text ); ?></span></a>
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>

@@ -64,7 +64,7 @@ if ( !function_exists( 'luigi_theme_setup_demos' ) ) {
 				'strings' => array(
 					'menu.title' => _x( 'Demo Menu', 'This phrase is used in the Food and Drink Menu demo content installed from the Theme Setup page.', 'luigi' ),
 					'section.starters' => _x( 'Starters', 'This phrase is used in the Food and Drink Menu demo content installed from the Theme Setup page.', 'luigi' ),
-					'section.entrees' => _x( 'Entrées', 'This phrase is used in the Food and Drink Menu demo content installed from the Theme Setup page.', 'luigi' ),
+					'section.entrees' => _x( 'Entrees', 'This phrase is used in the Food and Drink Menu demo content installed from the Theme Setup page.', 'luigi' ),
 					'section.desserts' => _x( 'Desserts', 'This phrase is used in the Food and Drink Menu demo content installed from the Theme Setup page.', 'luigi' ),
 					'item.title' => _x( 'Demo Menu Dish %s', 'This phrase is used in the Food and Drink Menu demo content installed from the Theme Setup page.', 'luigi' ),
 					'item.description' => _x( 'A delicious dish made of the finest, carefully selected ingredients.', 'This phrase is used in the Food and Drink Menu demo content installed from the Theme Setup page.', 'luigi' ),

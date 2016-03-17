@@ -28,8 +28,8 @@ get_header(); ?>
 
 				the_posts_navigation(
 					array(
-						'prev_text' => esc_html__( '&larr; Older posts', 'lugi' ),
-						'next_text' => esc_html__( 'Newer posts &rarr;', 'lugi' ),
+						'prev_text' => esc_html__( '&larr; Older posts', 'luigi' ),
+						'next_text' => esc_html__( 'Newer posts &rarr;', 'luigi' ),
 					)
 				);
 

@@ -10,7 +10,7 @@
 
 <div class="clc-wrapper">
 	<?php if ( !empty( $this->left ) ) : ?>
-		<div class="luigi-clc-mixer luigi-clc-mixer-<?php esc_attr_e( $this->left ); ?>">
+		<div class="luigi-clc-mixer luigi-clc-mixer-<?php echo esc_attr( $this->left ); ?>">
 			<?php if ( !empty( $this->left_title ) ) : ?>
 				<h2><?php echo luigi_wrap_first_word( $this->left_title ); ?></h2>
 			<?php endif; ?>
@@ -18,7 +18,7 @@
 		</div>
 	<?php endif; ?>
 	<?php if ( !empty( $this->right ) ) : ?>
-		<div class="luigi-clc-mixer luigi-clc-mixer-<?php esc_attr_e( $this->right ); ?>">
+		<div class="luigi-clc-mixer luigi-clc-mixer-<?php echo esc_attr( $this->right ); ?>">
 			<?php if ( !empty( $this->right_title ) ) : ?>
 				<h2><?php echo luigi_wrap_first_word( $this->right_title ); ?></h2>
 			<?php endif; ?>

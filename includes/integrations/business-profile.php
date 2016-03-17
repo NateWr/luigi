@@ -66,7 +66,7 @@ if ( !function_exists( 'luigi_bpfwp_get_contact_card_modal' ) ) {
 				'autoload_google_maps' => apply_filters( 'bpfwp_autoload_google_maps', true ),
 				'map_options' => apply_filters( 'bpfwp_google_map_options', array() ),
 				'strings' => array(
-					'get_directions' => __( 'Get directions', 'business-profile' ),
+					'get_directions' => __( 'Get directions', 'luigi' ),
 				),
 			);
 		}
