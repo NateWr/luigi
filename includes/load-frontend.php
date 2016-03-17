@@ -135,7 +135,7 @@ if ( !function_exists( 'luigi_set_map_options' ) ) {
 			$opts['styles'] = array(
 				array(
 					'stylers' => array(
-						array( 'hue' => '#9a8f45' )
+						array( 'hue' => get_theme_mod( 'theme_painter_setting_accent', '#9a8f45' ) )
 					)
 				),
 				array(
