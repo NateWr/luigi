@@ -329,3 +329,66 @@
 		border-bottom-right-radius: 5px;
 	}
 }
+
+// Swap out icons based on background color
+.luigi-bg-dark {
+
+	.rtb-booking-form label:before {
+		&:extend(.luigi-icon-w-message);
+	}
+
+	.rtb-text.date label:before {
+		&:extend(.luigi-icon-w-date);
+	}
+
+	.rtb-text.time label:before {
+		&:extend(.luigi-icon-w-time);
+	}
+
+	.rtb-select.party label:before {
+		&:extend(.luigi-icon-w-party);
+	}
+
+	.rtb-text.name label:before {
+		&:extend(.luigi-icon-w-name);
+	}
+
+	.rtb-text.email label:before {
+		&:extend(.luigi-icon-w-contact);
+	}
+
+	.rtb-text.phone label:before {
+		&:extend(.luigi-icon-w-phone);
+	}
+}
+
+.luigi-bg-light {
+
+	.rtb-booking-form label:before {
+		&:extend(.luigi-icon-b-message);
+	}
+
+	.rtb-text.date label:before {
+		&:extend(.luigi-icon-b-date);
+	}
+
+	.rtb-text.time label:before {
+		&:extend(.luigi-icon-b-time);
+	}
+
+	.rtb-select.party label:before {
+		&:extend(.luigi-icon-b-party);
+	}
+
+	.rtb-text.name label:before {
+		&:extend(.luigi-icon-b-name);
+	}
+
+	.rtb-text.email label:before {
+		&:extend(.luigi-icon-b-contact);
+	}
+
+	.rtb-text.phone label:before {
+		&:extend(.luigi-icon-b-phone);
+	}
+}

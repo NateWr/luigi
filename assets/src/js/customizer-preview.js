@@ -240,6 +240,48 @@ var luigi_eo_calendar_args = {};
 	} );
 
 	/**
+	 * Adjust body classes if background is light/dark and accent color is
+	 * changed.
+	 *
+	 * @since 0.0.1
+	 */
+	wp.customize( 'theme_painter_setting_background', function( val ) {
+		val.bind( function( to ) {
+
+			var body = jQuery( 'body' )
+				.removeClass( 'luigi-bg-light', 'luigi-bg-dark' );
+
+			if ( wp.customize.get().theme_painter_setting_accent == '#9a8f45' || typeof theme_painter == 'undefined' ) {
+				return;
+			}
+
+			if ( theme_painter.is_color_dark( to ) ) {
+				body.addClass( 'luigi-bg-dark' );
+			} else {
+				body.addClass( 'luigi-bg-light' );
+			}
+		} );
+	} );
+
+	wp.customize( 'theme_painter_setting_accent', function( val ) {
+		val.bind( function( to ) {
+
+			var body = jQuery( 'body' )
+				.removeClass( 'luigi-bg-light', 'luigi-bg-dark' );
+
+			if ( to == '#9a8f45' || typeof theme_painter == 'undefined' ) {
+				return;
+			}
+
+			if ( theme_painter.is_color_dark( wp.customize.get().theme_painter_setting_background ) ) {
+				body.addClass( 'luigi-bg-dark' );
+			} else {
+				body.addClass( 'luigi-bg-light' );
+			}
+		} );
+	} );
+
+	/**
 	 * Add buttons to load controls directly from the preview
 	 *
 	 * @since 0.0.1

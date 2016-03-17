@@ -43,7 +43,7 @@
 }
 
 .bp-name {
-	.luigi-icon-location;
+	&:extend(.luigi-icon-location);
 	font-weight: @semibold;
 	margin-bottom: @base;
 }
@@ -59,12 +59,12 @@
 }
 
 .bp-phone {
-	.luigi-icon-phone;
+	&:extend(.luigi-icon-phone);
 	margin-bottom: @triple;
 }
 
 .bp-contact {
-	.luigi-icon-contact;
+	&:extend(.luigi-icon-contact);
 }
 
 .luigi-contact-card-links {
@@ -118,7 +118,7 @@
 	}
 
 	.bp-title {
-		.luigi-icon-time;
+		&:extend(.luigi-icon-time);
 		display: inline-block;
 		padding-left: 25px;
 		margin-bottom: @quadruple;
@@ -222,5 +222,44 @@
 
 	.bp-contact-card {
 		border: none;
+	}
+}
+
+// Swap out icons based on background color
+.luigi-bg-dark {
+
+	.bp-name {
+		&:extend(.luigi-icon-w-location);
+	}
+
+	.bp-phone {
+		&:extend(.luigi-icon-w-phone);
+	}
+
+	.bp-contact {
+		&:extend(.luigi-icon-w-contact);
+	}
+
+	.bp-opening-hours .bp-title {
+		&:extend(.luigi-icon-w-time);
+	}
+}
+
+.luigi-bg-light {
+
+	.bp-name {
+		&:extend(.luigi-icon-b-location);
+	}
+
+	.bp-phone {
+		&:extend(.luigi-icon-b-phone);
+	}
+
+	.bp-contact {
+		&:extend(.luigi-icon-b-contact);
+	}
+
+	.bp-opening-hours .bp-title {
+		&:extend(.luigi-icon-b-time);
 	}
 }
