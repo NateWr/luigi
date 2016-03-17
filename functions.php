@@ -68,6 +68,10 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
 		);
 
 		add_image_size( 'luigi-medium', 450, 450, true );
+
+		if ( !isset( $content_width ) ) {
+			$content_width = 1320;
+		}
 	}
 	add_action( 'after_setup_theme', 'luigi_setup_theme' );
 }
