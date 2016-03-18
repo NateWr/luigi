@@ -137,11 +137,33 @@ module.exports = function(grunt) {
 					updateTimestamp: true             // Whether the POT-Creation-Date should be updated without other changes.
 				}
 			}
+		},
+
+		// Build a package for distribution
+		compress: {
+			main: {
+				options: {
+					archive: 'luigi.zip'
+				},
+				files: [
+					{
+						src: [
+							'*', '**/*',
+							'!luigi.zip',
+							'!.*', '!Gruntfile.js', '!package.json', '!node_modules', '!node_modules/**/*',
+							'!**/.*', '!**/Gruntfile.js', '!**/package.json', '!**/node_modules', '!**/node_modules/**/*',
+							'!assets/src', '!assets/src/**/*',
+							'!lib/content-layout-control/src', '!lib/content-layout-control/src/**/*',
+						],
+					}
+				]
+			}
 		}
 
 	});
 
 	// Load tasks
+	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-less');
@@ -154,5 +176,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['watch']);
 
 	grunt.registerTask('build', ['less', 'jshint', 'concat', 'uglify']);
+
+	grunt.registerTask('package', ['build', 'compress']);
 
 };
