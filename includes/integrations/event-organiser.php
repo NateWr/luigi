@@ -207,3 +207,22 @@ if ( !function_exists( 'luigi_eo_customizer_load_calendar_handlers' ) ) {
 		<?php
 	}
 }
+
+if ( !function_exists( 'luigi_eo_dequeue_calendar_style' ) ) {
+	/**
+	 * Dequeue the calendar stylesheet that gets printed
+	 *
+	 * Although styles are generally dequeued with the call to
+	 * add_theme_support( 'event-organiser' ), it seems there's at least one
+	 * place the calendar styles are still loaded.
+	 *
+	 * See: https://github.com/stephenharris/Event-Organiser/issues/354
+	 *
+	 * @since 0.1
+	 */
+	function luigi_eo_dequeue_calendar_style() {
+		wp_dequeue_style( 'eo_calendar-style' );
+	}
+	add_action( 'wp_head', 'luigi_eo_dequeue_calendar_style' );
+	add_action( 'wp_footer', 'luigi_eo_dequeue_calendar_style' );
+}
