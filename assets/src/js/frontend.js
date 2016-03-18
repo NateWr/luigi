@@ -157,15 +157,13 @@ jQuery(document).ready(function ($) {
 						luigi.closeModal();
 					}
 
-					// Assign a unique ID to this map (since this map is loaded in its
-					// own request, it will come back with #bp-map-0 which might clash
-					// with an existing map)
-					var i = $( '.bp-map' ).length;
-					var el = $( r.data.output );
-					el.find( '#bp-map-0' ).attr( 'id', 'bp-map-' + i.toString() );
+					luigi.openModal( r.data.output );
 
-
-					luigi.openModal( el );
+					// Assign a unique ID to this map (since each map is loaded in its
+					// own request, they all come back with #bp-map-0 )
+					$( '.bp-map' ).each( function( i ) {
+						$(this).attr( 'id', 'bp-map-' + i.toString() );
+					} );
 
 					if ( typeof bpfwp_map === 'undefined' && typeof r.data.script_data !== 'undefined' ) {
 						$( 'body' ).append( $( '<script type="text/javascript"></script>' ).html(

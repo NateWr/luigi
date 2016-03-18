@@ -32,14 +32,13 @@
 		injectHTML: function( html ) {
 
 			html += '<a href="#" class="clc-edit-component">' + CLC_Preview_Settings.i18n.edit_component + '</a>';
+			this.$el.html( html );
 
-			// Assign a unique ID to a map (since each map is loaded in its
+			// Assign a unique ID to this map (since each map is loaded in its
 			// own request, they all come back with #bp-map-0 )
-			var i = $( '.bp-map' ).length;
-			var el = $( html );
-			el.find( '#bp-map-0' ).attr( 'id', 'bp-map-' + i.toString() );
-
-			this.$el.html( el );
+			$( '.bp-map' ).each( function( i ) {
+				$(this).attr( 'id', 'bp-map-' + i.toString() );
+			} );
 
 			// Re-initialize any maps which may have been added
 			if ( typeof bp_initialize_map !== 'undefined' && typeof google !== 'undefined' && typeof google.maps != 'undefined' ) {
