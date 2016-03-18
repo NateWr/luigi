@@ -458,6 +458,7 @@ if ( !function_exists( 'luigi_customizer_clc_maybe_control_post_edit' ) ) {
 		remove_meta_box( 'revisionsdiv', 'page', 'normal' );
 		remove_meta_box( 'wp_featherlight_options', 'page', 'side' );
 		remove_meta_box( 'ninja_forms_selector', 'page', 'side' );
+		remove_meta_box( 'wpseo_meta', 'page', 'normal' );
 
 		add_meta_box(
 			'luigi_clc_edit_notice',
