@@ -4,3 +4,6 @@
 [submodule "lib/content-layout-control"]
 	path = lib/content-layout-control
 	url = https://github.com/NateWr/content-layout-control.git
+[submodule "lib/totc-theme-setup"]
+	path = lib/totc-theme-setup
+	url = https://github.com/NateWr/totc-theme-setup.git
