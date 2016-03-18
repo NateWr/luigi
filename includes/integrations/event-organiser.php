@@ -208,7 +208,7 @@ if ( !function_exists( 'luigi_eo_customizer_load_calendar_handlers' ) ) {
 	}
 }
 
-if ( !function_exists( 'luigi_eo_dequeue_calendar_style' ) ) {
+if ( !function_exists( 'luigi_eo_disable_css' ) ) {
 	/**
 	 * Dequeue the calendar stylesheet that gets printed
 	 *
@@ -220,10 +220,9 @@ if ( !function_exists( 'luigi_eo_dequeue_calendar_style' ) ) {
 	 *
 	 * @since 0.1
 	 */
-	function luigi_eo_dequeue_calendar_style() {
-		wp_dequeue_style( 'eo_calendar-style' );
-		wp_dequeue_style( 'eo_front' );
+	function luigi_eo_disable_css( $options ) {
+		$options['disable_css'] = 1;
+		return $options;
 	}
-	add_action( 'wp_head', 'luigi_eo_dequeue_calendar_style' );
-	add_action( 'wp_footer', 'luigi_eo_dequeue_calendar_style' );
+	add_filter( 'eventorganiser_options', 'luigi_eo_disable_css' );
 }
