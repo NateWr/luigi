@@ -447,8 +447,8 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.ui-datepicker-calendar a:focus';
 				$selectors[] = '.post-summary .entry-title a:hover';
 				$selectors[] = '.post-summary .entry-title a:focus';
-				$selectors[] = '.widget_recent_entries .more:hover';
-				$selectors[] = '.widget_recent_entries .more:focus';
+				$selectors[] = '.widget_recent_entries .post-summary .more:hover';
+				$selectors[] = '.widget_recent_entries .post-summary .more:focus';
 				$selectors[] = '.post-edit-link:hover';
 				$selectors[] = '.post-edit-link:focus';
 				break;
