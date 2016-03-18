@@ -10,10 +10,10 @@
 include_once( 'customizer/ajax-handler.php' );
 
 // Initialize the content-layout-control library
-include_once( get_template_directory() . '/lib/content-layout-control/content-layout-control.php' );
+include_once( get_template_directory() . '/lib/content-layout-control/dist/content-layout-control.php' );
 CLC_Content_Layout_Control(
 	array(
-		'url' => get_template_directory_uri() . '/lib/content-layout-control',
+		'url' => get_template_directory_uri() . '/lib/content-layout-control/dist',
 		'i18n' => array(
 			'delete'                        => esc_attr__( 'Delete', 'luigi' ),
 			'control-toggle'                => esc_attr__( 'Open/close this component', 'luigi' ),

@@ -1,3 +1,6 @@
 [submodule "lib/theme-painter"]
 	path = lib/theme-painter
 	url = https://github.com/NateWr/theme-painter.git
+[submodule "lib/content-layout-control"]
+	path = lib/content-layout-control
+	url = https://github.com/NateWr/content-layout-control.git
