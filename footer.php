@@ -30,13 +30,13 @@
 				<div class="site-footer-top">
 					<div class="identity">
 						<a class="home-link" href="<?php echo home_url(); ?>" title="<?php esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<?php if( !empty( get_theme_mod( 'footer_logo' ) ) ) : ?>
+							<?php if( !get_theme_mod( 'footer_logo' ) ) : ?>
 								<?php luigi_print_footer_logo(); ?>
 							<?php else : ?>
 								<?php echo get_bloginfo( 'name', 'display' ); ?>
 							<?php endif; ?>
 						</a>
-						<?php if ( empty( get_theme_mod( 'footer_logo' ) ) && !empty( get_bloginfo( 'description' ) ) ) : ?>
+						<?php if ( get_theme_mod( 'footer_logo' ) && !get_bloginfo( 'description' ) ) : ?>
 							<span class="site-tagline">
 								<?php echo get_bloginfo( 'description', 'display' ); ?>
 							</span>
