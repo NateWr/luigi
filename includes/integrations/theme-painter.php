@@ -188,10 +188,8 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = 'select';
 				$selectors[] = 'textarea';
 				$selectors[] = '.fc-agenda-view > table';
-				$selectors[] = '.fc-agenda-view .fc-bg td';
 				$selectors[] = '.fc-agenda-view .fc-day-grid';
 				$selectors[] = '.fc-agenda-view .fc-slats .fc-minor';
-				$selectors[] = '.fc-basic-view .fc-bg td';
 				$selectors[] = '.fc-basic-view .fc-event.eo-multi-day';
 				$selectors[] = '.fc-basic-view .fc-event.eo-multi-day .fc-content';
 				$selectors[] = '.fc-basicWeek-view > table';
@@ -199,7 +197,6 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.fc-basicWeek-view > table > tbody';
 				$selectors[] = '.fc-basicDay-view > table > tbody';
 				$selectors[] = '.fc-month-view > table';
-				$selectors[] = '.fc-month-view > table > tbody > tr > td td';
 				$selectors[] = '.fc-month-view .fc-event.eo-multi-day .fc-content';
 				$selectors[] = '.ninja-forms-response-msg > div';
 				$selectors[] = '.rtb-booking-form label';
@@ -228,6 +225,9 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.bp-contact-card';
 				$selectors[] = '.bp-opening-hours:not(:first-child)';
 				$selectors[] = '.bp-opening-hours:not(:last-child)';
+				$selectors[] = '.fc-agenda-view .fc-bg td';
+				$selectors[] = '.fc-basic-view .fc-bg td';
+				$selectors[] = '.fc-month-view > table > tbody > tr > td td';
 				$selectors[] = '.fc-listMonth-view .fc-content-skeleton thead td';
 				$selectors[] = '.fc-agenda-view .fc-slats tr';
 				$selectors[] = '.event-meta-item.recurrence-description';
