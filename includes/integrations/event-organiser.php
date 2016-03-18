@@ -222,6 +222,7 @@ if ( !function_exists( 'luigi_eo_dequeue_calendar_style' ) ) {
 	 */
 	function luigi_eo_dequeue_calendar_style() {
 		wp_dequeue_style( 'eo_calendar-style' );
+		wp_dequeue_style( 'eo_front' );
 	}
 	add_action( 'wp_head', 'luigi_eo_dequeue_calendar_style' );
 	add_action( 'wp_footer', 'luigi_eo_dequeue_calendar_style' );
