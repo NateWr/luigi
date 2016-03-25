@@ -30,6 +30,7 @@ if ( !function_exists( 'luigi_theme_setup_strings' ) ) {
 		$strings['page.demo.view_demo'] = __( 'View Demo', 'luigi' );
 		$strings['page.documentation.section'] = __( 'Documentation & Support', 'luigi' );
 		$strings['page.documentation.help'] = __( 'Help Documentation', 'luigi' );
+		$strings['page.documentation.help.url'] = 'http://doc.themeofthecrop.com/themes/luigi?utm_source=Theme&utm_medium=Theme%20Help&utm_campaign=Luigi';
 		$strings['page.documentation.help.description'] = __( 'Read the help guide for this theme', 'luigi' );
 		$strings['page.documentation.support'] = __( 'Support', 'luigi' );
 		$strings['page.documentation.support.url'] = 'http://themeofthecrop.com/about/support/';
@@ -41,6 +42,7 @@ if ( !function_exists( 'luigi_theme_setup_strings' ) ) {
 		$strings['ajax.error.nopriv'] = __( 'You have been logged out. Please login again before continuing.', 'luigi' );
 		$strings['ajax.error.unknown'] = __( 'An unexpected error occur. Please reload the page and try again.', 'luigi' );
 		$strings['ajax.error.route_unknown'] = __( 'Your request could not be processed. Please reload the page and try again', 'luigi' );
+
 
 		return $strings;
 	}
