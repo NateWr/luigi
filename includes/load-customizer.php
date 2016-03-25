@@ -500,7 +500,7 @@ if ( !function_exists( 'luigi_customizer_clc_print_meta_box' ) ) {
 				<?php
 					printf(
 						__( 'Edit your homepage using the Homepage Editor in the Customizer. %sLearn More%s', 'luigi' ),
-						'<a href="http://docs.themeofthecrop.com/themes/luigi/user/faq#homepage">',
+						'<a href="http://doc.themeofthecrop.com/themes/luigi/user/faq#homepage">',
 						'</a>'
 					);
 				?>
