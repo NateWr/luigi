@@ -204,7 +204,7 @@ if ( !function_exists( 'luigi_print_mixer_content' ) ) {
 	}
 }
 
-if ( !function_exists( '_s_categorized_blog' ) ) {
+if ( !function_exists( 'luigi_categorized_blog' ) ) {
 	/**
 	 * Returns true if a blog has more than 1 category.
 	 *
@@ -225,7 +225,9 @@ if ( !function_exists( '_s_categorized_blog' ) ) {
 		}
 		return $all_the_cool_cats > 1;
 	}
+}
 
+if ( !function_exists( 'luigi_category_transient_flusher' ) ) {
 	/**
 	 * Flush out the transients used in luigi_categorized_blog
 	 *
