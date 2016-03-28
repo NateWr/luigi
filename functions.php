@@ -38,8 +38,8 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
 
 		register_nav_menus(
 			array(
-				'primary_menu' => esc_html__( 'Primary Navigation Menu', 'luigi' ),
-				'social_menu'  => esc_html__( 'Social Profiles Menu', 'luigi' ),
+				'primary_menu' => esc_html__( 'Primary Location', 'luigi' ),
+				'social_menu'  => esc_html__( 'Social Profiles', 'luigi' ),
 			)
 		);
 
