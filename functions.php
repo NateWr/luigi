@@ -68,12 +68,21 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
 		);
 
 		add_image_size( 'luigi-medium', 450, 450, true );
-
-		if ( !isset( $content_width ) ) {
-			$content_width = 1320;
-		}
 	}
 	add_action( 'after_setup_theme', 'luigi_setup_theme' );
+}
+
+if ( !function_exists( 'luigi_set_content_width' ) ) {
+	/**
+	 * Set the $content_width global early so that it's available to other
+	 * callbacks attached to `after_setup_theme`.
+	 *
+	 * @since 0.1
+	 */
+	function luigi_set_content_width() {
+		$GLOBALS['content_width'] = apply_filters( 'luigi_content_width', 1320 );
+	}
+	add_action( 'after_setup_theme', 'luigi_set_content_width', 0 );
 }
 
 if ( !function_exists( 'luigi_load_typecase' ) ) {
