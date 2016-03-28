@@ -25,12 +25,7 @@ get_header(); ?>
 				if ( is_tax( 'event-category' ) || is_tax( 'event-tag' ) ) {
 					luigi_eo_the_posts_navigation();
 				} else {
-					the_posts_navigation(
-						array(
-							'prev_text' => esc_html__( '&larr; Older posts', 'luigi' ),
-							'next_text' => esc_html__( 'Newer posts &rarr;', 'luigi' ),
-						)
-					);
+					luigi_the_posts_navigation();
 				}
 
 			else :

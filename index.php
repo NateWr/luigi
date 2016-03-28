@@ -18,6 +18,8 @@ get_header(); ?>
 		while ( have_posts() ) : the_post();
 			get_template_part( 'content', get_post_type() );
 		endwhile;
+
+		luigi_the_posts_navigation();
 		?>
 
 	</main><!-- #main -->

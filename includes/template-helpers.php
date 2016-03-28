@@ -256,3 +256,20 @@ if ( !function_exists( 'luigi_menu_has_two_cols' ) ) {
 		return !empty( $has_two_cols );
 	}
 }
+
+if ( !function_exists( 'luigi_the_posts_navigation' ) ) {
+	/**
+	 * Wrapper for the_posts_navigation which defines the locale strings in one
+	 * place.
+	 *
+	 * @since 0.1
+	 */
+	function luigi_the_posts_navigation() {
+		the_posts_navigation(
+			array(
+				'prev_text' => esc_html__( '&larr; Older posts', 'luigi' ),
+				'next_text' => esc_html__( 'Newer posts &rarr;', 'luigi' ),
+			)
+		);
+	}
+}
