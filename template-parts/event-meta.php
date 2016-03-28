@@ -15,7 +15,7 @@
 
 	<?php if ( luigi_eo_get_venue() ) : ?>
 		<div class="event-meta-item venue">
-			<a href="<?php luigi_eo_venue_link(); ?>">
+			<a href="<?php echo esc_url( luigi_eo_get_venue_link() ); ?>">
 				<?php luigi_eo_venue_name(); ?>
 			</a>
 		</div>

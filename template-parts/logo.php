@@ -11,7 +11,7 @@ $brand_element = is_front_page() ? 'h1' : 'div';
 ?>
 
 <<?php echo $brand_element; ?> class="brand">
-	<a class="home-link" href="<?php echo home_url(); ?>" title="<?php esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+	<a class="home-link" href="<?php echo esc_url( home_url() ); ?>" title="<?php esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 		<?php if ( !get_theme_mod( 'site_logo' ) ) : ?>
 			<?php echo get_bloginfo( 'name', 'display' ); ?>
 		<?php else : ?>

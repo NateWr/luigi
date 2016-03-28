@@ -138,18 +138,14 @@ if ( !function_exists( 'luigi_eo_get_venue' ) ) {
 	}
 }
 
-if ( !function_exists( 'luigi_eo_venue_link' ) ) {
+if ( !function_exists( 'luigi_eo_get_venue_link' ) ) {
 	/**
-	 * Wrapper for the eo_venue_link() function
+	 * Wrapper for the eo_get_venue_link() function
 	 *
 	 * @since 0.1
 	 */
-	function luigi_eo_venue_link() {
-	 	if ( function_exists( 'eo_venue_link' ) ) {
-			eo_venue_link();
-		} else {
-			echo '';
-		}
+	function luigi_eo_get_venue_link() {
+		return function_exists( 'eo_venue_link' ) ? eo_get_venue_link() : '';
 	}
 }
 

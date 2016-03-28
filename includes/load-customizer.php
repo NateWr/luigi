@@ -335,7 +335,7 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 				'name'          => esc_html__( 'Map', 'luigi' ),
 				'description'   => esc_html__( 'A full-width map identifying your location.', 'luigi' ),
 				'i18n'          => array(
-					'description' => sprintf( esc_html__( 'To change the address, edit your %sBusiness Profile%s.', 'luigi' ), '<a href="' . admin_url( 'admin.php?page=bpfwp-settings' ) . '">', '</a>' ),
+					'description' => sprintf( esc_html__( 'To change the address, edit your %sBusiness Profile%s.', 'luigi' ), '<a href="' . esc_url( admin_url( 'admin.php?page=bpfwp-settings' ) ) . '">', '</a>' ),
 				),
 			);
 		}
@@ -347,7 +347,7 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 				'name'          => esc_html__( 'Event Calendar', 'luigi' ),
 				'description'   => esc_html__( 'A monthly calendar displaying your upcoming events.', 'luigi' ),
 				'i18n'          => array(
-					'description' => sprintf( esc_html__( 'Add and edit events from your %sevents management page%s.', 'luigi' ), '<a href="' . admin_url( 'edit.php?post_type=event' ) . '">', '</a>' ),
+					'description' => sprintf( esc_html__( 'Add and edit events from your %sevents management page%s.', 'luigi' ), '<a href="' . esc_url( admin_url( 'edit.php?post_type=event' ) ) . '">', '</a>' ),
 				),
 			);
 		}
