@@ -15,12 +15,16 @@ if ( !function_exists( 'luigi_enqueue_assets' ) ) {
 	 */
 	function luigi_enqueue_assets() {
 
+		// Maybe load minified scripts/styles
+		$min = SCRIPT_DEBUG ? '' : 'min.';
+
 		// Auto-load the parent theme's style if a child theme is active
 		if ( is_child_theme() ) {
-			wp_enqueue_style( 'luigi-parent', trailingslashit( get_template_directory_uri() ) . 'style.css' );
+			wp_enqueue_style( 'luigi-parent', trailingslashit( get_template_directory_uri() ) . 'style.' . $min . 'css' );
 		}
 
 		// Enqueue active theme's CSS stylesheet
+		add_filter( 'stylesheet_uri', 'luigi_load_minified_stylesheet' );
 		wp_enqueue_style( 'luigi', get_stylesheet_uri() );
 
 		// Load fonts
@@ -37,9 +41,6 @@ if ( !function_exists( 'luigi_enqueue_assets' ) ) {
 			'//fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Open+Sans:300,400,400italic,600,600italic,700,700italic&subset=latin,latin-ext'
 		);
 		wp_enqueue_style( 'luigi-fonts', $font_uri );
-
-		// Maybe load minified scripts
-		$min = SCRIPT_DEBUG ? '' : 'min.';
 
 		// Enqueue frontend script
 		wp_enqueue_script( 'luigi-js', get_template_directory_uri() . '/assets/js/frontend.' . $min . 'js', array( 'jquery' ), '0.0.1', true );
@@ -60,6 +61,22 @@ if ( !function_exists( 'luigi_enqueue_assets' ) ) {
 		}
 	}
 	add_action( 'wp_enqueue_scripts', 'luigi_enqueue_assets' );
+}
+
+if ( !function_exists( 'luigi_load_minified_stylesheet' ) ) {
+	/**
+	 * Filter the stylesheet_uri to load the minified stylesheet if
+	 * SCRIPT_DEBUG is false
+	 *
+	 * @since 0.1
+	 */
+	function luigi_load_minified_stylesheet( $uri ) {
+		if ( is_child_theme() || SCRIPT_DEBUG ) {
+			return $uri;
+		} else {
+			return substr( $uri, 0, -4 ) . '.min.css';
+		}
+	}
 }
 
 if ( !function_exists( 'luigi_dequeue_footer_assets' ) ) {

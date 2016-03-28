@@ -12,8 +12,6 @@ module.exports = function(grunt) {
 		less: {
 			build: {
 				options: {
-					compress: true,
-					cleancss: true,
 					ieCompat: true
 				},
 				files: {
@@ -21,6 +19,26 @@ module.exports = function(grunt) {
 					'assets/css/customizer-preview.css': 'assets/src/less/customizer/customizer-preview.less',
 					'assets/css/customizer-control.css': 'assets/src/less/customizer/customizer-control.less'
 				}
+			},
+		},
+
+		// Configure the CSS minifier
+		cssmin: {
+			build: {
+				files: [
+					{
+						src: 'style.css',
+						dest: 'style.min.css',
+					},
+					{
+						src: 'assets/css/customizer-preview.css',
+						dest: 'assets/css/customizer-preview.min.css',
+					},
+					{
+						src: 'assets/css/customizer-control.css',
+						dest: 'assets/css/customizer-control.min.css',
+					}
+				]
 			}
 		},
 
@@ -105,7 +123,7 @@ module.exports = function(grunt) {
 		watch: {
 			less: {
 				files: ['assets/src/less/**/*.less'],
-				tasks: ['less']
+				tasks: ['less', 'cssmin']
 			},
 			js: {
 				files: ['assets/src/js/**', 'lib/WAI-ARIA-Walker_Nav_Menu/*.js'],
@@ -165,6 +183,7 @@ module.exports = function(grunt) {
 	// Load tasks
 	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
