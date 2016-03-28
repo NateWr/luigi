@@ -7,14 +7,12 @@
  *
  * @package luigi
  */
-if ( has_nav_menu( 'primary_menu' ) ) {
-	wp_nav_menu(
-		array(
-			'theme_location'  => 'primary_menu',
-			'container'       => 'div',
-			'container_class' => 'primary-menu',
-			'walker'          => new Aria_Walker_Nav_Menu(),
-			'depth'           => 3,
-		)
-	);
-}
+wp_nav_menu(
+	array(
+		'theme_location'  => 'primary_menu',
+		'container'       => 'div',
+		'container_class' => 'primary-menu',
+		'walker'          => new Aria_Walker_Nav_Menu(),
+		'depth'           => 3,
+	)
+);

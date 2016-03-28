@@ -42,11 +42,13 @@
 				<?php get_template_part( 'template-parts/menu', 'social' ); ?>
 			</div>
 
-			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main Menu', 'luigi' ); ?>">
-				<?php get_template_part( 'template-parts/menu', 'primary' ); ?>
-			</nav><!-- #site-navigation -->
+			<?php if ( has_nav_menu( 'primary_menu' ) ) : ?>
+				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main Menu', 'luigi' ); ?>">
+					<?php get_template_part( 'template-parts/menu', 'primary' ); ?>
+				</nav><!-- #site-navigation -->
 
-			<a href="#" id="luigi-primary-nav-control" aria-controls="masthead">
-				<?php esc_attr_e( 'Browse', 'luigi' ); ?>
-			</a>
+				<a href="#" id="luigi-primary-nav-control" aria-controls="masthead">
+					<?php esc_attr_e( 'Browse', 'luigi' ); ?>
+				</a>
+			<?php endif; ?>
 		</header><!-- #masthead -->
