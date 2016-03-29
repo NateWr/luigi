@@ -68,6 +68,9 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
 		);
 
 		add_image_size( 'luigi-medium', 450, 450, true );
+
+		// Theme license updater
+		include_once( 'lib/updater/theme-updater.php' );
 	}
 	add_action( 'after_setup_theme', 'luigi_setup_theme' );
 }
