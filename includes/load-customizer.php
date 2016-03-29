@@ -194,6 +194,46 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 				'type'           => 'text',
 			)
 		);
+
+
+		if ( !is_plugin_active( 'typecase/typecase.php' ) ) {
+			include_once( 'customizer/WP_Customize_Notice_Control.php' );
+			$wp_customize->add_section(
+				'luigi_typecase_placeholder',
+				array(
+					'title'      => __( 'Theme Fonts', 'luigi' ),
+					'priority'   => 30,
+				)
+			);
+
+			$wp_customize->add_setting(
+				'luigi_typecase_placeholder',
+				array(
+					'default'           => '',
+					'sanitize_callback' => 'sanitize_text_field',
+				)
+			);
+
+			$wp_customize->add_control(
+				new Luigi_WP_Customize_Notice_Control(
+					$wp_customize,
+					'luigi_typecase_placeholder',
+					array(
+						'label'     => __( 'Install Typecase', 'luigi' ),
+						'section'   => 'luigi_typecase_placeholder',
+						'setting'   => 'luigi_typecase_placeholder',
+						'content'   => sprintf(
+							// Translators: 1 and 2 wrap a link to install the plugin. 3 and 4 wrap a link to documentation on this.
+							__( 'Install and activate the %1$sTypecase plugin%2$s if you would like to change the fonts used on your site. %3$sLearn more%4$s', 'luigi' ),
+							'<a href="' . esc_url( admin_url( 'plugin-install.php?tab=plugin-information&plugin=typecase' ) ) . '" target="_blank">',
+							'</a>',
+							'<a href="http://doc.themeofthecrop.com/themes/luigi/user/faq#typecase" target="_blank">',
+							'</a>'
+						),
+					)
+				)
+			);
+		}
 	}
 	add_action( 'customize_register', 'luigi_customizer_add_controls' );
 }
