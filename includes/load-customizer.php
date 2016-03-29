@@ -206,14 +206,6 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 				)
 			);
 
-			$wp_customize->add_setting(
-				'luigi_typecase_placeholder',
-				array(
-					'default'           => '',
-					'sanitize_callback' => 'sanitize_text_field',
-				)
-			);
-
 			$wp_customize->add_control(
 				new Luigi_WP_Customize_Notice_Control(
 					$wp_customize,
@@ -221,7 +213,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 					array(
 						'label'     => __( 'Install Typecase', 'luigi' ),
 						'section'   => 'luigi_typecase_placeholder',
-						'setting'   => 'luigi_typecase_placeholder',
+						'settings'   => array(),
 						'content'   => sprintf(
 							// Translators: 1 and 2 wrap a link to install the plugin. 3 and 4 wrap a link to documentation on this.
 							__( 'Install and activate the %1$sTypecase plugin%2$s if you would like to change the fonts used on your site. %3$sLearn more%4$s', 'luigi' ),
