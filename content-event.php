@@ -84,7 +84,10 @@
 			<?php the_excerpt(); ?>
 
 			<a href="<?php echo esc_url( get_permalink() ); ?>" class="more">
-				<?php printf( esc_html__( 'Read More%s about %s%s', 'luigi' ), '<span class="screen-reader-text">', get_the_title(), '</span>' ); ?>
+				<?php
+				    // Translators: 1 and 3 are an opening and closing <span> tag. 2 is the post title.
+				    printf( esc_html__( 'Read More%1$s about %2$s%3$s', 'luigi' ), '<span class="screen-reader-text">', get_the_title(), '</span>' );
+				?>
 			</a>
 		</div><!-- .entry-content -->
 
