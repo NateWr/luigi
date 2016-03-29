@@ -242,8 +242,8 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 		// Maybe load minified scripts
 		$min = SCRIPT_DEBUG ? '' : 'min.';
 
-		wp_enqueue_style( 'luigi-customizer-preview', get_stylesheet_directory_uri() . '/assets/css/customizer-preview.' . $min . 'css', '0.0.1' );
-		wp_enqueue_script( 'luigi-customizer-preview-js', get_stylesheet_directory_uri() . '/assets/js/customizer-preview.' . $min . 'js', array( 'luigi-js', 'customize-preview', 'content-layout-preview-js' ), '0.0.1', true );
+		wp_enqueue_style( 'luigi-customizer-preview', get_template_directory_uri() . '/assets/css/customizer-preview.' . $min . 'css', '0.0.1' );
+		wp_enqueue_script( 'luigi-customizer-preview-js', get_template_directory_uri() . '/assets/js/customizer-preview.' . $min . 'js', array( 'luigi-js', 'customize-preview', 'content-layout-preview-js' ), '0.0.1', true );
 
 		$upload_dir = wp_upload_dir();
 		wp_localize_script( 'luigi-customizer-preview-js', 'luigi_theme_customizer', array(
@@ -273,8 +273,8 @@ if ( !function_exists( 'luigi_customizer_enqueue_control_assets' ) ) {
 		// Maybe load minified scripts
 		$min = SCRIPT_DEBUG ? '' : 'min.';
 
-		wp_enqueue_style( 'luigi-customizer-control', get_stylesheet_directory_uri() . '/assets/css/customizer-control.' . $min . 'css', '0.0.1' );
-		wp_enqueue_script( 'luigi-customizer-control-js', get_stylesheet_directory_uri() . '/assets/js/customizer-control.' . $min . 'js', array( 'customize-controls', 'content-layout-control-js' ), '0.0.1', true );
+		wp_enqueue_style( 'luigi-customizer-control', get_template_directory_uri() . '/assets/css/customizer-control.' . $min . 'css', '0.0.1' );
+		wp_enqueue_script( 'luigi-customizer-control-js', get_template_directory_uri() . '/assets/js/customizer-control.' . $min . 'js', array( 'customize-controls', 'content-layout-control-js' ), '0.0.1', true );
 
 		wp_localize_script( 'luigi-customizer-control-js', 'luigi_theme_customizer_control', array(
 			'business_profile_active' => defined( 'BPFWP_VERSION' ),
