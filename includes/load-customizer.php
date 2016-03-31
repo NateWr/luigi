@@ -196,7 +196,8 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 		);
 
 
-		if ( !is_plugin_active( 'typecase/typecase.php' ) ) {
+		// Versions prior to 4.5 don't support controls unattached to a setting
+		if ( version_compare( get_bloginfo( 'version' ), '4.5', '>=' ) && !is_plugin_active( 'typecase/typecase.php' ) ) {
 			include_once( 'customizer/WP_Customize_Notice_Control.php' );
 			$wp_customize->add_section(
 				'luigi_typecase_placeholder',
