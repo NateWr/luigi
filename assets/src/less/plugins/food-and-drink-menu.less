@@ -225,6 +225,21 @@
     }
 }
 
+@media(min-width: @screen-lg) {
+
+    // Two-column display
+    .fdm-columns-2 {
+
+        .fdm-column {
+            padding-right: @double * 2;
+
+            + .fdm-column {
+                padding-left: @double * 2;
+            }
+        }
+    }
+}
+
 // Menu Item Flag icons
 .fdm-icon {
     background-image: url('assets/img/item-flags.png');
