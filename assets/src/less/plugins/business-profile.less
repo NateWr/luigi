@@ -109,14 +109,6 @@
 		border-top: @border-line-light;
 	}
 
-	// Hacky workaround because meta tags mess with nth-child statements
-	&:nth-child(10) {
-		margin-top: 0;
-		padding-top: 0;
-		border-top: 0;
-		margin-bottom: 0;
-	}
-
 	.bp-title {
 		&:extend(.luigi-icon-time);
 		display: inline-block;
@@ -154,6 +146,18 @@
 		margin-left: -@triple;
 		margin-right: -@triple;
 	}
+}
+
+// This is nasty and not very bulletproof. Ideally, we target this rule
+// whenever the opening hours are displayed with nothing above. However, we can't
+// write a CSS selector that knows that for sure. Instead, we make a best
+// guess and say that if the address is not being displayed, probably the
+// other pieces at the top aren't as well.
+.bp-contact-card > meta[itemprop="address"] ~ .bp-opening-hours {
+	margin-top: 0;
+	padding-top: 0;
+	border-top: 0;
+	margin-bottom: 0;
 }
 
 .bp-map {
