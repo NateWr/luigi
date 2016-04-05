@@ -5,13 +5,13 @@
  * @package    luigi
  */
 
-if ( !function_exists( 'luigi_typecase_get_alt_font_selector' ) ) {
+if ( !function_exists( 'luigi_typecase_get_title_accent_font_selector' ) ) {
 	/**
 	 * CSS selectors for text styled with the accent font
 	 *
 	 * @since 0.1
 	 */
-	function luigi_typecase_get_alt_font_selector() {
+	function luigi_typecase_get_title_accent_font_selector() {
 
 		$selectors = array(
 			'.site-header .home-link',
@@ -19,7 +19,26 @@ if ( !function_exists( 'luigi_typecase_get_alt_font_selector' ) ) {
 			'.clc-component-layout .title_line_one',
 		);
 
-		return join( ',', apply_filters( 'luigi_typecase_alt_font', $selectors ) );
+		return join( ',', apply_filters( 'luigi_typecase_title_alt_font', $selectors ) );
+	}
+}
+
+if ( !function_exists( 'luigi_typecase_get_title_font_selector' ) ) {
+	/**
+	 * CSS selectors for text styled with the accent font
+	 *
+	 * @since 0.1
+	 */
+	function luigi_typecase_get_title_font_selector() {
+
+		$selectors = array(
+			'.clc-component-layout .title',
+			'.luigi-clc-mixer h2',
+			'.entry-title',
+			'.widgettitle',
+		);
+
+		return join( ',', apply_filters( 'luigi_typecase_title_font', $selectors ) );
 	}
 }
 
@@ -39,8 +58,13 @@ if ( !function_exists( 'luigi_typecase_get_settings' ) ) {
 					'default' => '"Open Sans", "Trebuchet MS", Helvetica, Arial, sans-serif'
 				),
 				array(
-					'label' => esc_html__( 'Accent Font', 'luigi' ),
-					'selector' => luigi_typecase_get_alt_font_selector(),
+					'label' => esc_html__( 'Title Font', 'luigi' ),
+					'selector' => luigi_typecase_get_title_font_selector(),
+					'default' => '"Open Sans", "Trebuchet MS", Helvetica, Arial, sans-serif',
+				),
+				array(
+					'label' => esc_html__( 'Title Accent Font', 'luigi' ),
+					'selector' => luigi_typecase_get_title_accent_font_selector(),
 					'default' => '"Bilbo Swash Caps", "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", serif'
 				),
 			)
