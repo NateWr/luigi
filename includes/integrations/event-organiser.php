@@ -203,22 +203,3 @@ if ( !function_exists( 'luigi_eo_customizer_load_calendar_handlers' ) ) {
 		<?php
 	}
 }
-
-if ( !function_exists( 'luigi_eo_disable_css' ) ) {
-	/**
-	 * Dequeue the calendar stylesheet that gets printed
-	 *
-	 * Although styles are generally dequeued with the call to
-	 * add_theme_support( 'event-organiser' ), it seems there's at least one
-	 * place the calendar styles are still loaded.
-	 *
-	 * See: https://github.com/stephenharris/Event-Organiser/issues/354
-	 *
-	 * @since 0.1
-	 */
-	function luigi_eo_disable_css( $options ) {
-		$options['disable_css'] = 1;
-		return $options;
-	}
-	add_filter( 'eventorganiser_options', 'luigi_eo_disable_css' );
-}
