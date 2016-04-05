@@ -61,7 +61,7 @@
 										'show_contact' => true,
 										'show_opening_hours' => false,
 										'show_map' => false,
-										'show_booking_link' => false,
+										'show_booking_link' => true,
 									)
 								)
 							);
