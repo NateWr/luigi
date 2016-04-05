@@ -9,16 +9,18 @@
 	 * @since 0.1
 	 */
 	clc.Models.components['luigi-mixer'] = clc.Models.Component.extend({
-		defaults: {
-			name:           '',
-			description:    '',
-			type:           'luigi-mixer',
-			left:           '',
-			right:          '',
-			left_title:     '',
-			right_title:    '',
-			valid_options:  [],
-			order:          0
+		defaults: function() {
+			return {
+				name:           '',
+				description:    '',
+				type:           'luigi-mixer',
+				left:           '',
+				right:          '',
+				left_title:     '',
+				right_title:    '',
+				valid_options:  [],
+				order:          0
+			};
 		}
 	});
 

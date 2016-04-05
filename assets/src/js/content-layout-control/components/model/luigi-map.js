@@ -9,11 +9,13 @@
 	 * @since 0.1
 	 */
 	clc.Models.components['luigi-map'] = clc.Models.Component.extend({
-		defaults: {
-			name:           '',
-			description:    '',
-			type:           'luigi-map',
-			order:          0
+		defaults: function() {
+			return {
+				name:           '',
+				description:    '',
+				type:           'luigi-map',
+				order:          0
+			};
 		}
 	});
 

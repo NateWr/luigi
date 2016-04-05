@@ -9,15 +9,17 @@
 	 * @since 0.1
 	 */
 	clc.Models.components['luigi-posts-reviews'] = clc.Models.components.posts.extend({
-		defaults: {
-			name:           '',
-			description:    '',
-			type:           'luigi-posts-reviews',
-			title:          '',
-			items:          [],
-			limit_posts:    1,
-			post_types:     'grfwp-review',
-			order:          0
+		defaults: function() {
+			return {
+				name:           '',
+				description:    '',
+				type:           'luigi-posts-reviews',
+				title:          '',
+				items:          [],
+				limit_posts:    1,
+				post_types:     'grfwp-review',
+				order:          0
+			};
 		}
 	});
 

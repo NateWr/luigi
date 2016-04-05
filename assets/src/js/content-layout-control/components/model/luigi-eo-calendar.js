@@ -9,11 +9,13 @@
 	 * @since 0.1
 	 */
 	clc.Models.components['luigi-eo-calendar'] = clc.Models.Component.extend({
-		defaults: {
-			name:           '',
-			description:    '',
-			type:           'luigi-eo-calendar',
-			order:          0
+		defaults: function() {
+			return {
+				name:           '',
+				description:    '',
+				type:           'luigi-eo-calendar',
+				order:          0
+			};
 		}
 	});
 

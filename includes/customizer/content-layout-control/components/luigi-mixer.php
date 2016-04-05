@@ -104,14 +104,14 @@ if ( !class_exists( 'Luigi_CLC_Component_Mixer' ) ) {
 		}
 
 		/**
-		 * Get attribute hash for passing to Backbone Model
+		 * Get meta attributes
 		 *
 		 * @return array
 		 * @since 0.1
 		 */
-		public function get_attributes() {
+		public function get_meta_attributes() {
 
-			$atts = parent::get_attributes();
+			$atts = parent::get_meta_attributes();
 			$atts['valid_options'] = $this->valid_options;
 
 			return $atts;

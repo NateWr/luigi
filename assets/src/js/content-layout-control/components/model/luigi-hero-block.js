@@ -10,17 +10,19 @@
 	 * @since 0.1
 	 */
 	clc.Models.components['luigi-hero-block'] = clc.Models.components['content-block'].extend({
-		defaults: {
-			name:               '',
-			description:        '',
-			type:               'luigi-hero-block',
-			image:              0,
-			image_transparency: 0,
-			title_line_one:     '',
-			title:              '',
-			links:              [],
-			contact:            '',
-			order:              0
+		defaults: function() {
+			return {
+				name:               '',
+				description:        '',
+				type:               'luigi-hero-block',
+				image:              0,
+				image_transparency: 0,
+				title_line_one:     '',
+				title:              '',
+				links:              [],
+				contact:            '',
+				order:              0
+			};
 		}
 	});
 
