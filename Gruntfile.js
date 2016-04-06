@@ -173,6 +173,7 @@ module.exports = function(grunt) {
 							'!assets/src', '!assets/src/**/*',
 							'!lib/content-layout-control/src', '!lib/content-layout-control/src/**/*',
 						],
+						dest: 'luigi/',
 					}
 				]
 			}
