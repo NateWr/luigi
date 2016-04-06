@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Luigi 0.0.1\n"
 "Report-Msgid-Bugs-To: http://themeofthecrop.com\n"
-"POT-Creation-Date: 2016-03-17 18:21:28+00:00\n"
+"POT-Creation-Date: 2016-04-06 12:31:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,14 +23,6 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
-
-#: archive.php:30 front-page.php:30 home.php:30 search.php:31
-msgid "&larr; Older posts"
-msgstr ""
-
-#: archive.php:31 front-page.php:31 home.php:31 search.php:32
-msgid "Newer posts &rarr;"
-msgstr ""
 
 #: comments.php:39 comments.php:60
 msgid "Comment navigation"
@@ -52,14 +44,16 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-event.php:59 content-page.php:29 content.php:66
+#: content-event.php:59 content-page.php:29 content.php:69
 #. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
 
-#: content-event.php:87 content.php:38
-#: includes/widgets/luigi-recent-posts.php:78
-msgid "Read More%s about %s%s"
+#: content-event.php:89 content.php:40
+#: includes/widgets/luigi-recent-posts.php:80
+#. Translators: 1 and 3 are an opening and closing <span> tag. 2 is the post
+#. title.
+msgid "Read More%1$s about %2$s%3$s"
 msgstr ""
 
 #: content-none.php:11
@@ -78,16 +72,16 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: content.php:52 content.php:57
+#: content.php:55 content.php:60
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: content.php:54
+#: content.php:57
 msgid "Posted in: %1$s"
 msgstr ""
 
-#: content.php:59
+#: content.php:62
 msgid "Tagged: %1$s"
 msgstr ""
 
@@ -96,11 +90,11 @@ msgid "Close"
 msgstr ""
 
 #: functions.php:41
-msgid "Primary Navigation Menu"
+msgid "Primary Location"
 msgstr ""
 
 #: functions.php:42
-msgid "Social Profiles Menu"
+msgid "Social Profiles"
 msgstr ""
 
 #: functions.php:48
@@ -127,11 +121,11 @@ msgstr ""
 msgid "Display widgets (many widgets per row) side by side in the footer."
 msgstr ""
 
-#: header.php:45
+#: header.php:35
 msgid "Main Menu"
 msgstr ""
 
-#: header.php:50
+#: header.php:40
 msgid "Browse"
 msgstr ""
 
@@ -188,11 +182,11 @@ msgstr ""
 msgid "This event finished on %s"
 msgstr ""
 
-#: includes/integrations/event-organiser.php:184
+#: includes/integrations/event-organiser.php:180
 msgid "&larr; Older events"
 msgstr ""
 
-#: includes/integrations/event-organiser.php:185
+#: includes/integrations/event-organiser.php:181
 msgid "Later events &rarr;"
 msgstr ""
 
@@ -256,12 +250,16 @@ msgid ""
 "lighter shade of the Text Color."
 msgstr ""
 
-#: includes/integrations/typecase.php:37
+#: includes/integrations/typecase.php:56
 msgid "Base Font"
 msgstr ""
 
-#: includes/integrations/typecase.php:42
-msgid "Accent Font"
+#: includes/integrations/typecase.php:61
+msgid "Title Font"
+msgstr ""
+
+#: includes/integrations/typecase.php:66
+msgid "Title Accent Font"
 msgstr ""
 
 #: includes/load-customizer.php:18
@@ -280,7 +278,7 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: includes/load-customizer.php:80 includes/load-customizer.php:495
+#: includes/load-customizer.php:80 includes/load-customizer.php:529
 msgid "Homepage Editor"
 msgstr ""
 
@@ -296,7 +294,7 @@ msgstr ""
 msgid "Search content"
 msgstr ""
 
-#: includes/load-customizer.php:107 includes/load-customizer.php:275
+#: includes/load-customizer.php:107 includes/load-customizer.php:308
 msgid "Add Link"
 msgstr ""
 
@@ -328,210 +326,226 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: includes/load-customizer.php:221
+#: includes/load-customizer.php:205
+msgid "Theme Fonts"
+msgstr ""
+
+#: includes/load-customizer.php:215
+msgid "Install Typecase"
+msgstr ""
+
+#: includes/load-customizer.php:220
+#. Translators: 1 and 2 wrap a link to install the plugin. 3 and 4 wrap a link
+#. to documentation on this.
+msgid ""
+"Install and activate the %1$sTypecase plugin%2$s if you would like to "
+"change the fonts used on your site. %3$sLearn more%4$s"
+msgstr ""
+
+#: includes/load-customizer.php:254
 msgid ""
 "An unknown error occurred. Please try again. If the problem continues, "
 "please refresh the page."
 msgstr ""
 
-#: includes/load-customizer.php:264
+#: includes/load-customizer.php:297
 msgid "Title"
 msgstr ""
 
-#: includes/load-customizer.php:265
+#: includes/load-customizer.php:298
 msgid "Content"
 msgstr ""
 
-#: includes/load-customizer.php:266
+#: includes/load-customizer.php:299
 msgid "Image"
 msgstr ""
 
-#: includes/load-customizer.php:267
+#: includes/load-customizer.php:300
 msgid "No image selected"
 msgstr ""
 
-#: includes/load-customizer.php:268
+#: includes/load-customizer.php:301
 msgid "Image Position"
 msgstr ""
 
-#: includes/load-customizer.php:269
+#: includes/load-customizer.php:302
 msgid "Left"
 msgstr ""
 
-#: includes/load-customizer.php:270
+#: includes/load-customizer.php:303
 msgid "Right"
 msgstr ""
 
-#: includes/load-customizer.php:271
+#: includes/load-customizer.php:304
 msgid "Select Image"
 msgstr ""
 
-#: includes/load-customizer.php:272
+#: includes/load-customizer.php:305
 msgid "Change Image"
 msgstr ""
 
-#: includes/load-customizer.php:273 includes/load-customizer.php:276
-#: includes/load-customizer.php:323
+#: includes/load-customizer.php:306 includes/load-customizer.php:309
+#: includes/load-customizer.php:356
 msgid "Remove"
 msgstr ""
 
-#: includes/load-customizer.php:274
+#: includes/load-customizer.php:307
 msgid "Links"
 msgstr ""
 
-#: includes/load-customizer.php:282
+#: includes/load-customizer.php:315
 msgid "Hero Block"
 msgstr ""
 
-#: includes/load-customizer.php:283
+#: includes/load-customizer.php:316
 msgid "A prominent call to action on a full-width background image."
 msgstr ""
 
-#: includes/load-customizer.php:287 includes/load-customizer.php:307
+#: includes/load-customizer.php:320 includes/load-customizer.php:340
 msgid "Title (top)"
 msgstr ""
 
-#: includes/load-customizer.php:288 includes/load-customizer.php:308
+#: includes/load-customizer.php:321 includes/load-customizer.php:341
 msgid "Title (bottom)"
 msgstr ""
 
-#: includes/load-customizer.php:289
+#: includes/load-customizer.php:322
 msgid "Contact Detail"
 msgstr ""
 
-#: includes/load-customizer.php:290
+#: includes/load-customizer.php:323
 msgid "None"
 msgstr ""
 
-#: includes/load-customizer.php:291
+#: includes/load-customizer.php:324
 msgid "Phone Number"
 msgstr ""
 
-#: includes/load-customizer.php:292
+#: includes/load-customizer.php:325
 msgid "Contact Popup"
 msgstr ""
 
-#: includes/load-customizer.php:293
+#: includes/load-customizer.php:326
 msgid "Find Us"
 msgstr ""
 
-#: includes/load-customizer.php:294
+#: includes/load-customizer.php:327
 msgid "Darken Image"
 msgstr ""
 
-#: includes/load-customizer.php:302
+#: includes/load-customizer.php:335
 msgid "Content Block"
 msgstr ""
 
-#: includes/load-customizer.php:303
+#: includes/load-customizer.php:336
 msgid "A simple content block with an image, title, text and links."
 msgstr ""
 
-#: includes/load-customizer.php:318
+#: includes/load-customizer.php:351
 msgid "Review"
 msgstr ""
 
-#: includes/load-customizer.php:319
+#: includes/load-customizer.php:352
 msgid "Display one or more reviews."
 msgstr ""
 
-#: includes/load-customizer.php:322
+#: includes/load-customizer.php:355
 msgid "Loading"
 msgstr ""
 
-#: includes/load-customizer.php:324
+#: includes/load-customizer.php:357
 msgid "No review selected."
 msgstr ""
 
-#: includes/load-customizer.php:325
+#: includes/load-customizer.php:358
 msgid "Add Review"
 msgstr ""
 
-#: includes/load-customizer.php:335 includes/load-customizer.php:398
+#: includes/load-customizer.php:368 includes/load-customizer.php:431
 msgid "Map"
 msgstr ""
 
-#: includes/load-customizer.php:336
+#: includes/load-customizer.php:369
 msgid "A full-width map identifying your location."
 msgstr ""
 
-#: includes/load-customizer.php:338
+#: includes/load-customizer.php:371
 msgid "To change the address, edit your %sBusiness Profile%s."
 msgstr ""
 
-#: includes/load-customizer.php:347
+#: includes/load-customizer.php:380
 msgid "Event Calendar"
 msgstr ""
 
-#: includes/load-customizer.php:348
+#: includes/load-customizer.php:381
 msgid "A monthly calendar displaying your upcoming events."
 msgstr ""
 
-#: includes/load-customizer.php:350
+#: includes/load-customizer.php:383
 msgid "Add and edit events from your %sevents management page%s."
 msgstr ""
 
-#: includes/load-customizer.php:360
+#: includes/load-customizer.php:393
 msgid "Mix-and-Match"
 msgstr ""
 
-#: includes/load-customizer.php:361
+#: includes/load-customizer.php:394
 msgid ""
 "Pair two items in a row. Select from opening hours, a map, latest posts and "
 "more."
 msgstr ""
 
-#: includes/load-customizer.php:364
+#: includes/load-customizer.php:397
 msgid "Left Content"
 msgstr ""
 
-#: includes/load-customizer.php:365
+#: includes/load-customizer.php:398
 msgid "Right Content"
 msgstr ""
 
-#: includes/load-customizer.php:366
+#: includes/load-customizer.php:399
 msgid "Left Title"
 msgstr ""
 
-#: includes/load-customizer.php:367
+#: includes/load-customizer.php:400
 msgid "Right Title"
 msgstr ""
 
-#: includes/load-customizer.php:386
+#: includes/load-customizer.php:419
 msgid "Latest Blog Posts"
 msgstr ""
 
-#: includes/load-customizer.php:389
+#: includes/load-customizer.php:422
 msgid "Opening Hours"
 msgstr ""
 
-#: includes/load-customizer.php:394
+#: includes/load-customizer.php:427
 msgid "Contact Card"
 msgstr ""
 
-#: includes/load-customizer.php:404
+#: includes/load-customizer.php:437
 msgid "Booking Form"
 msgstr ""
 
-#: includes/load-customizer.php:464
+#: includes/load-customizer.php:498
 msgid "Homepage"
 msgstr ""
 
-#: includes/load-customizer.php:501
+#: includes/load-customizer.php:535
 msgid ""
 "Edit your homepage using the Homepage Editor in the Customizer. %sLearn "
 "More%s"
 msgstr ""
 
-#: includes/load-plugin-installer.php:37 includes/load-theme-setup.php:63
+#: includes/load-plugin-installer.php:37 includes/load-theme-setup.php:65
 msgid "Food and Drink Menu"
 msgstr ""
 
-#: includes/load-plugin-installer.php:43 includes/load-theme-setup.php:78
+#: includes/load-plugin-installer.php:43 includes/load-theme-setup.php:80
 msgid "Restaurant Reservations"
 msgstr ""
 
-#: includes/load-plugin-installer.php:49 includes/load-theme-setup.php:88
+#: includes/load-plugin-installer.php:49 includes/load-theme-setup.php:90
 msgid "Business Profile"
 msgstr ""
 
@@ -539,7 +553,7 @@ msgstr ""
 msgid "Good Reviews"
 msgstr ""
 
-#: includes/load-plugin-installer.php:61 includes/load-theme-setup.php:114
+#: includes/load-plugin-installer.php:61 includes/load-theme-setup.php:116
 msgid "Event Organiser"
 msgstr ""
 
@@ -612,46 +626,54 @@ msgstr ""
 msgid "Help Documentation"
 msgstr ""
 
-#: includes/load-theme-setup.php:33
+#: includes/load-theme-setup.php:34
 msgid "Read the help guide for this theme"
 msgstr ""
 
-#: includes/load-theme-setup.php:34
+#: includes/load-theme-setup.php:35
 msgid "Support"
 msgstr ""
 
-#: includes/load-theme-setup.php:36
+#: includes/load-theme-setup.php:37
 msgid ""
 "Get %sone-on-one support%s if you are having trouble or need customizations "
 "done."
 msgstr ""
 
-#: includes/load-theme-setup.php:37
+#: includes/load-theme-setup.php:38
 msgid "Theme Demo"
 msgstr ""
 
-#: includes/load-theme-setup.php:39
+#: includes/load-theme-setup.php:40
 msgid "View an online demo of this theme"
 msgstr ""
 
-#: includes/load-theme-setup.php:40
+#: includes/load-theme-setup.php:41
 msgid "Installing"
 msgstr ""
 
-#: includes/load-theme-setup.php:41
+#: includes/load-theme-setup.php:42
 msgid "You have been logged out. Please login again before continuing."
 msgstr ""
 
-#: includes/load-theme-setup.php:42
+#: includes/load-theme-setup.php:43
 msgid "An unexpected error occur. Please reload the page and try again."
 msgstr ""
 
-#: includes/load-theme-setup.php:43
+#: includes/load-theme-setup.php:44
 msgid "Your request could not be processed. Please reload the page and try again"
 msgstr ""
 
-#: includes/load-theme-setup.php:100
+#: includes/load-theme-setup.php:102
 msgid "Good Reviews for WordPress"
+msgstr ""
+
+#: includes/template-helpers.php:270
+msgid "&larr; Older posts"
+msgstr ""
+
+#: includes/template-helpers.php:271
+msgid "Newer posts &rarr;"
 msgstr ""
 
 #: lib/tgmpa/class-tgm-plugin-activation.php:333
@@ -1028,6 +1050,91 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#: lib/updater/theme-updater.php:31
+msgid "Theme License"
+msgstr ""
+
+#: lib/updater/theme-updater.php:32
+msgid "Enter your theme license key."
+msgstr ""
+
+#: lib/updater/theme-updater.php:33
+msgid "License Key"
+msgstr ""
+
+#: lib/updater/theme-updater.php:34
+msgid "License Action"
+msgstr ""
+
+#: lib/updater/theme-updater.php:35
+msgid "Deactivate License"
+msgstr ""
+
+#: lib/updater/theme-updater.php:36
+msgid "Activate License"
+msgstr ""
+
+#: lib/updater/theme-updater.php:37 lib/updater/theme-updater.php:49
+msgid "License status is unknown."
+msgstr ""
+
+#: lib/updater/theme-updater.php:38
+msgid "Renew?"
+msgstr ""
+
+#: lib/updater/theme-updater.php:39
+msgid "unlimited"
+msgstr ""
+
+#: lib/updater/theme-updater.php:40
+msgid "License key is active."
+msgstr ""
+
+#: lib/updater/theme-updater.php:41
+msgid "Expires %s."
+msgstr ""
+
+#: lib/updater/theme-updater.php:42
+msgid "You have %1$s / %2$s sites activated."
+msgstr ""
+
+#: lib/updater/theme-updater.php:43
+msgid "License key expired %s."
+msgstr ""
+
+#: lib/updater/theme-updater.php:44
+msgid "License key has expired."
+msgstr ""
+
+#: lib/updater/theme-updater.php:45
+msgid "License keys do not match."
+msgstr ""
+
+#: lib/updater/theme-updater.php:46
+msgid "License is inactive."
+msgstr ""
+
+#: lib/updater/theme-updater.php:47
+msgid "License key is disabled."
+msgstr ""
+
+#: lib/updater/theme-updater.php:48
+msgid "Site is inactive."
+msgstr ""
+
+#: lib/updater/theme-updater.php:50
+msgid ""
+"Updating this theme will lose any customizations you have made. 'Cancel' to "
+"stop, 'OK' to update."
+msgstr ""
+
+#: lib/updater/theme-updater.php:51
+msgid ""
+"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" "
+"class=\"thickbox\" title=\"%4s\">Check out what's new</a> or <a "
+"href=\"%5$s\"%6$s>update now</a>."
+msgstr ""
+
 #: node_modules/grunt-wp-i18n/test/fixtures/basic-theme/exclude/file.php:3
 #: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/plugin-include.php:6
 msgid "Exclude"
@@ -1056,11 +1163,13 @@ msgid "Luigi"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://themeofthecrop.com/themes/luigi"
+msgid "http://themeofthecrop.com/theme/luigi"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "A WordPress theme for restaurants."
+msgid ""
+"An elegant, refined theme for Italian bistros, fine dining establishments "
+"and any venue with a touch of class."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1097,77 +1206,77 @@ msgctxt "Brief format of start and end dates of recurring events."
 msgid "%s&mdash;%s"
 msgstr ""
 
-#: includes/load-theme-setup.php:65
+#: includes/load-theme-setup.php:67
 msgctxt ""
 "This phrase is used in the Food and Drink Menu demo content installed from "
 "the Theme Setup page."
 msgid "Demo Menu"
 msgstr ""
 
-#: includes/load-theme-setup.php:66
+#: includes/load-theme-setup.php:68
 msgctxt ""
 "This phrase is used in the Food and Drink Menu demo content installed from "
 "the Theme Setup page."
 msgid "Starters"
 msgstr ""
 
-#: includes/load-theme-setup.php:67
+#: includes/load-theme-setup.php:69
 msgctxt ""
 "This phrase is used in the Food and Drink Menu demo content installed from "
 "the Theme Setup page."
 msgid "Entrees"
 msgstr ""
 
-#: includes/load-theme-setup.php:68
+#: includes/load-theme-setup.php:70
 msgctxt ""
 "This phrase is used in the Food and Drink Menu demo content installed from "
 "the Theme Setup page."
 msgid "Desserts"
 msgstr ""
 
-#: includes/load-theme-setup.php:69
+#: includes/load-theme-setup.php:71
 msgctxt ""
 "This phrase is used in the Food and Drink Menu demo content installed from "
 "the Theme Setup page."
 msgid "Demo Menu Dish %s"
 msgstr ""
 
-#: includes/load-theme-setup.php:70
+#: includes/load-theme-setup.php:72
 msgctxt ""
 "This phrase is used in the Food and Drink Menu demo content installed from "
 "the Theme Setup page."
 msgid "A delicious dish made of the finest, carefully selected ingredients."
 msgstr ""
 
-#: includes/load-theme-setup.php:71
+#: includes/load-theme-setup.php:73
 msgctxt ""
 "This phrase is used in the Food and Drink Menu demo content installed from "
 "the Theme Setup page."
 msgid "$12.99"
 msgstr ""
 
-#: includes/load-theme-setup.php:80
+#: includes/load-theme-setup.php:82
 msgctxt ""
 "This phrase is used in the Restaurant Reservations demo content installed "
 "from the Theme Setup page."
 msgid "This is a demo of the Restaurant Reservations booking form"
 msgstr ""
 
-#: includes/load-theme-setup.php:81
+#: includes/load-theme-setup.php:83
 msgctxt ""
 "This phrase is used in the Restaurant Reservations demo content installed "
 "from the Theme Setup page."
 msgid "Booking Form Demo"
 msgstr ""
 
-#: includes/load-theme-setup.php:90
+#: includes/load-theme-setup.php:92
 msgctxt ""
 "This phrase is used in the Restaurant Reservations demo content installed "
 "from the Theme Setup page."
 msgid "Contact Card Demo"
 msgstr ""
 
-#: includes/load-theme-setup.php:91
+#: includes/load-theme-setup.php:93
 msgctxt ""
 "This phrase is used in the Restaurant Reservations demo content installed "
 "from the Theme Setup page."
@@ -1176,49 +1285,49 @@ msgid ""
 "Mountain View, CA 94043"
 msgstr ""
 
-#: includes/load-theme-setup.php:92
+#: includes/load-theme-setup.php:94
 msgctxt ""
 "This phrase is used in the Restaurant Reservations demo content installed "
 "from the Theme Setup page."
 msgid "(123) 456-7890"
 msgstr ""
 
-#: includes/load-theme-setup.php:93
+#: includes/load-theme-setup.php:95
 msgctxt ""
 "This phrase is used in the Restaurant Reservations demo content installed "
 "from the Theme Setup page."
 msgid "contact@example.com"
 msgstr ""
 
-#: includes/load-theme-setup.php:116
+#: includes/load-theme-setup.php:118
 msgctxt ""
 "This phrase is used in the Restaurant Reservations demo content installed "
 "from the Theme Setup page."
 msgid "Event Calendar Demo"
 msgstr ""
 
-#: includes/load-theme-setup.php:117
+#: includes/load-theme-setup.php:119
 msgctxt ""
 "This phrase is used in the Restaurant Reservations demo content installed "
 "from the Theme Setup page."
 msgid "Demo Event %s"
 msgstr ""
 
-#: includes/load-theme-setup.php:118
+#: includes/load-theme-setup.php:120
 msgctxt ""
 "This phrase is used in the Restaurant Reservations demo content installed "
 "from the Theme Setup page."
 msgid "This is a sample event created with the Event Organiser plugin."
 msgstr ""
 
-#: includes/load-theme-setup.php:102
+#: includes/load-theme-setup.php:104
 msgctxt ""
 "This phrase is used in the Good Reviews for WordPress demo content "
 "installed from the Theme Setup page."
 msgid "Good Reviews Demo"
 msgstr ""
 
-#: includes/load-theme-setup.php:103
+#: includes/load-theme-setup.php:105
 msgctxt ""
 "This phrase is used in the Good Reviews for WordPress demo content "
 "installed from the Theme Setup page."
@@ -1227,21 +1336,21 @@ msgid ""
 "had to go back for more. We've been three times now!"
 msgstr ""
 
-#: includes/load-theme-setup.php:104
+#: includes/load-theme-setup.php:106
 msgctxt ""
 "This phrase is used in the Good Reviews for WordPress demo content "
 "installed from the Theme Setup page."
 msgid "Reviewer Name %s"
 msgstr ""
 
-#: includes/load-theme-setup.php:105 includes/load-theme-setup.php:107
+#: includes/load-theme-setup.php:107 includes/load-theme-setup.php:109
 msgctxt ""
 "This phrase is used in the Good Reviews for WordPress demo content "
 "installed from the Theme Setup page."
 msgid "http://example.com"
 msgstr ""
 
-#: includes/load-theme-setup.php:106
+#: includes/load-theme-setup.php:108
 msgctxt ""
 "This phrase is used in the Good Reviews for WordPress demo content "
 "installed from the Theme Setup page."
