@@ -24,3 +24,8 @@ Luigi was designed by [Jonathan Aktinson](https://cr3ativ.com/) and built by [Th
 == More information ==
 
 Further information can be found at themeofthecrop.com.
+
+== Changelog ==
+
+= 1.0 (2016-04-06) =
+* Initial Release
