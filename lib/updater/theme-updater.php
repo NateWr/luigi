@@ -22,7 +22,7 @@ $updater = new EDD_Theme_Updater_Admin(
 		'theme_slug' => 'luigi', // Theme slug
 		'version' => $theme->get( 'Version' ), // The current version of this theme
 		'author' => 'Theme of the Crop', // The author of this theme
-		'download_id' => '', // Optional, used for generating a license renewal link
+		'download_id' => 13087, // Optional, used for generating a license renewal link
 		'renew_url' => '' // Optional, allows for a custom license renewal link
 	),
 
