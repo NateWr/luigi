@@ -161,13 +161,13 @@ module.exports = function(grunt) {
 		compress: {
 			main: {
 				options: {
-					archive: 'luigi.zip'
+					archive: 'luigi-<%= pkg.version %>.zip'
 				},
 				files: [
 					{
 						src: [
 							'*', '**/*',
-							'!luigi.zip',
+							'!luigi-<%= pkg.version %>.zip',
 							'!.*', '!Gruntfile.js', '!package.json', '!node_modules', '!node_modules/**/*',
 							'!**/.*', '!**/Gruntfile.js', '!**/package.json', '!**/node_modules', '!**/node_modules/**/*',
 							'!assets/src', '!assets/src/**/*',
