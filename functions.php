@@ -36,6 +36,8 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
 		add_theme_support( 'event-organiser' );
 		add_theme_support( 'theme-painter', luigi_load_theme_painter() );
 
+		load_theme_textdomain( 'luigi', get_template_directory() . '/languages' );
+
 		register_nav_menus(
 			array(
 				'primary_menu' => esc_html__( 'Primary Location', 'luigi' ),
