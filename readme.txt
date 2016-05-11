@@ -2,8 +2,8 @@
 Contributors: NateWr
 Donate link: http://themeofthecrop.com
 Requires at least: 4.4.2
-Tested up to: 4.4.2
-Stable tag: 1.0
+Tested up to: 4.5
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,12 @@ Luigi was designed by [Jonathan Aktinson](https://cr3ativ.com/) and built by [Th
 Further information can be found at themeofthecrop.com.
 
 == Changelog ==
+
+= 1.0.1 (2016-05-11) =
+* Fix bug with trnaslation textdomain not being loadd
+* Fix post limiting on the review component for the homepage editor
+* Fix error with mix and match component values in the homepage editor
+* Allow Yoast SEO content analysis tools to be used for the homepage
 
 = 1.0 (2016-04-06) =
 * Initial Release
