@@ -174,6 +174,7 @@ if ( !function_exists( 'luigi_load_admin' ) ) {
 	 * @since 0.0.1
 	 */
 	function luigi_load_admin() {
+		include_once( 'includes/load-admin.php' );
 		include_once( 'includes/integrations/restaurant-reservations.php' );
 	}
 }
