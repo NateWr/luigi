@@ -44,14 +44,28 @@ if ( !function_exists( 'luigi_shortcode_recent_posts' ) ) {
 	add_shortcode( 'luigi-recent-posts', 'luigi_shortcode_recent_posts' );
 }
 
+//
+// DEPRECATED FUNCTIONS
+//
+
 if ( !function_exists( 'luigi_shortcode_bpfwp_contact_card' ) ) {
 	/**
 	 * Overwrite the [contact-card] shortcode from Business Profile to allow
 	 * particular formatting and styling.
 	 *
+	 * DEPRECATED. This function is deprecated in favor of the new templating
+	 * system to be released in Business Profile v1.1. The template file in
+	 * /business-profile-templates/contact-card.php should be used instead.
+	 *
 	 * @since 0.0.1
+	 * @deprecated 1.1
 	 */
 	function luigi_shortcode_bpfwp_contact_card( $args = array() ) {
+
+		if ( defined( 'BPFWP_VERSION' ) && version_compare( BPFWP_VERSION, '1.1', '>=' ) ) {
+			echo bpwfwp_print_contact_card( $args );
+			return;
+		}
 
 		// Define shortcode attributes
 		$defaults = array(
@@ -166,5 +180,8 @@ if ( !function_exists( 'luigi_shortcode_bpfwp_contact_card' ) ) {
 
 		return apply_filters( 'bpwfwp_contact_card_output', $output );
 	}
-	add_shortcode( 'contact-card', 'luigi_shortcode_bpfwp_contact_card' );
+
+	if ( defined( 'BPFWP_VERSION' ) && version_compare( BPFWP_VERSION, '1.1', '<' ) ) {
+		add_shortcode( 'contact-card', 'luigi_shortcode_bpfwp_contact_card' );
+	}
 }
