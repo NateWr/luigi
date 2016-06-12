@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying all singular posts and pages
- *
- * This is the template that displays all single post or page requests.
+ * The template for displaying single events
  *
  * @package luigi
  */
