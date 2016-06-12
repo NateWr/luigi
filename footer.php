@@ -50,21 +50,37 @@
 					</div>
 					<div class="contact">
 						<?php
-							echo luigi_shortcode_bpfwp_contact_card(
+							echo bpwfwp_print_contact_card(
 								apply_filters(
 									'luigi-footer-contact-card',
 									array(
-										'show_name' => true,
-										'show_address' => true,
-										'show_get_directions' => true,
-										'show_phone' => true,
-										'show_contact' => true,
 										'show_opening_hours' => false,
 										'show_map' => false,
-										'show_booking_link' => true,
 									)
 								)
 							);
+
+							if ( post_type_exists( 'location' ) ) :
+								?>
+								<div class="luigi-contact-card-links">
+									<div class="bp-locations">
+										<a href="<?php echo esc_url( get_post_type_archive_link( 'location' ) ); ?>">
+											<?php esc_html_e( 'All Locations', 'luigi' ); ?>
+										</a>
+									</div>
+									<?php
+										$link = luigi_rtb_maybe_print_booking_link();
+										if ( !empty( $link ) ) :
+											?>
+											<div class="bp-booking">
+												<?php echo $link; ?>
+											</div>
+											<?php
+										endif;
+									?>
+								</div>
+								<?php
+							endif;
 						?>
 					</div>
 				</div>

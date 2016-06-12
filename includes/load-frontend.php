@@ -109,7 +109,8 @@ if ( !function_exists( 'luigi_add_body_classes' ) ) {
 				is_page_template( 'page-full-width.php' ) ||
 				!is_active_sidebar( 'primary-sidebar' ) ||
 				( get_post_type() == 'fdm-menu' && luigi_menu_has_two_cols() ) ||
-				( get_post_type() == 'event' && is_single() )
+				( get_post_type() == 'event' && is_single() ) ||
+				( get_post_type() == 'location' && is_single() )
 			) {
 			$classes[] = 'luigi-primary-sidebar-inactive';
 		}

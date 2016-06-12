@@ -113,3 +113,20 @@ if ( !function_exists( 'luigi_bp_location_archive_title' ) ) {
 	}
 	add_filter( 'get_the_archive_title', 'luigi_bp_location_archive_title' );
 }
+
+if ( !function_exists( 'luigi_bp_adjust_footer_contact_card' ) ) {
+	/**
+	 * Hide elements of the footer contact card if multiple locations are
+	 * enabled.
+	 *
+	 * @since 1.1
+	 */
+	function luigi_bp_adjust_footer_contact_card( $args ) {
+
+		$args['show_get_directions'] = false;
+		$args['show_booking_link'] = false;
+
+		return $args;
+	}
+	add_filter( 'luigi-footer-contact-card', 'luigi_bp_adjust_footer_contact_card' );
+}

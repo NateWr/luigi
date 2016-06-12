@@ -14,9 +14,7 @@
 			<?php the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' ); ?>
 		</header>
 
-		<div class="location-sidebar">
-			<?php get_template_part( 'template-parts/location', 'sidebar' ); ?>
-		</div>
+		<?php get_template_part( 'template-parts/location', 'sidebar' ); ?>
 
 		<div class="location-content">
 			<div class="entry-content" itemprop="description">
