@@ -24,7 +24,7 @@ global $bpfwp_controller; ?>
 				$show_get_directions = $bpfwp_controller->display_settings['show_get_directions'];
 				$bpfwp_controller->display_settings['show_get_directions'] = false;
 
-				call_user_func( $data->address );
+				call_user_func( $data->address, $bpfwp_controller->display_settings['location'] );
 
 				$bpfwp_controller->display_settings['show_get_directions'] = $show_get_directions;
 			}
