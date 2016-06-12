@@ -126,9 +126,12 @@
 // Booking form
 .luigi-clc-mixer-booking_form {
 
-	fieldset,
-	fieldset > div:nth-child(2) {
+	fieldset {
 		margin-top: 0;
+	}
+
+	.rtb-booking-form fieldset.location {
+		margin-bottom: 0;
 	}
 
 	legend {
@@ -226,6 +229,11 @@
 				.rtb-text input,
 				.rtb-select select {
 					width: 50%;
+				}
+
+				.rtb-select.location label {
+					border-right: @border-line;
+					border-bottom-width: 0;
 				}
 			}
 		}

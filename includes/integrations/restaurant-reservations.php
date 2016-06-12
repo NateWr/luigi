@@ -12,6 +12,16 @@ if ( !function_exists( 'luigi_move_message_field' ) ) {
 	 */
 	function luigi_move_message_field( $fields, $request ) {
 
+		if ( isset( $fields['reservation']['fields']['location'] ) ) {
+			$fields['location'] = array(
+				'legend' => $fields['reservation']['legend'],
+				'fields' => array( 'location' => $fields['reservation']['fields']['location'] ),
+			);
+
+			unset( $fields['reservation']['legend'] );
+			unset( $fields['reservation']['fields']['location'] );
+		}
+
 		$fields['message-set'] = array(
 			'fields'	=> array(
 				'add-message'	=> $fields['contact']['fields']['add-message'],

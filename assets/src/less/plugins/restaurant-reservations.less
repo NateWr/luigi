@@ -8,6 +8,10 @@
 		> div {
 			margin-top: @triple;
 		}
+
+		&.location {
+			margin-bottom: -@triple;
+		}
 	}
 
 	label {
@@ -27,6 +31,10 @@
 			margin-right: @base;
 			vertical-align: middle;
 		}
+	}
+
+	.rtb-select.location label:before {
+		&:extend(.luigi-icon-location);
 	}
 
 	.rtb-text.date label:before {
@@ -183,16 +191,32 @@
 			legend {
 				margin-right: @triple;
 			}
+
+			&.contact > legend {
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+			}
 		}
 
-		fieldset.contact legend {
-			opacity: 0;
-		}
-
+		fieldset.location,
 		.message-set,
 		.optin {
 			float: none;
 			width: 100%;
+		}
+
+		.rtb-select.location {
+
+			label {
+				width: 100%;
+				border-right: @border-line;
+				border-bottom-width: 0;
+			}
+
+			select {
+				width: 100%;
+			}
 		}
 
 		button {
@@ -214,6 +238,11 @@
 		.rtb-text input,
 		.rtb-select select {
 			width: 70%;
+		}
+
+		.rtb-select.location label,
+		.rtb-select.location select {
+			width: 100%;
 		}
 	}
 }
