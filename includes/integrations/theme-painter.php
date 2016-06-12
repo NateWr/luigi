@@ -308,6 +308,7 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = 'textarea';
 				$selectors[] = '.bp-contact-card';
 				$selectors[] = '.bp-opening-hours .bp-weekday:nth-child(even)';
+				$selectors[] = '.post-location-summary .location-more-link';
 				$selectors[] = '.fc-agenda-view .fc-day-grid';
 				$selectors[] = '.fc-month-view .fc-bg .fc-day:not(.fc-past):not(.fc-other-moth)';
 				break;
@@ -348,6 +349,7 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.fc-toolbar .fc-next-button:hover';
 				$selectors[] = '.fc-toolbar .fc-next-button:focus';
 				$selectors[] = '.post-edit-link';
+				$selectors[] = '.post-location-summary .location-more-link a';
 				break;
 
 			case 'accent-important' :
@@ -452,6 +454,8 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.widget_recent_entries .post-summary .more:focus';
 				$selectors[] = '.post-edit-link:hover';
 				$selectors[] = '.post-edit-link:focus';
+				$selectors[] = '.post-location-summary .location-more-link a:hover';
+				$selectors[] = '.post-location-summary .location-more-link a:focus';
 				break;
 
 			case 'accent-lift-background' :

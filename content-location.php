@@ -6,9 +6,9 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( is_single() ? 'post-single-location' : 'post-summary' ); ?>  itemscope itemtype="http://schema.org/<?php echo bpfwp_setting( 'schema-type', get_the_ID() ); ?>">
+<?php if ( is_single() ) : ?>
 
-	<?php if ( is_single() ) : ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-single-location' ); ?>  itemscope itemtype="http://schema.org/<?php echo bpfwp_setting( 'schema-type', get_the_ID() ); ?>">
 
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' ); ?>
@@ -31,29 +31,32 @@
 			</div><!-- .entry-content -->
 			<meta itemprop="url" content="<?php echo esc_url( get_permalink() ); ?>">
 		</div>
+	</article>
 
-	<?php else : ?>
+<?php else : ?>
 
-		<header class="entry-header">
-			<?php
-				if ( is_archive() ) {
-					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" itemprop="url"><span itemprop="name">', '</span></a></h2>' );
-				} else {
-					the_title( '<div class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" itemprop="url"><span itemprop="name">', '</span></a></div>' );
-				}
-			?>
-		</header><!-- .entry-header -->
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-summary post-location-summary' ); ?>>
 
-		<div class="entry-content" itemprop="description">
-			<?php the_excerpt(); ?>
+		<?php echo luigi_bp_maybe_print_map( get_the_ID() ); ?>
 
-			<a href="<?php echo esc_url( get_permalink() ); ?>" class="more">
+		<?php
+			echo bpwfwp_print_contact_card(
+				array(
+					'location'           => get_the_ID(),
+					'show_opening_hours' => false,
+					'show_map'           => false,
+				)
+			);
+		?>
+
+		<div class="location-more-link">
+			<a href="<?php echo esc_url( get_permalink() ); ?>">
 				<?php
 				    // Translators: 1 and 3 are an opening and closing <span> tag. 2 is the post title.
-				    printf( esc_html__( 'Read More%1$s about %2$s%3$s', 'luigi' ), '<span class="screen-reader-text">', get_the_title(), '</span>' );
+				    printf( esc_html__( 'Read More%1$s about the %2$s location%3$s', 'luigi' ), '<span class="screen-reader-text">', get_the_title(), '</span>' );
 				?>
 			</a>
-		</div><!-- .entry-content -->
+		</div>
+	</article>
 
-	<?php endif; ?>
-</article><!-- #post-## -->
+<?php endif; ?>

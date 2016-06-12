@@ -96,3 +96,20 @@ if ( !function_exists( 'luigi_bp_maybe_print_map' ) ) {
 		bpwfwp_print_map( $location );
 	}
 }
+
+if ( !function_exists( 'luigi_bp_location_archive_title' ) ) {
+	/**
+	 * Adjust the location archive title
+	 *
+	 * @since 1.1
+	 */
+	function luigi_bp_location_archive_title( $title ) {
+		if ( !is_post_type_archive( 'location' ) ) {
+			return $title;
+		}
+
+		return post_type_archive_title( '', false );
+
+	}
+	add_filter( 'get_the_archive_title', 'luigi_bp_location_archive_title' );
+}

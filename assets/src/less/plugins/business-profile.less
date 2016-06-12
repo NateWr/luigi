@@ -382,3 +382,39 @@
 		}
 	}
 }
+
+// Location archive pages
+.post-location-summary {
+
+	.bp-map {
+		min-height: 250px;
+	}
+
+	.bp-map + .bp-contact-card {
+		border-top: none;
+	}
+
+	.bp-contact-card {
+		max-width: 100%;
+	}
+
+	.luigi-contact-card-links {
+		margin-bottom: 0;
+	}
+
+	.location-more-link {
+		padding: @base @double;
+		border: @border-line-light;
+		border-top: none;
+		font-size: @font-sml;
+		line-height: @line-sml;
+		text-align: right;
+		background: @bg-lift;
+
+		a {
+			&:extend(.luigi-button-link all);
+			&:extend(.luigi-button-link-primary all);
+			&:extend(.luigi-button-link-sml all);
+		}
+	}
+}
