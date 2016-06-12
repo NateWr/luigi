@@ -42,7 +42,13 @@ if ( $this->image ) {
 						<span class="luigi-icon luigi-icon-w-phone"></span> <?php echo esc_html( $bpfwp_controller->settings->get_setting( 'phone' ) ); ?>
 					</div>
 				<?php elseif ( $this->contact == 'find' ) : ?>
-					<a href="#" class="luigi-load-contact-card"><span class="luigi-icon luigi-icon-w-location"></span> <span class="contact_text"><?php echo esc_html( $this->contact_text ); ?></span></a>
+					<?php if ( post_type_exists( 'location' ) ) : ?>
+						<a href="<?php echo esc_url( get_post_type_archive_link( 'location' ) ); ?>">
+							<span class="luigi-icon luigi-icon-w-location"></span> <span class="contact_text"><?php echo esc_html( $this->contact_text ); ?></span>
+						</a>
+					<?php else : ?>
+						<a href="#" class="luigi-load-contact-card"><span class="luigi-icon luigi-icon-w-location"></span> <span class="contact_text"><?php echo esc_html( $this->contact_text ); ?></span></a>
+					<?php endif; ?>
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>

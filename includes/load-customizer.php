@@ -322,7 +322,7 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 					'contact'                       => esc_attr__( 'Contact Detail', 'luigi' ),
 					'none'                          => esc_attr__( 'None', 'luigi' ),
 					'phone'                         => esc_attr__( 'Phone Number', 'luigi' ),
-					'find'                          => esc_attr__( 'Contact Popup', 'luigi' ),
+					'find'                          => esc_attr__( 'Contact Link', 'luigi' ),
 					'find_text_default'             => esc_attr__( 'Find Us', 'luigi' ),
 					'image_transparency'            => esc_attr__( 'Darken Image', 'luigi' ),
 				)
