@@ -199,6 +199,15 @@
 			}
 		}
 
+		// A hacky workaround which fixes the positioning of the contact
+		// fieldset when no location fieldset is present
+		input + fieldset.reservation + fieldset.contact > legend {
+			position: relative;
+			top: auto;
+			left: auto;
+			opacity: 0;
+		}
+
 		fieldset.location,
 		.message-set,
 		.optin {
