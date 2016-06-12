@@ -35,6 +35,10 @@ if ( !function_exists( 'luigi_setup_theme' ) ) {
 		add_theme_support( 'post-thumbnails', array( 'fdm-menu-item', 'grfwp-review' ) );
 		add_theme_support( 'event-organiser' );
 		add_theme_support( 'theme-painter', luigi_load_theme_painter() );
+		add_theme_support( 'business-profile', array(
+			'disable_append_to_content' => true,
+			'disable_styles' => true,
+		) );
 
 		load_theme_textdomain( 'luigi', get_template_directory() . '/languages' );
 

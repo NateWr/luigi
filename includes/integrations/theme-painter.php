@@ -377,6 +377,7 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.luigi-clc-mixer-opening_hours .booking:active';
 				$selectors[] = '.clc-component-layout .links li:first-child a';
 				$selectors[] = '.luigi-contact-card-links > div:first-child a';
+				$selectors[] = '.location-sidebar .bp-directions a';
 				$selectors[] = '.luigi-clc-mixer-opening_hours .booking';
 				$selectors[] = '.widget_archive li:before';
 				$selectors[] = '.widget_categories li:before';
@@ -479,6 +480,8 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.luigi-contact-card-links a:focus';
 				$selectors[] = '.luigi-contact-card-links > div:first-child a:hover';
 				$selectors[] = '.luigi-contact-card-links > div:first-child a:focus';
+				$selectors[] = '.location-sidebar .bp-directions a:hover';
+				$selectors[] = '.location-sidebar .bp-directions a:focus';
 				$selectors[] = '.ninja-forms-cont .submit-wrap input[type="submit"]:hover';
 				$selectors[] = '.ninja-forms-cont .submit-wrap input[type="submit"]:focus';
 				$selectors[] = '.clc-component-luigi-hero-block .links a:hover';

@@ -78,3 +78,21 @@ if ( !function_exists( 'luigi_bpfwp_get_contact_card_modal' ) ) {
 	add_action( 'wp_ajax_nopriv_luigi-bpfwp-get-contact-card-modal', 'luigi_bpfwp_get_contact_card_modal' );
 	add_action( 'wp_ajax_luigi-bpfwp-get-contact-card-modal', 'luigi_bpfwp_get_contact_card_modal' );
 }
+
+if ( !function_exists( 'luigi_bp_maybe_print_map' ) ) {
+	/**
+	 * Print a location map if an address exists
+	 *
+	 *  @since 1.1
+	 */
+	function luigi_bp_maybe_print_map( $location = false ) {
+
+		$address = bpfwp_setting( 'address', $location );
+
+		if ( empty( $address ) || empty( $address['text'] ) ) {
+			return;
+		}
+
+		bpwfwp_print_map( $location );
+	}
+}

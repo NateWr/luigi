@@ -10,7 +10,7 @@
  */
 global $bpfwp_controller; ?>
 
-<address class="bp-contact-card" itemscope itemtype="http://schema.org/<?php echo bpfwp_setting( 'schema_type', $bpfwp_controller->display_settings['location'] ); ?>">
+<address class="bp-contact-card" itemscope itemtype="http://schema.org/<?php echo bpfwp_setting( 'schema-type', $bpfwp_controller->display_settings['location'] ); ?>">
 
 	<?php if ( $bpfwp_controller->display_settings['show_name'] || $bpfwp_controller->display_settings['show_address'] ) : ?>
 		<div class="luigi-contact-card-address-wrapper">

@@ -271,3 +271,114 @@
 		&:extend(.luigi-icon-b-time);
 	}
 }
+
+// Single location pages
+.single-location .bp-map + .site-content {
+	margin-top: 60px;
+}
+
+// Mimic the narrow content layout for single event pages
+.post-single-location {
+
+	@media(min-width: @screen-md) {
+		.clearfix();
+
+		.location-content {
+			float: left;
+			width: @container-primary-md;
+		}
+
+		.location-sidebar {
+			float: right;
+			width: @sidebar-width;
+		}
+
+		.entry-content,
+		.entry-footer {
+			width: @content-width;
+		}
+
+		.entry-meta {
+			display: block;
+			margin: 0 auto 0;
+			padding-left: @triple;
+		}
+	}
+
+	@media(min-width: @screen-lg) {
+
+		.entry-header {
+			padding-left: 100px; // Align with main content column
+		}
+
+		.location-content {
+			width: @container-primary-lg;
+		}
+
+		.entry-content,
+		.entry-footer {
+			width: @content-width;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	@media(min-width: @screen-xl) {
+
+		.location-content {
+			width: @container-primary-xl;
+		}
+
+		.entry-content,
+		.entry-footer {
+			width: @content-width-xl;
+		}
+	}
+}
+
+// Sidebar with location details
+.location-sidebar {
+
+	.bp-address {
+		&:extend(.luigi-icon-location);
+		background-position: left top;
+		background-repeat: no-repeat;
+		background-size: auto @font-base;
+	}
+
+	.bp-directions {
+		margin: @base 0 @triple @quadruple;
+
+		a {
+			&:extend(.luigi-button all);
+			&:extend(.luigi-button-sml all);
+			&:extend(.luigi-button-primary all);
+		}
+	}
+
+	.bp-opening-hours {
+		margin: @triple 0 0;
+		padding: 0;
+		border: none;
+
+		.bp-title {
+			&:extend(.screen-reader-text all);
+		}
+	}
+}
+
+@media(min-width: @screen-lg) {
+
+	.single-location.luigi-primary-sidebar-inactive .rtb-booking-form {
+
+		.rtb-text label,
+		.rtb-select label {
+			width: 40%;
+		}
+
+		.rtb-text input,
+		.rtb-select select {
+			width: 60%;
+		}
+	}
+}

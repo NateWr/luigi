@@ -86,7 +86,7 @@ if ( !function_exists( 'luigi_dequeue_footer_assets' ) ) {
 	 * @since 0.0.1
 	 */
 	function luigi_dequeue_footer_assets() {
-		wp_dequeue_style( 'bpfwp-default' );
+		wp_dequeue_style( 'bpfwp-default' ); // Deprecrated in favor of add_theme_supports( 'business-profile' ), introduced in Business Profile v1.1.
 		wp_dequeue_style( 'gr-reviews' );
 		wp_dequeue_style( 'rtb-booking-form' );
 		wp_dequeue_style( 'fdm-css-base' );
