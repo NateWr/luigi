@@ -8,18 +8,16 @@
 
 <div class="location-sidebar">
 	<?php
-		$address = bpfwp_setting( 'address', get_the_ID() );
-		if ( !empty( $address['text'] ) ) {
+		if ( defined( 'BPFWP_VERSION' ) && version_compare( BPFWP_VERSION, '1.1', '>=' ) ) {
 			bpwfwp_print_address( get_the_ID() );
-		}
-		if ( bpfwp_setting( 'phone', get_the_ID() ) ) {
 			bpwfwp_print_phone( get_the_ID() );
-		}
-		if ( bpfwp_setting( 'contact-email', get_the_ID() ) || bpfwp_setting( 'contact-page', get_the_ID() )) {
 			bpwfwp_print_contact( get_the_ID() );
-		}
-		if ( bpfwp_setting( 'opening-hours', get_the_ID() ) ) {
 			bpwfwp_print_opening_hours( get_the_ID() );
+
+			if ( function_exists( 'rtb_bp_print_booking_link' ) ) {
+				bpfwp_set_display( 'show_booking_link', false );
+				rtb_bp_print_booking_link( get_the_ID() );
+			}
 		}
 	?>
 </div>

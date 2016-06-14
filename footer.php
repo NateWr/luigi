@@ -69,14 +69,9 @@
 										</a>
 									</div>
 									<?php
-										$link = luigi_rtb_maybe_print_booking_link();
-										if ( !empty( $link ) ) :
-											?>
-											<div class="bp-booking">
-												<?php echo $link; ?>
-											</div>
-											<?php
-										endif;
+										if ( function_exists( 'rtb_bp_print_booking_link' ) ) {
+											rtb_bp_print_booking_link();
+										}
 									?>
 								</div>
 								<?php

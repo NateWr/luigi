@@ -87,13 +87,9 @@ if ( !function_exists( 'luigi_bp_maybe_print_map' ) ) {
 	 */
 	function luigi_bp_maybe_print_map( $location = false ) {
 
-		$address = bpfwp_setting( 'address', $location );
-
-		if ( empty( $address ) || empty( $address['text'] ) ) {
-			return;
+		if ( function_exists( 'bpwfwp_print_map' ) ) {
+			bpwfwp_print_map( $location );
 		}
-
-		bpwfwp_print_map( $location );
 	}
 }
 
@@ -123,8 +119,10 @@ if ( !function_exists( 'luigi_bp_adjust_footer_contact_card' ) ) {
 	 */
 	function luigi_bp_adjust_footer_contact_card( $args ) {
 
-		$args['show_get_directions'] = false;
-		$args['show_booking_link'] = false;
+		if ( post_type_exists( 'location' ) ) {
+			$args['show_get_directions'] = false;
+			$args['show_booking_link'] = false;
+		}
 
 		return $args;
 	}
