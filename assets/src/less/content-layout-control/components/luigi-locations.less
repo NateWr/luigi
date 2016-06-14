@@ -1,0 +1,34 @@
+//
+// Locations component
+// Content Layout Control component
+//
+@media( min-width: @screen-md ) {
+
+	.clc-component-luigi-locations {
+
+		.clc-wrapper {
+			.clearfix;
+		}
+
+		article {
+			margin: @double 0;
+			float: left;
+			width: 50%;
+			padding-right: @double;
+
+			&:nth-child(odd) {
+				clear: left;
+			}
+
+			&:nth-child(even) {
+				float: right;
+				padding-left: @double;
+				padding-right: 0;
+			}
+
+			&:nth-child(2) {
+				margin-top: 0;
+			}
+		}
+	}
+}

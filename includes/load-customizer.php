@@ -97,7 +97,7 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 				array(
 					'section'    => 'content_layout_control',
 					'priority'   => 1,
-					'components' => array( 'luigi-hero-block', 'luigi-content-block', 'luigi-posts-reviews', 'luigi-mixer', 'luigi-map', 'luigi-eo-calendar' ),
+					'components' => apply_filters( 'luigi_clc_homepage_components', array( 'luigi-hero-block', 'luigi-content-block', 'luigi-posts-reviews', 'luigi-mixer', 'luigi-map', 'luigi-eo-calendar', 'luigi-locations' ) ),
 					'active_callback' => 'luigi_customizer_clc_active_callback',
 					'i18n' => array(
 						'add_component'                 => esc_html__( 'Add Component', 'luigi' ),
@@ -398,6 +398,18 @@ if ( !function_exists( 'luigi_customizer_register_content_layout_control_compone
 					'right' => esc_html__( 'Right Content', 'luigi' ),
 					'left_title'  => esc_html__( 'Left Title', 'luigi' ),
 					'right_title' => esc_html__( 'Right Title', 'luigi' ),
+				),
+			);
+		}
+
+		if ( isset( $bpfwp_controller ) && isset( $bpfwp_controller->cpts ) ) {
+			$components['luigi-locations'] = array(
+				'file'          => get_template_directory() . '/includes/customizer/content-layout-control/components/luigi-locations.php',
+				'class'         => 'Luigi_CLC_Component_Locations',
+				'name'          => esc_html__( 'Locations', 'luigi' ),
+				'description'   => esc_html__( 'Display the locations of your restaurant.', 'luigi' ),
+				'i18n'          => array(
+					'description' => sprintf( esc_html__( 'To add, edit or remove locations, visit the %sLocations%s page.', 'luigi' ), '<a href="' . esc_url( admin_url( 'edit.php?post_type=' . $bpfwp_controller->cpts->location_cpt_slug ) ) . '">', '</a>' ),
 				),
 			);
 		}

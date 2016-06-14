@@ -70,12 +70,14 @@ module.exports = function(grunt) {
 						'assets/src/js/content-layout-control/components/model/luigi-mixer.js',
 						'assets/src/js/content-layout-control/components/model/luigi-map.js',
 						'assets/src/js/content-layout-control/components/model/luigi-eo-calendar.js',
+						'assets/src/js/content-layout-control/components/model/luigi-locations.js',
 						'assets/src/js/content-layout-control/components/preview/luigi-content-block.js',
 						'assets/src/js/content-layout-control/components/preview/luigi-hero-block.js',
 						'assets/src/js/content-layout-control/components/preview/luigi-posts-reviews.js',
 						'assets/src/js/content-layout-control/components/preview/luigi-mixer.js',
 						'assets/src/js/content-layout-control/components/preview/luigi-map.js',
 						'assets/src/js/content-layout-control/components/preview/luigi-eo-calendar.js',
+						'assets/src/js/content-layout-control/components/preview/luigi-locations.js',
 						'assets/src/js/customizer-preview-*.js',
 						'assets/src/js/customizer-preview.js'
 					],
@@ -86,12 +88,14 @@ module.exports = function(grunt) {
 						'assets/src/js/content-layout-control/components/model/luigi-mixer.js',
 						'assets/src/js/content-layout-control/components/model/luigi-map.js',
 						'assets/src/js/content-layout-control/components/model/luigi-eo-calendar.js',
+						'assets/src/js/content-layout-control/components/model/luigi-locations.js',
 						'assets/src/js/content-layout-control/components/control/luigi-content-block.js',
 						'assets/src/js/content-layout-control/components/control/luigi-hero-block.js',
 						'assets/src/js/content-layout-control/components/control/luigi-posts-reviews.js',
 						'assets/src/js/content-layout-control/components/control/luigi-mixer.js',
 						'assets/src/js/content-layout-control/components/control/luigi-map.js',
 						'assets/src/js/content-layout-control/components/control/luigi-eo-calendar.js',
+						'assets/src/js/content-layout-control/components/control/luigi-locations.js',
 						'assets/src/js/customizer-control-*.js',
 						'assets/src/js/customizer-control.js'
 					],
@@ -101,6 +105,7 @@ module.exports = function(grunt) {
 					'assets/js/content-layout-control/templates/components/luigi-mixer.js': 'assets/src/js/content-layout-control/templates/components/luigi-mixer.js',
 					'assets/js/content-layout-control/templates/components/luigi-map.js': 'assets/src/js/content-layout-control/templates/components/luigi-map.js',
 					'assets/js/content-layout-control/templates/components/luigi-eo-calendar.js': 'assets/src/js/content-layout-control/templates/components/luigi-eo-calendar.js',
+					'assets/js/content-layout-control/templates/components/luigi-locations.js': 'assets/src/js/content-layout-control/templates/components/luigi-locations.js',
 				}
 			}
 		},
