@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Luigi 0.0.1\n"
+"Project-Id-Version: Luigi 1.1\n"
 "Report-Msgid-Bugs-To: http://themeofthecrop.com\n"
-"POT-Creation-Date: 2016-04-06 12:31:13+00:00\n"
+"POT-Creation-Date: 2016-06-15 20:18:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,6 +24,12 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
+#: business-profile-templates/contact-card.php:52
+#: includes/integrations/business-profile.php:69
+#: includes/template-shortcodes.php:163
+msgid "Get directions"
+msgstr ""
+
 #: comments.php:39 comments.php:60
 msgid "Comment navigation"
 msgstr ""
@@ -40,7 +46,8 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-event.php:27 content-page.php:18 content.php:30
+#: content-event.php:27 content-location.php:25 content-page.php:18
+#: content.php:30
 msgid "Pages:"
 msgstr ""
 
@@ -85,39 +92,43 @@ msgstr ""
 msgid "Tagged: %1$s"
 msgstr ""
 
-#: footer.php:86 includes/load-customizer.php:105
+#: footer.php:68
+msgid "All Locations"
+msgstr ""
+
+#: footer.php:97 includes/load-customizer.php:105
 msgid "Close"
 msgstr ""
 
-#: functions.php:41
+#: functions.php:47
 msgid "Primary Location"
 msgstr ""
 
-#: functions.php:42
+#: functions.php:48
 msgid "Social Profiles"
 msgstr ""
 
-#: functions.php:48
+#: functions.php:54
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:50
+#: functions.php:56
 msgid "This sidebar will appear beside most pages and posts"
 msgstr ""
 
-#: functions.php:56
+#: functions.php:62
 msgid "Footer (full-width)"
 msgstr ""
 
-#: functions.php:58
+#: functions.php:64
 msgid "Display full-width widgets (one per row) in the footer."
 msgstr ""
 
-#: functions.php:64
+#: functions.php:70
 msgid "Footer (side-by-side)"
 msgstr ""
 
-#: functions.php:66
+#: functions.php:72
 msgid "Display widgets (many widgets per row) side by side in the footer."
 msgstr ""
 
@@ -153,6 +164,13 @@ msgid ""
 "Please try to reset your logo."
 msgstr ""
 
+#: includes/customizer/content-layout-control/components/templates/luigi-locations.php:30
+#: template-parts/location-summary.php:26
+#. Translators: 1 and 3 are an opening and closing <span> tag. 2 is the post
+#. title.
+msgid "Read More%1$s about the %2$s location%3$s"
+msgstr ""
+
 #: includes/customizer/content-layout-control/components/templates/luigi-mixer-opening-hours.php:17
 msgid "Make a Reservation"
 msgstr ""
@@ -163,11 +181,6 @@ msgstr ""
 
 #: includes/integrations/business-profile.php:47
 msgid "Contact card is not currently available"
-msgstr ""
-
-#: includes/integrations/business-profile.php:69
-#: includes/template-shortcodes.php:149
-msgid "Get directions"
 msgstr ""
 
 #: includes/integrations/event-organiser.php:18
@@ -262,6 +275,20 @@ msgstr ""
 msgid "Title Accent Font"
 msgstr ""
 
+#: includes/load-admin.php:61
+msgid "Homepage"
+msgstr ""
+
+#: includes/load-admin.php:94 includes/load-customizer.php:80
+msgid "Homepage Editor"
+msgstr ""
+
+#: includes/load-admin.php:100
+msgid ""
+"Edit your homepage using the Homepage Editor in the Customizer. %sLearn "
+"More%s"
+msgstr ""
+
 #: includes/load-customizer.php:18
 msgid "Delete"
 msgstr ""
@@ -276,10 +303,6 @@ msgstr ""
 
 #: includes/load-customizer.php:61 includes/load-customizer.php:148
 msgid "Logo"
-msgstr ""
-
-#: includes/load-customizer.php:80 includes/load-customizer.php:529
-msgid "Homepage Editor"
 msgstr ""
 
 #: includes/load-customizer.php:103
@@ -422,7 +445,7 @@ msgid "Phone Number"
 msgstr ""
 
 #: includes/load-customizer.php:325
-msgid "Contact Popup"
+msgid "Contact Link"
 msgstr ""
 
 #: includes/load-customizer.php:326
@@ -461,7 +484,7 @@ msgstr ""
 msgid "Add Review"
 msgstr ""
 
-#: includes/load-customizer.php:368 includes/load-customizer.php:431
+#: includes/load-customizer.php:368 includes/load-customizer.php:443
 msgid "Map"
 msgstr ""
 
@@ -511,30 +534,32 @@ msgstr ""
 msgid "Right Title"
 msgstr ""
 
-#: includes/load-customizer.php:419
+#: includes/load-customizer.php:409
+msgid "Locations"
+msgstr ""
+
+#: includes/load-customizer.php:410
+msgid "Display the locations of your restaurant."
+msgstr ""
+
+#: includes/load-customizer.php:412
+msgid "To add, edit or remove locations, visit the %sLocations%s page."
+msgstr ""
+
+#: includes/load-customizer.php:431
 msgid "Latest Blog Posts"
 msgstr ""
 
-#: includes/load-customizer.php:422
+#: includes/load-customizer.php:434
 msgid "Opening Hours"
 msgstr ""
 
-#: includes/load-customizer.php:427
+#: includes/load-customizer.php:439
 msgid "Contact Card"
 msgstr ""
 
-#: includes/load-customizer.php:437
+#: includes/load-customizer.php:449
 msgid "Booking Form"
-msgstr ""
-
-#: includes/load-customizer.php:498
-msgid "Homepage"
-msgstr ""
-
-#: includes/load-customizer.php:535
-msgid ""
-"Edit your homepage using the Homepage Editor in the Customizer. %sLearn "
-"More%s"
 msgstr ""
 
 #: includes/load-plugin-installer.php:37 includes/load-theme-setup.php:65
