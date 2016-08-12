@@ -34,6 +34,7 @@
 }
 
 .luigi-contact-card-address-wrapper,
+.bp-name,
 .bp-phone,
 .bp-contact,
 .bp-opening-hours .bp-title {
@@ -234,9 +235,18 @@
 }
 
 // Swap out icons based on background color
+.luigi-bg-dark,
+.luigi-bg-light {
+
+	.luigi-contact-card-address-wrapper {
+		background: none;
+	}
+}
+
 .luigi-bg-dark {
 
-	.bp-name {
+	.bp-name,
+	.location-sidebar .bp-address {
 		&:extend(.luigi-icon-w-location);
 	}
 
@@ -255,7 +265,8 @@
 
 .luigi-bg-light {
 
-	.bp-name {
+	.bp-name,
+	.location-sidebar .bp-address {
 		&:extend(.luigi-icon-b-location);
 	}
 
