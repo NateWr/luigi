@@ -13,13 +13,15 @@ if ( !function_exists( 'luigi_move_message_field' ) ) {
 	function luigi_move_message_field( $fields, $request ) {
 
 		if ( isset( $fields['reservation']['fields']['location'] ) ) {
-			$fields['location'] = array(
+			$location_fieldset = array(
 				'legend' => $fields['reservation']['legend'],
 				'fields' => array( 'location' => $fields['reservation']['fields']['location'] ),
 			);
 
 			unset( $fields['reservation']['legend'] );
 			unset( $fields['reservation']['fields']['location'] );
+
+			$fields = array_merge( array( 'location' => $location_fieldset ), $fields );
 		}
 
 		$fields['message-set'] = array(
