@@ -3,12 +3,14 @@
 //
 
 // Hide the honeypot
+.nf-field-hp,
 .hp-wrap,
 .honeypot-wrap {
 	&:extend(.screen-reader-text all);
 }
 
-.ninja-forms-cont {
+.ninja-forms-cont,
+.nf-form-cont {
 
 	.field-wrap {
 		margin-top: @triple;
@@ -38,7 +40,8 @@
 				margin-bottom: 0;
 				width: 40%;
 
-				+ .ninja-forms-field-description {
+				+ .ninja-forms-field-description,
+				+ .nf-field-description {
 					float: left;
 					clear: left;
 					padding-right: @double;
@@ -46,9 +49,21 @@
 				}
 			}
 
+			.nf-field-element,
 			.ninja-forms-field {
 				float: right;
 				width: 60%;
+			}
+
+			.nf-field-element {
+
+				input[type="text"],
+				input[type="email"],
+				input[type="phone"],
+				select,
+				textarea {
+					width: 100%;
+				}
 			}
 		}
 
@@ -59,7 +74,8 @@
 				padding-right: 0;
 				padding-left: @double;
 
-				+ .ninja-forms-field-description {
+				+ .ninja-forms-field-description,
+				+ .nf-field-description {
 					float: right;
 					clear: right;
 					padding-left: @double;
@@ -73,33 +89,86 @@
 		}
 	}
 
-	.checkbox-wrap {
+	.label-left .checkbox-wrap,
+	.label-right .checkbox-wrap {
 
-		&.label-left,
-		&.label-right {
+		.nj-field,
+		.ninja-forms-field,
+		.nf-field-label,
+		label {
+			display: inline;
+			float: none;
+			width: auto;
+			padding-right: 0.5em;
+		}
 
-			.ninja-forms-field,
-			label {
-				display: inline;
+		.nf-field-label,
+		label {
+			font-size: @font-sml;
+			line-height: @line-sml;
+			font-weight: @normal;
+			text-transform: none;
+		}
+	}
+
+	.label-left .checkbox-wrap label {
+		padding-right: 0.5em;
+	}
+
+	.label-right .checkbox-wrap {
+
+		label {
+			padding-left: 0.5em;
+		}
+
+		.nf-field-element {
+			float: left;
+			width: auto;
+		}
+	}
+
+	.list-radio-wrap,
+	.list-checkbox-wrap {
+
+		.nf-field-element,
+		.nf-field-label label {
+			float: none;
+			padding-left: 0;
+			padding-right: 0;
+			display: block;
+		}
+
+		.nf-field-element {
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			label,
+			.nf-element {
 				float: none;
+				display: inline-block;
 				width: auto;
-				padding-right: 0.5em;
 			}
 
 			label {
+				padding: 0;
 				font-size: @font-sml;
 				line-height: @line-sml;
 				font-weight: @normal;
 				text-transform: none;
 			}
-		}
 
-		&.label-left label {
-			padding-right: 0.5em;
 		}
+	}
 
-		&.label-right label {
-			padding-left: 0.5em;
+	.list-multiselect-wrap {
+
+		select[multiple] {
+			width: 100%;
+			height: 10em;
 		}
 	}
 
@@ -141,6 +210,7 @@
 	}
 }
 
+.nf-field-description,
 .ninja-forms-field-description,
 .ninja-forms-cont .description {
 	font-size: @font-sml;
@@ -217,6 +287,7 @@
 	color: @no;
 }
 
+.nf-error-msg,
 .ninja-forms-field-error {
 	&:extend(.luigi-error-message);
 	top: -1px;
