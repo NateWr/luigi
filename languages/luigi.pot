@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Luigi 1.1\n"
-"Report-Msgid-Bugs-To: http://themeofthecrop.com\n"
-"POT-Creation-Date: 2016-06-15 20:18:13+00:00\n"
+"Project-Id-Version: Luigi 1.1.2\n"
+"Report-Msgid-Bugs-To: https://themeofthecrop.com\n"
+"POT-Creation-Date: 2016-09-08 11:12:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1158,21 +1158,6 @@ msgid ""
 "<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" "
 "class=\"thickbox\" title=\"%4s\">Check out what's new</a> or <a "
 "href=\"%5$s\"%6$s>update now</a>."
-msgstr ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/basic-theme/exclude/file.php:3
-#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/plugin-include.php:6
-msgid "Exclude"
-msgstr ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/include/file.php:2
-msgid "Include"
-msgstr ""
-
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/add-domain.php:2
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:2
-#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:3
-msgid "String"
 msgstr ""
 
 #: search.php:20
