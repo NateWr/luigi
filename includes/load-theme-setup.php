@@ -33,10 +33,10 @@ if ( !function_exists( 'luigi_theme_setup_strings' ) ) {
 		$strings['page.documentation.help.url'] = 'http://doc.themeofthecrop.com/themes/luigi?utm_source=Theme&utm_medium=Theme%20Help&utm_campaign=Luigi';
 		$strings['page.documentation.help.description'] = __( 'Read the help guide for this theme', 'luigi' );
 		$strings['page.documentation.support'] = __( 'Support', 'luigi' );
-		$strings['page.documentation.support.url'] = 'http://themeofthecrop.com/about/support/';
-		$strings['page.documentation.support.description'] = sprintf( __( 'Get %sone-on-one support%s if you are having trouble or need customizations done.', 'luigi' ), '<a href="http://themeofthecrop.com/about/support/">', '</a>' );
+		$strings['page.documentation.support.url'] = 'https://themeofthecrop.com/about/support/';
+		$strings['page.documentation.support.description'] = sprintf( __( 'Get %sone-on-one support%s if you are having trouble or need customizations done.', 'luigi' ), '<a href="https://themeofthecrop.com/about/support/">', '</a>' );
 		$strings['page.documentation.demo'] = __( 'Theme Demo', 'luigi' );
-		$strings['page.documentation.demo.url'] = 'http://themeofthecrop.com/demo/luigi'; // @TODO make sure this is correct
+		$strings['page.documentation.demo.url'] = 'https://themeofthecrop.com/demo/luigi'; // @TODO make sure this is correct
 		$strings['page.documentation.demo.description'] = __( 'View an online demo of this theme', 'luigi' );
 		$strings['ajax.installing'] = __( 'Installing', 'luigi' );
 		$strings['ajax.error.nopriv'] = __( 'You have been logged out. Please login again before continuing.', 'luigi' );

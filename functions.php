@@ -13,9 +13,9 @@
  * @package    luigi
  * @subpackage Functions
  * @version    0.0.1
- * @author     Theme of the Crop <http://themeofthecrop.com>
+ * @author     Theme of the Crop <https://themeofthecrop.com>
  * @copyright  Copyright (c) 2015, Theme of the Crop
- * @link       http://themeofthecrop.com
+ * @link       https://themeofthecrop.com
  * @license    GNU General Public License v2.0 or later
  */
 

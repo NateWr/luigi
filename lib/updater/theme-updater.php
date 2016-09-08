@@ -17,7 +17,7 @@ $updater = new EDD_Theme_Updater_Admin(
 
 	// Config settings
 	$config = array(
-		'remote_api_url' => 'http://themeofthecrop.com', // Site where EDD is hosted
+		'remote_api_url' => 'https://themeofthecrop.com', // Site where EDD is hosted
 		'item_name' => 'Luigi', // Name of theme
 		'theme_slug' => 'luigi', // Theme slug
 		'version' => $theme->get( 'Version' ), // The current version of this theme

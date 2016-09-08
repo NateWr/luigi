@@ -1173,7 +1173,7 @@ msgid "Luigi"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://themeofthecrop.com/theme/luigi"
+msgid "https://themeofthecrop.com/theme/luigi"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -1187,7 +1187,7 @@ msgid "Theme of the Crop"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://themeofthecrop.com"
+msgid "https://themeofthecrop.com"
 msgstr ""
 
 #. Template Name of the plugin/theme
