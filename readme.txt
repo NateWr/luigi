@@ -3,7 +3,7 @@ Contributors: NateWr
 Donate link: https://themeofthecrop.com
 Requires at least: 4.4.2
 Tested up to: 4.6
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ Luigi was designed by [Jonathan Aktinson](https://cr3ativ.com/) and built by [Th
 Further information can be found at themeofthecrop.com.
 
 == Changelog ==
+
+= 1.1.3 (2016-09-09) =
+* Fix critical bugs when recommended plugins not active
 
 = 1.1.2 (2016-09-08) =
 * Update styles for Ninja Forms 3.0
