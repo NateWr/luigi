@@ -50,7 +50,7 @@
 					</div>
 					<div class="contact">
 						<?php
-							echo bpwfwp_print_contact_card(
+							echo luigi_bpfwp_print_contact_card(
 								apply_filters(
 									'luigi-footer-contact-card',
 									array(

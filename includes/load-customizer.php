@@ -195,8 +195,8 @@ if ( !function_exists( 'luigi_customizer_add_controls' ) ) {
 			)
 		);
 
-
 		// Versions prior to 4.5 don't support controls unattached to a setting
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		if ( version_compare( get_bloginfo( 'version' ), '4.5', '>=' ) && !is_plugin_active( 'typecase/typecase.php' ) ) {
 			include_once( 'customizer/WP_Customize_Notice_Control.php' );
 			$wp_customize->add_section(
@@ -239,7 +239,6 @@ if ( !function_exists( 'luigi_customizer_enqueue_preview_assets' ) ) {
 	 */
 	function luigi_customizer_enqueue_preview_assets() {
 
-
 		// Maybe load minified scripts
 		$min = SCRIPT_DEBUG ? '' : 'min.';
 
@@ -269,7 +268,6 @@ if ( !function_exists( 'luigi_customizer_enqueue_control_assets' ) ) {
 	 * @since 0.0.1
 	 */
 	function luigi_customizer_enqueue_control_assets() {
-
 
 		// Maybe load minified scripts
 		$min = SCRIPT_DEBUG ? '' : 'min.';

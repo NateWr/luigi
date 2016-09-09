@@ -29,6 +29,18 @@ if ( !function_exists( 'luigi_customizer_load_bpfwp_map_handlers' ) ) {
 	}
 }
 
+if ( !function_exists( 'luigi_bpfwp_print_contact_card' ) ) {
+	/**
+	 * A wrapper function for printing a contact card that can be safely called
+	 * whether or not Business Profile is active
+	 *
+	 * @since 1.1.3
+	 */
+	function luigi_bpfwp_print_contact_card( $args = array() ) {
+		return function_exists( 'bpwfwp_print_contact_card' ) ? bpwfwp_print_contact_card( $args ) : '';
+	}
+}
+
 if ( !function_exists( 'luigi_bpfwp_get_contact_card_modal' ) ) {
 	/**
 	 * Print a hidden map using Business Profile's native functions to ensure
