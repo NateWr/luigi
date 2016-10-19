@@ -38,8 +38,8 @@ global $bpfwp_controller; ?>
 		<div class="luigi-contact-card-contact-wrapper">
 	<?php endif; ?>
 
-		<?php if ( isset( $data->phone ) ) : call_user_func( $data->phone ); endif; ?>
-		<?php if ( isset( $data->contact ) ) : call_user_func( $data->contact ); endif; ?>
+		<?php if ( isset( $data->phone ) ) : call_user_func( $data->phone, bpfwp_get_display( 'location' ) ); endif; ?>
+		<?php if ( isset( $data->contact ) ) : call_user_func( $data->contact, bpfwp_get_display( 'location' ) ); endif; ?>
 
 	<?php if ( bpfwp_get_display( 'show_phone' ) || bpfwp_get_display( 'show_contact' ) ) : ?>
 		</div>
@@ -60,6 +60,6 @@ global $bpfwp_controller; ?>
 
 	<?php foreach ( $data as $slug => $callback ) : ?>
 		<?php if ( $slug == 'name' || $slug == 'address' || $slug == 'phone' || $slug == 'contact' || $slug == 'booking_page' ) { continue; } ?>
-		<?php call_user_func( $callback ); ?>
+		<?php call_user_func( $callback, bpfwp_get_display( 'location' ) ); ?>
 	<?php endforeach; ?>
 </address>
