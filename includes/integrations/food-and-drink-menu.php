@@ -73,3 +73,94 @@ if ( !function_exists( 'luigi_fdm_exclude_menu_item_from_search' ) ) {
 	}
 	add_filter( 'fdm_menu_item_args', 'luigi_fdm_exclude_menu_item_from_search' );
 }
+
+if ( !function_exists( 'luigi_fdmp_get_plugin_version' ) ) {
+	/**
+	 * Get the current version of Food and DRink Menu Pro, or false if it's not
+	 * active.
+	 *
+	 * @since 1.1.4
+	 */
+	function luigi_fdmp_get_plugin_version() {
+
+		if ( !defined( 'FDMP_PLUGIN_FNAME' ) ) {
+			return false;
+		}
+
+		$fdmp = get_plugin_data( FDMP_PLUGIN_FPATH );
+		return $fdmp['Version'];
+	}
+}
+
+if ( !function_exists( 'luigi_fdmp_trigger_icon_font' ) ) {
+	/**
+	 * Initiate a call to load the item flag icon font when a menu is printed
+	 *
+	 * @param string $output HTML output of the menu
+	 * @param fdmViewMenu $menu Menu view object
+	 * @since 1.1.4
+	 */
+	function luigi_fdmp_trigger_icon_font( $output, $menu ) {
+
+		if ( is_plugin_active( 'food-and-drink-menu-pro/food-and-drink-menu-pro.php' ) ) {
+			add_action( 'wp_footer', 'luigi_fdmp_load_icon_font' );
+		}
+
+		return $output;
+	}
+	add_filter( 'fdm_menu_output', 'luigi_fdmp_trigger_icon_font', 10, 2 );
+}
+
+if ( !function_exists( 'luigi_fdmp_load_icon_font' ) ) {
+	/**
+	 * Enqueue the item flag icon font
+	 *
+	 * @since 1.1.4
+	 */
+	function luigi_fdmp_load_icon_font() {
+
+		$fdmp_version = luigi_fdmp_get_plugin_version();
+		if ( !$fdmp_version || version_compare( $fdmp_version, '1.4', '<' ) || !defined( 'FDMP_PLUGIN_URL' ) ) {
+			return;
+		}
+
+		?>
+		<style type="text/css">
+			@font-face {
+				font-family: 'food-and-drink-menu-icons';
+				src: url('<?php echo FDMP_PLUGIN_URL; ?>/assets/fonts/food-and-drink-menu-icons.eot?4zwtn9');
+				src: url('<?php echo FDMP_PLUGIN_URL; ?>/assets/fonts/food-and-drink-menu-icons.eot?4zwtn9#iefix') format('embedded-opentype'),
+					url('<?php echo FDMP_PLUGIN_URL; ?>/assets/fonts/food-and-drink-menu-icons.ttf?4zwtn9') format('truetype'),
+					url('<?php echo FDMP_PLUGIN_URL; ?>/assets/fonts/food-and-drink-menu-icons.woff?4zwtn9') format('woff'),
+					url('<?php echo FDMP_PLUGIN_URL; ?>/assets/fonts/food-and-drink-menu-icons.svg?4zwtn9#food-and-drink-menu-icons') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+		</style>
+		<?php
+	}
+}
+
+if ( !function_exists( 'luigi_fdmp_body_class_deprecated_icons' ) ) {
+	/**
+	 * Add a body class to load the deprecated icons if Food and Drink Menu Pro
+	 * has not been updated
+	 *
+	 * @param array $classes Classes to add to the body tag
+	 * @since 1.1.4
+	 */
+	function luigi_fdmp_body_class_deprecated_icons( $classes ) {
+
+		if ( !is_plugin_active( 'food-and-drink-menu-pro/food-and-drink-menu-pro.php' ) ) {
+			return $classes;
+		}
+
+		$fdmp_version = luigi_fdmp_get_plugin_version();
+		if ( !$fdmp_version || version_compare( $fdmp_version, '1.4', '<' ) ) {
+			$classes[] = 'fdmp-deprecated-item-flag-icons';
+		}
+
+		return $classes;
+	}
+	add_filter( 'body_class', 'luigi_fdmp_body_class_deprecated_icons' );
+}

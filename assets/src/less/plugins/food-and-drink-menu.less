@@ -123,6 +123,7 @@
     display: inline-block;
     margin-right: 0.5em;
     line-height: 40px;
+    min-height: 40px;
     vertical-align: middle;
 
     &:last-child {
@@ -240,133 +241,272 @@
     }
 }
 
-// Menu Item Flag icons
 .fdm-icon {
-    background-image: url('assets/img/item-flags.png');
-    background-repeat: no-repeat;
-    width: 32px;
-    height: 32px;
-    display: block;
-	background-position: 32px 32px;
+    position: relative;
+    font-family: 'food-and-drink-menu-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: @primary;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.fdm-icon-chili {
-    background-position: 0 0;
+.fdm-icon:before,
+.fdm-icon:after {
+	width: 32px;
+	height: 32px;
+	font-size: 32px;
+	display: block;
+}
+.fdm-icon:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.fdm-icon-chili:before {
+    content: "\e900";
+}
+.fdm-icon-chili-2:before {
+    content: "\e901";
+}
+.fdm-icon-chili-3:before {
+    content: "\e902";
+}
+.fdm-icon-decaf:before {
+    content: "\e903";
+}
+.fdm-icon-fair-trade:before {
+    content: "\e904";
+}
+.fdm-icon-free-range:before {
+    content: "\e905";
+}
+.fdm-icon-local:before {
+    content: "\e906";
+}
+.fdm-icon-kosher:before {
+    content: "\e907";
+}
+.fdm-icon-halal:before {
+    content: "\e908";
+}
+.fdm-icon-has-dairy:before {
+    content: "\e909";
+}
+.fdm-icon-has-peanuts:before {
+    content: "\e90a";
+}
+.fdm-icon-has-sesame:before {
+    content: "\e90b";
+}
+.fdm-icon-has-shellfish:before {
+    content: "\e90c";
+}
+.fdm-icon-heart-healthy-1:before {
+    content: "\e90d";
+}
+.fdm-icon-heart-healthy-2:before {
+    content: "\e90e";
+}
+.fdm-icon-low-sodium:before {
+    content: "\e90f";
+}
+.fdm-icon-no-gluten:before {
+    content: "\e911";
+}
+.fdm-icon-no-gluten-2:before {
+	content: "\e910";
+}
+.fdm-icon-no-gm:before {
+    content: "\e912";
+}
+.fdm-icon-no-dairy:before {
+    content: "\e913";
+}
+.fdm-icon-no-peanuts:before {
+    content: "\e914";
+}
+.fdm-icon-no-sesame:before {
+    content: "\e915";
+}
+.fdm-icon-no-shellfish:before {
+    content: "\e916";
+}
+.fdm-icon-no-sugar:before {
+    content: "\e917";
+}
+.fdm-icon-antibiotic-hormone-free-1:before {
+    content: "\e918";
+}
+.fdm-icon-antibiotic-hormone-free-2:before {
+    content: "\e919";
+}
+.fdm-icon-antibiotic-hormone-free-2:after {
+    content: "\e91a";
+}
+.fdm-icon-organic:before {
+    content: "\e91b";
+}
+.fdm-icon-superfood:before {
+	content: "\e91d";
+}
+.fdm-icon-superfood-2:before {
+    content: "\e91c";
+}
+.fdm-icon-vegan:before {
+    content: "\e91e";
+}
+.fdm-icon-vegetarian:before {
+	content: "\e920";
+}
+.fdm-icon-vegetarian-2:before {
+    content: "\e91f";
+}
+.fdm-icon-wholegrain:before {
+    content: "\e921";
 }
 
-.fdm-icon-chili-2 {
-    background-position: -32px 0;
-}
+// Deprecated Menu Item Flag icons
+.fdmp-deprecated-item-flag-icons {
 
-.fdm-icon-chili-3 {
-    background-position: -64px 0;
-}
+    .fdm-icon {
+        background-image: url('assets/img/item-flags.png');
+        background-repeat: no-repeat;
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        background-position: 32px 32px;
 
-.fdm-icon-decaf {
-    background-position: -96px 0;
-}
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
 
-.fdm-icon-fair-trade {
-    background-position: -128px 0;
-}
+    .fdm-icon-chili {
+        background-position: 0 0;
+    }
 
-.fdm-icon-free-range {
-    background-position: 0 -32px;
-}
+    .fdm-icon-chili-2 {
+        background-position: -32px 0;
+    }
 
-.fdm-icon-halal {
-    background-position: -32px -32px;
-}
+    .fdm-icon-chili-3 {
+        background-position: -64px 0;
+    }
 
-.fdm-icon-has-dairy {
-    background-position: -64px -32px;
-}
+    .fdm-icon-decaf {
+        background-position: -96px 0;
+    }
 
-.fdm-icon-has-peanuts {
-    background-position: -96px -32px;
-}
+    .fdm-icon-fair-trade {
+        background-position: -128px 0;
+    }
 
-.fdm-icon-has-sesame {
-    background-position: -128px -32px;
-}
+    .fdm-icon-free-range {
+        background-position: 0 -32px;
+    }
 
-.fdm-icon-has-shellfish {
-    background-position: 0 -64px;
-}
+    .fdm-icon-halal {
+        background-position: -32px -32px;
+    }
 
-.fdm-icon-kosher {
-    background-position: -32px -64px;
-}
+    .fdm-icon-has-dairy {
+        background-position: -64px -32px;
+    }
 
-.fdm-icon-local {
-    background-position: -64px -64px;
-}
+    .fdm-icon-has-peanuts {
+        background-position: -96px -32px;
+    }
 
-.fdm-icon-low-sodium {
-    background-position: -96px -64px;
-}
+    .fdm-icon-has-sesame {
+        background-position: -128px -32px;
+    }
 
-.fdm-icon-no-dairy {
-    background-position: -128px -64px;
-}
+    .fdm-icon-has-shellfish {
+        background-position: 0 -64px;
+    }
 
-.fdm-icon-no-gluten {
-    background-position: 0 -96px;
-}
+    .fdm-icon-kosher {
+        background-position: -32px -64px;
+    }
 
-.fdm-icon-no-gm {
-    background-position: -32px -96px;
-}
+    .fdm-icon-local {
+        background-position: -64px -64px;
+    }
 
-.fdm-icon-no-peanuts {
-    background-position: -64px -96px;
-}
+    .fdm-icon-low-sodium {
+        background-position: -96px -64px;
+    }
 
-.fdm-icon-no-sesame {
-    background-position: -96px -96px;
-}
+    .fdm-icon-no-dairy {
+        background-position: -128px -64px;
+    }
 
-.fdm-icon-no-shellfish {
-    background-position: -128px -96px;
-}
+    .fdm-icon-no-gluten {
+        background-position: 0 -96px;
+    }
 
-.fdm-icon-no-sugar {
-    background-position: 0 -128px;
-}
+    .fdm-icon-no-gm {
+        background-position: -32px -96px;
+    }
 
-.fdm-icon-organic {
-    background-position: -32px -128px;
-}
+    .fdm-icon-no-peanuts {
+        background-position: -64px -96px;
+    }
 
-.fdm-icon-superfood {
-    background-position: -64px -128px;
-}
+    .fdm-icon-no-sesame {
+        background-position: -96px -96px;
+    }
 
-.fdm-icon-superfood-2 {
-    background-position: -96px -128px;
-}
+    .fdm-icon-no-shellfish {
+        background-position: -128px -96px;
+    }
 
-.fdm-icon-vegan {
-    background-position: -128px -128px;
-}
+    .fdm-icon-no-sugar {
+        background-position: 0 -128px;
+    }
 
-.fdm-icon-vegetarian {
-    background-position: -160px 0;
-}
+    .fdm-icon-organic {
+        background-position: -32px -128px;
+    }
 
-.fdm-icon-vegetarian-2 {
-    background-position: -160px -32px;
-}
+    .fdm-icon-superfood {
+        background-position: -64px -128px;
+    }
 
-.fdm-icon-wholegrain {
-    background-position: -160px -64px;
-}
+    .fdm-icon-superfood-2 {
+        background-position: -96px -128px;
+    }
 
-// Swap out icons based on background color
-.luigi-bg-dark .fdm-icon {
-    background-image: url('assets/img/item-flags-w.png');
-}
+    .fdm-icon-vegan {
+        background-position: -128px -128px;
+    }
 
-.luigi-bg-light .fdm-icon {
-    background-image: url('assets/img/item-flags-b.png');
+    .fdm-icon-vegetarian {
+        background-position: -160px 0;
+    }
+
+    .fdm-icon-vegetarian-2 {
+        background-position: -160px -32px;
+    }
+
+    .fdm-icon-wholegrain {
+        background-position: -160px -64px;
+    }
+
+    // Swap out icons based on background color
+    .luigi-bg-dark .fdm-icon {
+        background-image: url('assets/img/item-flags-w.png');
+    }
+
+    .luigi-bg-light .fdm-icon {
+        background-image: url('assets/img/item-flags-b.png');
+    }
 }

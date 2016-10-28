@@ -338,6 +338,7 @@ if ( !function_exists( 'luigi_tp' ) ) {
 				$selectors[] = '.clc-component-layout .title_line_one';
 				$selectors[] = '.fdm-item-price-wrapper';
 				$selectors[] = '.fdm-item-flag-text';
+				$selectors[] = '.fdm-icon';
 				$selectors[] = '.gr-reviews .gr-rating-stars .dashicons';
 				$selectors[] = '.gr-reviews .gr-rating-numbers';
 				$selectors[] = '.ninja-forms-star-rating-on:before';
