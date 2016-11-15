@@ -2,8 +2,8 @@
 Contributors: NateWr
 Donate link: https://themeofthecrop.com
 Requires at least: 4.4.2
-Tested up to: 4.6
-Stable tag: 1.1.3
+Tested up to: 4.6.1
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,10 @@ Luigi was designed by [Jonathan Aktinson](https://cr3ativ.com/) and built by [Th
 Further information can be found at themeofthecrop.com.
 
 == Changelog ==
+
+= 1.1.4 (2016-11-15) =
+* Add: support new item flag icons in Food and Drink Menu Pro
+* Fix: location-specific phone and contact details in contact cards
 
 = 1.1.3 (2016-09-09) =
 * Fix critical bugs when recommended plugins not active
