@@ -17,7 +17,7 @@ Luigi was designed by [Jonathan Aktinson](https://cr3ativ.com/) and built by [Th
 
 == Installation ==
 
-1. Unzip the contents of thespot.zip and upload the folder to the `/wp-content/themes/` directory
+1. Unzip the contents of luigi.zip and upload the folder to the `/wp-content/themes/` directory
 2. Activate the theme through the 'Appearance' menu in WordPress
 3. Consult the setup page in 'Appearance > Theme Setup' for help installing the recommended plugins and getting started.
 
