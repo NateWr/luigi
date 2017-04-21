@@ -12,6 +12,10 @@ global $bpfwp_controller; ?>
 
 <address class="bp-contact-card" itemscope itemtype="http://schema.org/<?php echo bpfwp_setting( 'schema-type', bpfwp_get_display( 'location' ) ); ?>">
 
+	<?php if ( bpfwp_setting( 'image', bpfwp_get_display( 'location' ) ) ) : ?>
+		<meta itemprop="image" content="<?php echo esc_url( wp_get_attachment_url( bpfwp_setting( 'image', bpfwp_get_display( 'location' ) ) ) ); ?>">
+	<?php endif; ?>
+
 	<?php if ( bpfwp_get_display( 'show_name' ) || bpfwp_get_display( 'show_address' ) ) : ?>
 		<div class="luigi-contact-card-address-wrapper">
 	<?php endif; ?>
