@@ -1,14 +1,14 @@
-# Copyright (C) 2016 Theme of the Crop
+# Copyright (C) 2017 Theme of the Crop
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Luigi 1.1.2\n"
+"Project-Id-Version: Luigi 1.1.5\n"
 "Report-Msgid-Bugs-To: https://themeofthecrop.com\n"
-"POT-Creation-Date: 2016-09-08 11:12:59+00:00\n"
+"POT-Creation-Date: 2017-04-21 16:19:10+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
@@ -24,8 +24,8 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: business-profile-templates/contact-card.php:52
-#: includes/integrations/business-profile.php:69
+#: business-profile-templates/contact-card.php:56
+#: includes/integrations/business-profile.php:81
 #: includes/template-shortcodes.php:163
 msgid "Get directions"
 msgstr ""
@@ -175,11 +175,11 @@ msgstr ""
 msgid "Make a Reservation"
 msgstr ""
 
-#: includes/integrations/business-profile.php:47
+#: includes/integrations/business-profile.php:59
 msgid "The Business Profile plugin is not active."
 msgstr ""
 
-#: includes/integrations/business-profile.php:47
+#: includes/integrations/business-profile.php:59
 msgid "Contact card is not currently available"
 msgstr ""
 
@@ -317,7 +317,7 @@ msgstr ""
 msgid "Search content"
 msgstr ""
 
-#: includes/load-customizer.php:107 includes/load-customizer.php:308
+#: includes/load-customizer.php:107 includes/load-customizer.php:306
 msgid "Add Link"
 msgstr ""
 
@@ -365,200 +365,200 @@ msgid ""
 "change the fonts used on your site. %3$sLearn more%4$s"
 msgstr ""
 
-#: includes/load-customizer.php:254
+#: includes/load-customizer.php:253
 msgid ""
 "An unknown error occurred. Please try again. If the problem continues, "
 "please refresh the page."
 msgstr ""
 
-#: includes/load-customizer.php:297
+#: includes/load-customizer.php:295
 msgid "Title"
 msgstr ""
 
-#: includes/load-customizer.php:298
+#: includes/load-customizer.php:296
 msgid "Content"
 msgstr ""
 
-#: includes/load-customizer.php:299
+#: includes/load-customizer.php:297
 msgid "Image"
 msgstr ""
 
-#: includes/load-customizer.php:300
+#: includes/load-customizer.php:298
 msgid "No image selected"
 msgstr ""
 
-#: includes/load-customizer.php:301
+#: includes/load-customizer.php:299
 msgid "Image Position"
 msgstr ""
 
-#: includes/load-customizer.php:302
+#: includes/load-customizer.php:300
 msgid "Left"
 msgstr ""
 
-#: includes/load-customizer.php:303
+#: includes/load-customizer.php:301
 msgid "Right"
 msgstr ""
 
-#: includes/load-customizer.php:304
+#: includes/load-customizer.php:302
 msgid "Select Image"
 msgstr ""
 
-#: includes/load-customizer.php:305
+#: includes/load-customizer.php:303
 msgid "Change Image"
 msgstr ""
 
-#: includes/load-customizer.php:306 includes/load-customizer.php:309
-#: includes/load-customizer.php:356
+#: includes/load-customizer.php:304 includes/load-customizer.php:307
+#: includes/load-customizer.php:354
 msgid "Remove"
 msgstr ""
 
-#: includes/load-customizer.php:307
+#: includes/load-customizer.php:305
 msgid "Links"
 msgstr ""
 
-#: includes/load-customizer.php:315
+#: includes/load-customizer.php:313
 msgid "Hero Block"
 msgstr ""
 
-#: includes/load-customizer.php:316
+#: includes/load-customizer.php:314
 msgid "A prominent call to action on a full-width background image."
 msgstr ""
 
-#: includes/load-customizer.php:320 includes/load-customizer.php:340
+#: includes/load-customizer.php:318 includes/load-customizer.php:338
 msgid "Title (top)"
 msgstr ""
 
-#: includes/load-customizer.php:321 includes/load-customizer.php:341
+#: includes/load-customizer.php:319 includes/load-customizer.php:339
 msgid "Title (bottom)"
 msgstr ""
 
-#: includes/load-customizer.php:322
+#: includes/load-customizer.php:320
 msgid "Contact Detail"
 msgstr ""
 
-#: includes/load-customizer.php:323
+#: includes/load-customizer.php:321
 msgid "None"
 msgstr ""
 
-#: includes/load-customizer.php:324
+#: includes/load-customizer.php:322
 msgid "Phone Number"
 msgstr ""
 
-#: includes/load-customizer.php:325
+#: includes/load-customizer.php:323
 msgid "Contact Link"
 msgstr ""
 
-#: includes/load-customizer.php:326
+#: includes/load-customizer.php:324
 msgid "Find Us"
 msgstr ""
 
-#: includes/load-customizer.php:327
+#: includes/load-customizer.php:325
 msgid "Darken Image"
 msgstr ""
 
-#: includes/load-customizer.php:335
+#: includes/load-customizer.php:333
 msgid "Content Block"
 msgstr ""
 
-#: includes/load-customizer.php:336
+#: includes/load-customizer.php:334
 msgid "A simple content block with an image, title, text and links."
 msgstr ""
 
-#: includes/load-customizer.php:351
+#: includes/load-customizer.php:349
 msgid "Review"
 msgstr ""
 
-#: includes/load-customizer.php:352
+#: includes/load-customizer.php:350
 msgid "Display one or more reviews."
 msgstr ""
 
-#: includes/load-customizer.php:355
+#: includes/load-customizer.php:353
 msgid "Loading"
 msgstr ""
 
-#: includes/load-customizer.php:357
+#: includes/load-customizer.php:355
 msgid "No review selected."
 msgstr ""
 
-#: includes/load-customizer.php:358
+#: includes/load-customizer.php:356
 msgid "Add Review"
 msgstr ""
 
-#: includes/load-customizer.php:368 includes/load-customizer.php:443
+#: includes/load-customizer.php:366 includes/load-customizer.php:441
 msgid "Map"
 msgstr ""
 
-#: includes/load-customizer.php:369
+#: includes/load-customizer.php:367
 msgid "A full-width map identifying your location."
 msgstr ""
 
-#: includes/load-customizer.php:371
+#: includes/load-customizer.php:369
 msgid "To change the address, edit your %sBusiness Profile%s."
 msgstr ""
 
-#: includes/load-customizer.php:380
+#: includes/load-customizer.php:378
 msgid "Event Calendar"
 msgstr ""
 
-#: includes/load-customizer.php:381
+#: includes/load-customizer.php:379
 msgid "A monthly calendar displaying your upcoming events."
 msgstr ""
 
-#: includes/load-customizer.php:383
+#: includes/load-customizer.php:381
 msgid "Add and edit events from your %sevents management page%s."
 msgstr ""
 
-#: includes/load-customizer.php:393
+#: includes/load-customizer.php:391
 msgid "Mix-and-Match"
 msgstr ""
 
-#: includes/load-customizer.php:394
+#: includes/load-customizer.php:392
 msgid ""
 "Pair two items in a row. Select from opening hours, a map, latest posts and "
 "more."
 msgstr ""
 
-#: includes/load-customizer.php:397
+#: includes/load-customizer.php:395
 msgid "Left Content"
 msgstr ""
 
-#: includes/load-customizer.php:398
+#: includes/load-customizer.php:396
 msgid "Right Content"
 msgstr ""
 
-#: includes/load-customizer.php:399
+#: includes/load-customizer.php:397
 msgid "Left Title"
 msgstr ""
 
-#: includes/load-customizer.php:400
+#: includes/load-customizer.php:398
 msgid "Right Title"
 msgstr ""
 
-#: includes/load-customizer.php:409
+#: includes/load-customizer.php:407
 msgid "Locations"
 msgstr ""
 
-#: includes/load-customizer.php:410
+#: includes/load-customizer.php:408
 msgid "Display the locations of your restaurant."
 msgstr ""
 
-#: includes/load-customizer.php:412
+#: includes/load-customizer.php:410
 msgid "To add, edit or remove locations, visit the %sLocations%s page."
 msgstr ""
 
-#: includes/load-customizer.php:431
+#: includes/load-customizer.php:429
 msgid "Latest Blog Posts"
 msgstr ""
 
-#: includes/load-customizer.php:434
+#: includes/load-customizer.php:432
 msgid "Opening Hours"
 msgstr ""
 
-#: includes/load-customizer.php:439
+#: includes/load-customizer.php:437
 msgid "Contact Card"
 msgstr ""
 
-#: includes/load-customizer.php:449
+#: includes/load-customizer.php:447
 msgid "Booking Form"
 msgstr ""
 
