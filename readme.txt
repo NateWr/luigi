@@ -2,8 +2,8 @@
 Contributors: NateWr
 Donate link: https://themeofthecrop.com
 Requires at least: 4.4.2
-Tested up to: 4.7.4
-Stable tag: 1.1.5
+Tested up to: 4.9.2
+Stable tag: 1.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ Luigi was designed by [Jonathan Aktinson](https://cr3ativ.com/) and built by [Th
 Further information can be found at themeofthecrop.com.
 
 == Changelog ==
+
+= 1.1.6 (2018-05-30) =
+* Add: style privacy consent field in Restaurant Reservations v1.7.7.
 
 = 1.1.5 (2017-04-21) =
 * Add: support image property in Business Profile v1.1.4.
