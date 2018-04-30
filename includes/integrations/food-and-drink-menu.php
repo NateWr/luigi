@@ -102,6 +102,7 @@ if ( !function_exists( 'luigi_fdmp_trigger_icon_font' ) ) {
 	 */
 	function luigi_fdmp_trigger_icon_font( $output, $menu ) {
 
+		include_once(ABSPATH . 'wp-admin/includes/plugin.php' );
 		if ( is_plugin_active( 'food-and-drink-menu-pro/food-and-drink-menu-pro.php' ) ) {
 			add_action( 'wp_footer', 'luigi_fdmp_load_icon_font' );
 		}
@@ -151,6 +152,7 @@ if ( !function_exists( 'luigi_fdmp_body_class_deprecated_icons' ) ) {
 	 */
 	function luigi_fdmp_body_class_deprecated_icons( $classes ) {
 
+		include_once(ABSPATH . 'wp-admin/includes/plugin.php' );
 		if ( !is_plugin_active( 'food-and-drink-menu-pro/food-and-drink-menu-pro.php' ) ) {
 			return $classes;
 		}
